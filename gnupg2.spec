@@ -13,10 +13,10 @@ URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
-BuildRequires:	libassuan-devel >= 1:0.6.4
+BuildRequires:	libassuan-devel >= 1:0.6.6
 BuildRequires:	libgcrypt-devel >= 1.1.93
 BuildRequires:	libgpg-error-devel >= 0.6
-BuildRequires:	libksba-devel >= 0.9.4
+BuildRequires:	libksba-devel >= 0.9.7
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	opensc-devel >= 0.8.0
 BuildRequires:	pth-devel >= 2.0.0
