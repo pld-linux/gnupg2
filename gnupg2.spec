@@ -1,17 +1,19 @@
 #
 # Conditional build:
 %bcond_without	xinitrc	# don't use xinitrc's directory
+%bcond_without	pth	# without pth-based based version of gnupg
 #
-Summary:	GnuPG extension - agent
-Summary(pl):	Rozszerzenie GnuPG - agent
-Name:		gnupg-agent
+Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
+Summary(pl):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
+Name:		gnupg2
 Version:	1.9.14
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
 # Source0-md5:	72b56586392c7be6668df4ef8ea7c879
 Source1:	gnupg-agent.sh
+Patch0:		%{name}-info.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
@@ -25,28 +27,77 @@ BuildRequires:	opensc-devel >= 0.8.0
 BuildRequires:	pth-devel >= 2.0.0
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
-Requires:	gnupg
+Requires:	gnupg2-common = %{version}-%{release}
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_libexecdir	%{_libdir}/gnupg2
+
+%description
+GnuPG is GNU's tool for secure communication and data storage. It can
+be used to encrypt data and to create digital signatures. It includes
+an advanced key management facility and is compliant with the proposed
+OpenPGP Internet standard as described in RFC2440.
+
+This is development version. Don't use it with production keys.
+
+%description -l pl
+GnuPG (GNU Privacy Guard) jest narzędziem do bezpiecznej komunikacji i
+bezpiecznego przechowywania danych. Może być używany do szyfrowania
+oraz podpisywania danych. Umożliwia zaawansowane zarządzanie kluczami
+i spełnia normy zdefiniowane w standardzie OpenPGP, który jest opisany
+w RFC2440.
+
+Wersja rozwojowa. Nie do użytku z kluczami produkcyjnymi.
+
+%package common
+Summary:	GnuPG - common files
+Summary(pl):	GnuPG - pliki wspólne 
+Group:		Applications/File
+Conflicts:	gnupg-agent < 1.9.14-2
+
+%description common
+Common files used by tools from GnuPG project.
+
+%description common -l pl
+Pliki wspólne używane przez różne narzędzia z projektu GnuPG.
+
+%package -n gnupg-agent
+Summary:	GnuPG extension - agent
+Summary(pl):	Rozszerzenie GnuPG - agent
+Group:		Applications/File
+Requires:	gnupg2-common = %{version}-%{release}
 Requires:	pinentry
 %{?with_xinitrc:Requires: xinitrc}
 Obsoletes:	newpg
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_libexecdir	%{_libdir}/gnupg
-
-%description
+%description -n gnupg-agent
 GnuPG extension - agent.
 
-%description -l pl
+%description -n gnupg-agent -l pl
 Rozszerzenie GnuPG - agent.
+
+%package -n gnupg-smime
+Summary:	GnuPG extension - S/MIME support
+Summary(pl):	Rozszeżenie GnuPG - obsługa S/MIME
+Group:		Applications/File
+Requires:	gnupg2-common = %{version}-%{release}
+Conflicts:	gnupg-agent < 1.9.14-2
+
+%description -n gnupg-smime
+GnuPG extension - S/MIME support.
+
+%description -n gnupg-smime -l pl
+Rozszeżenie GnuPG - obsługa S/MIME.
 
 %prep
 %setup -q -n gnupg-%{version}
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.* scripts
 %configure \
-	--disable-gpg \
 	--with-capabilities \
+	%{!?with_pth:--disable-threads} \
 %ifarch sparc sparc64
 	--disable-m-guard \
 %else
@@ -64,11 +115,14 @@ install -d $RPM_BUILD_ROOT/etc/profile.d
 %{?with_xinitrc:install -d $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d}
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	pkglibdir=%{_libexecdir}
 
-ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/%{name}.sh
-%{?with_xinitrc:ln -sf /etc/profile.d/%{name}.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}.sh}
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
+%{?with_xinitrc:ln -sf /etc/profile.d/gnupg-agent.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh}
+
+mv ChangeLog main-ChangeLog || :
+find . -name ChangeLog |awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); print "cp " src " " dst}'|sh
 
 %find_lang gnupg2
 
@@ -81,20 +135,37 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
-%files -f gnupg2.lang
+%files 
 %defattr(644,root,root,755)
-%doc agent/ChangeLog
-%attr(755,root,root) %{_bindir}/gpg-agent
+%doc g10-ChangeLog g10/options.skel
+%attr(755,root,root) %{_bindir}/gpg2
+%attr(755,root,root) %{_bindir}/gpgv2
+
+%files common -f gnupg2.lang
+%defattr(644,root,root,755)
+%doc AUTHORS main-ChangeLog NEWS README THANKS TODO 
+%doc intl-ChangeLog jnlib-ChangeLog m4-ChangeLog po-ChangeLog scripts-ChangeLog common-ChangeLog kbx-ChangeLog tools-ChangeLog doc-ChangeLog
 %attr(755,root,root) %{_bindir}/gpgconf
-%attr(755,root,root) %{_bindir}/gpgsm
-%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
-%attr(755,root,root) %{_bindir}/kbxutil
-%attr(755,root,root) %{_bindir}/sc-copykeys
-%attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
-%attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
-%attr(755,root,root) %{_libdir}/gnupg/gpg-preset-passphrase
-%attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
-%attr(755,root,root) /etc/profile.d/%{name}.sh
-%{?with_xinitrc:%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}.sh}
+%attr(755,root,root) %{_bindir}/kbxutil
+%{_datadir}/gnupg
+%{_infodir}/*info*
+
+%files -n gnupg-smime
+%defattr(644,root,root,755)
+%doc sm-ChangeLog
+%attr(755,root,root) %{_bindir}/gpgsm
+%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
+
+%files -n gnupg-agent
+%defattr(644,root,root,755)
+%doc agent-ChangeLog scd-ChangeLog
+%attr(755,root,root) %{_bindir}/gpg-agent
+%attr(755,root,root) %{_bindir}/sc-copykeys
+%attr(755,root,root) %{_bindir}/scdaemon
+%attr(755,root,root) %{_libexecdir}/gpg-protect-tool
+%attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
+%attr(755,root,root) %{_libexecdir}/pcsc-wrapper
+%attr(755,root,root) /etc/profile.d/gnupg-agent.sh
+%{?with_xinitrc:%attr(755,root,root) /etc/X11/xinit/xinitrc.d/gnupg-agent.sh}
