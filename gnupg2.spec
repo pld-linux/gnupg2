@@ -5,18 +5,18 @@
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
-Version:	1.9.13
+Version:	1.9.14
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	f9c1aac160e7cfbdbc195934950c3a2a
+# Source0-md5:	72b56586392c7be6668df4ef8ea7c879
 Source1:	gnupg-agent.sh
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.12.1
-BuildRequires:	libassuan-devel >= 1:0.6.6
+BuildRequires:	libassuan-devel >= 1:0.6.9
 BuildRequires:	libgcrypt-devel >= 1.1.93
 BuildRequires:	libgpg-error-devel >= 0.6
 BuildRequires:	libksba-devel >= 0.9.7
@@ -94,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
+%attr(755,root,root) %{_libdir}/gnupg/gpg-preset-passphrase
 %attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
 %attr(755,root,root) /etc/profile.d/%{name}.sh
 %{?with_xinitrc:%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}.sh}
