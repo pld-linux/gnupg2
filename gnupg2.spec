@@ -1,7 +1,7 @@
-
+#
 # Conditional build:
 %bcond_without	xinitrc	# don't use xinitrc's directory
-
+#
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
