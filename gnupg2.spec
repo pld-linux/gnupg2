@@ -1,5 +1,6 @@
 #
 # Conditional build:
+%bcond_with	max_cache_ttl # add max-cache-ttl option (for tests) 
 %bcond_without	xinitrc	# don't use xinitrc's directory
 #
 Summary:	GnuPG extension - agent
@@ -12,6 +13,9 @@ Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
 # Source0-md5:	d923cfe0921898fbeb66374a0e32ddc6
 Source1:	gnupg-agent.sh
+# Patch0 based on http://marc.theaimsgroup.com/?l=gnupg-devel&m=109300087831144&w=2
+# taken from gnupg cvs.
+Patch0:		%{name}-max_cache_ttl.patch	
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
@@ -41,6 +45,7 @@ Rozszerzenie GnuPG - agent.
 
 %prep
 %setup -q -n gnupg-%{version}
+%{?with_max_cache_ttl:%patch0 -p1}
 
 %build
 cp -f /usr/share/automake/config.* scripts
