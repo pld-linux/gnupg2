@@ -4,7 +4,7 @@
 %bcond_without	pth	# without pth-based based version of gnupg
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
-Summary(pl):	GnuPG - narzÄ™dzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
+Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
 Version:	1.9.14
 Release:	2
@@ -41,17 +41,17 @@ OpenPGP Internet standard as described in RFC2440.
 This is development version. Don't use it with production keys.
 
 %description -l pl
-GnuPG (GNU Privacy Guard) jest narzÄ™dziem do bezpiecznej komunikacji i
-bezpiecznego przechowywania danych. MoÅ¼e byÄ‡ uÅ¼ywany do szyfrowania
-oraz podpisywania danych. UmoÅ¼liwia zaawansowane zarzÄ…dzanie kluczami
-i speÅ‚nia normy zdefiniowane w standardzie OpenPGP, ktÃ³ry jest opisany
+GnuPG (GNU Privacy Guard) jest narzêdziem do bezpiecznej komunikacji i
+bezpiecznego przechowywania danych. Mo¿e byæ u¿ywany do szyfrowania
+oraz podpisywania danych. Umo¿liwia zaawansowane zarz±dzanie kluczami
+i spe³nia normy zdefiniowane w standardzie OpenPGP, który jest opisany
 w RFC2440.
 
-Wersja rozwojowa. Nie do uÅ¼ytku z kluczami produkcyjnymi.
+Wersja rozwojowa. Nie do u¿ytku z kluczami produkcyjnymi.
 
 %package common
 Summary:	GnuPG - common files
-Summary(pl):	GnuPG - pliki wspÃ³lne 
+Summary(pl):	GnuPG - pliki wspólne 
 Group:		Applications/File
 Conflicts:	gnupg-agent < 1.9.14-2
 
@@ -59,7 +59,7 @@ Conflicts:	gnupg-agent < 1.9.14-2
 Common files used by tools from GnuPG project.
 
 %description common -l pl
-Pliki wspÃ³lne uÅ¼ywane przez rÃ³Å¼ne narzÄ™dzia z projektu GnuPG.
+Pliki wspólne u¿ywane przez ró¿ne narzêdzia z projektu GnuPG.
 
 %package -n gnupg-agent
 Summary:	GnuPG extension - agent
@@ -78,7 +78,7 @@ Rozszerzenie GnuPG - agent.
 
 %package -n gnupg-smime
 Summary:	GnuPG extension - S/MIME support
-Summary(pl):	RozszeÅ¼enie GnuPG - obsÅ‚uga S/MIME
+Summary(pl):	Rozszerzenie GnuPG - obs³uga S/MIME
 Group:		Applications/File
 Requires:	gnupg2-common = %{version}-%{release}
 Conflicts:	gnupg-agent < 1.9.14-2
@@ -87,7 +87,7 @@ Conflicts:	gnupg-agent < 1.9.14-2
 GnuPG extension - S/MIME support.
 
 %description -n gnupg-smime -l pl
-RozszeÅ¼enie GnuPG - obsÅ‚uga S/MIME.
+Rozszerzenie GnuPG - obs³uga S/MIME.
 
 %prep
 %setup -q -n gnupg-%{version}
