@@ -6,12 +6,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.14
-Release:	2
+Version:	1.9.15
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	72b56586392c7be6668df4ef8ea7c879
+# Source0-md5:	c1955d88280ff6e847f82f37b9a9a008
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Icon:		gnupg.gif
@@ -19,7 +19,7 @@ URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.12.1
 BuildRequires:	libassuan-devel >= 1:0.6.9
-BuildRequires:	libgcrypt-devel >= 1.1.93
+BuildRequires:	libgcrypt-devel >= 1.1.94
 BuildRequires:	libgpg-error-devel >= 0.6
 BuildRequires:	libksba-devel >= 0.9.7
 BuildRequires:	pcsc-lite-devel
