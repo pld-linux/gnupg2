@@ -1,6 +1,6 @@
 #
 Summary:	GnuPG extension - agent
-Summary(pl):	ozszerzenie GnuPG - agent
+Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
 Version:	1.9.6
 Release:	1
@@ -23,9 +23,9 @@ BuildRequires:	opensc-devel >= 0.8.0
 BuildRequires:	pth-devel >= 2.0.0
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
-Requires:       gnupg
-Requires:       pinentry
-Obsoletes:      newpg
+Requires:	gnupg
+Requires:	pinentry
+Obsoletes:	newpg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/gnupg
