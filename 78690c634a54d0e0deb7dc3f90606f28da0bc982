@@ -1,0 +1,5 @@
+- some BRs updated - configure said:
+ You need libassuan to build this program.
+ (at least version 0.6.6 is required).
+ You need libksba to build this program.
+ (at least version 0.9.7 is required).
