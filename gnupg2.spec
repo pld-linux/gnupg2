@@ -40,7 +40,7 @@ Rozszerzenie GnuPG - agent.
 %setup -q -n gnupg-%{version}
 
 %build
-install %{_datadir}/automake/config.* .
+install %{_datadir}/automake/config.* scripts
 %configure \
 	--disable-gpg \
 	--with-capabilities \
