@@ -83,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f gnupg2.lang
 %defattr(644,root,root,755)
+%doc agent/ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/gpgsm
 %attr(755,root,root) %{_bindir}/kbxutil
