@@ -1,13 +1,12 @@
-#
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
-Version:	1.9.6
+Version:	1.9.7
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	69a8be8f0d236df96f948348f6fda162
+# Source0-md5:	9bee7fe855b14cba433af5273963d4f5
 Source1:	gnupg-agent.sh
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
@@ -57,16 +56,16 @@ install %{_datadir}/automake/config.* scripts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/{profile.d,X11/xinit/xinitrc.d}
+install -d $RPM_BUILD_ROOT/etc/{profile.d,X11/xinit/xinitrc.d}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/profile.d/%{name}-agent.sh
-ln -s %{_sysconfdir}/profile.d/%{name}-agent.sh $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh 
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/%{name}-agent.sh
+ln -sf /etc/profile.d/%{name}-agent.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}-agent.sh
 
-#%%find_lang %{name}
+%find_lang gnupg2
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -77,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
-%files
+%files -f gnupg2.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/gpgsm
@@ -86,5 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sc-investigate
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
-%attr(755,root,root) %{_sysconfdir}/profile.d/%{name}-agent.sh
-%attr(755,root,root) %{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh
+%attr(755,root,root) /etc/profile.d/%{name}-agent.sh
+%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}-agent.sh
