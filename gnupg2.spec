@@ -11,6 +11,7 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
 Source1:	gnupg-agent.sh
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
+BuildRequires:	automake
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
 BuildRequires:	libassuan-devel >= 1:0.6.4
@@ -39,6 +40,7 @@ Rozszerzenie GnuPG - agent.
 %setup -q -n gnupg-%{version}
 
 %build
+install %{_datadir}/automake/config.* .
 %configure \
 	--disable-gpg \
 	--with-capabilities \
