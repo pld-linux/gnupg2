@@ -1,3 +1,7 @@
+
+# Conditional build:
+%bcond_without	xinitrc	# don't use xinitrc's directory
+
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
@@ -11,7 +15,6 @@ Source1:	gnupg-agent.sh
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
-BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
 BuildRequires:	libassuan-devel >= 1:0.6.6
 BuildRequires:	libgcrypt-devel >= 1.1.93
@@ -24,6 +27,7 @@ BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg
 Requires:	pinentry
+%{?with_xinitrc:Requires: xinitrc}
 Obsoletes:	newpg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -56,14 +60,15 @@ cp -f /usr/share/automake/config.* scripts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/{profile.d,X11/xinit/xinitrc.d}
+install -d $RPM_BUILD_ROOT/etc/profile.d
+%{?with_xinitrc:install -d $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/%{name}-agent.sh
-ln -sf /etc/profile.d/%{name}-agent.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}-agent.sh
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d
+%{?with_xinitrc:ln -sf /etc/profile.d/%{name}.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}.sh}
 
 %find_lang gnupg2
 
@@ -86,5 +91,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
 %attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
-%attr(755,root,root) /etc/profile.d/%{name}-agent.sh
-%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}-agent.sh
+%attr(755,root,root) /etc/profile.d/%{name}.sh
+%{?with_xinitrc:%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}.sh}
