@@ -1,21 +1,17 @@
 #
 # Conditional build:
-%bcond_with	max_cache_ttl # add max-cache-ttl option (for tests) 
 %bcond_without	xinitrc	# don't use xinitrc's directory
 #
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
-Version:	1.9.11
+Version:	1.9.12
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	33134af66b983c29984eeab8681a9f10
+# Source0-md5:	e3449f448c32827d61eaec63fc84d7ce
 Source1:	gnupg-agent.sh
-# Patch0 based on http://marc.theaimsgroup.com/?l=gnupg-devel&m=109300087831144&w=2
-# taken from gnupg cvs.
-Patch0:		%{name}-max_cache_ttl.patch	
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
@@ -45,7 +41,6 @@ Rozszerzenie GnuPG - agent.
 
 %prep
 %setup -q -n gnupg-%{version}
-%{?with_max_cache_ttl:%patch0 -p1}
 
 %build
 cp -f /usr/share/automake/config.* scripts
@@ -92,9 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgsm
+%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/sc-copykeys
-%attr(755,root,root) %{_bindir}/sc-investigate
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
