@@ -1,12 +1,12 @@
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
-Version:	1.9.7
+Version:	1.9.8
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	9bee7fe855b14cba433af5273963d4f5
+# Source0-md5:	30ca9f999a3eeb5b933c3a6b91afa707
 Source1:	gnupg-agent.sh
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
@@ -38,8 +38,11 @@ Rozszerzenie GnuPG - agent.
 %prep
 %setup -q -n gnupg-%{version}
 
+# Typo
+sed -i 's/osc_get_status/ocsc_get_status/' scd/apdu.c
+
 %build
-install %{_datadir}/automake/config.* scripts
+cp -f /usr/share/automake/config.* scripts
 %configure \
 	--disable-gpg \
 	--with-capabilities \
@@ -85,5 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sc-investigate
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
+%attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
 %attr(755,root,root) /etc/profile.d/%{name}-agent.sh
 %attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}-agent.sh
