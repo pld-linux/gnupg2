@@ -60,15 +60,15 @@ cp -f /usr/share/automake/config.* scripts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/profile.d
+install -d $RPM_BUILD_ROOT/etc/env.d
 %{?with_xinitrc:install -d $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d
-%{?with_xinitrc:ln -sf /etc/profile.d/%{name}.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}.sh}
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/env.d/GPG_AGENT_INFO
+%{?with_xinitrc:ln -sf /etc/env.d/GPG_AGENT_INFO $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}.sh}
 
 %find_lang gnupg2
 
@@ -91,5 +91,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
 %attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
-%attr(755,root,root) /etc/profile.d/%{name}.sh
+%attr(755,root,root) /etc/env.d/GPG_AGENT_INFO
 %{?with_xinitrc:%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}.sh}
