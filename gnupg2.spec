@@ -5,12 +5,12 @@
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
-Version:	1.9.12
+Version:	1.9.13
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	e3449f448c32827d61eaec63fc84d7ce
+# Source0-md5:	f9c1aac160e7cfbdbc195934950c3a2a
 Source1:	gnupg-agent.sh
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
