@@ -6,12 +6,12 @@
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
-Version:	1.9.10
-Release:	3
+Version:	1.9.11
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	d923cfe0921898fbeb66374a0e32ddc6
+# Source0-md5:	33134af66b983c29984eeab8681a9f10
 Source1:	gnupg-agent.sh
 # Patch0 based on http://marc.theaimsgroup.com/?l=gnupg-devel&m=109300087831144&w=2
 # taken from gnupg cvs.
@@ -90,11 +90,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc agent/ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-agent
+%attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgsm
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/sc-copykeys
 %attr(755,root,root) %{_bindir}/sc-investigate
 %attr(755,root,root) %{_bindir}/scdaemon
+%attr(755,root,root) %{_bindir}/watchgnupg
+%attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
 %attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
 %attr(755,root,root) /etc/profile.d/%{name}.sh
