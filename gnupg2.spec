@@ -6,7 +6,7 @@ Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Name:		gnupg-agent
 Version:	1.9.10
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
@@ -67,8 +67,8 @@ install -d $RPM_BUILD_ROOT/etc/profile.d
 	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/GPG_AGENT_INFO
-%{?with_xinitrc:ln -sf /etc/profile.d/GPG_AGENT_INFO $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}.sh}
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/%{name}.sh
+%{?with_xinitrc:ln -sf /etc/profile.d/%{name}.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}.sh}
 
 %find_lang gnupg2
 
@@ -92,5 +92,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
 %attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
-%attr(755,root,root) /etc/profile.d/GPG_AGENT_INFO
+%attr(755,root,root) /etc/profile.d/%{name}.sh
 %{?with_xinitrc:%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}.sh}
