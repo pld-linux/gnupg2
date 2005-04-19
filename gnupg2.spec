@@ -142,7 +142,7 @@ rm -rf $RPM_BUILD_ROOT
 %files 
 %defattr(644,root,root,755)
 %doc g10-ChangeLog g10/options.skel
-%attr(755,root,root) %{_bindir}/gpg
+%{_bindir}/gpg
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
 
