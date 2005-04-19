@@ -24,7 +24,7 @@ BuildRequires:	libgpg-error-devel >= 0.6
 BuildRequires:	libksba-devel >= 0.9.7
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	opensc-devel >= 0.8.0
-BuildRequires:	pth-devel >= 2.0.0
+%{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
