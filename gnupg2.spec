@@ -28,6 +28,8 @@ BuildRequires:	opensc-devel >= 0.8.0
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
+Provides:	gnupg = %{version}-%{release}
+Obsoletes:	gnupg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/gnupg2
