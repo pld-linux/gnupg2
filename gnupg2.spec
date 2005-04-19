@@ -120,6 +120,8 @@ install -d $RPM_BUILD_ROOT/etc/profile.d
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkglibdir=%{_libexecdir}
 
+ln -sf %{_bindir}/gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
+
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 %{?with_xinitrc:ln -sf /etc/profile.d/gnupg-agent.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh}
 
@@ -140,6 +142,7 @@ rm -rf $RPM_BUILD_ROOT
 %files 
 %defattr(644,root,root,755)
 %doc g10-ChangeLog g10/options.skel
+%attr(755,root,root) %{_bindir}/gpg
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
 
