@@ -1,0 +1,14 @@
+--- gnupg-1.9.16/scd/command.c.orig	2005-04-20 12:23:46.000000000 +0200
++++ gnupg-1.9.16/scd/command.c	2005-04-23 18:40:53.481725240 +0200
+@@ -26,6 +26,11 @@
+ #include <ctype.h>
+ #include <unistd.h>
+ #include <signal.h>
++#ifdef HAVE_OPENSC
++# ifdef USE_GNU_PTH
++#  undef USE_GNU_PTH
++# endif
++#endif
+ #ifdef USE_GNU_PTH
+ # include <pth.h>
+ #endif
