@@ -6,22 +6,23 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.15
+Version:	1.9.16
 Release:	1
 License:	GPL
 Group:		Applications/File
-Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.gz
-# Source0-md5:	c1955d88280ff6e847f82f37b9a9a008
+Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
+# Source0-md5:	1282755dce9cf4a84e904ca0191017a3
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-pth.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.12.1
 BuildRequires:	libassuan-devel >= 1:0.6.9
 BuildRequires:	libgcrypt-devel >= 1.1.94
-BuildRequires:	libgpg-error-devel >= 0.6
-BuildRequires:	libksba-devel >= 0.9.7
+BuildRequires:	libgpg-error-devel >= 1.0
+BuildRequires:	libksba-devel >= 0.9.11
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	opensc-devel >= 0.8.0
 %{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
@@ -53,6 +54,7 @@ Wersja rozwojowa. Nie do u¿ytku z kluczami produkcyjnymi.
 Summary:	GnuPG - common files
 Summary(pl):	GnuPG - pliki wspólne 
 Group:		Applications/File
+Requires:	libgpg-error >= 1.0
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description common
@@ -92,12 +94,14 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %prep
 %setup -q -n gnupg-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* scripts
 %configure \
 	--with-capabilities \
 	%{!?with_pth:--disable-threads} \
+	--enable-gpg \
 %ifarch sparc sparc64
 	--disable-m-guard \
 %else
@@ -145,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS main-ChangeLog NEWS README THANKS TODO 
 %doc intl-ChangeLog jnlib-ChangeLog m4-ChangeLog po-ChangeLog scripts-ChangeLog common-ChangeLog kbx-ChangeLog tools-ChangeLog doc-ChangeLog
+%attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
