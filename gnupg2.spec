@@ -1,13 +1,12 @@
 #
 # Conditional build:
-%bcond_without	xinitrc	# don't use xinitrc's directory
 %bcond_without	pth	# without pth-based based version of gnupg
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
 Version:	1.9.16
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
@@ -26,6 +25,7 @@ BuildRequires:	libksba-devel >= 0.9.11
 BuildRequires:	pcsc-lite-devel
 BuildRequires:	opensc-devel >= 0.8.0
 %{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
+BuildRequires:	rpmbuild(macros) >= 1.177
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
@@ -69,7 +69,6 @@ Summary(pl):	Rozszerzenie GnuPG - agent
 Group:		Applications/File
 Requires:	gnupg2-common = %{version}-%{release}
 Requires:	pinentry
-%{?with_xinitrc:Requires: xinitrc}
 Obsoletes:	newpg
 
 %description -n gnupg-agent
@@ -77,6 +76,31 @@ GnuPG extension - agent.
 
 %description -n gnupg-agent -l pl
 Rozszerzenie GnuPG - agent.
+
+%package -n gnupg-agent-profile_d
+Summary:	gnupg-agent start script for text mode
+Summary(pl):	Skrypt startowy gnupg-agenta dla trybu tekstowego
+Group:		Applications/File
+Requires:	gnupg-agent = %{version}-%{release}
+
+%description -n gnupg-agent-profile_d
+gnupg-agent start script for text mode.
+
+%description -n gnupg-agent-profile_d -l pl
+Skrypt startowy gnupg-agenta dla trybu tekstowego.
+
+%package -n gnupg-agent-xinitrc
+Summary:	gnupg-agent start script for X-Window mode
+Summary(pl):	Skrypt startowy gnupg-agenta dla trybu X-Window
+Group:		Applications/File
+Requires:	gnupg-agent = %{version}-%{release}
+Requires:	xinitrc
+
+%description -n gnupg-agent-xinitrc
+gnupg-agent start script for X-Window mode.
+
+%description -n gnupg-agent-xinitrc -l pl
+Skrypt startowy gnupg-agenta dla trybu X-Window.
 
 %package -n gnupg-smime
 Summary:	GnuPG extension - S/MIME support
@@ -115,15 +139,13 @@ cp -f /usr/share/automake/config.* scripts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/profile.d
-%{?with_xinitrc:install -d $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkglibdir=%{_libexecdir}
 
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
-%{?with_xinitrc:ln -sf /etc/profile.d/gnupg-agent.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh}
+install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
+install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
 mv ChangeLog main-ChangeLog || :
 find . -name ChangeLog |awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); print "cp " src " " dst}'|sh
@@ -138,6 +160,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+
+%triggerpostun -n gnupg-agent -- gnupg-agent < 1.9.16-2
+%banner gnupg-agent-1.9.16-2 << EOF
+Scripts for starting gnupg-agent have been moved to separate
+subpackages: gnupg-agent-profile_d and gnupg-agent-xinitrc.
+EOF 
 
 %files 
 %defattr(644,root,root,755)
@@ -172,5 +200,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
 %attr(755,root,root) %{_libexecdir}/pcsc-wrapper
+
+%files -n gnupg-agent-profile_d
+%defattr(644,root,root,755)
 %attr(755,root,root) /etc/profile.d/gnupg-agent.sh
-%{?with_xinitrc:%attr(755,root,root) /etc/X11/xinit/xinitrc.d/gnupg-agent.sh}
+
+%files -n gnupg-agent-xinitrc
+%defattr(644,root,root,755)
+%attr(755,root,root) /etc/X11/xinit/xinitrc.d/gnupg-agent.sh
