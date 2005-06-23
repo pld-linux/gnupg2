@@ -5,15 +5,16 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.16
-Release:	2
+Version:	1.9.17
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	1282755dce9cf4a84e904ca0191017a3
+# Source0-md5:	a1bf98c5ec0c5c316b4ae6f017f02fa3
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
+Patch2:		%{name}-build.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
@@ -119,6 +120,7 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 cp -f /usr/share/automake/config.* scripts
@@ -179,6 +181,7 @@ EOF
 %doc intl-ChangeLog jnlib-ChangeLog m4-ChangeLog po-ChangeLog scripts-ChangeLog common-ChangeLog kbx-ChangeLog tools-ChangeLog doc-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
+%attr(755,root,root) %{_bindir}/gpgkey2ssh
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_bindir}/kbxutil
@@ -195,7 +198,6 @@ EOF
 %defattr(644,root,root,755)
 %doc agent-ChangeLog scd-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-agent
-%attr(755,root,root) %{_bindir}/sc-copykeys
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
