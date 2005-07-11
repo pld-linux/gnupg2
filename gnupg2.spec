@@ -19,7 +19,7 @@ Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.12.1
-BuildRequires:	libassuan-devel >= 1:0.6.9
+BuildRequires:	libassuan-devel >= 1:0.6.10
 BuildRequires:	libgcrypt-devel >= 1.1.94
 BuildRequires:	libgpg-error-devel >= 1.0
 BuildRequires:	libksba-devel >= 0.9.11
