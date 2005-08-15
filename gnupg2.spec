@@ -5,26 +5,25 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.17
+Version:	1.9.18
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	a1bf98c5ec0c5c316b4ae6f017f02fa3
+# Source0-md5:	221d843dc23b4f33cdb8a91788a00e4d
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
-Patch2:		%{name}-build.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
-BuildRequires:	gettext-devel >= 0.12.1
+BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	libassuan-devel >= 1:0.6.10
 BuildRequires:	libgcrypt-devel >= 1.1.94
 BuildRequires:	libgpg-error-devel >= 1.0
-BuildRequires:	libksba-devel >= 0.9.11
+BuildRequires:	libksba-devel >= 0.9.12
+BuildRequires:	libusb-devel
 BuildRequires:	pcsc-lite-devel
-BuildRequires:	opensc-devel >= 0.8.0
 %{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
 BuildRequires:	rpmbuild(macros) >= 1.177
 BuildRequires:	texinfo
@@ -120,7 +119,6 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 cp -f /usr/share/automake/config.* scripts
