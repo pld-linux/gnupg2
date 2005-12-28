@@ -5,12 +5,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.19
+Version:	1.9.20
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	8084256a61aa90e0173d436bf1e6f82b
+# Source0-md5:	93899203fc0530f03e146d49b65c1e28
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -21,7 +21,7 @@ BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	libassuan-devel >= 1:0.6.10
 BuildRequires:	libgcrypt-devel >= 1.1.94
 BuildRequires:	libgpg-error-devel >= 1.0
-BuildRequires:	libksba-devel >= 0.9.12
+BuildRequires:	libksba-devel >= 0.9.13
 BuildRequires:	libusb-devel
 BuildRequires:	pcsc-lite-devel
 %{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
@@ -180,6 +180,7 @@ EOF
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgkey2ssh
+%attr(755,root,root) %{_bindir}/gpgparsemail
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_bindir}/kbxutil
