@@ -51,7 +51,7 @@ Wersja rozwojowa. Nie do u¿ytku z kluczami produkcyjnymi.
 
 %package common
 Summary:	GnuPG - common files
-Summary(pl):	GnuPG - pliki wspólne 
+Summary(pl):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libgpg-error >= 1.0
 Conflicts:	gnupg-agent < 1.9.14-2
@@ -150,6 +150,7 @@ mv ChangeLog main-ChangeLog || :
 find . -name ChangeLog |awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); print "cp " src " " dst}'|sh
 
 %find_lang gnupg2
+rm -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -164,9 +165,9 @@ rm -rf $RPM_BUILD_ROOT
 %banner gnupg-agent-1.9.16-2 << EOF
 Scripts for starting gnupg-agent have been moved to separate
 subpackages: gnupg-agent-profile_d and gnupg-agent-xinitrc.
-EOF 
+EOF
 
-%files 
+%files
 %defattr(644,root,root,755)
 %doc g10-ChangeLog g10/options.skel
 %attr(755,root,root) %{_bindir}/gpg2
@@ -174,7 +175,7 @@ EOF
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
-%doc AUTHORS main-ChangeLog NEWS README THANKS TODO 
+%doc AUTHORS main-ChangeLog NEWS README THANKS TODO
 %doc intl-ChangeLog jnlib-ChangeLog m4-ChangeLog po-ChangeLog scripts-ChangeLog common-ChangeLog kbx-ChangeLog tools-ChangeLog doc-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
