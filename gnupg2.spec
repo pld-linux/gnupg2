@@ -6,7 +6,7 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - de
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
 Version:	1.9.20
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
@@ -198,6 +198,7 @@ EOF
 %doc agent-ChangeLog scd-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/scdaemon
+%dir %{_libexecdir}
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
 %attr(755,root,root) %{_libexecdir}/pcsc-wrapper
