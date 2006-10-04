@@ -1,3 +1,6 @@
+# TODO:
+# - separate keys plugins (see gnupg.spec)
+# - update pl.po (just a note for myself  --q)
 #
 # Conditional build:
 %bcond_without	pth	# without pth-based based version of gnupg
@@ -5,24 +8,26 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.22
+Version:	1.9.91
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	ccea28fbab26bcb01890f2687d71f900
+# Source0-md5:	fb6838f6e2e26e5f00271ce588fd080b
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
+BuildRequires:	curl-devel
 BuildRequires:	gettext-devel >= 0.14.1
-BuildRequires:	libassuan-devel >= 1:0.6.10
+BuildRequires:	libassuan-devel >= 1:0.9.1
 BuildRequires:	libgcrypt-devel >= 1.1.94
-BuildRequires:	libgpg-error-devel >= 1.0
-BuildRequires:	libksba-devel >= 0.9.13
+BuildRequires:	libgpg-error-devel >= 1.4
+BuildRequires:	libksba-devel >= 1.0.0
 BuildRequires:	libusb-devel
+BuildRequires:	openldap-devel
 BuildRequires:	pcsc-lite-devel
 %{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
 BuildRequires:	rpmbuild(macros) >= 1.177
@@ -54,7 +59,8 @@ Wersja rozwojowa. Nie do u¿ytku z kluczami produkcyjnymi.
 Summary:	GnuPG - common files
 Summary(pl):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libgpg-error >= 1.0
+Requires:	libassuan >= 1:0.9.1
+Requires:	libgpg-error >= 1.4
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description common
@@ -173,6 +179,18 @@ EOF
 %doc g10-ChangeLog g10/options.skel
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
+%attr(755,root,root) %{_libexecdir}/gpg2keys_curl
+%attr(755,root,root) %{_libexecdir}/gpg2keys_finger
+%attr(755,root,root) %{_libexecdir}/gpg2keys_hkp
+%attr(755,root,root) %{_libexecdir}/gpg2keys_ldap
+%{_mandir}/man1/gpg2.1*
+%{_mandir}/man1/gpgv2.1*
+# conflicts with gnupg 1.4.x
+#%attr(755,root,root) %{_bindir}/gpg-zip
+#%attr(755,root,root) %{_bindir}/gpgsplit
+#%{_mandir}/man7/gnupg.7*
+# program not built by default
+#%{_mandir}/man1/symcryptrun.1*
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
@@ -182,27 +200,37 @@ EOF
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgkey2ssh
 %attr(755,root,root) %{_bindir}/gpgparsemail
+%attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
-%attr(755,root,root) %{_bindir}/kbxutil
+%dir %{_libexecdir}
 %{_datadir}/gnupg
-%{_infodir}/*info*
+%{_mandir}/man1/gpg-connect-agent.1*
+%{_mandir}/man1/gpgconf.1*
+%{_mandir}/man1/gpgparsemail.1*
+%{_mandir}/man1/watchgnupg.1*
+%{_mandir}/man8/addgnupghome.8*
+%{_infodir}/*.info*
 
 %files -n gnupg-smime
 %defattr(644,root,root,755)
 %doc sm-ChangeLog
 %attr(755,root,root) %{_bindir}/gpgsm
 %attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
+%{_mandir}/man1/gpgsm.1*
+%{_mandir}/man1/gpgsm-gencert.sh.1*
 
 %files -n gnupg-agent
 %defattr(644,root,root,755)
 %doc agent-ChangeLog scd-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/scdaemon
-%dir %{_libexecdir}
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
 %attr(755,root,root) %{_libexecdir}/pcsc-wrapper
+%{_mandir}/man1/gpg-agent.1*
+%{_mandir}/man1/gpg-preset-passphrase.1*
+%{_mandir}/man1/scdaemon.1*
 
 %files -n gnupg-agent-profile_d
 %defattr(644,root,root,755)
