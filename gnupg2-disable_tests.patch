@@ -1,0 +1,11 @@
+--- gnupg-1.9.91/Makefile.am.orig	2006-09-27 17:32:53.000000000 +0200
++++ gnupg-1.9.91/Makefile.am	2006-10-07 18:09:36.428269750 +0200
+@@ -70,7 +70,7 @@
+ if HAVE_W32_SYSTEM
+ tests =
+ else
+-tests = tests
++tests =
+ endif
+ 
+ SUBDIRS = m4 intl gl include jnlib common ${kbx} \
