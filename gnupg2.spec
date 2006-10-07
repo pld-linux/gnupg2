@@ -10,7 +10,7 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - de
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
 Version:	1.9.91
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
@@ -18,6 +18,7 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
+Patch2:		%{name}-disable_tests.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
@@ -126,9 +127,12 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
+%{!?with_tests:%patch2 -p1}
 
 %build
 cp -f /usr/share/automake/config.* scripts
+%{__automake}
+
 %configure \
 	--with-capabilities \
 	%{!?with_pth:--disable-threads} \
@@ -142,7 +146,7 @@ cp -f /usr/share/automake/config.* scripts
 	--disable-m-debug \
 	--with-mailprog=/usr/lib/sendmail
 
-%{__make} %{!?with_tests:tests=''}
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
