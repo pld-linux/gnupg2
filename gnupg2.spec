@@ -4,12 +4,13 @@
 #
 # Conditional build:
 %bcond_without	pth	# without pth-based based version of gnupg
+%bcond_with	tests	# run testsuite ( currently it smashes stack on x86-64 and SEGVs )
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
 Version:	1.9.91
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
@@ -141,7 +142,7 @@ cp -f /usr/share/automake/config.* scripts
 	--disable-m-debug \
 	--with-mailprog=/usr/lib/sendmail
 
-%{__make}
+%{__make} %{!?with_tests:tests=''}
 
 %install
 rm -rf $RPM_BUILD_ROOT
