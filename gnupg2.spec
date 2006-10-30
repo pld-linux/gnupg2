@@ -9,18 +9,20 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.93
+Version:	1.9.94
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	84b1af5b6c489fcbbbbf4f219aaf2526
+# Source0-md5:	1da8c928948800efa2a13d4aecb8d013
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
-Patch2:		%{name}-disable_tests.patch
+Patch2:		%{name}-ac.patch
+Patch3:		%{name}-disable_tests.patch
 URL:		http://www.gnupg.org/
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1:1.9.3
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel >= 0.14.1
@@ -127,12 +129,15 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
-%{!?with_tests:%patch2 -p1}
+%patch2 -p1
+%{!?with_tests:%patch3 -p1}
 
 %build
-cp -f /usr/share/automake/config.* scripts
+%{__gettextize}
+%{__aclocal} -I m4 -I gl/m4
+%{__autoconf}
+%{__autoheader}
 %{__automake}
-
 %configure \
 	--with-capabilities \
 	%{!?with_pth:--disable-threads} \
