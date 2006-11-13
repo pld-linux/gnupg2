@@ -9,12 +9,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	1.9.94
-Release:	1
+Version:	2.0.0
+Release:	0.1
 License:	GPL
 Group:		Applications/File
-Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	1da8c928948800efa2a13d4aecb8d013
+Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
+# Source0-md5:	13c0d43bd1f4a129de470dda20192284
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -139,16 +139,10 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-capabilities \
 	%{!?with_pth:--disable-threads} \
 	--enable-gpg \
-%ifarch sparc sparc64
-	--disable-m-guard \
-%else
-	--enable-m-guard \
-%endif
-	--without-included-gettext \
-	--disable-m-debug \
+	--enable-symcryptrun \
+	--with-capabilities \
 	--with-mailprog=/usr/lib/sendmail
 
 %{__make}
@@ -195,12 +189,6 @@ EOF
 %attr(755,root,root) %{_libexecdir}/gpg2keys_ldap
 %{_mandir}/man1/gpg2.1*
 %{_mandir}/man1/gpgv2.1*
-# conflicts with gnupg 1.4.x
-#%attr(755,root,root) %{_bindir}/gpg-zip
-#%attr(755,root,root) %{_bindir}/gpgsplit
-#%{_mandir}/man7/gnupg.7*
-# program not built by default
-#%{_mandir}/man1/symcryptrun.1*
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
@@ -235,12 +223,14 @@ EOF
 %doc agent-ChangeLog scd-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/scdaemon
+%attr(755,root,root) %{_bindir}/symcryptrun
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
 %attr(755,root,root) %{_libexecdir}/pcsc-wrapper
 %{_mandir}/man1/gpg-agent.1*
 %{_mandir}/man1/gpg-preset-passphrase.1*
 %{_mandir}/man1/scdaemon.1*
+%{_mandir}/man1/symcryptrun.1*
 
 %files -n gnupg-agent-profile_d
 %defattr(644,root,root,755)
