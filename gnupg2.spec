@@ -4,28 +4,27 @@
 #
 # Conditional build:
 %bcond_without	pth	# without pth-based based version of gnupg
-%bcond_with	tests	# run testsuite ( currently it smashes stack on x86-64 and SEGVs )
+%bcond_without	tests	# testsuite on build
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	2.0.0
+Version:	2.0.1
 Release:	0.1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	13c0d43bd1f4a129de470dda20192284
+# Source0-md5:	eb24e258db73f4cb53a3ce18375efa21
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
-Patch2:		%{name}-ac.patch
-Patch3:		%{name}-disable_tests.patch
+Patch2:		%{name}-disable_tests.patch
 URL:		http://www.gnupg.org/
-BuildRequires:	autoconf >= 2.52
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9.3
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel
-BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	gettext-devel >= 0.15
 BuildRequires:	libassuan-devel >= 1:0.9.3
 BuildRequires:	libgcrypt-devel >= 1.2.0
 BuildRequires:	libgpg-error-devel >= 1.4
@@ -129,8 +128,7 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%{!?with_tests:%patch3 -p1}
+%{!?with_tests:%patch2 -p1}
 
 %build
 %{__gettextize}
@@ -224,9 +222,9 @@ EOF
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_bindir}/symcryptrun
+%attr(755,root,root) %{_libexecdir}/gnupg-pcsc-wrapper
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
-%attr(755,root,root) %{_libexecdir}/pcsc-wrapper
 %{_mandir}/man1/gpg-agent.1*
 %{_mandir}/man1/gpg-preset-passphrase.1*
 %{_mandir}/man1/scdaemon.1*
