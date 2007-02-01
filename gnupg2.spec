@@ -1,5 +1,4 @@
 # TODO:
-# - separate keys plugins (see gnupg.spec)
 # - update pl.po (just a note for myself  --q)
 #
 # Conditional build:
@@ -72,11 +71,60 @@ Common files used by tools from GnuPG project.
 %description common -l pl
 Pliki wspólne u¿ywane przez ró¿ne narzêdzia z projektu GnuPG.
 
+%package plugin-keys_curl
+Summary:	GnuPG 2 plugin for allow talk to a HTTP/FTP keyserver
+Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy HTTP/FTP
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_curl
+GnuPG 2 plugin for allow talk to a HTTP(S)/FTP(S) keyserver.
+
+%description plugin-keys_curl -l pl
+Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy
+HTTP(S)/FTP(S).
+
+%package plugin-keys_finger
+Summary:	GnuPG 2 plugin for allow talk to a FINGER keyserver
+Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_finger
+GnuPG 2 plugin for allow talk to a FINGER keyserver.
+
+%description plugin-keys_finger -l pl
+Wtyczka 2 GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER.
+
+%package plugin-keys_hkp
+Summary:	GnuPG 2 plugin for allow talk to a HKP keyserver
+Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_hkp
+GnuPG 2 plugin for allow talk to a HKP keyserver.
+
+%description plugin-keys_hkp -l pl
+Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP.
+
+%package plugin-keys_ldap
+Summary:	GnuPG 2 plugin for allow talk to a LDAP keyserver
+Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_ldap
+GnuPG 2 plugin for allow talk to a LDAP keyserver.
+
+%description plugin-keys_ldap -l pl
+Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP.
+
 %package -n gnupg-agent
 Summary:	GnuPG extension - agent
 Summary(pl):	Rozszerzenie GnuPG - agent
 Group:		Applications/File
-Requires:	gnupg2-common = %{version}-%{release}
+Requires:	%{name}-common = %{version}-%{release}
 Requires:	pinentry
 Obsoletes:	newpg
 
@@ -115,7 +163,7 @@ Skrypt startowy gnupg-agenta dla trybu X-Window.
 Summary:	GnuPG extension - S/MIME support
 Summary(pl):	Rozszerzenie GnuPG - obs³uga S/MIME
 Group:		Applications/File
-Requires:	gnupg2-common = %{version}-%{release}
+Requires:	%{name}-common = %{version}-%{release}
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description -n gnupg-smime
@@ -181,10 +229,6 @@ EOF
 %doc g10-ChangeLog g10/options.skel
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
-%attr(755,root,root) %{_libexecdir}/gpg2keys_curl
-%attr(755,root,root) %{_libexecdir}/gpg2keys_finger
-%attr(755,root,root) %{_libexecdir}/gpg2keys_hkp
-%attr(755,root,root) %{_libexecdir}/gpg2keys_ldap
 %{_mandir}/man1/gpg2.1*
 %{_mandir}/man1/gpgv2.1*
 
@@ -207,6 +251,22 @@ EOF
 %{_mandir}/man1/watchgnupg.1*
 %{_mandir}/man8/addgnupghome.8*
 %{_infodir}/*.info*
+
+%files plugin-keys_curl
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_curl
+
+%files plugin-keys_finger
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_finger
+
+%files plugin-keys_hkp
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_hkp
+
+%files plugin-keys_ldap
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_ldap
 
 %files -n gnupg-smime
 %defattr(644,root,root,755)
