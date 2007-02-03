@@ -1,5 +1,3 @@
-# TODO:
-# - update pl.po (just a note for myself  --q)
 #
 # Conditional build:
 %bcond_without	pth	# without pth-based based version of gnupg
@@ -17,7 +15,8 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
-Patch2:		%{name}-disable_tests.patch
+Patch2:		%{name}-pl.po-update.patch
+Patch3:		%{name}-disable_tests.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9.3
@@ -176,7 +175,10 @@ Rozszerzenie GnuPG - obs³uga S/MIME.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
-%{!?with_tests:%patch2 -p1}
+%patch2 -p1
+%{!?with_tests:%patch3 -p1}
+
+rm -f po/stamp-po
 
 %build
 %{__gettextize}
