@@ -4,7 +4,7 @@
 %bcond_without	tests	# testsuite on build
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
-Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
+Summary(pl.UTF-8):   GnuPG - narzÄ™dzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
 Version:	2.0.2
 Release:	0.1
@@ -47,18 +47,18 @@ OpenPGP Internet standard as described in RFC2440.
 
 This is development version. Don't use it with production keys.
 
-%description -l pl
-GnuPG (GNU Privacy Guard) jest narzêdziem do bezpiecznej komunikacji i
-bezpiecznego przechowywania danych. Mo¿e byæ u¿ywany do szyfrowania
-oraz podpisywania danych. Umo¿liwia zaawansowane zarz±dzanie kluczami
-i spe³nia normy zdefiniowane w standardzie OpenPGP, który jest opisany
+%description -l pl.UTF-8
+GnuPG (GNU Privacy Guard) jest narzÄ™dziem do bezpiecznej komunikacji i
+bezpiecznego przechowywania danych. MoÅ¼e byÄ‡ uÅ¼ywany do szyfrowania
+oraz podpisywania danych. UmoÅ¼liwia zaawansowane zarzÄ…dzanie kluczami
+i speÅ‚nia normy zdefiniowane w standardzie OpenPGP, ktÃ³ry jest opisany
 w RFC2440.
 
-Wersja rozwojowa. Nie do u¿ytku z kluczami produkcyjnymi.
+Wersja rozwojowa. Nie do uÅ¼ytku z kluczami produkcyjnymi.
 
 %package common
 Summary:	GnuPG - common files
-Summary(pl):	GnuPG - pliki wspólne
+Summary(pl.UTF-8):   GnuPG - pliki wspÃ³lne
 Group:		Applications/File
 Requires:	libassuan >= 1:0.9.3
 Requires:	libgpg-error >= 1.4
@@ -67,61 +67,61 @@ Conflicts:	gnupg-agent < 1.9.14-2
 %description common
 Common files used by tools from GnuPG project.
 
-%description common -l pl
-Pliki wspólne u¿ywane przez ró¿ne narzêdzia z projektu GnuPG.
+%description common -l pl.UTF-8
+Pliki wspÃ³lne uÅ¼ywane przez rÃ³Å¼ne narzÄ™dzia z projektu GnuPG.
 
 %package plugin-keys_curl
 Summary:	GnuPG 2 plugin for allow talk to a HTTP/FTP keyserver
-Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy HTTP/FTP
+Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy HTTP/FTP
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
 %description plugin-keys_curl
 GnuPG 2 plugin for allow talk to a HTTP(S)/FTP(S) keyserver.
 
-%description plugin-keys_curl -l pl
-Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy
+%description plugin-keys_curl -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy
 HTTP(S)/FTP(S).
 
 %package plugin-keys_finger
 Summary:	GnuPG 2 plugin for allow talk to a FINGER keyserver
-Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER
+Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy FINGER
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
 %description plugin-keys_finger
 GnuPG 2 plugin for allow talk to a FINGER keyserver.
 
-%description plugin-keys_finger -l pl
-Wtyczka 2 GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER.
+%description plugin-keys_finger -l pl.UTF-8
+Wtyczka 2 GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy FINGER.
 
 %package plugin-keys_hkp
 Summary:	GnuPG 2 plugin for allow talk to a HKP keyserver
-Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP
+Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy HKP
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
 %description plugin-keys_hkp
 GnuPG 2 plugin for allow talk to a HKP keyserver.
 
-%description plugin-keys_hkp -l pl
-Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP.
+%description plugin-keys_hkp -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy HKP.
 
 %package plugin-keys_ldap
 Summary:	GnuPG 2 plugin for allow talk to a LDAP keyserver
-Summary(pl):	Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP
+Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy LDAP
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
 %description plugin-keys_ldap
 GnuPG 2 plugin for allow talk to a LDAP keyserver.
 
-%description plugin-keys_ldap -l pl
-Wtyczka GnuPG 2 pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP.
+%description plugin-keys_ldap -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy LDAP.
 
 %package -n gnupg-agent
 Summary:	GnuPG extension - agent
-Summary(pl):	Rozszerzenie GnuPG - agent
+Summary(pl.UTF-8):   Rozszerzenie GnuPG - agent
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 Requires:	pinentry
@@ -130,24 +130,24 @@ Obsoletes:	newpg
 %description -n gnupg-agent
 GnuPG extension - agent.
 
-%description -n gnupg-agent -l pl
+%description -n gnupg-agent -l pl.UTF-8
 Rozszerzenie GnuPG - agent.
 
 %package -n gnupg-agent-profile_d
 Summary:	gnupg-agent start script for text mode
-Summary(pl):	Skrypt startowy gnupg-agenta dla trybu tekstowego
+Summary(pl.UTF-8):   Skrypt startowy gnupg-agenta dla trybu tekstowego
 Group:		Applications/File
 Requires:	gnupg-agent = %{version}-%{release}
 
 %description -n gnupg-agent-profile_d
 gnupg-agent start script for text mode.
 
-%description -n gnupg-agent-profile_d -l pl
+%description -n gnupg-agent-profile_d -l pl.UTF-8
 Skrypt startowy gnupg-agenta dla trybu tekstowego.
 
 %package -n gnupg-agent-xinitrc
 Summary:	gnupg-agent start script for X-Window mode
-Summary(pl):	Skrypt startowy gnupg-agenta dla trybu X-Window
+Summary(pl.UTF-8):   Skrypt startowy gnupg-agenta dla trybu X-Window
 Group:		Applications/File
 Requires:	gnupg-agent = %{version}-%{release}
 Requires:	xinitrc
@@ -155,12 +155,12 @@ Requires:	xinitrc
 %description -n gnupg-agent-xinitrc
 gnupg-agent start script for X-Window mode.
 
-%description -n gnupg-agent-xinitrc -l pl
+%description -n gnupg-agent-xinitrc -l pl.UTF-8
 Skrypt startowy gnupg-agenta dla trybu X-Window.
 
 %package -n gnupg-smime
 Summary:	GnuPG extension - S/MIME support
-Summary(pl):	Rozszerzenie GnuPG - obs³uga S/MIME
+Summary(pl.UTF-8):   Rozszerzenie GnuPG - obsÅ‚uga S/MIME
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 Conflicts:	gnupg-agent < 1.9.14-2
@@ -168,8 +168,8 @@ Conflicts:	gnupg-agent < 1.9.14-2
 %description -n gnupg-smime
 GnuPG extension - S/MIME support.
 
-%description -n gnupg-smime -l pl
-Rozszerzenie GnuPG - obs³uga S/MIME.
+%description -n gnupg-smime -l pl.UTF-8
+Rozszerzenie GnuPG - obsÅ‚uga S/MIME.
 
 %prep
 %setup -q -n gnupg-%{version}
