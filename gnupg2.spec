@@ -4,7 +4,7 @@
 %bcond_without	tests	# testsuite on build
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
-Summary(pl.UTF-8):   GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
+Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
 Version:	2.0.2
 Release:	0.1
@@ -58,7 +58,7 @@ Wersja rozwojowa. Nie do użytku z kluczami produkcyjnymi.
 
 %package common
 Summary:	GnuPG - common files
-Summary(pl.UTF-8):   GnuPG - pliki wspólne
+Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libassuan >= 1:0.9.3
 Requires:	libgpg-error >= 1.4
@@ -72,7 +72,7 @@ Pliki wspólne używane przez różne narzędzia z projektu GnuPG.
 
 %package plugin-keys_curl
 Summary:	GnuPG 2 plugin for allow talk to a HTTP/FTP keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HTTP/FTP
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HTTP/FTP
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
@@ -85,7 +85,7 @@ HTTP(S)/FTP(S).
 
 %package plugin-keys_finger
 Summary:	GnuPG 2 plugin for allow talk to a FINGER keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy FINGER
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy FINGER
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
@@ -97,7 +97,7 @@ Wtyczka 2 GnuPG pozwalająca komunikować się z serwerem kluczy FINGER.
 
 %package plugin-keys_hkp
 Summary:	GnuPG 2 plugin for allow talk to a HKP keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
@@ -109,7 +109,7 @@ Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP.
 
 %package plugin-keys_ldap
 Summary:	GnuPG 2 plugin for allow talk to a LDAP keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy LDAP
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy LDAP
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 
@@ -121,7 +121,7 @@ Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy LDAP.
 
 %package -n gnupg-agent
 Summary:	GnuPG extension - agent
-Summary(pl.UTF-8):   Rozszerzenie GnuPG - agent
+Summary(pl.UTF-8):	Rozszerzenie GnuPG - agent
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 Requires:	pinentry
@@ -135,7 +135,7 @@ Rozszerzenie GnuPG - agent.
 
 %package -n gnupg-agent-profile_d
 Summary:	gnupg-agent start script for text mode
-Summary(pl.UTF-8):   Skrypt startowy gnupg-agenta dla trybu tekstowego
+Summary(pl.UTF-8):	Skrypt startowy gnupg-agenta dla trybu tekstowego
 Group:		Applications/File
 Requires:	gnupg-agent = %{version}-%{release}
 
@@ -147,7 +147,7 @@ Skrypt startowy gnupg-agenta dla trybu tekstowego.
 
 %package -n gnupg-agent-xinitrc
 Summary:	gnupg-agent start script for X-Window mode
-Summary(pl.UTF-8):   Skrypt startowy gnupg-agenta dla trybu X-Window
+Summary(pl.UTF-8):	Skrypt startowy gnupg-agenta dla trybu X-Window
 Group:		Applications/File
 Requires:	gnupg-agent = %{version}-%{release}
 Requires:	xinitrc
@@ -160,7 +160,7 @@ Skrypt startowy gnupg-agenta dla trybu X-Window.
 
 %package -n gnupg-smime
 Summary:	GnuPG extension - S/MIME support
-Summary(pl.UTF-8):   Rozszerzenie GnuPG - obsługa S/MIME
+Summary(pl.UTF-8):	Rozszerzenie GnuPG - obsługa S/MIME
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
 Conflicts:	gnupg-agent < 1.9.14-2
