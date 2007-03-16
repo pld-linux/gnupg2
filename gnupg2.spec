@@ -6,12 +6,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
 Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
 Name:		gnupg2
-Version:	2.0.2
-Release:	0.1
+Version:	2.0.3
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	9f972c78135a7dea1bae66bb9f263980
+# Source0-md5:	4e33a5d35583da439f1bd26aa7e7042a
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -245,6 +245,7 @@ EOF
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
+%attr(755,root,root) %{_sbindir}/applygnupgdefaults
 %dir %{_libexecdir}
 %{_datadir}/gnupg
 %{_mandir}/man1/gpg-connect-agent.1*
@@ -252,6 +253,7 @@ EOF
 %{_mandir}/man1/gpgparsemail.1*
 %{_mandir}/man1/watchgnupg.1*
 %{_mandir}/man8/addgnupghome.8*
+%{_mandir}/man8/applygnupgdefaults.8*
 %{_infodir}/*.info*
 
 %files plugin-keys_curl
