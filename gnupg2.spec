@@ -3,8 +3,8 @@
 %bcond_without	pth	# without pth-based based version of gnupg
 %bcond_without	tests	# testsuite on build
 #
-Summary:	GNU Privacy Guard - tool for secure communication and data storage - development version
-Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozwojowa
+Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
+Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 Version:	2.0.4
 Release:	1
@@ -45,7 +45,7 @@ be used to encrypt data and to create digital signatures. It includes
 an advanced key management facility and is compliant with the proposed
 OpenPGP Internet standard as described in RFC2440.
 
-This is development version. Don't use it with production keys.
+This is enhanced version.
 
 %description -l pl.UTF-8
 GnuPG (GNU Privacy Guard) jest narzędziem do bezpiecznej komunikacji i
@@ -54,7 +54,7 @@ oraz podpisywania danych. Umożliwia zaawansowane zarządzanie kluczami
 i spełnia normy zdefiniowane w standardzie OpenPGP, który jest opisany
 w RFC2440.
 
-Wersja rozwojowa. Nie do użytku z kluczami produkcyjnymi.
+To jest wersja rozszerzona.
 
 %package common
 Summary:	GnuPG - common files
