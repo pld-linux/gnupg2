@@ -6,27 +6,27 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.0.4
+Version:	2.0.5
 Release:	1
-License:	GPL
+License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	e16efce067ba132f933792a3ec7f180e
+# Source0-md5:	a678b11b9333b66dbfdb9b6adb83b0b3
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
 Patch2:		%{name}-pl.po-update.patch
 Patch3:		%{name}-disable_tests.patch
 URL:		http://www.gnupg.org/
-BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.9.3
+BuildRequires:	autoconf >= 2.61
+BuildRequires:	automake >= 1:1.10
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel
-BuildRequires:	gettext-devel >= 0.15
-BuildRequires:	libassuan-devel >= 1:0.9.3
-BuildRequires:	libgcrypt-devel >= 1.2.0
+BuildRequires:	gettext-devel >= 0.16.1
+BuildRequires:	libassuan-devel >= 1:1.0.2
+BuildRequires:	libgcrypt-devel >= 1.2.2
 BuildRequires:	libgpg-error-devel >= 1.4
-BuildRequires:	libksba-devel >= 1.0.0
+BuildRequires:	libksba-devel >= 1.0.2
 BuildRequires:	libusb-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pcsc-lite-devel
@@ -60,8 +60,10 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan >= 1:0.9.3
+Requires:	libassuan >= 1:1.0.2
+Requires:	libgcrypt >= 1.2.2
 Requires:	libgpg-error >= 1.4
+Requires:	libksba >= 1.0.2
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description common
@@ -237,7 +239,7 @@ EOF
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
 %doc AUTHORS main-ChangeLog NEWS README THANKS TODO
-%doc intl-ChangeLog jnlib-ChangeLog m4-ChangeLog po-ChangeLog scripts-ChangeLog common-ChangeLog kbx-ChangeLog tools-ChangeLog doc-ChangeLog
+%doc jnlib-ChangeLog m4-ChangeLog po-ChangeLog scripts-ChangeLog common-ChangeLog kbx-ChangeLog tools-ChangeLog doc-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgkey2ssh
