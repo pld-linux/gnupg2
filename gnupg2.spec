@@ -195,7 +195,7 @@ rm -f po/stamp-po
 	--with-capabilities \
 	--with-mailprog=/usr/lib/sendmail
 
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
