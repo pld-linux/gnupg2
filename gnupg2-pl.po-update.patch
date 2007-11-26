@@ -1,6 +1,5 @@
-diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
---- gnupg-2.0.7.org/po/pl.po	2007-09-10 17:28:36.000000000 +0200
-+++ gnupg-2.0.7/po/pl.po	2007-11-25 21:37:19.000000000 +0100
+--- gnupg-2.0.7/po/pl.po.orig	2007-09-10 17:28:36.000000000 +0200
++++ gnupg-2.0.7/po/pl.po	2007-11-26 19:23:20.638207427 +0100
 @@ -1,90 +1,77 @@
  # Gnu Privacy Guard.
  # Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
@@ -13,13 +12,13 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-1.2.2\n"
-+"Project-Id-Version: gnupg-2.0.6\n"
++"Project-Id-Version: gnupg-2.0.7\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
  "POT-Creation-Date: 2007-09-10 17:28+0200\n"
 -"PO-Revision-Date: 2004-06-23 15:54+0200\n"
 -"Last-Translator: Janusz A. Urbanowicz <alex@bofh.net.pl>\n"
 -"Language-Team: Polish <pl@li.org>\n"
-+"PO-Revision-Date: 2007-08-28 21:20+0200\n"
++"PO-Revision-Date: 2007-11-26 19:01+0100\n"
 +"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 +"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
@@ -235,7 +234,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: agent/genkey.c:185
  #, c-format
-@@ -202,10 +186,17 @@
+@@ -202,7 +186,14 @@
  "Warning:  You have entered a passphrase that%%0Ais obviously not secure.  A "
  "passphrase should%%0Abe at least %u characters long."
  msgstr[0] ""
@@ -249,37 +248,39 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
 +"powinno mieæ przynajmniej%%0A%u znaków d³ugo¶ci."
  
  #: agent/genkey.c:202
--#, c-format
-+#, fuzzy, c-format
- msgid ""
- "Warning:  You have entered a passphrase that%%0Ais obviously not secure.  A "
- "passphrase should%%0Acontain at least %u digit or special character."
-@@ -213,14 +204,23 @@
+ #, c-format
+@@ -213,7 +204,14 @@
  "Warning:  You have entered a passphrase that%%0Ais obviously not secure.  A "
  "passphrase should%%0Acontain at least %u digits or special characters."
  msgstr[0] ""
 +"Uwaga: Wprowadzono has³o, które na pewno nie jest%%0Abezpieczne. Has³o "
-+"powinno mieæ przynajmniej%%0A%u znak d³ugo¶ci."
++"powinno mieæ przynajmniej%%0A%u cyfrê lub znak specjalny."
  msgstr[1] ""
 +"Uwaga: Wprowadzono has³o, które na pewno nie jest%%0Abezpieczne. Has³o "
-+"powinno mieæ przynajmniej%%0A%u znaki d³ugo¶ci."
++"powinno mieæ przynajmniej%%0A%u cyfry lub znaki specjalne."
 +msgstr[2] ""
 +"Uwaga: Wprowadzono has³o, które na pewno nie jest%%0Abezpieczne. Has³o "
-+"powinno mieæ przynajmniej%%0A%u znaków d³ugo¶ci."
++"powinno mieæ przynajmniej%%0A%u cyfr lub znaków specjalnych."
  
  #: agent/genkey.c:225
--#, c-format
-+#, fuzzy, c-format
- msgid ""
+ #, c-format
+@@ -221,12 +219,15 @@
  "Warning:  You have entered a passphrase that%0Ais obviously not secure.  A "
  "passphrase may not%0Abe a known term or match certain pattern."
  msgstr ""
-+"Uwaga: Wprowadzono has³o, które na pewno nie jest%%0Abezpieczne. Has³o "
-+"powinno mieæ przynajmniej%%0A%u znak d³ugo¶ci."
++"Uwaga: Wprowadzono has³o, które na pewno nie jest%0Abezpieczne. Has³o "
++"nie mo¿e byæ znanym s³owem%0Aani pasowaæ do okre¶lonego wzorca."
  
  #: agent/genkey.c:238
  #, c-format
-@@ -234,50 +234,47 @@
+ msgid ""
+ "You have not entered a passphrase!%0AAn empty passphrase is not allowed."
+ msgstr ""
++"Nie wprowadzono has³a!%0APuste has³o nie jest dozwolone."
+ 
+ #: agent/genkey.c:240
+ #, c-format
+@@ -234,50 +235,47 @@
  "You have not entered a passphrase - this is in general a bad idea!%0APlease "
  "confirm that you do not want to have any protection on your key."
  msgstr ""
@@ -341,7 +342,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: agent/gpg-agent.c:122 g10/gpg.c:469 g10/gpgv.c:70 kbx/kbxutil.c:88
  #: scd/scdaemon.c:110 sm/gpgsm.c:340 tools/gpg-connect-agent.c:58
-@@ -288,115 +285,109 @@
+@@ -288,115 +286,109 @@
  #: agent/gpg-agent.c:123 g10/gpgv.c:71 kbx/kbxutil.c:89 scd/scdaemon.c:111
  #: sm/gpgsm.c:341
  msgid "be somewhat more quiet"
@@ -482,7 +483,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: agent/gpg-agent.c:605 g10/gpg.c:2023 scd/scdaemon.c:416 sm/gpgsm.c:910
  #, c-format
-@@ -418,7 +409,7 @@
+@@ -418,7 +410,7 @@
  #: g10/plaintext.c:162
  #, c-format
  msgid "error creating `%s': %s\n"
@@ -491,7 +492,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: agent/gpg-agent.c:1247 agent/gpg-agent.c:1373 agent/gpg-agent.c:1377
  #: agent/gpg-agent.c:1418 agent/gpg-agent.c:1422 g10/exec.c:172
-@@ -429,82 +420,80 @@
+@@ -429,82 +421,80 @@
  
  #: agent/gpg-agent.c:1261 scd/scdaemon.c:922
  msgid "name of socket too long\n"
@@ -599,7 +600,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: agent/gpg-agent.c:1820 common/simple-pwquery.c:329
  #: tools/gpg-connect-agent.c:756
-@@ -518,103 +507,104 @@
+@@ -518,103 +508,104 @@
  msgstr "wersja %d protoko³u agenta nie jest obs³ugiwana\n"
  
  #: agent/preset-passphrase.c:98
@@ -733,7 +734,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #. TRANSLATORS: This prompt is shown by the Pinentry
  #. and has one special property: A "%%0A" is used by
-@@ -631,13 +621,15 @@
+@@ -631,13 +622,15 @@
  "Please verify that the certificate identified as:%%0A  \"%s\"%%0Ahas the "
  "fingerprint:%%0A  %s"
  msgstr ""
@@ -750,7 +751,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #. TRANSLATORS: This prompt is shown by the Pinentry
  #. and has one special property: A "%%0A" is used by
-@@ -653,15 +645,16 @@
+@@ -653,20 +646,21 @@
  "Do you ultimately trust%%0A  \"%s\"%%0Ato correctly certify user "
  "certificates?"
  msgstr ""
@@ -770,16 +771,28 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: agent/findkey.c:158
  #, c-format
-@@ -678,61 +671,60 @@
+ msgid "Note: This passphrase has never been changed.%0APlease change it now."
+-msgstr ""
++msgstr "Uwaga: To has³o nie by³o nigdy zmieniane.%0AProszê zmieniæ je teraz."
+ 
+ #: agent/findkey.c:174
+ #, c-format
+@@ -674,65 +668,64 @@
+ "This passphrase has not been changed%%0Asince %.4s-%.2s-%.2s.  Please change "
+ "it now."
+ msgstr ""
++"To has³o nie zosta³o zmienione%%0Aod %.4s-%.2s-%.2s. Proszê zmieniæ je teraz."
+ 
  #: agent/findkey.c:188 agent/findkey.c:195
- #, fuzzy
+-#, fuzzy
  msgid "Change passphrase"
 -msgstr "zmiana has³a klucza"
-+msgstr "zmiana has³a"
++msgstr "Zmiana has³a"
  
  #: agent/findkey.c:196
  msgid "I'll change it later"
- msgstr ""
+-msgstr ""
++msgstr "Zmieniê je pó¼niej"
  
  #: common/exechelp.c:371 common/exechelp.c:459 tools/gpgconf-comp.c:1340
 -#, fuzzy, c-format
@@ -850,7 +863,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: common/simple-pwquery.c:315
  msgid "gpg-agent is not available in this session\n"
-@@ -745,22 +737,19 @@
+@@ -745,22 +738,19 @@
  
  #: common/simple-pwquery.c:384
  msgid "communication problem with gpg-agent\n"
@@ -876,7 +889,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: common/sysutils.c:103
  #, c-format
-@@ -768,14 +757,14 @@
+@@ -768,14 +758,14 @@
  msgstr "nie mo¿na wy³±czyæ zrzutów pamiêci: %s\n"
  
  #: common/sysutils.c:198
@@ -895,7 +908,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #. TRANSLATORS: See doc/TRANSLATE about this string.
  #: common/yesno.c:31 common/yesno.c:68
-@@ -807,31 +796,30 @@
+@@ -807,31 +797,30 @@
  #. TRANSLATORS: See doc/TRANSLATE about this string.
  #: common/yesno.c:109
  msgid "okay|okay"
@@ -933,7 +946,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/armor.c:366
  #, c-format
-@@ -855,22 +843,21 @@
+@@ -855,22 +844,21 @@
  msgstr "zagnie¿d¿one podpisy na koñcu dokumentu\n"
  
  #: g10/armor.c:614
@@ -960,7 +973,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/armor.c:857
  msgid "premature eof (in CRC)\n"
-@@ -881,12 +868,11 @@
+@@ -881,12 +869,11 @@
  msgstr "b³±d formatu CRC\n"
  
  #: g10/armor.c:869 g10/armor.c:1427
@@ -975,7 +988,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "premature eof (in trailer)\n"
  msgstr "przedwczesny koniec pliku (w linii koñcz±cej)\n"
  
-@@ -915,43 +901,41 @@
+@@ -915,43 +902,41 @@
  "a notation name must have only printable characters or spaces, and end with "
  "an '='\n"
  msgstr ""
@@ -1028,7 +1041,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "can't do this in batch mode\n"
  msgstr "nie dzia³a w trybie wsadowym\n"
  
-@@ -963,66 +947,61 @@
+@@ -963,66 +948,61 @@
  
  #: g10/card-util.c:218 g10/card-util.c:268
  msgid "[not set]"
@@ -1109,7 +1122,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/card-util.c:689 g10/card-util.c:758 g10/import.c:283
  #, c-format
-@@ -1031,84 +1010,75 @@
+@@ -1031,84 +1011,75 @@
  
  #: g10/card-util.c:697
  msgid "Login data (account name): "
@@ -1213,7 +1226,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/card-util.c:1084
  #, c-format
-@@ -1117,25 +1087,25 @@
+@@ -1117,25 +1088,25 @@
  "   PIN = `%s'     Admin PIN = `%s'\n"
  "You should change them using the command --change-pin\n"
  msgstr ""
@@ -1246,7 +1259,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/card-util.c:1138 g10/card-util.c:1217 g10/keyedit.c:945
  #: g10/keygen.c:1581 g10/keygen.c:1609 g10/keygen.c:1683 g10/revoke.c:685
-@@ -1143,113 +1113,100 @@
+@@ -1143,113 +1114,100 @@
  msgstr "Niew³a¶ciwy wybór.\n"
  
  #: g10/card-util.c:1194
@@ -1381,7 +1394,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/decrypt.c:110 g10/encode.c:890
  msgid "--output doesn't work for this command\n"
-@@ -1262,7 +1219,7 @@
+@@ -1262,7 +1220,7 @@
  
  #: g10/delkey.c:73 g10/export.c:324 g10/keyedit.c:3401 g10/keyserver.c:1719
  #: g10/revoke.c:226
@@ -1390,7 +1403,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "key \"%s\" not found: %s\n"
  msgstr "klucz ,,%s'' nie zosta³ odnaleziony: %s\n"
  
-@@ -1277,19 +1234,16 @@
+@@ -1277,19 +1235,16 @@
  msgstr "(chyba, ¿e klucz zostaje wybrany przez podanie odcisku)\n"
  
  #: g10/delkey.c:133
@@ -1413,7 +1426,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/delkey.c:163
  #, c-format
-@@ -1307,7 +1261,7 @@
+@@ -1307,7 +1262,7 @@
  
  #: g10/delkey.c:206
  msgid "use option \"--delete-secret-keys\" to delete it first.\n"
@@ -1422,7 +1435,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/encode.c:226 g10/sign.c:1296
  #, c-format
-@@ -1342,7 +1296,7 @@
+@@ -1342,7 +1297,7 @@
  #: g10/encode.c:510
  #, c-format
  msgid "reading from `%s'\n"
@@ -1431,7 +1444,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/encode.c:541
  msgid ""
-@@ -1351,17 +1305,21 @@
+@@ -1351,17 +1306,21 @@
  "nie mo¿na u¿yæ szyfru IDEA z wszystkimi kluczami dla których szyfrujesz.\n"
  
  #: g10/encode.c:559
@@ -1457,7 +1470,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/encode.c:765
  #, c-format
-@@ -1409,21 +1367,20 @@
+@@ -1409,21 +1368,20 @@
  "nieszczelne uprawnienia ustawieñ - wo³anie zewnêtrznych programów wy³±czone\n"
  
  #: g10/exec.c:343
@@ -1483,7 +1496,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/exec.c:509
  #, c-format
-@@ -1454,72 +1411,65 @@
+@@ -1454,72 +1412,65 @@
  msgstr "OSTRZE¯ENIE: nie mo¿na skasowaæ tymczasowego katalogu ,,%s'': %s.\n"
  
  #: g10/export.c:61
@@ -1575,7 +1588,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/export.c:633
  msgid "WARNING: nothing exported\n"
-@@ -1530,7 +1480,6 @@
+@@ -1530,7 +1481,6 @@
  msgstr "zbyt wiele wpisów w buforze kluczy publicznych - wy³±czony\n"
  
  #: g10/getkey.c:174
@@ -1583,7 +1596,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "[User ID not found]"
  msgstr "[brak identyfikatora u¿ytkownika]"
  
-@@ -1538,28 +1487,28 @@
+@@ -1538,28 +1488,28 @@
  #: g10/getkey.c:1002
  #, c-format
  msgid "automatically retrieved `%s' via %s\n"
@@ -1621,7 +1634,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:368 kbx/kbxutil.c:71 sm/gpgsm.c:242 tools/gpgconf.c:55
  msgid ""
-@@ -1606,9 +1555,8 @@
+@@ -1606,9 +1556,8 @@
  msgstr "lista kluczy i podpisów"
  
  #: g10/gpg.c:384
@@ -1632,7 +1645,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:385 sm/gpgsm.c:256
  msgid "list keys and fingerprints"
-@@ -1672,15 +1620,15 @@
+@@ -1672,15 +1621,15 @@
  
  #: g10/gpg.c:409
  msgid "print the card status"
@@ -1651,7 +1664,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:420
  msgid "update the trust database"
-@@ -1692,7 +1640,7 @@
+@@ -1692,7 +1641,7 @@
  
  #: g10/gpg.c:430 sm/gpgsm.c:264
  msgid "run in server mode"
@@ -1660,7 +1673,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:432 g10/gpgv.c:68 kbx/kbxutil.c:81 sm/gpgsm.c:279
  #: tools/gpg-connect-agent.c:56 tools/gpgconf.c:66 tools/symcryptrun.c:157
-@@ -1739,11 +1687,11 @@
+@@ -1739,11 +1688,11 @@
  
  #: g10/gpg.c:523
  msgid "use strict OpenPGP behavior"
@@ -1674,7 +1687,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:553 sm/gpgsm.c:397
  msgid ""
-@@ -1767,12 +1715,13 @@
+@@ -1767,12 +1716,13 @@
  "@\n"
  "Przyk³ady:\n"
  "\n"
@@ -1693,7 +1706,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:750 g10/gpgv.c:95
  msgid "Please report bugs to <gnupg-bugs@gnu.org>.\n"
-@@ -1825,141 +1774,143 @@
+@@ -1825,141 +1775,143 @@
  msgstr "sprzeczne polecenia\n"
  
  #: g10/gpg.c:1063
@@ -1884,7 +1897,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:1981
  #, c-format
-@@ -1972,29 +1923,27 @@
+@@ -1972,29 +1924,27 @@
  msgstr "UWAGA: %s nie jest do normalnego u¿ytku!\n"
  
  #: g10/gpg.c:2399 g10/gpg.c:2411
@@ -1922,7 +1935,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:2538
  #, c-format
-@@ -2015,72 +1964,69 @@
+@@ -2015,72 +1965,69 @@
  msgstr "niepoprawne opcje eksportu kluczy\n"
  
  #: g10/gpg.c:2558
@@ -2014,7 +2027,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:2608
  #, c-format
-@@ -2088,13 +2034,13 @@
+@@ -2088,13 +2035,13 @@
  msgstr "nie mo¿na ustawiæ ¶cie¿ki programów wykonywalnych na %s\n"
  
  #: g10/gpg.c:2782
@@ -2031,7 +2044,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:2871 sm/gpgsm.c:1298
  msgid "WARNING: program may create a core file!\n"
-@@ -2116,9 +2062,9 @@
+@@ -2116,9 +2063,9 @@
  msgstr "%s nie ma sensu w po³±czeniu z %s!\n"
  
  #: g10/gpg.c:2902
@@ -2043,7 +2056,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:2916
  msgid "you can only make detached or clear signatures while in --pgp2 mode\n"
-@@ -2147,9 +2093,8 @@
+@@ -2147,9 +2094,8 @@
  msgstr "wybrany algorytm skrótów wiadomo¶ci jest niepoprawny\n"
  
  #: g10/gpg.c:3019
@@ -2054,7 +2067,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:3025
  msgid "selected certification digest algorithm is invalid\n"
-@@ -2164,7 +2109,6 @@
+@@ -2164,7 +2110,6 @@
  msgstr "warto¶æ marginals-needed musi byæ wiêksza od 1\n"
  
  #: g10/gpg.c:3044
@@ -2062,7 +2075,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "max-cert-depth must be in the range from 1 to 255\n"
  msgstr "warto¶æ max-cert-depth musi mie¶ciæ siê w zakresie od 1 do 255\n"
  
-@@ -2208,17 +2152,17 @@
+@@ -2208,17 +2153,17 @@
  msgstr "%s jeszcze nie dzia³a z %s!\n"
  
  #: g10/gpg.c:3159
@@ -2083,7 +2096,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "you may not use compression algorithm `%s' while in %s mode\n"
  msgstr "kompresja ,,%s'' nie jest dostêpna w trybie %s\n"
  
-@@ -2240,27 +2184,26 @@
+@@ -2240,27 +2185,26 @@
  msgstr "--symmetric [plik]"
  
  #: g10/gpg.c:3302
@@ -2117,7 +2130,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:3348
  msgid "--sign [filename]"
-@@ -2271,18 +2214,17 @@
+@@ -2271,18 +2215,17 @@
  msgstr "--sign --encrypt [plik]"
  
  #: g10/gpg.c:3376
@@ -2140,7 +2153,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:3401
  msgid "--sign --symmetric [filename]"
-@@ -2290,7 +2232,7 @@
+@@ -2290,7 +2233,7 @@
  
  #: g10/gpg.c:3410
  msgid "--clearsign [filename]"
@@ -2149,7 +2162,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:3435
  msgid "--decrypt [filename]"
-@@ -2346,7 +2288,7 @@
+@@ -2346,7 +2289,7 @@
  #: g10/gpg.c:3727
  #, c-format
  msgid "invalid hash algorithm `%s'\n"
@@ -2158,7 +2171,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpg.c:3844
  msgid "[filename]"
-@@ -2365,9 +2307,8 @@
+@@ -2365,9 +2308,8 @@
  msgstr "podany URL regulaminu podpisów jest niepoprawny\n"
  
  #: g10/gpg.c:4195
@@ -2169,7 +2182,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/gpgv.c:72
  msgid "take the keys from this keyring"
-@@ -2390,7 +2331,7 @@
+@@ -2390,7 +2332,7 @@
  "Syntax: gpg [options] [files]\n"
  "Check signatures against known trusted keys\n"
  msgstr ""
@@ -2178,7 +2191,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "Sprawdzanie podpisów ze znanych zaufanych kluczy\n"
  
  #: g10/helptext.c:49
-@@ -2399,7 +2340,7 @@
+@@ -2399,7 +2341,7 @@
  "to any 3rd party.  We need it to implement the web-of-trust; it has nothing\n"
  "to do with the (implicitly created) web-of-certificates."
  msgstr ""
@@ -2187,7 +2200,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "eksportowane poza ten system. Potrzebne s± one do zbudowania sieci\n"
  "zaufania, i nie ma to nic wspólnego z tworzon± automatycznie sieci±\n"
  "certyfikatów."
-@@ -2440,6 +2381,17 @@
+@@ -2440,6 +2382,17 @@
  "\n"
  "The first (primary) key must always be a key which is capable of signing."
  msgstr ""
@@ -2205,7 +2218,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/helptext.c:84
  msgid ""
-@@ -2459,7 +2411,7 @@
+@@ -2459,7 +2412,7 @@
  #: g10/helptext.c:95 g10/helptext.c:100 g10/helptext.c:112 g10/helptext.c:144
  #: g10/helptext.c:172 g10/helptext.c:177 g10/helptext.c:182
  msgid "Answer \"yes\" or \"no\""
@@ -2214,7 +2227,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/helptext.c:105
  msgid ""
-@@ -2468,7 +2420,7 @@
+@@ -2468,7 +2421,7 @@
  "get a good error response - instead the system tries to interpret\n"
  "the given value as an interval."
  msgstr ""
@@ -2223,7 +2236,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "Mo¿na tu podaæ datê w formacie ISO (RRRR-MM-DD) ale nie da to\n"
  "w³a¶ciwej obs³ugi b³êdów - system próbuje interpretowaæ podan± warto¶æ\n"
  "jako okres."
-@@ -2544,7 +2496,7 @@
+@@ -2544,7 +2497,7 @@
  "\n"
  "If you don't know what the right answer is, answer \"0\"."
  msgstr ""
@@ -2232,7 +2245,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "czy to¿samo¶æ u¿ytkownika odpowiada temu, co jest wpisane w "
  "identyfikatorze.\n"
  "Innym u¿ytkownikom przyda siê informacja, jak dog³êbnie zosta³o to przez\n"
-@@ -2554,16 +2506,16 @@
+@@ -2554,16 +2507,16 @@
  "dog³êbnie\n"
  "    to¿samo¶æ u¿ytkownika zosta³a przez Ciebie potwierdzona.\n"
  "\n"
@@ -2252,7 +2265,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "    klucza, sprawdzenie to¿samo¶ci z okazanego oficjalnego dokumentu ze\n"
  "    zdjêciem (np paszportu) i weryfikacja poprawno¶ci adresu poczty\n"
  "    elektronicznej przez wymianê poczty z tym adresem.\n"
-@@ -2576,7 +2528,6 @@
+@@ -2576,7 +2529,6 @@
  "Je¶li nie wiesz co odpowiedzieæ, podaj \"0\"."
  
  #: g10/helptext.c:186
@@ -2260,7 +2273,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "Answer \"yes\" if you want to sign ALL the user IDs"
  msgstr "Odpowiedz \"tak\", aby podpisaæ WSZYSTKIE identyfikatory u¿ytkownika."
  
-@@ -2599,7 +2550,7 @@
+@@ -2599,7 +2551,7 @@
  "trust connection to the key or another key certified by this key."
  msgstr ""
  "To jest poprawny podpis na tym kluczu; normalnie nie nale¿y go usuwaæ\n"
@@ -2269,7 +2282,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "którym go z³o¿ono lub do innego klucza nim po¶wiadczonego."
  
  #: g10/helptext.c:205
-@@ -2619,7 +2570,7 @@
+@@ -2619,7 +2571,7 @@
  msgid ""
  "The signature is not valid.  It does make sense to remove it from\n"
  "your keyring."
@@ -2278,7 +2291,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/helptext.c:215
  msgid ""
-@@ -2643,7 +2594,7 @@
+@@ -2643,7 +2595,7 @@
  msgstr ""
  "Przestawienie wszystkich (lub tylko wybranych) identyfikatorów na aktualne\n"
  "ustawienia. Data na odpowiednich podpisach zostane przesuniêta do przodu o\n"
@@ -2287,7 +2300,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/helptext.c:230
  msgid "Please enter the passhrase; this is a secret sentence \n"
-@@ -2651,7 +2602,7 @@
+@@ -2651,7 +2603,7 @@
  
  #: g10/helptext.c:236
  msgid "Please repeat the last passphrase, so you are sure what you typed in."
@@ -2296,7 +2309,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/helptext.c:240
  msgid "Give the name of the file to which the signature applies"
-@@ -2692,7 +2643,7 @@
+@@ -2692,7 +2644,7 @@
  "  \"Klucz nie jest ju¿ u¿ywany\"\n"
  "      Klucz zosta³ wycofany z u¿ycia.\n"
  "  \"Identyfikator u¿ytkownika przesta³ byæ poprawny\"\n"
@@ -2305,7 +2318,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "      poprawny.\n"
  
  #: g10/helptext.c:272
-@@ -2702,7 +2653,7 @@
+@@ -2702,7 +2654,7 @@
  "An empty line ends the text.\n"
  msgstr ""
  "Je¶li chcesz, mo¿esz podaæ opis powodu wystawienia certyfikatu\n"
@@ -2314,7 +2327,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "Pusta linia koñczy wprowadzanie tekstu.\n"
  
  #: g10/helptext.c:287
-@@ -2716,34 +2667,31 @@
+@@ -2716,34 +2668,31 @@
  
  #: g10/import.c:94
  msgid "import signatures that are marked as local-only"
@@ -2356,7 +2369,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/import.c:269
  #, c-format
-@@ -2751,7 +2699,7 @@
+@@ -2751,7 +2700,7 @@
  msgstr "blok typu %d zostaje pominiêty\n"
  
  #: g10/import.c:278
@@ -2365,7 +2378,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "%lu keys processed so far\n"
  msgstr "%lu kluczy przetworzonych do tej chwili\n"
  
-@@ -2821,14 +2769,14 @@
+@@ -2821,14 +2770,14 @@
  msgstr "      nie w³±czono do zbioru: %lu\n"
  
  #: g10/import.c:326
@@ -2384,7 +2397,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/import.c:569
  #, c-format
-@@ -2836,68 +2784,71 @@
+@@ -2836,68 +2785,71 @@
  "WARNING: key %s contains preferences for unavailable\n"
  "algorithms on these user IDs:\n"
  msgstr ""
@@ -2474,7 +2487,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/import.c:803
  #, c-format
-@@ -2907,266 +2858,262 @@
+@@ -2907,266 +2859,262 @@
  #: g10/import.c:808 g10/openfile.c:278 g10/sign.c:832 g10/sign.c:1141
  #, c-format
  msgid "writing to `%s'\n"
@@ -2839,7 +2852,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keydb.c:168
  #, c-format
-@@ -3179,9 +3126,9 @@
+@@ -3179,9 +3127,9 @@
  msgstr "zbiór kluczy ,,%s'' zosta³ utworzony\n"
  
  #: g10/keydb.c:315 g10/keydb.c:318
@@ -2851,7 +2864,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keydb.c:697
  #, c-format
-@@ -3234,7 +3181,6 @@
+@@ -3234,7 +3182,6 @@
  "wykryto %d identyfikatorów u¿ytkownika niepodpisanych tym samym kluczem\n"
  
  #: g10/keyedit.c:414 g10/pkclist.c:261
@@ -2859,7 +2872,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid ""
  "Please decide how far you trust this user to correctly verify other users' "
  "keys\n"
-@@ -3244,17 +3190,16 @@
+@@ -3244,17 +3191,16 @@
  "Zastanów siê jak bardzo ufasz temu u¿ytkownikowi w kwestii sprawdzania\n"
  "to¿samo¶ci innych u¿ytkowników (czy sprawdzi on odciski kluczy pobrane\n"
  "z ró¿nych ¼róde³, dokumenty potwierdzaj±ce to¿samo¶æ, itd.).\n"
@@ -2881,7 +2894,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:438
  msgid ""
-@@ -3262,10 +3207,13 @@
+@@ -3262,10 +3208,13 @@
  "A depth greater than 1 allows the key you are signing to make\n"
  "trust signatures on your behalf.\n"
  msgstr ""
@@ -2896,7 +2909,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:598
  #, c-format
-@@ -3293,14 +3241,13 @@
+@@ -3293,14 +3242,13 @@
  msgstr "Identyfikator ,,%s'' nie jest podpisany swoim kluczem."
  
  #: g10/keyedit.c:682
@@ -2914,7 +2927,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:706
  #, c-format
-@@ -3321,7 +3268,7 @@
+@@ -3321,7 +3269,7 @@
  "Your current signature on \"%s\"\n"
  "has expired.\n"
  msgstr ""
@@ -2923,7 +2936,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "przekroczy³ datê wa¿no¶ci.\n"
  
  #: g10/keyedit.c:733
-@@ -3334,7 +3281,7 @@
+@@ -3334,7 +3282,7 @@
  "Your current signature on \"%s\"\n"
  "is a local signature.\n"
  msgstr ""
@@ -2932,7 +2945,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "jest podpisem prywatnym (lokalnym).\n"
  
  #: g10/keyedit.c:758
-@@ -3343,23 +3290,23 @@
+@@ -3343,23 +3291,23 @@
  "Czy chcesz zamieniæ go na pe³ny, publiczny, eksportowalny podpis? (t/N) "
  
  #: g10/keyedit.c:779
@@ -2963,7 +2976,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:824
  msgid "This key has expired!"
-@@ -3384,7 +3331,7 @@
+@@ -3384,7 +3332,7 @@
  
  #: g10/keyedit.c:890
  msgid "This would make the key unusable in PGP 2.x.\n"
@@ -2972,7 +2985,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:915
  msgid ""
-@@ -3416,74 +3363,53 @@
+@@ -3416,74 +3364,53 @@
  msgstr "   (3) Bardzo dok³adnie.%s\n"
  
  #: g10/keyedit.c:932
@@ -3060,7 +3073,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1021
  msgid "Really sign? (y/N) "
-@@ -3498,6 +3424,7 @@
+@@ -3498,6 +3425,7 @@
  #: g10/keyedit.c:1131
  msgid "Key has only stub or on-card key items - no passphrase to change.\n"
  msgstr ""
@@ -3068,7 +3081,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1142 g10/keygen.c:3516
  msgid "This key is not protected.\n"
-@@ -3508,9 +3435,8 @@
+@@ -3508,9 +3436,8 @@
  msgstr "Czê¶æ tajna g³ównego klucza jest niedostêpna.\n"
  
  #: g10/keyedit.c:1150 g10/keygen.c:3519
@@ -3079,7 +3092,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1154 g10/keygen.c:3523
  msgid "Key is protected.\n"
-@@ -3519,7 +3445,7 @@
+@@ -3519,7 +3446,7 @@
  #: g10/keyedit.c:1178
  #, c-format
  msgid "Can't edit this key: %s\n"
@@ -3088,7 +3101,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1184
  msgid ""
-@@ -3542,9 +3468,8 @@
+@@ -3542,9 +3469,8 @@
  "\n"
  
  #: g10/keyedit.c:1207
@@ -3099,7 +3112,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1278
  msgid "moving a key signature to the correct place\n"
-@@ -3555,45 +3480,46 @@
+@@ -3555,45 +3481,46 @@
  msgstr "zapis zmian i wyj¶cie"
  
  #: g10/keyedit.c:1367
@@ -3156,7 +3169,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1390
  msgid "add a user ID"
-@@ -3604,56 +3530,48 @@
+@@ -3604,56 +3531,48 @@
  msgstr "dodanie zdjêcia u¿ytkownika do klucza"
  
  #: g10/keyedit.c:1394
@@ -3224,7 +3237,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1424
  msgid "list preferences (expert)"
-@@ -3664,21 +3582,18 @@
+@@ -3664,21 +3583,18 @@
  msgstr "rozbudowana lista ustawieñ"
  
  #: g10/keyedit.c:1428
@@ -3251,7 +3264,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1437
  msgid "change the passphrase"
-@@ -3689,47 +3604,45 @@
+@@ -3689,47 +3605,45 @@
  msgstr "zmiana zaufania w³a¶ciciela"
  
  #: g10/keyedit.c:1443
@@ -3311,7 +3324,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1597
  msgid "Secret key is available.\n"
-@@ -3750,24 +3663,28 @@
+@@ -3750,24 +3664,28 @@
  "  a `t' for trust signatures (tsign), an `nr' for non-revocable signatures\n"
  "  (nrsign), or any combination thereof (ltsign, tnrsign, etc.).\n"
  msgstr ""
@@ -3344,7 +3357,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:1805
  #, c-format
-@@ -3783,108 +3700,97 @@
+@@ -3783,108 +3701,97 @@
  msgstr "Nie mo¿esz usun±æ ostatniego identyfikatora u¿ytkownika!\n"
  
  #: g10/keyedit.c:1831
@@ -3479,7 +3492,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:2229
  #, c-format
-@@ -3910,73 +3816,71 @@
+@@ -3910,73 +3817,71 @@
  
  #: g10/keyedit.c:2405
  msgid "Keyserver no-modify"
@@ -3574,7 +3587,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:2776
  msgid "This key has been disabled"
-@@ -3984,7 +3888,7 @@
+@@ -3984,7 +3889,7 @@
  
  #: g10/keyedit.c:2804 g10/keylist.c:198
  msgid "card-no: "
@@ -3583,7 +3596,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:2828
  msgid ""
-@@ -3996,15 +3900,13 @@
+@@ -3996,15 +3901,13 @@
  
  #: g10/keyedit.c:2892 g10/keyedit.c:3238 g10/keyserver.c:531
  #: g10/mainproc.c:1835 g10/trustdb.c:1173 g10/trustdb.c:1693
@@ -3601,7 +3614,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:2959
  msgid ""
-@@ -4067,29 +3969,29 @@
+@@ -4067,29 +3970,29 @@
  msgstr "niepoprawny"
  
  #: g10/keyedit.c:3244
@@ -3641,7 +3654,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:3355
  msgid ""
-@@ -4098,7 +4000,7 @@
+@@ -4098,7 +4001,7 @@
  "         some versions of PGP to reject this key.\n"
  msgstr ""
  "OSTRZE¯ENIE: To jest klucz PGP wersji 2.x. Wyznaczenie mu klucza\n"
@@ -3650,7 +3663,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "             go rozumieæ.\n"
  
  #: g10/keyedit.c:3366
-@@ -4115,12 +4017,11 @@
+@@ -4115,12 +4018,11 @@
  
  #: g10/keyedit.c:3426
  msgid "you cannot appoint a key as its own designated revoker\n"
@@ -3665,7 +3678,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:3467
  msgid "WARNING: appointing a key as a designated revoker cannot be undone!\n"
-@@ -4128,22 +4029,19 @@
+@@ -4128,22 +4030,19 @@
  "OSTRZE¯ENIE: nie mo¿na cofn±æ wyznaczenia klucza jako uniewa¿niaj±cego!\n"
  
  #: g10/keyedit.c:3473
@@ -3690,7 +3703,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "Changing expiration time for a subkey.\n"
  msgstr "Zmiana daty wa¿no¶ci podklucza.\n"
  
-@@ -4160,47 +4058,44 @@
+@@ -4160,47 +4059,44 @@
  msgstr "Brak odpowiadaj±cego podpisu w zbiorze kluczy prywatnych\n"
  
  #: g10/keyedit.c:3687
@@ -3747,7 +3760,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:4422
  #, c-format
-@@ -4208,24 +4103,24 @@
+@@ -4208,24 +4104,24 @@
  msgstr "Brak identyfikatora u¿ytkownika o numerze %d.\n"
  
  #: g10/keyedit.c:4480
@@ -3780,7 +3793,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:4647 g10/keyedit.c:4711 g10/keyedit.c:4754
  msgid " (non-exportable)"
-@@ -4245,19 +4140,18 @@
+@@ -4245,19 +4141,18 @@
  msgstr "Stworzyæ certyfikat uniewa¿nienia tego podpisu? (t/N) "
  
  #: g10/keyedit.c:4686
@@ -3805,7 +3818,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyedit.c:4741
  msgid "You are about to revoke these signatures:\n"
-@@ -4284,44 +4178,43 @@
+@@ -4284,44 +4179,43 @@
  "przysz³o¶ci)\n"
  
  #: g10/keyedit.c:4942
@@ -3865,7 +3878,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:884
  msgid "writing direct signature\n"
-@@ -4344,72 +4237,72 @@
+@@ -4344,72 +4238,72 @@
  #: g10/keygen.c:1157 g10/keygen.c:1273 g10/keygen.c:1408 g10/keygen.c:3022
  #, c-format
  msgid "keysize rounded up to %u bits\n"
@@ -3955,7 +3968,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:1632
  #, c-format
-@@ -4417,14 +4310,14 @@
+@@ -4417,14 +4311,14 @@
  msgstr "   (%d) DSA (tylko do podpisywania)\n"
  
  #: g10/keygen.c:1634
@@ -3974,7 +3987,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:1637
  #, c-format
-@@ -4437,29 +4330,29 @@
+@@ -4437,29 +4331,29 @@
  msgstr "   (%d) RSA (tylko do szyfrowania)\n"
  
  #: g10/keygen.c:1641
@@ -4012,7 +4025,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:1747
  #, c-format
-@@ -4480,7 +4373,7 @@
+@@ -4480,7 +4374,7 @@
  "      <n>m = key expires in n months\n"
  "      <n>y = key expires in n years\n"
  msgstr ""
@@ -4021,7 +4034,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "         0 = klucz nie ma okre¶lonego terminu wa¿no¶ci\n"
  "      <n>  = termin wa¿no¶ci klucza up³ywa za n dni\n"
  "      <n>w = termin wa¿no¶ci klucza up³ywa za n tygodni\n"
-@@ -4496,7 +4389,7 @@
+@@ -4496,7 +4390,7 @@
  "      <n>m = signature expires in n months\n"
  "      <n>y = signature expires in n years\n"
  msgstr ""
@@ -4030,7 +4043,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "         0 = klucz nie ma okre¶lonego terminu wa¿no¶ci\n"
  "      <n>  = termin wa¿no¶ci podpisu up³ywa za n dni\n"
  "      <n>w = termin wa¿no¶ci podpisu up³ywa za n tygodni\n"
-@@ -4505,36 +4398,34 @@
+@@ -4505,36 +4399,34 @@
  
  #: g10/keygen.c:1860
  msgid "Key is valid for? (0) "
@@ -4076,7 +4089,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:1901
  msgid ""
-@@ -4545,12 +4436,10 @@
+@@ -4545,12 +4437,10 @@
  "Niemniej daty do roku 2106 bêd± poprawnie obs³ugiwane.\n"
  
  #: g10/keygen.c:1908
@@ -4090,7 +4103,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid ""
  "\n"
  "You need a user ID to identify your key; the software constructs the user "
-@@ -4580,7 +4469,7 @@
+@@ -4580,7 +4470,7 @@
  
  #: g10/keygen.c:1956
  msgid "Name must be at least 5 characters long\n"
@@ -4099,7 +4112,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:1964
  msgid "Email address: "
-@@ -4617,7 +4506,7 @@
+@@ -4617,7 +4507,7 @@
  #: g10/keygen.c:2017
  msgid "Please don't put the email address into the real name or the comment\n"
  msgstr ""
@@ -4108,7 +4121,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "komentarza.\n"
  
  #. TRANSLATORS: These are the allowed answers in
-@@ -4643,7 +4532,7 @@
+@@ -4643,7 +4533,7 @@
  msgid "Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? "
  msgstr ""
  "Zmieniæ (I)miê/nazwisko, (K)omentarz, adres (E)mail, przej¶æ (D)alej,\n"
@@ -4117,7 +4130,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:2063
  msgid "Please correct the error first\n"
-@@ -4655,6 +4544,7 @@
+@@ -4655,6 +4545,7 @@
  "\n"
  msgstr ""
  "Musisz podaæ d³ugie, skomplikowane has³o aby ochroniæ swój klucz tajny.\n"
@@ -4125,7 +4138,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:2117
  #, c-format
-@@ -4682,7 +4572,7 @@
+@@ -4682,7 +4573,7 @@
  msgstr ""
  "Musimy wygenerowaæ du¿o losowych bajtów. Dobrym pomys³em aby pomóc "
  "komputerowi\n"
@@ -4134,7 +4147,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "dzia³añ (pisanie na klawiaturze, poruszanie myszk±, odwo³anie siê do "
  "dysków);\n"
  "dziêki temu generator liczb losowych ma mo¿liwo¶æ zebrania odpowiedniej "
-@@ -4696,17 +4586,17 @@
+@@ -4696,17 +4587,17 @@
  #: g10/keygen.c:3188 g10/keygen.c:3355
  #, c-format
  msgid "writing public key to `%s'\n"
@@ -4156,7 +4169,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keygen.c:3342
  #, c-format
-@@ -4733,7 +4623,6 @@
+@@ -4733,7 +4624,6 @@
  msgstr "klucz publiczny i prywatny (tajny) zosta³y utworzone i podpisane.\n"
  
  #: g10/keygen.c:3415
@@ -4164,7 +4177,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid ""
  "Note that this key cannot be used for encryption.  You may want to use\n"
  "the command \"--edit-key\" to generate a subkey for this purpose.\n"
-@@ -4768,24 +4657,23 @@
+@@ -4768,24 +4658,23 @@
  "UWAGA: tworzenie podkluczy dla kluczy wersji 3 jest niezgodne z OpenPGP.\n"
  
  #: g10/keygen.c:3537 g10/keygen.c:3670
@@ -4196,7 +4209,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyid.c:538 g10/keyid.c:550 g10/keyid.c:562 g10/keyid.c:574
  msgid "never     "
-@@ -4801,7 +4689,7 @@
+@@ -4801,7 +4690,7 @@
  
  #: g10/keylist.c:304
  msgid "Critical preferred keyserver: "
@@ -4205,7 +4218,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keylist.c:357
  msgid "Critical signature notation: "
-@@ -4834,18 +4722,17 @@
+@@ -4834,18 +4723,17 @@
  msgstr "       Odcisk podklucza:"
  
  #: g10/keylist.c:1519 g10/keylist.c:1523
@@ -4228,7 +4241,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyring.c:1254
  msgid "WARNING: 2 files with confidential information exists.\n"
-@@ -4866,19 +4753,19 @@
+@@ -4866,19 +4754,19 @@
  msgstr "Proszê usun±æ to naruszenie zasad bezpieczeñstwa\n"
  
  #: g10/keyring.c:1380
@@ -4254,7 +4267,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyring.c:1510
  #, c-format
-@@ -4887,117 +4774,115 @@
+@@ -4887,117 +4775,115 @@
  
  #: g10/keyserver.c:71
  msgid "include revoked keys in search results"
@@ -4410,7 +4423,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/keyserver.c:1519 g10/keyserver.c:2047
  msgid "no keyserver known (use option --keyserver)\n"
-@@ -5006,71 +4891,71 @@
+@@ -5006,71 +4892,71 @@
  #: g10/keyserver.c:1525
  msgid "external keyserver calls are not supported in this build\n"
  msgstr ""
@@ -4503,7 +4516,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/mainproc.c:284
  #, c-format
-@@ -5078,33 +4963,34 @@
+@@ -5078,33 +4964,34 @@
  msgstr "klucz sesyjny zaszyfrowany %s\n"
  
  #: g10/mainproc.c:294
@@ -4548,7 +4561,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/mainproc.c:472
  #, c-format
-@@ -5128,7 +5014,7 @@
+@@ -5128,7 +5015,7 @@
  #: g10/mainproc.c:528
  #, c-format
  msgid "IDEA cipher unavailable, optimistically attempting to use %s instead\n"
@@ -4557,7 +4570,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/mainproc.c:561
  msgid "decryption okay\n"
-@@ -5158,7 +5044,7 @@
+@@ -5158,7 +5045,7 @@
  
  #: g10/mainproc.c:695
  msgid "WARNING: multiple plaintexts seen\n"
@@ -4566,7 +4579,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/mainproc.c:836
  msgid "standalone revocation - use \"gpg --import\" to apply\n"
-@@ -5166,61 +5052,59 @@
+@@ -5166,61 +5053,59 @@
  "osobny certyfikat uniewa¿nienia - u¿yj ,,gpg --import'' aby go wczytaæ\n"
  
  #: g10/mainproc.c:1189 g10/mainproc.c:1226
@@ -4644,7 +4657,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/mainproc.c:1926
  #, c-format
-@@ -5278,43 +5162,44 @@
+@@ -5278,43 +5163,44 @@
  msgstr "wykryto niepoprawny pakiet pierwotny w proc_tree()\n"
  
  #: g10/misc.c:109 g10/misc.c:137 g10/misc.c:209
@@ -4703,7 +4716,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/misc.c:652
  #, c-format
-@@ -5329,22 +5214,23 @@
+@@ -5329,22 +5215,23 @@
  #: g10/misc.c:658
  #, c-format
  msgid "please use \"%s%s\" instead\n"
@@ -4733,7 +4746,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/misc.c:739
  msgid "Uncompressed"
-@@ -5352,9 +5238,8 @@
+@@ -5352,9 +5239,8 @@
  
  #. TRANSLATORS: See doc/TRANSLATE about this string.
  #: g10/misc.c:764
@@ -4744,7 +4757,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/misc.c:874
  #, c-format
-@@ -5362,14 +5247,14 @@
+@@ -5362,14 +5248,14 @@
  msgstr "ta wiadomo¶æ mo¿e nie daæ siê odczytaæ za pomoc± %s\n"
  
  #: g10/misc.c:1049
@@ -4763,7 +4776,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/openfile.c:89
  #, c-format
-@@ -5377,9 +5262,8 @@
+@@ -5377,9 +5263,8 @@
  msgstr "Plik ,,%s'' ju¿ istnieje. "
  
  #: g10/openfile.c:93
@@ -4774,7 +4787,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/openfile.c:126
  #, c-format
-@@ -5426,20 +5310,20 @@
+@@ -5426,20 +5311,20 @@
  msgstr "podpakiet typu %d ma ustawiony krytyczny bit\n"
  
  #: g10/passphrase.c:313 g10/passphrase.c:603
@@ -4800,7 +4813,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/passphrase.c:352
  msgid "Repeat passphrase\n"
-@@ -5454,29 +5338,28 @@
+@@ -5454,29 +5339,28 @@
  msgstr "anulowano przez u¿ytkownika\n"
  
  #: g10/passphrase.c:384 g10/passphrase.c:450
@@ -4837,7 +4850,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/photoid.c:72
  msgid ""
-@@ -5497,22 +5380,21 @@
+@@ -5497,22 +5381,21 @@
  msgstr "Nazwa pliku ze zdjêciem w formacie JPEG: "
  
  #: g10/photoid.c:115
@@ -4865,7 +4878,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "`%s' is not a JPEG file\n"
  msgstr ",,%s'' nie jest plikiem JPEG\n"
  
-@@ -5557,52 +5439,45 @@
+@@ -5557,52 +5440,45 @@
  msgstr "iImMwWpP"
  
  #: g10/pkclist.c:212
@@ -4931,7 +4944,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/pkclist.c:291
  #, c-format
-@@ -5610,41 +5485,40 @@
+@@ -5610,41 +5486,40 @@
  "The minimum trust level for this key is: %s\n"
  "\n"
  msgstr ""
@@ -4981,7 +4994,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid ""
  "It is NOT certain that the key belongs to the person named\n"
  "in the user ID.  If you *really* know what you are doing,\n"
-@@ -5653,12 +5527,10 @@
+@@ -5653,12 +5528,10 @@
  "NIE MA pewno¶ci, czy klucz nale¿y do osoby wymienionej w identyfikatorze.\n"
  "Je¶li nie masz co do tego ¿adnych w±tpliwo¶ci i *naprawdê* wiesz co robisz,\n"
  "mo¿esz odpowiedzieæ ,,tak'' na nastêpne pytanie.\n"
@@ -4995,7 +5008,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/pkclist.c:512
  msgid "WARNING: Using untrusted key!\n"
-@@ -5667,7 +5539,7 @@
+@@ -5667,7 +5540,7 @@
  #: g10/pkclist.c:519
  msgid "WARNING: this key might be revoked (revocation key not present)\n"
  msgstr ""
@@ -5004,7 +5017,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  "             (brak klucza uniewa¿niaj±cego aby to sprawdziæ)\n"
  
  #: g10/pkclist.c:528
-@@ -5679,9 +5551,8 @@
+@@ -5679,9 +5552,8 @@
  msgstr "OSTRZE¯ENIE: Ten klucz zosta³ uniewa¿niony przez w³a¶ciciela!\n"
  
  #: g10/pkclist.c:532
@@ -5015,7 +5028,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/pkclist.c:538
  msgid "WARNING: This subkey has been revoked by its owner!\n"
-@@ -5689,25 +5560,27 @@
+@@ -5689,25 +5561,27 @@
  
  #: g10/pkclist.c:543
  msgid "Note: This key has been disabled.\n"
@@ -5046,7 +5059,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/pkclist.c:601
  msgid "Note: This key has expired!\n"
-@@ -5755,11 +5628,11 @@
+@@ -5755,11 +5629,11 @@
  
  #: g10/pkclist.c:895
  msgid "You did not specify a user ID. (you may use \"-r\")\n"
@@ -5060,7 +5073,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/pkclist.c:945
  msgid ""
-@@ -5786,7 +5659,7 @@
+@@ -5786,7 +5660,7 @@
  msgstr "pominiêty: zosta³ ju¿ wybrany w innej opcji\n"
  
  #: g10/pkclist.c:1044
@@ -5069,7 +5082,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "unknown default recipient \"%s\"\n"
  msgstr "nieznany domy¶lny adresat ,,%s''\n"
  
-@@ -5800,14 +5673,14 @@
+@@ -5800,14 +5674,14 @@
  msgstr "brak poprawnych adresatów\n"
  
  #: g10/pkclist.c:1478
@@ -5088,7 +5101,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/plaintext.c:95
  msgid "data not saved; use option \"--output\" to save it\n"
-@@ -5836,14 +5709,14 @@
+@@ -5836,14 +5710,14 @@
  msgstr "nie mo¿na otworzyæ podpisanego pliku ,,%s''\n"
  
  #: g10/plaintext.c:599
@@ -5107,7 +5120,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/pubkey-enc.c:136
  msgid "okay, we are the anonymous recipient.\n"
-@@ -5851,22 +5724,22 @@
+@@ -5851,22 +5725,22 @@
  
  #: g10/pubkey-enc.c:225
  msgid "old encoding of the DEK is not supported\n"
@@ -5136,7 +5149,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/pubkey-enc.c:310
  msgid "NOTE: key has been revoked"
-@@ -5879,9 +5752,9 @@
+@@ -5879,9 +5753,9 @@
  msgstr "wywo³anie funkcji build_packet nie powiod³o siê: %s\n"
  
  #: g10/revoke.c:145
@@ -5148,7 +5161,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/revoke.c:306
  msgid "To be revoked by:\n"
-@@ -5889,10 +5762,9 @@
+@@ -5889,10 +5763,9 @@
  
  #: g10/revoke.c:310
  msgid "(This is a sensitive revocation key)\n"
@@ -5160,7 +5173,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "Create a designated revocation certificate for this key? (y/N) "
  msgstr "Stworzyæ certyfikat uniewa¿nienia tego klucza? (t/N) "
  
-@@ -5910,12 +5782,12 @@
+@@ -5910,12 +5783,12 @@
  msgstr "Certyfikat uniewa¿nienia zosta³ utworzony.\n"
  
  #: g10/revoke.c:411
@@ -5175,7 +5188,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "secret key \"%s\" not found: %s\n"
  msgstr "klucz prywatny ,,%s'' nie zosta³ odnaleziony: %s\n"
  
-@@ -5926,10 +5798,9 @@
+@@ -5926,10 +5799,9 @@
  
  #: g10/revoke.c:510
  msgid "public key does not match secret key!\n"
@@ -5187,7 +5200,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "Create a revocation certificate for this key? (y/N) "
  msgstr "Stworzyæ certyfikat uniewa¿nienia tego klucza? (t/N) "
  
-@@ -5992,9 +5863,8 @@
+@@ -5992,9 +5864,8 @@
  msgstr "(nie podano)\n"
  
  #: g10/revoke.c:723
@@ -5198,7 +5211,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/seckey-cert.c:55
  msgid "secret key parts are not available\n"
-@@ -6006,9 +5876,9 @@
+@@ -6006,9 +5877,9 @@
  msgstr "algorytm ochrony %d%s nie jest obs³ugiwany\n"
  
  #: g10/seckey-cert.c:72
@@ -5210,7 +5223,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/seckey-cert.c:291
  msgid "Invalid passphrase; please try again"
-@@ -6021,8 +5891,7 @@
+@@ -6021,8 +5892,7 @@
  
  #: g10/seckey-cert.c:361
  msgid "WARNING: Weak key detected - please change passphrase again.\n"
@@ -5220,7 +5233,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/seckey-cert.c:404
  msgid "generating the deprecated 16-bit checksum for secret key protection\n"
-@@ -6042,81 +5911,80 @@
+@@ -6042,81 +5912,80 @@
  
  #: g10/seskey.c:227 sm/certcheck.c:89
  msgid "DSA requires the hash length to be a multiple of 8 bits\n"
@@ -5327,7 +5340,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/sign.c:82
  msgid "can't put notation data into v3 (PGP 2.x style) signatures\n"
-@@ -6145,7 +6013,7 @@
+@@ -6145,7 +6014,7 @@
  "w podpisach dla PGP 2.x nie mo¿na umie¶ciæ URL-a do regulaminu podpisu\n"
  
  #: g10/sign.c:142
@@ -5336,7 +5349,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid ""
  "WARNING: unable to %%-expand policy URL (too large).  Using unexpanded.\n"
  msgstr ""
-@@ -6153,13 +6021,13 @@
+@@ -6153,13 +6022,13 @@
  "           (jest zbyt d³ugi). U¿yty zostanie nie rozwiniêty.\n"
  
  #: g10/sign.c:170
@@ -5353,7 +5366,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/sign.c:343
  #, c-format
-@@ -6167,9 +6035,9 @@
+@@ -6167,9 +6036,9 @@
  msgstr "sprawdzenie z³o¿onego podpisu nie powiod³o siê: %s\n"
  
  #: g10/sign.c:352
@@ -5365,7 +5378,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/sign.c:788
  msgid "you can only detach-sign with PGP 2.x style keys while in --pgp2 mode\n"
-@@ -6178,10 +6046,12 @@
+@@ -6178,10 +6047,12 @@
  "podpisów\n"
  
  #: g10/sign.c:864
@@ -5380,7 +5393,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/sign.c:991
  msgid "signing:"
-@@ -6199,16 +6069,16 @@
+@@ -6199,16 +6070,16 @@
  #: g10/skclist.c:149 g10/skclist.c:213
  msgid "key is not flagged as insecure - can't use it with the faked RNG!\n"
  msgstr ""
@@ -5400,7 +5413,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  msgid "skipped \"%s\": %s\n"
  msgstr "pominiêty ,,%s'': %s\n"
  
-@@ -6217,11 +6087,10 @@
+@@ -6217,11 +6088,10 @@
  msgstr "pominiêty: klucz prywatny jest ju¿ wpisany\n"
  
  #: g10/skclist.c:208
@@ -5414,7 +5427,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/tdbdump.c:58 g10/trustdb.c:360
  #, c-format
-@@ -6235,41 +6104,38 @@
+@@ -6235,41 +6105,38 @@
  "# (Use \"gpg --import-ownertrust\" to restore them)\n"
  msgstr ""
  "# Lista przypisanych warto¶ci zaufania, stworzona %s\n"
@@ -5467,7 +5480,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/tdbdump.c:226 g10/trustdb.c:375
  #, c-format
-@@ -6291,9 +6157,9 @@
+@@ -6291,9 +6158,9 @@
  msgstr "zbyt du¿e zlecenie dla bazy zaufania\n"
  
  #: g10/tdbio.c:498
@@ -5479,7 +5492,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/tdbio.c:513
  #, c-format
-@@ -6301,14 +6167,14 @@
+@@ -6301,14 +6168,14 @@
  msgstr "%s: katalog nie istnieje!\n"
  
  #: g10/tdbio.c:523 g10/tdbio.c:546 g10/tdbio.c:587 sm/keydb.c:221
@@ -5498,7 +5511,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/tdbio.c:551
  #, c-format
-@@ -6421,25 +6287,24 @@
+@@ -6421,25 +6288,24 @@
  msgstr ",,%s'' nie jest poprawnym d³ugim numerem klucza\n"
  
  #: g10/trustdb.c:252
@@ -5532,7 +5545,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/trustdb.c:339
  #, c-format
-@@ -6455,67 +6320,64 @@
+@@ -6455,67 +6321,64 @@
  #, c-format
  msgid "unable to use unknown trust model (%d) - assuming %s trust model\n"
  msgstr ""
@@ -5614,7 +5627,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/trustdb.c:571
  msgid "no need for a trustdb check\n"
-@@ -6527,19 +6389,19 @@
+@@ -6527,19 +6390,19 @@
  msgstr "nastêpne sprawdzanie bazy odbêdzie siê %s\n"
  
  #: g10/trustdb.c:586
@@ -5640,7 +5653,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/trustdb.c:1028
  msgid "please do a --check-trustdb\n"
-@@ -6559,25 +6421,29 @@
+@@ -6559,25 +6422,29 @@
  msgstr "brak absolutnie zaufanych kluczy\n"
  
  #: g10/trustdb.c:2168
@@ -5675,7 +5688,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: g10/verify.c:118
  msgid ""
-@@ -6595,44 +6461,42 @@
+@@ -6595,74 +6462,67 @@
  msgstr "linia wej¶cia %u zbyt d³uga lub brak znaku LF\n"
  
  #: g10/verify.c:250
@@ -5686,84 +5699,88 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
 +msgstr "nie mo¿na otworzyæ fd %d: %s\n"
  
  #: jnlib/argparse.c:176
- #, fuzzy
+-#, fuzzy
  msgid "argument not expected"
 -msgstr "zapisujê klucz tajny w '%s'\n"
-+msgstr "Argument nie jest dozwolony"
++msgstr "nieoczekiwany argument"
  
  #: jnlib/argparse.c:178
 -#, fuzzy
  msgid "read error"
 -msgstr "b³±d przy odczycie pliku"
-+msgstr ""
++msgstr "b³±d odczytu"
  
  #: jnlib/argparse.c:180
- #, fuzzy
+-#, fuzzy
  msgid "keyword too long"
 -msgstr "linia zbyt d³uga\n"
-+msgstr "linia zbyt d³uga"
++msgstr "s³owo kluczowe zbyt d³ugie"
  
  #: jnlib/argparse.c:182
 -#, fuzzy
  msgid "missing argument"
 -msgstr "b³êdny argument"
-+msgstr ""
++msgstr "brak argumentu"
  
  #: jnlib/argparse.c:184
- #, fuzzy
+-#, fuzzy
  msgid "invalid command"
 -msgstr "sprzeczne polecenia\n"
-+msgstr "Polecenie tylko dla administratora\n"
++msgstr "b³êdne polecenie"
  
  #: jnlib/argparse.c:186
- #, fuzzy
+-#, fuzzy
  msgid "invalid alias definition"
 -msgstr "niepoprawne opcje wczytania kluczy\n"
-+msgstr "niepoprawne opcje wypisywania\n"
++msgstr "b³êdna definicja aliasu"
  
  #: jnlib/argparse.c:188
- #, fuzzy
+-#, fuzzy
  msgid "invalid option"
 -msgstr "niepoprawne opcje wczytania kluczy\n"
-+msgstr "niepoprawne opcje wypisywania\n"
++msgstr "b³êdna opcja"
  
  #: jnlib/argparse.c:196
  #, c-format
-@@ -6640,19 +6504,19 @@
- msgstr ""
+ msgid "missing argument for option \"%.50s\"\n"
+-msgstr ""
++msgstr "brak argumentu dla opcji ,,%.50s''\n"
  
  #: jnlib/argparse.c:198
--#, c-format
-+#, fuzzy, c-format
+ #, c-format
  msgid "option \"%.50s\" does not expect an argument\n"
 -msgstr ""
-+msgstr "opcja ,,%s'' wymaga programu i opcjonalnych argumentów\n"
++msgstr "opcja ,,%.50s'' nie mo¿e mieæ argumentów\n"
  
  #: jnlib/argparse.c:201
- #, fuzzy, c-format
+-#, fuzzy, c-format
++#, c-format
  msgid "invalid command \"%.50s\"\n"
 -msgstr "Niepoprawna komenda  (spróbuj \"help\")\n"
-+msgstr "Niepoprawne polecenie  (spróbuj ,,help'')\n"
++msgstr "b³êdne polecenie ,,%.50s''\n"
  
  #: jnlib/argparse.c:203
--#, c-format
-+#, fuzzy, c-format
+ #, c-format
  msgid "option \"%.50s\" is ambiguous\n"
 -msgstr ""
-+msgstr "opcja ,,%s'' zignorowana z powodu ,,%s''\n"
++msgstr "opcja ,,%.50s'' jest niejednoznaczna\n"
  
  #: jnlib/argparse.c:205
  #, c-format
-@@ -6662,7 +6526,7 @@
+ msgid "command \"%.50s\" is ambiguous\n"
+-msgstr ""
++msgstr "polecenie ,,%.50s'' jest niejednoznaczne\n"
+ 
  #: jnlib/argparse.c:207
- #, fuzzy, c-format
+-#, fuzzy, c-format
++#, c-format
  msgid "invalid option \"%.50s\"\n"
 -msgstr "niepoprawne opcje wczytania kluczy\n"
-+msgstr "niepoprawne opcje wypisywania\n"
++msgstr "b³êdna opcja ,,%.50s''\n"
  
  #: jnlib/logging.c:624
  #, c-format
-@@ -6670,1060 +6534,1005 @@
+@@ -6670,1060 +6530,1005 @@
  msgstr "znalaz³e¶(a¶) b³±d w programie ... (%s:%d)\n"
  
  #: jnlib/utf8conv.c:86
@@ -7098,7 +7115,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: sm/qualified.c:225
  #, c-format
-@@ -7735,12 +7544,19 @@
+@@ -7735,12 +7540,19 @@
  "\n"
  "%s%sAre you really sure that you want to do this?"
  msgstr ""
@@ -7118,7 +7135,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: sm/qualified.c:327
  #, c-format
-@@ -7749,159 +7565,155 @@
+@@ -7749,345 +7561,330 @@
  "\"%s\"\n"
  "Note, that this certificate will NOT create a qualified signature!"
  msgstr ""
@@ -7321,7 +7338,13 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: tools/gpgconf-comp.c:526
  msgid "Options enforcing a passphrase policy"
-@@ -7913,7 +7725,7 @@
+-msgstr ""
++msgstr "Opcje wymuszaj±ce politykê hase³"
+ 
+ #: tools/gpgconf-comp.c:529
+ msgid "do not allow to bypass the passphrase policy"
+-msgstr ""
++msgstr "nie zezwalanie na pominiêcie polityki hase³"
  
  #: tools/gpgconf-comp.c:533
  msgid "|N|set minimal required length for new passphrases to N"
@@ -7330,18 +7353,25 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: tools/gpgconf-comp.c:537
  msgid "|N|require at least N non-alpha characters for a new passphrase"
-@@ -7926,66 +7738,64 @@
+-msgstr ""
++msgstr "|N|wymaganie przynajmniej N znaków niealfanumerycznych w nowym ha¶le"
+ 
+ #: tools/gpgconf-comp.c:541
+ msgid "|FILE|check new passphrases against pattern in FILE"
+-msgstr ""
++msgstr "|PLIK|sprawdzanie nowych hase³ pod k±tem wzorców z PLIKU"
+ 
  #: tools/gpgconf-comp.c:545
- #, fuzzy
+-#, fuzzy
  msgid "|N|expire the passphrase after N days"
 -msgstr "|N|N-ty tryb obliczania has³a"
-+msgstr "|N|przedawnienie pamiêtanych PIN-ów po N sekundach"
++msgstr "|N|przedawnianie hase³ po N dniach"
  
  #: tools/gpgconf-comp.c:549
- #, fuzzy
+-#, fuzzy
  msgid "do not allow the reuse of old passphrases"
 -msgstr "b³±d podczas tworzenia has³a: %s\n"
-+msgstr "zezwolenie na predefiniowane has³o"
++msgstr "nie zezwalanie na ponowne u¿ycie starych hase³"
  
  #: tools/gpgconf-comp.c:650 tools/gpgconf-comp.c:712
 -#, fuzzy
@@ -7412,7 +7442,8 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: tools/gpgconf.c:58
  msgid "check all programs"
-@@ -7993,101 +7803,94 @@
+-msgstr ""
++msgstr "sprawdzenie wszystkich programów"
  
  #: tools/gpgconf.c:59
  msgid "|COMPONENT|list options"
@@ -7537,7 +7568,7 @@ diff -urN gnupg-2.0.7.org/po/pl.po gnupg-2.0.7/po/pl.po
  
  #: tools/symcryptrun.c:210
  msgid ""
-@@ -8095,1684 +7898,126 @@
+@@ -8095,1684 +7892,126 @@
  "[options...] COMMAND [inputfile]\n"
  "Call a simple symmetric encryption tool\n"
  msgstr ""
