@@ -7,7 +7,7 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 Version:	2.0.7
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
@@ -195,6 +195,7 @@ sed -i -e 's#gl_AC_TYPE_LONG_LONG#AC_TYPE_LONG_LONG_INT#g' gl/m4/allocsa.m4
 	--enable-gpg \
 	--enable-symcryptrun \
 	--with-capabilities \
+	--with-pinentry-pgm=%{_bindir}/pinentry-curses \
 	--with-mailprog=/usr/lib/sendmail
 
 %{__make} -j1
