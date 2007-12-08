@@ -34,6 +34,7 @@ BuildRequires:	pcsc-lite-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
+Suggests:	gpg-agent
 Requires:	gnupg2-common = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
