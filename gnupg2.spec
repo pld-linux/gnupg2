@@ -199,7 +199,7 @@ sed -i -e 's#gl_AC_TYPE_LONG_LONG#AC_TYPE_LONG_LONG_INT#g' gl/m4/allocsa.m4
 	--with-pinentry-pgm=%{_bindir}/pinentry-curses \
 	--with-mailprog=/usr/lib/sendmail
 
-%{__make} -j1
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
