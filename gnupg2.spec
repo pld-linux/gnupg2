@@ -211,8 +211,6 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
-ln -s %{_libexecdir}/gpg-preset-passphrase $RPM_BUILD_ROOT%{_bindir}
-
 mv ChangeLog main-ChangeLog || :
 find -name ChangeLog | awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); print "cp " src " " dst}' | sh
 
@@ -294,7 +292,6 @@ EOF
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_bindir}/symcryptrun
-%attr(755,root,root) %{_bindir}/gpg-preset-passphrase
 %attr(755,root,root) %{_libexecdir}/gnupg-pcsc-wrapper
 %attr(755,root,root) %{_libexecdir}/gpg-check-pattern
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
