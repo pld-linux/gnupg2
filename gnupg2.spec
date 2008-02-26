@@ -28,7 +28,7 @@ BuildRequires:	libgcrypt-devel >= 1.2.2
 BuildRequires:	libgpg-error-devel >= 1.4
 BuildRequires:	libksba-devel >= 1.0.2
 BuildRequires:	libusb-devel
-BuildRequires:	openldap-devel >= 2.4.6
+BuildRequires:	openldap-devel
 BuildRequires:	pcsc-lite-devel
 %{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
 BuildRequires:	rpmbuild(macros) >= 1.177
