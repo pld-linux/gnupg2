@@ -1,5 +1,5 @@
---- gnupg-2.0.8/po/pl.po.orig	2007-12-14 17:00:20.000000000 +0100
-+++ gnupg-2.0.8/po/pl.po	2008-01-05 17:09:46.178821853 +0100
+--- gnupg-2.0.9/po/pl.po.orig	2008-03-26 10:01:21.000000000 +0100
++++ gnupg-2.0.9/po/pl.po	2008-05-29 23:06:25.025569566 +0200
 @@ -3,14 +3,14 @@
  #               2007 Free Software Foundation, Inc.
  # Janusz A. Urbanowicz <alex@bofh.net.pl>, 1999, 2000, 2001, 2002, 
@@ -10,18 +10,18 @@
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-2.0.7\n"
-+"Project-Id-Version: gnupg-2.0.8\n"
++"Project-Id-Version: gnupg-2.0.9\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2007-12-14 17:00+0100\n"
+ "POT-Creation-Date: 2008-03-26 10:01+0100\n"
 -"PO-Revision-Date: 2007-11-26 19:01+0100\n"
-+"PO-Revision-Date: 2008-01-05 16:10+0100\n"
++"PO-Revision-Date: 2008-05-29 23:01+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
 @@ -40,9 +40,8 @@
  #. TRANSLATORS: This string is displayed by pinentry as the
  #. label for the quality bar.
- #: agent/call-pinentry.c:586
+ #: agent/call-pinentry.c:632
 -#, fuzzy
  msgid "Quality:"
 -msgstr "poprawno¶æ: %s"
@@ -30,13 +30,13 @@
  #. TRANSLATORS: This string is a tooltip, shown by pinentry
  #. when hovering over the quality bar.  Please use an
 @@ -53,6 +52,8 @@
- #: agent/call-pinentry.c:609
+ #: agent/call-pinentry.c:655
  msgid "pinentry.qualitybar.tooltip"
  msgstr ""
 +"Jako¶æ wprowadzonego wy¿ej tekstu.\n"
 +"Szczegó³y odno¶nie kryteriów mo¿na uzyskaæ od administratora."
  
- #: agent/call-pinentry.c:651
+ #: agent/call-pinentry.c:697
  #, c-format
 @@ -207,7 +208,7 @@
  msgstr "Przyjmij je mimo to"
@@ -119,18 +119,18 @@
  msgid "a gpg-agent is already running - not starting a new one\n"
  msgstr "gpg-agent ju¿ dzia³a - nie uruchamianie nowego\n"
  
- #: agent/gpg-agent.c:1377 scd/scdaemon.c:978
+ #: agent/gpg-agent.c:1377 scd/scdaemon.c:980
 -#, fuzzy
  msgid "error getting nonce for the socket\n"
 -msgstr "b³±d podczas odczytu nowego PIN-u: %s\n"
 +msgstr "b³±d podczas odczytu identyfikatora gniazda\n"
  
- #: agent/gpg-agent.c:1382 scd/scdaemon.c:981
+ #: agent/gpg-agent.c:1382 scd/scdaemon.c:983
  #, c-format
 @@ -492,9 +492,9 @@
  msgstr "nie mo¿na u¿yæ ,,%s'' jako katalogu domowego\n"
  
- #: agent/gpg-agent.c:1602 scd/scdaemon.c:1013
+ #: agent/gpg-agent.c:1602 scd/scdaemon.c:1015
 -#, fuzzy, c-format
 +#, c-format
  msgid "error reading nonce on fd %d: %s\n"
@@ -283,28 +283,28 @@
 -msgstr "eksport certyfikatów"
 +msgstr "Za³±czone certyfikaty"
  
- #: common/audit.c:965
+ #: common/audit.c:968
  msgid "No audit log entries."
 -msgstr ""
 +msgstr "Brak wpisów logu audytowego."
  
- #: common/audit.c:1014
+ #: common/audit.c:1017
 -#, fuzzy
  msgid "Unknown operation"
 -msgstr "nieznana opcja ,,%s''\n"
 +msgstr "Nieznana operacja"
  
- #: common/audit.c:1032
+ #: common/audit.c:1035
  msgid "Gpg-Agent usable"
 -msgstr ""
 +msgstr "Gpg-Agent dostêpny"
  
- #: common/audit.c:1042
+ #: common/audit.c:1045
  msgid "Dirmngr usable"
 -msgstr ""
 +msgstr "Dirmngr dostêpny"
  
- #: common/audit.c:1078
+ #: common/audit.c:1081
 -#, fuzzy, c-format
 +#, c-format
  msgid "No help available for `%s'."
@@ -333,22 +333,22 @@
 @@ -1856,9 +1836,8 @@
  msgstr "kanoniczny format tekstowy"
  
- #: g10/gpg.c:466 sm/gpgsm.c:342
+ #: g10/gpg.c:466 sm/gpgsm.c:343
 -#, fuzzy
  msgid "|FILE|write output to FILE"
 -msgstr "|PLIK|odczyt opcji z PLIKU"
 +msgstr "|PLIK|zapis wyj¶cia do PLIKU"
  
- #: g10/gpg.c:479 kbx/kbxutil.c:90 sm/gpgsm.c:353 tools/gpgconf.c:74
+ #: g10/gpg.c:479 kbx/kbxutil.c:90 sm/gpgsm.c:354 tools/gpgconf.c:74
  msgid "do not make any changes"
 @@ -1950,7 +1929,7 @@
  
- #: g10/gpg.c:814 sm/gpgsm.c:605
+ #: g10/gpg.c:815 sm/gpgsm.c:607
  msgid "Used libraries:"
 -msgstr ""
 +msgstr "U¿ywane biblioteki:"
  
- #: g10/gpg.c:922
+ #: g10/gpg.c:923
  msgid "usage: gpg [options] "
 @@ -3629,12 +3608,10 @@
  msgstr "Czy na pewno chcesz uniewa¿niæ ten podklucz? (t/N) "
@@ -365,18 +365,118 @@
  
  #: g10/keyedit.c:2140
  msgid "Set preference list to:\n"
-@@ -5053,9 +5030,8 @@
+@@ -5053,9 +5030,9 @@
  "OSTRZE¯ENIE: u¿ycie eksperymentalnego algorytmu klucza publicznego %s\n"
  
  #: g10/misc.c:294
 -#, fuzzy
  msgid "WARNING: Elgamal sign+encrypt keys are deprecated\n"
 -msgstr "OSTRZE¯ENIE: algorytm skrótu %s jest odradzany\n"
-+msgstr "OSTRZE¯ENIE: klucze do podpisywania i szyfrowania Elgamala s± odradzane\n"
++msgstr ""
++"OSTRZE¯ENIE: klucze do podpisywania i szyfrowania Elgamala s± odradzane\n"
  
  #: g10/misc.c:307
  #, c-format
-@@ -7056,53 +7032,52 @@
+@@ -5195,7 +5172,7 @@
+ msgstr " (ID g³ównego klucza %s)"
+ 
+ #: g10/passphrase.c:309
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Please enter the passphrase to unlock the secret key for the OpenPGP "
+ "certificate:\n"
+@@ -5203,9 +5180,10 @@
+ "%u-bit %s key, ID %s,\n"
+ "created %s%s.\n"
+ msgstr ""
+-"Musisz podaæ has³o aby odbezpieczyæ klucz tajny u¿ytkownika:\n"
++"Proszê podaæ has³o aby odbezpieczyæ klucz tajny certyfikatu OpenPGP:\n"
+ ",,%.*s''.\n"
+-"Klucz o d³ugo¶ci %u bitów, typ %s, ID %s, stworzony %s%s\n"
++"Klucz o d³ugo¶ci %u bitów, typ %s, ID %s,\n"
++"stworzony %s%s\n"
+ 
+ #: g10/passphrase.c:335
+ msgid "Repeat passphrase\n"
+@@ -6516,17 +6494,16 @@
+ msgstr "Zosta³o %d prób PIN-u administratora do trwa³ego zablokowania karty\n"
+ 
+ #: scd/app-openpgp.c:1491
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "|A|Please enter the Admin PIN at the reader's keypad%%0A[remaining attempts: "
+ "%d]"
+ msgstr ""
+-"||Proszê wprowadziæ PIN na klawiaturze czytnika%%0A[podpisów wykonanych: %lu]"
++"|A|Proszê wprowadziæ PIN administratora na klawiaturze czytnika%%0A[pozosta³o prób: %d]"
+ 
+ #: scd/app-openpgp.c:1506
+-#, fuzzy
+ msgid "|A|Please enter the Admin PIN at the reader's keypad"
+-msgstr "||Proszê wprowadziæ PIN na klawiaturze czytnika"
++msgstr "|A|Proszê wprowadziæ PIN administratora na klawiaturze czytnika"
+ 
+ #. TRANSLATORS: Do not translate the "|A|" prefix but keep
+ #. it at the start of the string.  We need this elsewhere to
+@@ -6703,7 +6680,7 @@
+ #: sm/call-agent.c:138
+ #, c-format
+ msgid "failed to proxy %s inquiry to client\n"
+-msgstr ""
++msgstr "nie uda³o siê przekazaæ zapytania %s do klienta\n"
+ 
+ #: sm/call-dirmngr.c:212
+ #, c-format
+@@ -6772,19 +6749,18 @@
+ msgstr "liczba pasuj±cych wystawców: %d\n"
+ 
+ #: sm/certchain.c:544
+-#, fuzzy
+ msgid "looking up issuer from the Dirmngr cache\n"
+-msgstr "poszukiwanie wystawcy na zewn±trz\n"
++msgstr "poszukiwanie wystawcy w pamiêci podrêcznej Dirmngr\n"
+ 
+ #: sm/certchain.c:568
+-#, fuzzy, c-format
++#, c-format
+ msgid "number of matching certificates: %d\n"
+-msgstr "b³±d importu certyfikatu: %s\n"
++msgstr "liczba pasuj±cych certyfikatów: %d\n"
+ 
+ #: sm/certchain.c:570
+-#, fuzzy, c-format
++#, c-format
+ msgid "dirmngr cache-only key lookup failed: %s\n"
+-msgstr "zaciemnienie klucza nie powiod³o siê: %s\n"
++msgstr "wyszukiwanie klucza tylko w pamiêci podrêcznej dirmngr nie powiod³o siê: %s\n"
+ 
+ #: sm/certchain.c:740 sm/certchain.c:1227 sm/certchain.c:1831 sm/decrypt.c:259
+ #: sm/encrypt.c:349 sm/sign.c:327 sm/verify.c:113
+@@ -7001,7 +6977,7 @@
+ msgstr "[B³±d - niew³a¶ciwe DN]"
+ 
+ #: sm/certdump.c:955
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Please enter the passphrase to unlock the secret key for the X.509 "
+ "certificate:\n"
+@@ -7009,9 +6985,10 @@
+ "S/N %s, ID 0x%08lX,\n"
+ "created %s, expires %s.\n"
+ msgstr ""
+-"Proszê wprowadziæ has³o aby odbezpieczyæ klucz tajny dla:\n"
++"Proszê wprowadziæ has³o aby odbezpieczyæ klucz tajny certyfikatu X.509:\n"
+ ",,%s''\n"
+-"S/N %s, ID 0x%08lX, stworzony %s"
++"S/N %s, ID 0x%08lX,\n"
++"stworzony %s, wygasa %s.\n"
+ 
+ #: sm/certlist.c:122
+ msgid "no key usage specified - assuming all usages\n"
+@@ -7093,53 +7070,52 @@
  msgstr "linia %d: generowanie klucza nie powiod³o siê: %s <%s>\n"
  
  #: sm/certreqgen-ui.c:122
@@ -447,7 +547,7 @@
  
  #. TRANSLATORS: The 22 in the second string is the
  #. length of the first string up to the "%s".  Please
-@@ -7110,55 +7085,49 @@
+@@ -7147,55 +7123,50 @@
  #. second string is merely passed to atoi so you can
  #. drop everything after the number.
  #: sm/certreqgen-ui.c:220
@@ -505,8 +605,8 @@
  
  #: sm/certreqgen-ui.c:298
  msgid "Ready.  You should now send this request to your CA.\n"
--msgstr ""
-+msgstr "Gotowe. Teraz nale¿y wys³aæ to ¿±danie do w³asnego centrum certyfikacji.\n"
+ msgstr ""
++"Gotowe. Teraz nale¿y wys³aæ to ¿±danie do w³asnego centrum certyfikacji.\n"
  
  #: sm/certreqgen-ui.c:303
  msgid "resource problem: out or core\n"
@@ -515,24 +615,24 @@
  
  #: sm/decrypt.c:324
  msgid "(this is the RC2 algorithm)\n"
-@@ -7298,14 +7267,12 @@
+@@ -7335,14 +7306,12 @@
  msgstr "nie u¿ywanie w ogóle terminala"
  
- #: sm/gpgsm.c:346
+ #: sm/gpgsm.c:347
 -#, fuzzy
  msgid "|FILE|write a server mode log to FILE"
 -msgstr "|PLIK|zapisanie logów trybu serwerowego do PLIKu"
 +msgstr "|PLIK|zapisanie logów trybu serwerowego do PLIKU"
  
- #: sm/gpgsm.c:348
+ #: sm/gpgsm.c:349
 -#, fuzzy
  msgid "|FILE|write an audit log to FILE"
 -msgstr "|PLIK|zapisanie logów trybu serwerowego do PLIKu"
 +msgstr "|PLIK|zapisanie logów audytowych do PLIKU"
  
- #: sm/gpgsm.c:350
+ #: sm/gpgsm.c:351
  msgid "force v3 signatures"
-@@ -7595,13 +7562,12 @@
+@@ -7632,13 +7601,12 @@
  msgstr "nie u¿ywanie rozszerzonego trybu po³±czenia"
  
  #: tools/gpg-connect-agent.c:74
@@ -548,18 +648,37 @@
  
  #: tools/gpg-connect-agent.c:174
  msgid "Usage: gpg-connect-agent [options] (-h for help)"
-@@ -7732,9 +7698,8 @@
+@@ -7769,18 +7737,16 @@
  msgstr "Konfiguracja dla serwerów kluczy"
  
- #: tools/gpgconf-comp.c:671
+ #: tools/gpgconf-comp.c:679
 -#, fuzzy
  msgid "|URL|use keyserver at URL"
 -msgstr "niezrozumia³y URL serwera kluczy\n"
 +msgstr "|URL|u¿ycie serwera kluczy z URL-a"
  
- #: tools/gpgconf-comp.c:674
+ #: tools/gpgconf-comp.c:682
  msgid "allow PKA lookups (DNS requests)"
-@@ -7797,9 +7762,8 @@
+ msgstr "zezwolenie na wyszukiwania PKA (¿±dania DNS)"
+ 
+ #: tools/gpgconf-comp.c:727
+-#, fuzzy
+ msgid "disable all access to the dirmngr"
+-msgstr "przekazanie polecenia do dirmngr"
++msgstr "wy³±czenie wszelkiego dostêpu do dirmngr"
+ 
+ #: tools/gpgconf-comp.c:730
+ msgid "|NAME|use encoding NAME for PKCS#12 passphrases"
+@@ -7812,7 +7778,7 @@
+ 
+ #: tools/gpgconf-comp.c:888
+ msgid "LDAP server list"
+-msgstr ""
++msgstr "lista serwerów LDAP"
+ 
+ #: tools/gpgconf-comp.c:896
+ msgid "Configuration for OCSP"
+@@ -7843,9 +7809,8 @@
  msgstr "zastosowanie globalnych warto¶ci domy¶lnych"
  
  #: tools/gpgconf.c:65
@@ -570,7 +689,7 @@
  
  #: tools/gpgconf.c:67
  msgid "check global configuration file"
-@@ -8015,338 +7979,13 @@
+@@ -8061,338 +8026,13 @@
  msgstr "klasa %s nie jest obs³ugiwana\n"
  
  #: tools/gpg-check-pattern.c:145
