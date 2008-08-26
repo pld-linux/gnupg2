@@ -127,7 +127,7 @@ Summary:	GnuPG extension - agent
 Summary(pl.UTF-8):	Rozszerzenie GnuPG - agent
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
-Requires:	pinentry
+Requires:	pinentry >= 0.7.5-2
 Obsoletes:	newpg
 
 %description -n gnupg-agent
@@ -196,7 +196,7 @@ sed -i -e 's#gl_AC_TYPE_LONG_LONG#AC_TYPE_LONG_LONG_INT#g' gl/m4/allocsa.m4
 	--enable-gpg \
 	--enable-symcryptrun \
 	--with-capabilities \
-	--with-pinentry-pgm=%{_bindir}/pinentry-curses \
+	--with-pinentry-pgm=%{_bindir}/pinentry \
 	--with-mailprog=/usr/lib/sendmail
 
 %{__make}
