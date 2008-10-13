@@ -25,7 +25,7 @@ BuildRequires:	automake >= 1:1.10
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel >= 0.16.1
-BuildRequires:	libassuan-devel >= 1:1.0.2
+BuildRequires:	libassuan-devel >= 1:1.0.4
 BuildRequires:	libgcrypt-devel >= 1.2.2
 BuildRequires:	libgpg-error-devel >= 1.4
 BuildRequires:	libksba-devel >= 1.0.2
