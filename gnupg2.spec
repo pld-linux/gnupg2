@@ -18,6 +18,7 @@ Patch1:		%{name}-pth.patch
 Patch2:		%{name}-pl.po-update.patch
 Patch3:		%{name}-disable_tests.patch
 URL:		http://www.gnupg.org/
+BuildRequires:	adns-devel
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	bzip2-devel
@@ -109,6 +110,18 @@ GnuPG 2 plugin for allow talk to a HKP keyserver.
 
 %description plugin-keys_hkp -l pl.UTF-8
 Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP.
+
+%package plugin-keys_kdns
+Summary:	GnuPG 2 plugin for allow talk to a KDNS keyserver
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy KDNS
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_kdns
+GnuPG 2 plugin for allow talk to a KDNS keyserver.
+
+%description plugin-keys_kdns -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy KDNS.
 
 %package plugin-keys_ldap
 Summary:	GnuPG 2 plugin for allow talk to a LDAP keyserver
@@ -273,6 +286,10 @@ EOF
 %files plugin-keys_hkp
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libexecdir}/gpg2keys_hkp
+
+%files plugin-keys_kdns
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_kdns
 
 %files plugin-keys_ldap
 %defattr(644,root,root,755)
