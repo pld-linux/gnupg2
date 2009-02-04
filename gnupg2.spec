@@ -7,7 +7,7 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 Version:	2.0.10
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
@@ -28,7 +28,7 @@ BuildRequires:	libassuan-devel >= 1:1.0.4
 BuildRequires:	libgcrypt-devel >= 1.2.2
 BuildRequires:	libgpg-error-devel >= 1.4
 BuildRequires:	libksba-devel >= 1.0.2
-BuildRequires:	libusb-devel
+BuildRequires:	libusb-compat-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pcsc-lite-devel
 %{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
