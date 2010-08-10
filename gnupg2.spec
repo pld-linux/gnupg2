@@ -6,12 +6,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.0.14
+Version:	2.0.16
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	54732a0a76d59646b7e0b682fb357c22
+# Source0-md5:	88a4d46deca63d2eca29b2b611304afb
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -23,12 +23,12 @@ BuildRequires:	adns-devel
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	bzip2-devel
-BuildRequires:	curl-devel
-BuildRequires:	gettext-devel >= 0.16.1
-BuildRequires:	libassuan1-devel >= 1.0.5
-BuildRequires:	libgcrypt-devel >= 1.2.2
-BuildRequires:	libgpg-error-devel >= 1.4
-BuildRequires:	libksba-devel >= 1.0.2
+BuildRequires:	curl-devel >= 7.10
+BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	libassuan-devel >= 1:2.0.0
+BuildRequires:	libgcrypt-devel >= 1.4.0
+BuildRequires:	libgpg-error-devel >= 1.7
+BuildRequires:	libksba-devel >= 1.0.7
 BuildRequires:	libusb-compat-devel
 BuildRequires:	openldap-devel
 BuildRequires:	pcsc-lite-devel
@@ -63,10 +63,10 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan1 >= 1.0.2
-Requires:	libgcrypt >= 1.2.2
-Requires:	libgpg-error >= 1.4
-Requires:	libksba >= 1.0.2
+Requires:	libassuan >= 1:2.0.0
+Requires:	libgcrypt >= 1.4.0
+Requires:	libgpg-error >= 1.7
+Requires:	libksba >= 1.0.7
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description common
@@ -80,6 +80,7 @@ Summary:	GnuPG 2 plugin for allow talk to a HTTP/FTP keyserver
 Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HTTP/FTP
 Group:		Applications/File
 Requires:	%{name}-common = %{version}-%{release}
+Requires:	curl-libs >= 7.10
 
 %description plugin-keys_curl
 GnuPG 2 plugin for allow talk to a HTTP(S)/FTP(S) keyserver.
@@ -192,12 +193,10 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
-#%patch2 -p1
+%patch2 -p1
 %{!?with_tests:%patch3 -p1}
 
 rm -f po/stamp-po
-
-sed -i -e 's#gl_AC_TYPE_LONG_LONG#AC_TYPE_LONG_LONG_INT#g' gl/m4/allocsa.m4
 
 %build
 %{__gettextize}
@@ -234,10 +233,10 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %triggerpostun -n gnupg-agent -- gnupg-agent < 1.9.16-2
