@@ -1,6 +1,6 @@
---- gnupg-2.0.11/po/pl.po	2009-06-17 09:55:27.000000000 +0000
-+++ gnupg-2.0.11/po/pl.po	2009-08-14 15:27:19.000000000 +0000
-@@ -4,14 +4,15 @@
+--- gnupg-2.0.16/po/pl.po.orig	2010-07-19 09:06:51.000000000 +0200
++++ gnupg-2.0.16/po/pl.po	2010-08-10 07:50:07.398820781 +0200
+@@ -4,13 +4,14 @@
  # Janusz A. Urbanowicz <alex@bofh.net.pl>, 1999, 2000, 2001, 2002, 
  #                                           2003-2004(?).
  # fixes and updates by Jakub Bogusz <qboosh@pld-linux.org>, 2003-2007.
@@ -8,20 +8,35 @@
  #
  msgid ""
  msgstr ""
- "Project-Id-Version: gnupg-2.0.7\n"
+-"Project-Id-Version: gnupg-2.0.7\n"
++"Project-Id-Version: gnupg-2.0.16\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2009-06-17 11:55+0200\n"
+ "POT-Creation-Date: 2010-07-19 09:06+0200\n"
 -"PO-Revision-Date: 2007-11-26 19:01+0100\n"
--"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
-+"PO-Revision-Date: 2009-03-06 18:55+0100\n"
-+"Last-Translator: Adam Golebiowski <adamg@pld-linux.org>\n"
++"PO-Revision-Date: 2010-08-08 11:20+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
- "Content-Type: text/plain; charset=ISO-8859-2\n"
-@@ -27,9 +28,8 @@
+@@ -31,22 +32,21 @@
+ #. the second vertical bar.
+ #: agent/call-pinentry.c:401
+ msgid "|pinentry-label|_OK"
+-msgstr ""
++msgstr "|pinentry-label|_OK"
+ 
+ #: agent/call-pinentry.c:402
+ msgid "|pinentry-label|_Cancel"
+-msgstr ""
++msgstr "|pinentry-label|_Anuluj"
+ 
+ #: agent/call-pinentry.c:403
+ msgid "|pinentry-label|PIN:"
+-msgstr ""
++msgstr "|pinentry-label|PIN:"
+ 
  #. TRANSLATORS: This string is displayed by Pinentry as the label
  #. for the quality bar.
- #: agent/call-pinentry.c:584
+ #: agent/call-pinentry.c:649
 -#, fuzzy
  msgid "Quality:"
 -msgstr "poprawno¶æ: %s"
@@ -29,58 +44,81 @@
  
  #. TRANSLATORS: This string is a tooltip, shown by pinentry when
  #. hovering over the quality bar.  Please use an appropriate
-@@ -40,6 +40,8 @@
- #: agent/call-pinentry.c:606
+@@ -56,7 +56,7 @@
+ #. will be used.
+ #: agent/call-pinentry.c:671
  msgid "pinentry.qualitybar.tooltip"
- msgstr ""
-+"Jako¶æ wprowadzonego wy¿ej tekstu.\n"
-+"Szczegó³y odno¶nie kryteriów mo¿na uzyskaæ od administratora."
+-msgstr ""
++msgstr "Jako¶æ wpisanego wy¿ej tekstu.\nKryteria jako¶ci mo¿na uzyskaæ od administratora."
  
- #: agent/call-pinentry.c:650
+ #: agent/call-pinentry.c:715
  msgid ""
-@@ -182,7 +184,7 @@
+@@ -189,54 +189,50 @@
  
- #: agent/divert-scd.c:211
+ #: agent/divert-scd.c:92 g10/call-agent.c:863
+ msgid "Please insert the card with serial number"
+-msgstr ""
++msgstr "Proszê w³o¿yæ kartê z numerem seryjnym"
+ 
+ #: agent/divert-scd.c:93 g10/call-agent.c:864
+ msgid "Please remove the current card and insert the one with serial number"
+-msgstr ""
++msgstr "Proszê wyj±æ obecn± kartê i w³o¿yæ kartê z numerem seryjnym"
+ 
+ #: agent/divert-scd.c:200
+ msgid "Admin PIN"
+-msgstr "PIN administratora"
++msgstr "PIN administracyjny"
+ 
+ #. TRANSLATORS: A PUK is the Personal Unblocking Code
+ #. used to unblock a PIN.
+ #: agent/divert-scd.c:205
+ msgid "PUK"
+-msgstr ""
++msgstr "PUK"
+ 
+ #: agent/divert-scd.c:212
  msgid "Reset Code"
 -msgstr ""
 +msgstr "Kod resetuj±cy"
  
- #: agent/divert-scd.c:237
+ #: agent/divert-scd.c:238
  #, c-format
-@@ -190,28 +192,24 @@
- msgstr ""
+ msgid "%s%%0A%%0AUse the reader's keypad for input."
+-msgstr ""
++msgstr "%s%%0A%%0ADo wpisywania nale¿y u¿yæ klawiatury czytnika."
  
- #: agent/divert-scd.c:286
+ #: agent/divert-scd.c:287
 -#, fuzzy
  msgid "Repeat this Reset Code"
 -msgstr "Powtórz ten PIN"
 +msgstr "Powtórz ten kod resetuj±cy"
  
- #: agent/divert-scd.c:288
+ #: agent/divert-scd.c:289
 -#, fuzzy
  msgid "Repeat this PUK"
 -msgstr "Powtórz ten PIN"
 +msgstr "Powtórz ten PUK"
  
- #: agent/divert-scd.c:289
+ #: agent/divert-scd.c:290
  msgid "Repeat this PIN"
  msgstr "Powtórz ten PIN"
  
- #: agent/divert-scd.c:294
+ #: agent/divert-scd.c:295
 -#, fuzzy
  msgid "Reset Code not correctly repeated; try again"
 -msgstr "PIN nie powtórzony poprawnie; spróbuj jeszcze raz"
 +msgstr "Kod resetuj±cy nie powtórzony poprawnie; spróbuj jeszcze raz"
  
- #: agent/divert-scd.c:296
+ #: agent/divert-scd.c:297
 -#, fuzzy
  msgid "PUK not correctly repeated; try again"
 -msgstr "PIN nie powtórzony poprawnie; spróbuj jeszcze raz"
 +msgstr "PUK nie powtórzony poprawnie; spróbuj jeszcze raz"
  
- #: agent/divert-scd.c:297
+ #: agent/divert-scd.c:298
  msgid "PIN not correctly repeated; try again"
-@@ -242,7 +240,7 @@
+@@ -267,7 +263,7 @@
  msgstr "Przyjmij je mimo to"
  
  #: agent/genkey.c:193
@@ -89,7 +127,7 @@
  msgid ""
  "Warning: You have entered an insecure passphrase.%%0AA passphrase should be "
  "at least %u character long."
-@@ -250,17 +248,17 @@
+@@ -275,17 +271,17 @@
  "Warning: You have entered an insecure passphrase.%%0AA passphrase should be "
  "at least %u characters long."
  msgstr[0] ""
@@ -114,7 +152,7 @@
  msgid ""
  "Warning: You have entered an insecure passphrase.%%0AA passphrase should "
  "contain at least %u digit or%%0Aspecial character."
-@@ -268,23 +266,23 @@
+@@ -293,23 +289,23 @@
  "Warning: You have entered an insecure passphrase.%%0AA passphrase should "
  "contain at least %u digits or%%0Aspecial characters."
  msgstr[0] ""
@@ -147,50 +185,76 @@
  
  #: agent/genkey.c:253
  #, c-format
-@@ -484,18 +482,17 @@
+@@ -447,9 +443,8 @@
+ #: g10/gpg.c:814 g10/gpgv.c:114 kbx/kbxutil.c:113 scd/scdaemon.c:246
+ #: sm/gpgsm.c:519 tools/gpg-connect-agent.c:181 tools/gpgconf.c:102
+ #: tools/symcryptrun.c:203 tools/gpg-check-pattern.c:141
+-#, fuzzy
+ msgid "Please report bugs to <@EMAIL@>.\n"
+-msgstr "B³êdy prosimy zg³aszaæ na adres <"
++msgstr "B³êdy prosimy zg³aszaæ na adres <@EMAIL@>.\n"
+ 
+ #: agent/gpg-agent.c:341
+ msgid "Usage: gpg-agent [options] (-h for help)"
+@@ -514,18 +509,17 @@
  msgstr "nie mo¿na utworzyæ gniazda: %s\n"
  
- #: agent/gpg-agent.c:1460
+ #: agent/gpg-agent.c:1494
 -#, fuzzy, c-format
 +#, c-format
  msgid "socket name `%s' is too long\n"
 -msgstr "nazwa gniazda zbyt d³uga\n"
 +msgstr "nazwa gniazda `%s' zbyt d³uga\n"
  
- #: agent/gpg-agent.c:1478
+ #: agent/gpg-agent.c:1512
  msgid "a gpg-agent is already running - not starting a new one\n"
  msgstr "gpg-agent ju¿ dzia³a - nie uruchamianie nowego\n"
  
- #: agent/gpg-agent.c:1489 scd/scdaemon.c:1046
+ #: agent/gpg-agent.c:1523 scd/scdaemon.c:1077
 -#, fuzzy
  msgid "error getting nonce for the socket\n"
 -msgstr "b³±d podczas odczytu nowego PIN-u: %s\n"
 +msgstr "b³±d podczas pobierania nonce z gniazda\n"
  
- #: agent/gpg-agent.c:1494 scd/scdaemon.c:1049
+ #: agent/gpg-agent.c:1528 scd/scdaemon.c:1080
  #, c-format
-@@ -528,9 +525,9 @@
+@@ -558,9 +552,9 @@
  msgstr "nie mo¿na u¿yæ ,,%s'' jako katalogu domowego\n"
  
- #: agent/gpg-agent.c:1727 scd/scdaemon.c:1081
+ #: agent/gpg-agent.c:1764 scd/scdaemon.c:1112
 -#, fuzzy, c-format
 +#, c-format
  msgid "error reading nonce on fd %d: %s\n"
 -msgstr "b³±d odczytu z %s: %s\n"
 +msgstr "b³±d odczytu nonce z fd %d: %s\n"
  
- #: agent/gpg-agent.c:1749
+ #: agent/gpg-agent.c:1786
  #, c-format
-@@ -918,168 +915,148 @@
+@@ -779,7 +773,7 @@
+ 
+ #: agent/trustlist.c:668
+ msgid "Wrong"
+-msgstr ""
++msgstr "Odrzuæ"
+ 
+ #: agent/findkey.c:156
+ #, c-format
+@@ -948,181 +942,159 @@
  msgstr "brak miejsca podczas przydzielania %lu bajtów"
  
- #: common/asshelp.c:244 tools/gpg-connect-agent.c:2101
+ #: common/asshelp.c:293 tools/gpg-connect-agent.c:2129
 -#, fuzzy
  msgid "no running gpg-agent - starting one\n"
 -msgstr "dirmngr nie dzia³a - uruchamianie ,,%s''\n"
 +msgstr "gpg-agent nie dzia³a - uruchamianie\n"
  
  #: common/asshelp.c:349
+ #, c-format
+ msgid "waiting %d seconds for the agent to come up\n"
+-msgstr ""
++msgstr "oczekiwanie (%d s) na uruchomienie agenta\n"
+ 
+ #: common/asshelp.c:426
 -#, fuzzy
  msgid "can't connect to the agent - trying fall back\n"
 -msgstr "nie mo¿na po³±czyæ siê z dirmngr - próba fallbacku\n"
@@ -201,17 +265,17 @@
  #: common/audit.c:474
  msgid "|audit-log-result|Good"
 -msgstr ""
-+msgstr "|autid-log-result|Dobry"
++msgstr "|audit-log-result|Dobry"
  
  #: common/audit.c:477
  msgid "|audit-log-result|Bad"
 -msgstr ""
-+msgstr "|autit-log-result|Z³y"
++msgstr "|audit-log-result|Z³y"
  
  #: common/audit.c:479
  msgid "|audit-log-result|Not supported"
 -msgstr ""
-+msgstr "|audit-log-result|Nie wspierany"
++msgstr "|audit-log-result|Nieobs³ugiwany"
  
  #: common/audit.c:481
 -#, fuzzy
@@ -220,47 +284,77 @@
 +msgstr "|audit-log-result|Brak certyfikatu"
  
  #: common/audit.c:483
+-#, fuzzy
+ msgid "|audit-log-result|Not enabled"
+-msgstr "import certyfikatów"
++msgstr "|audit-log-result|Nie w³±czony"
+ 
+ #: common/audit.c:485
  msgid "|audit-log-result|Error"
 -msgstr ""
 +msgstr "|audit-log-result|B³±d"
  
- #: common/audit.c:716
+ #: common/audit.c:487
+-#, fuzzy
+ msgid "|audit-log-result|Not used"
+-msgstr "import certyfikatów"
++msgstr "|audit-log-result|Nie u¿ywany"
+ 
+ #: common/audit.c:489
+-#, fuzzy
+ msgid "|audit-log-result|Okay"
+-msgstr "import certyfikatów"
++msgstr "|audit-log-result|OK"
+ 
+ #: common/audit.c:491
+-#, fuzzy
+ msgid "|audit-log-result|Skipped"
+-msgstr "import certyfikatów"
++msgstr "|audit-log-result|Pominiêto"
+ 
+ #: common/audit.c:493
+-#, fuzzy
+ msgid "|audit-log-result|Some"
+-msgstr "import certyfikatów"
++msgstr "|audit-log-result|Czê¶ciowo"
+ 
+ #: common/audit.c:726
 -#, fuzzy
  msgid "Certificate chain available"
 -msgstr "³añcuch certyfikatów zbyt d³ugi\n"
-+msgstr "£añcuch certyfikatów dostepny"
++msgstr "£añcuch certyfikatów dostêpny"
  
- #: common/audit.c:723
+ #: common/audit.c:733
 -#, fuzzy
  msgid "root certificate missing"
 -msgstr "certyfikat g³ówny jest dobry\n"
-+msgstr "certyfikat g³ówny niedostêpny"
++msgstr "brak certyfikatu g³ównego"
  
- #: common/audit.c:749
+ #: common/audit.c:759
  msgid "Data encryption succeeded"
 -msgstr ""
 +msgstr "Szyfrowanie danych zakoñczone"
  
- #: common/audit.c:754 common/audit.c:815 common/audit.c:835 common/audit.c:859
+ #: common/audit.c:764 common/audit.c:830 common/audit.c:906 common/audit.c:997
 -#, fuzzy
  msgid "Data available"
 -msgstr "wypisanie wszystkich dostêpnych danych"
-+msgstr "dane dostêpne"
++msgstr "Dane dostêpne"
  
- #: common/audit.c:757
+ #: common/audit.c:767
 -#, fuzzy
  msgid "Session key created"
 -msgstr "%s: zbiór kluczy utworzony\n"
 +msgstr "Klucz sesji utworzony"
  
- #: common/audit.c:762
+ #: common/audit.c:772 common/audit.c:912 common/audit.c:919
 -#, fuzzy, c-format
 +#, c-format
  msgid "algorithm: %s"
 -msgstr "poprawno¶æ: %s"
 +msgstr "algorytm: %s"
  
- #: common/audit.c:764 common/audit.c:766
+ #: common/audit.c:774 common/audit.c:776 common/audit.c:921 common/audit.c:923
 -#, fuzzy, c-format
 +#, c-format
  msgid "unsupported algorithm: %s"
@@ -269,125 +363,159 @@
 -"Obs³ugiwane algorytmy:\n"
 +msgstr "nieobs³ugiwany algorytm: %s"
  
- #: common/audit.c:768
+ #: common/audit.c:778 common/audit.c:925
 -#, fuzzy
  msgid "seems to be not encrypted"
 -msgstr "(to nie wygl±da na zaszyfrowan± wiadomo¶æ)\n"
-+msgstr "(to nie wygl±da na zaszyfrowan± wiadomo¶æ)"
++msgstr "nie wygl±da na zaszyfrowan± wiadomo¶æ"
  
- #: common/audit.c:774
+ #: common/audit.c:784 common/audit.c:933
 -#, fuzzy
  msgid "Number of recipients"
 -msgstr "Aktualni odbiorcy:\n"
 +msgstr "Liczba odbiorców"
  
- #: common/audit.c:782
+ #: common/audit.c:792 common/audit.c:956
  #, c-format
  msgid "Recipient %d"
 -msgstr ""
 +msgstr "Odbiorca %d"
  
- #: common/audit.c:810
+ #: common/audit.c:825
  msgid "Data signing succeeded"
 -msgstr ""
 +msgstr "Podpisywanie danych zakoñczone"
  
- #: common/audit.c:830
+ #: common/audit.c:839 common/audit.c:1033 common/audit.c:1060
+-#, fuzzy, c-format
++#, c-format
+ msgid "data hash algorithm: %s"
+-msgstr "niew³a¶ciwy algorytm skrótu ,,%s''\n"
++msgstr "algorytm skrótu danych: %s"
+ 
+ #: common/audit.c:862
+-#, fuzzy, c-format
++#, c-format
+ msgid "Signer %d"
+-msgstr "Podpisano w "
++msgstr "Podpisuj±cy %d"
+ 
+ #: common/audit.c:866 common/audit.c:1065
+-#, fuzzy, c-format
++#, c-format
+ msgid "attr hash algorithm: %s"
+-msgstr "niew³a¶ciwy algorytm skrótu ,,%s''\n"
++msgstr "algorytm skrótu atrybutów: %s"
+ 
+ #: common/audit.c:901
  msgid "Data decryption succeeded"
 -msgstr ""
-+msgstr "Deszyfrowanie danych zakoñczone"
++msgstr "Odszyfrowywanie danych zakoñczone"
  
- #: common/audit.c:855
+ #: common/audit.c:910
+-#, fuzzy
+ msgid "Encryption algorithm supported"
+-msgstr "algorytm ochrony %d%s nie jest obs³ugiwany\n"
++msgstr "Algorytm szyfrowania obs³ugiwany"
+ 
+ #: common/audit.c:993
 -#, fuzzy
  msgid "Data verification succeeded"
 -msgstr "wymuszono pominiêcie sprawdzenia podpisu\n"
 +msgstr "Weryfikacja danych zakoñczona"
  
- #: common/audit.c:864
+ #: common/audit.c:1002
 -#, fuzzy
  msgid "Signature available"
 -msgstr "Podpisano w "
-+msgstr "Podpis dostêpny "
++msgstr "Podpis dostêpny"
  
- #: common/audit.c:869
+ #: common/audit.c:1024
 -#, fuzzy
- msgid "Parsing signature succeeded"
+ msgid "Parsing data succeeded"
 -msgstr "nie znaleziono podpisu\n"
-+msgstr "Przetwarzanie podpisu zakoñczone"
++msgstr "Analiza podpisu zakoñczona"
  
- #: common/audit.c:874
+ #: common/audit.c:1036
 -#, fuzzy, c-format
 +#, c-format
- msgid "Bad hash algorithm: %s"
+ msgid "bad data hash algorithm: %s"
 -msgstr "niew³a¶ciwy algorytm skrótu ,,%s''\n"
-+msgstr "niew³a¶ciwy algorytm skrótu %s"
++msgstr "niew³a¶ciwy algorytm skrótu danych: %s"
  
- #: common/audit.c:889
+ #: common/audit.c:1051
 -#, fuzzy, c-format
 +#, c-format
  msgid "Signature %d"
 -msgstr "Podpisano w "
-+msgstr "Podpi %d "
++msgstr "Podpis %d"
  
- #: common/audit.c:905
+ #: common/audit.c:1079
 -#, fuzzy
  msgid "Certificate chain valid"
- msgstr "certyfikat jeszcze nie jest wa¿ny"
+-msgstr "certyfikat jeszcze nie jest wa¿ny"
++msgstr "£añcuch certyfikatów poprawny"
  
- #: common/audit.c:916
+ #: common/audit.c:1090
 -#, fuzzy
  msgid "Root certificate trustworthy"
 -msgstr "certyfikat g³ówny jest dobry\n"
-+msgstr "certyfikat g³ówny jest dobry"
++msgstr "Certyfikat g³ówny jest zaufany"
  
- #: common/audit.c:926
+ #: common/audit.c:1111 sm/certchain.c:935
+ msgid "no CRL found for certificate"
+@@ -1133,41 +1105,37 @@
+ msgstr "dostêpny CRL jest zbyt stary"
+ 
+ #: common/audit.c:1119
 -#, fuzzy
  msgid "CRL/OCSP check of certificates"
 -msgstr "nie znaleziono CRL dla certyfikatu"
 +msgstr "weryfikacja CRL/OCSP certyfikatów"
  
- #: common/audit.c:943
+ #: common/audit.c:1139
 -#, fuzzy
  msgid "Included certificates"
 -msgstr "eksport certyfikatów"
 +msgstr "Do³±czone certyfikaty"
  
- #: common/audit.c:1002
+ #: common/audit.c:1194
  msgid "No audit log entries."
 -msgstr ""
 +msgstr "Brak wpisów w logu."
  
- #: common/audit.c:1051
+ #: common/audit.c:1243
 -#, fuzzy
  msgid "Unknown operation"
 -msgstr "nieznana opcja ,,%s''\n"
 +msgstr "Nieznana operacja"
  
- #: common/audit.c:1069
+ #: common/audit.c:1261
  msgid "Gpg-Agent usable"
 -msgstr ""
 +msgstr "Gpg-Agent sprawny"
  
- #: common/audit.c:1079
+ #: common/audit.c:1271
  msgid "Dirmngr usable"
 -msgstr ""
-+msgstr "Dirmng sprawny"
++msgstr "Dirmngr sprawny"
  
- #: common/audit.c:1115
+ #: common/audit.c:1307
 -#, fuzzy, c-format
 +#, c-format
  msgid "No help available for `%s'."
- msgstr "Brak pomocy o ,,%s''"
+-msgstr "Brak pomocy o ,,%s''"
++msgstr "Brak pomocy dla ,,%s''."
  
  #: common/helpfile.c:80
 -#, fuzzy
  msgid "ignoring garbage line"
 -msgstr "b³±d w linii koñcz±cej\n"
-+msgstr "b³±d w linii koñcz±cej"
++msgstr "zignorowano b³êdn± liniê"
  
  #: common/gettime.c:503
  msgid "[none]"
-@@ -1103,9 +1080,8 @@
+@@ -1191,9 +1159,8 @@
  msgstr "niew³a¶ciwy nag³ówek dokumentu z podpisem na koñcu\n"
  
  #: g10/armor.c:455
@@ -398,7 +526,7 @@
  
  #: g10/armor.c:508
  msgid "nested clear text signatures\n"
-@@ -1209,14 +1185,12 @@
+@@ -1297,14 +1264,12 @@
  msgstr "nie dzia³a w trybie wsadowym\n"
  
  #: g10/card-util.c:106
@@ -407,15 +535,15 @@
 -msgstr "To polecenie nie jest dostêpne w trybie %s.\n"
 +msgstr "To polecenie jest dostêpne tylko dla kart w wersji 2\n"
  
- #: g10/card-util.c:108 scd/app-openpgp.c:2010
+ #: g10/card-util.c:108 scd/app-openpgp.c:2020
 -#, fuzzy
  msgid "Reset Code not or not anymore available\n"
 -msgstr "tajne czê¶ci klucza s± niedostêpne\n"
 +msgstr "Kod resetuj±cy nie jest (ju¿ lub w ogóle) dostêpny\n"
  
- #: g10/card-util.c:141 g10/card-util.c:1340 g10/card-util.c:1419
- #: g10/keyedit.c:424 g10/keyedit.c:445 g10/keyedit.c:459 g10/keygen.c:1598
-@@ -1293,9 +1267,9 @@
+ #: g10/card-util.c:141 g10/card-util.c:1455 g10/card-util.c:1565
+ #: g10/keyedit.c:424 g10/keyedit.c:445 g10/keyedit.c:459 g10/keygen.c:1630
+@@ -1382,9 +1347,9 @@
  msgstr "b³±d odczytu ,,%s'': %s\n"
  
  #: g10/card-util.c:836
@@ -427,16 +555,99 @@
  
  #: g10/card-util.c:863
  msgid "Login data (account name): "
-@@ -1479,7 +1453,7 @@
+@@ -1456,21 +1421,24 @@
+ "      If the key generation does not succeed, please check the\n"
+ "      documentation of your card to see what sizes are allowed.\n"
+ msgstr ""
++"UWAGA: Nie ma gwarancji, ¿e karta obs³uguje ¿±dany rozmiar.\n"
++"       Je¶li tworzenie klucza nie powiedzie siê, proszê sprawdziæ\n"
++"       dokumentacjê karty, aby poznaæ dozwolone rozmiary.\n"
  
- #: g10/card-util.c:1540
+ #: g10/card-util.c:1292
+-#, fuzzy, c-format
++#, c-format
+ msgid "What keysize do you want for the Signature key? (%u) "
+-msgstr "Jakiej d³ugo¶ci klucz wygenerowaæ? (%u) "
++msgstr "Jakiej d³ugo¶ci klucz do podpisywania wygenerowaæ? (%u) "
+ 
+ #: g10/card-util.c:1294
+-#, fuzzy, c-format
++#, c-format
+ msgid "What keysize do you want for the Encryption key? (%u) "
+-msgstr "Jakiej d³ugo¶ci klucz wygenerowaæ? (%u) "
++msgstr "Jakiej d³ugo¶ci klucz do szyfrowania wygenerowaæ? (%u) "
+ 
+ #: g10/card-util.c:1295
+-#, fuzzy, c-format
++#, c-format
+ msgid "What keysize do you want for the Authentication key? (%u) "
+-msgstr "Jakiej d³ugo¶ci klucz wygenerowaæ? (%u) "
++msgstr "Jakiej d³ugo¶ci klucz do uwierzytelniania wygenerowaæ? (%u) "
+ 
+ #: g10/card-util.c:1306 g10/keygen.c:1844 g10/keygen.c:1850
+ #: sm/certreqgen-ui.c:194
+@@ -1486,21 +1454,20 @@
+ #: g10/card-util.c:1319
+ #, c-format
+ msgid "The card will now be re-configured to generate a key of %u bits\n"
+-msgstr ""
++msgstr "Karta zostanie przekonfigurowana do tworzenia klucza %u-bitowego\n"
+ 
+ #: g10/card-util.c:1339
+-#, fuzzy, c-format
++#, c-format
+ msgid "error changing size of key %d to %u bits: %s\n"
+-msgstr "b³±d podczas przypisywania gniazda do ,,%s'': %s\n"
++msgstr "b³±d podczas zmiany rozmiaru klucza %d na %u bitów: %s\n"
+ 
+ #: g10/card-util.c:1361
+ msgid "Make off-card backup of encryption key? (Y/n) "
+ msgstr "Stworzyæ poza kart± kopiê zapasow± klucza szyfruj±cego? (T/n) "
+ 
+ #: g10/card-util.c:1375
+-#, fuzzy
+ msgid "NOTE: keys are already stored on the card!\n"
+-msgstr "klucz prywatny jest ju¿ zapisany na karcie\n"
++msgstr "UWAGA: klucze s± ju¿ zapisane na karcie!\n"
+ 
+ #: g10/card-util.c:1378
+ msgid "Replace existing keys? (y/N) "
+@@ -1514,7 +1481,7 @@
+ "You should change them using the command --change-pin\n"
+ msgstr ""
+ "Fabryczne ustawienia PIN-ów to\n"
+-"   PIN = ,,%s''   PIN administratora = ,,%s''\n"
++"   PIN = ,,%s''   PIN administracyjny = ,,%s''\n"
+ "Nale¿y je zmieniæ przy u¿yciu polecenia --change-pin\n"
+ 
+ #: g10/card-util.c:1446
+@@ -1555,9 +1522,9 @@
+ msgstr "klucz prywatny jest ju¿ zapisany na karcie\n"
+ 
+ #: g10/card-util.c:1620
+-#, fuzzy, c-format
++#, c-format
+ msgid "error writing key to card: %s\n"
+-msgstr "b³±d zapisu klucza: %s\n"
++msgstr "b³±d zapisu klucza na karcie: %s\n"
+ 
+ #: g10/card-util.c:1679 g10/keyedit.c:1382
+ msgid "quit this menu"
+@@ -1621,11 +1588,11 @@
+ 
+ #: g10/card-util.c:1698
  msgid "unblock the PIN using a Reset Code"
 -msgstr ""
 +msgstr "odblokowanie PIN-u przy u¿yciu kodu resetuj±cego"
  
- #: g10/card-util.c:1663 g10/keyedit.c:1654
- msgid "Command> "
-@@ -1782,14 +1756,13 @@
+ #: g10/card-util.c:1820
+ msgid "gpg/card> "
+-msgstr ""
++msgstr "gpg/karta> "
+ 
+ #: g10/card-util.c:1861
+ msgid "Admin-only command\n"
+@@ -1924,14 +1891,13 @@
  msgstr "automatycznie pobrano `%s' poprzez %s\n"
  
  #: g10/getkey.c:1118
@@ -454,68 +665,79 @@
  
  #: g10/getkey.c:1930
  #, c-format
-@@ -1813,14 +1786,12 @@
+@@ -1955,14 +1921,12 @@
  msgstr "klucz %s: klucz tajny bez klucza jawnego - pominiêty\n"
  
- #: g10/gpg.c:372 sm/gpgsm.c:186
+ #: g10/gpg.c:375 sm/gpgsm.c:188
 -#, fuzzy
  msgid "make a signature"
 -msgstr "|[plik]|z³o¿enie podpisu"
 +msgstr "z³o¿enie podpisu"
  
- #: g10/gpg.c:373 sm/gpgsm.c:187
+ #: g10/gpg.c:376 sm/gpgsm.c:189
 -#, fuzzy
  msgid "make a clear text signature"
 -msgstr "|[plik]|z³o¿enie podpisu pod dokumentem"
 +msgstr "z³o¿enie podpisu pod dokumentem"
  
- #: g10/gpg.c:374 sm/gpgsm.c:188
+ #: g10/gpg.c:377 sm/gpgsm.c:190
  msgid "make a detached signature"
-@@ -1931,9 +1902,8 @@
+@@ -2077,9 +2041,8 @@
  msgstr "uaktualnienie bazy zaufania"
  
- #: g10/gpg.c:431
+ #: g10/gpg.c:436
 -#, fuzzy
  msgid "print message digests"
 -msgstr "|algo [pliki]|skróty wiadomo¶ci"
 +msgstr "wypisanie skrótów wiadomo¶ci"
  
- #: g10/gpg.c:434 sm/gpgsm.c:208
+ #: g10/gpg.c:439 sm/gpgsm.c:210
  msgid "run in server mode"
-@@ -1944,28 +1914,24 @@
+@@ -2090,28 +2053,24 @@
  msgstr "opakowanie ASCII pliku wynikowego"
  
- #: g10/gpg.c:441 sm/gpgsm.c:239
+ #: g10/gpg.c:446 sm/gpgsm.c:241
 -#, fuzzy
  msgid "|USER-ID|encrypt for USER-ID"
 -msgstr "|NAZWA|szyfrowanie dla odbiorcy NAZWA"
 +msgstr "|U¯YTKOWNIK|szyfrowanie dla odbiorcy o tym identyfikatorze"
  
- #: g10/gpg.c:454 sm/gpgsm.c:276
+ #: g10/gpg.c:459 sm/gpgsm.c:278
 -#, fuzzy
  msgid "|USER-ID|use USER-ID to sign or decrypt"
 -msgstr "identyfikator do podpisania lub odszyfrowania"
 +msgstr "|U¯YTKOWNIK|u¿ycie tego identyfikatora u¿ytkownika do podpisania lub odszyfrowania"
  
- #: g10/gpg.c:457
+ #: g10/gpg.c:462
 -#, fuzzy
  msgid "|N|set compress level to N (0 disables)"
 -msgstr "|N|poziom kompresji N (0 - bez)"
 +msgstr "|N|ustawienie poziomu kompresji N (0 - bez)"
  
- #: g10/gpg.c:463
+ #: g10/gpg.c:468
  msgid "use canonical text mode"
  msgstr "kanoniczny format tekstowy"
  
- #: g10/gpg.c:480 sm/gpgsm.c:278
+ #: g10/gpg.c:485 sm/gpgsm.c:280
 -#, fuzzy
  msgid "|FILE|write output to FILE"
 -msgstr "|PLIK|odczyt opcji z PLIKU"
 +msgstr "|PLIK|zapis wyj¶cia do PLIKU"
  
- #: g10/gpg.c:496 kbx/kbxutil.c:90 sm/gpgsm.c:289 tools/gpgconf.c:82
+ #: g10/gpg.c:501 kbx/kbxutil.c:90 sm/gpgsm.c:292 tools/gpgconf.c:82
  msgid "do not make any changes"
-@@ -2597,9 +2563,8 @@
+@@ -2679,9 +2638,8 @@
+ msgstr "--edit-key nazwa u¿ytkownika [polecenia]"
+ 
+ #: g10/gpg.c:3629
+-#, fuzzy
+ msgid "--passwd <user-id>"
+-msgstr "--sign-key nazwa u¿ytkownika"
++msgstr "--passwd <id-u¿ytkownika>"
+ 
+ #: g10/gpg.c:3716
+ #, c-format
+@@ -2744,9 +2702,8 @@
  msgstr "podany preferowany URL serwera kluczy jest niepoprawny\n"
  
  #: g10/gpgv.c:74
@@ -526,7 +748,12 @@
  
  #: g10/gpgv.c:76
  msgid "make timestamp conflicts only a warning"
-@@ -2619,7 +2584,7 @@
+@@ -2761,12 +2718,11 @@
+ msgstr "Wywo³anie: gpgv [opcje] [pliki] (-h podaje pomoc)"
+ 
+ #: g10/gpgv.c:119
+-#, fuzzy
+ msgid ""
  "Syntax: gpgv [options] [files]\n"
  "Check signatures against known trusted keys\n"
  msgstr ""
@@ -535,10 +762,22 @@
  "Sprawdzanie podpisów ze znanych zaufanych kluczy\n"
  
  #: g10/helptext.c:72
-@@ -3730,12 +3695,10 @@
+@@ -3121,9 +3077,9 @@
+ msgstr "klucz %s: nieobs³ugiwany algorytm asymetryczny\n"
+ 
+ #: g10/import.c:1487
+-#, fuzzy, c-format
++#, c-format
+ msgid "key %s: invalid direct key signature\n"
+-msgstr "klucz %s: dodano bezpo¶redni podpis\n"
++msgstr "klucz %s: nieprawid³owy bezpo¶redni podpis\n"
+ 
+ #: g10/import.c:1501
+ #, c-format
+@@ -3884,12 +3840,10 @@
  msgstr "Czy na pewno chcesz uniewa¿niæ ten podklucz? (t/N) "
  
- #: g10/keyedit.c:2118
+ #: g10/keyedit.c:2133
 -#, fuzzy
  msgid "Owner trust may not be set while using a user provided trust database\n"
  msgstr ""
@@ -548,49 +787,58 @@
 +"Zaufanie u¿ytkownika nie mo¿e byæ ustawione podczas u¿ywania bazy zaufania\n"
 +"dostarczonej przez u¿ytkownika\n"
  
- #: g10/keyedit.c:2160
+ #: g10/keyedit.c:2175
  msgid "Set preference list to:\n"
-@@ -4276,14 +4239,14 @@
+@@ -4261,7 +4215,7 @@
+ 
+ #: g10/keyedit.c:4843
+ msgid "Not signed by you.\n"
+-msgstr ""
++msgstr "Nie podpisane przez ciebie.\n"
+ 
+ #: g10/keyedit.c:4849
+ #, c-format
+@@ -4435,14 +4389,14 @@
  msgstr "Proszê wybraæ rodzaj klucza:\n"
  
- #: g10/keygen.c:1657
+ #: g10/keygen.c:1689
 -#, fuzzy, c-format
 +#, c-format
  msgid "   (%d) RSA and RSA (default)\n"
 -msgstr "   (%d) Para kluczy dla algorytmów DSA i Elgamala (domy¶lne)\n"
 +msgstr "   (%d) RSA i RSA (domy¶lne)\n"
  
- #: g10/keygen.c:1659
+ #: g10/keygen.c:1691
 -#, fuzzy, c-format
 +#, c-format
  msgid "   (%d) DSA and Elgamal\n"
 -msgstr "   (%d) Para kluczy dla algorytmów DSA i Elgamala (domy¶lne)\n"
-+msgstr "   (%d) DSA i Elgamal\n"
++msgstr "   (%d) DSA i Elgamala\n"
  
- #: g10/keygen.c:1661
+ #: g10/keygen.c:1693
  #, c-format
-@@ -4298,7 +4261,7 @@
- #: g10/keygen.c:1666
+@@ -4457,7 +4411,7 @@
+ #: g10/keygen.c:1698
  #, c-format
  msgid "   (%d) Elgamal (encrypt only)\n"
 -msgstr "   (%d) Klucz dla algorytmu Elgamala (tylko do szyfrowania)\n"
 +msgstr "   (%d) Elgamal (tylko do szyfrowania)\n"
  
- #: g10/keygen.c:1667
+ #: g10/keygen.c:1699
  #, c-format
-@@ -4321,9 +4284,9 @@
+@@ -4480,9 +4434,9 @@
  msgstr "Klucze %s bêd± mia³y od %u do %u bitów d³ugo¶ci.\n"
  
- #: g10/keygen.c:1788
+ #: g10/keygen.c:1820
 -#, fuzzy, c-format
 +#, c-format
  msgid "What keysize do you want for the subkey? (%u) "
 -msgstr "Jakiej d³ugo¶ci klucz wygenerowaæ? (%u) "
 +msgstr "Jakiej d³ugo¶ci podklucz wygenerowaæ? (%u) "
  
- #: g10/keygen.c:1791 sm/certreqgen-ui.c:142
+ #: g10/keygen.c:1823 sm/certreqgen-ui.c:179
  #, c-format
-@@ -4426,6 +4389,9 @@
+@@ -4575,6 +4529,9 @@
  "GnuPG needs to construct a user ID to identify your key.\n"
  "\n"
  msgstr ""
@@ -600,7 +848,39 @@
  
  #. TRANSLATORS: This string is in general not anymore used
  #. but you should keep your existing translation.  In case
-@@ -5178,9 +5144,9 @@
+@@ -4652,7 +4609,7 @@
+ 
+ #: g10/keygen.c:2185
+ msgid "Such a user ID already exists on this key!\n"
+-msgstr ""
++msgstr "Taki identyfikator u¿ytkownika ju¿ istnieje na tym kluczu!\n"
+ 
+ #. TRANSLATORS: These are the allowed answers in
+ #. lower and uppercase.  Below you will find the matching
+@@ -4692,12 +4649,11 @@
+ "\n"
+ 
+ #: g10/keygen.c:2276
+-#, fuzzy
+ msgid ""
+ "Please enter a passphrase to protect the off-card backup of the new "
+ "encryption key."
+ msgstr ""
+-"Proszê wprowadziæ has³o do zabezpieczenia wa¿nego obiektu w systemie GnuPG."
++"Proszê wprowadziæ has³o do zabezpieczenia kopii zapasowej poza kart± nowego klucza szyfruj±cego."
+ 
+ #: g10/keygen.c:2292
+ #, c-format
+@@ -5184,7 +5140,7 @@
+ #: g10/mainproc.c:592
+ #, c-format
+ msgid "cleared passphrase cached with ID: %s\n"
+-msgstr ""
++msgstr "wyczyszczono has³o zapamiêtane z ID: %s\n"
+ 
+ #: g10/mainproc.c:597
+ #, c-format
+@@ -5336,9 +5292,9 @@
  "OSTRZE¯ENIE: u¿ycie eksperymentalnego algorytmu klucza publicznego %s\n"
  
  #: g10/misc.c:302
@@ -612,32 +892,66 @@
  
  #: g10/misc.c:315
  #, c-format
-@@ -5328,9 +5294,10 @@
+@@ -5483,7 +5439,7 @@
+ msgstr " (ID g³ównego klucza %s)"
+ 
+ #: g10/passphrase.c:358
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Please enter the passphrase to unlock the secret key for the OpenPGP "
+ "certificate:\n"
+@@ -5491,9 +5447,10 @@
  "%u-bit %s key, ID %s,\n"
  "created %s%s.\n"
  msgstr ""
 -"Musisz podaæ has³o aby odbezpieczyæ klucz tajny u¿ytkownika:\n"
-+"Proszê podaæ has³o aby odbezpieczyæ klucz tajny certyfikatu OpenPGP:\n"
++"Proszê podaæ has³o, aby odbezpieczyæ klucz tajny certyfikatu OpenPGP:\n"
  ",,%.*s''.\n"
 -"Klucz o d³ugo¶ci %u bitów, typ %s, ID %s, stworzony %s%s\n"
 +"Klucz o d³ugo¶ci %u bitów, typ %s, ID %s,\n"
-+"stworzony %s%s\n"
++"stworzony %s%s.\n"
  
- #: g10/passphrase.c:328
+ #: g10/passphrase.c:384
  msgid "Enter passphrase\n"
-@@ -5973,9 +5940,9 @@
+@@ -6131,9 +6088,9 @@
  msgstr "UWAGA: klucz podpisuj±cy %s przekroczy³ datê wa¿no¶ci %s\n"
  
- #: g10/sig-check.c:248
+ #: g10/sig-check.c:252
 -#, fuzzy, c-format
 +#, c-format
  msgid "NOTE: signature key %s has been revoked\n"
 -msgstr "UWAGA: klucz zosta³ uniewa¿niony"
 +msgstr "UWAGA: klucz podpisuj±cy %s zosta³ uniewa¿niony\n"
  
- #: g10/sig-check.c:324
+ #: g10/sig-check.c:328
  #, c-format
-@@ -6479,9 +6446,8 @@
+@@ -6414,9 +6371,8 @@
+ msgstr "%s: dopisanie rekordu nie powiod³o siê: %s\n"
+ 
+ #: g10/tdbio.c:1506
+-#, fuzzy
+ msgid "Error: The trustdb is corrupted.\n"
+-msgstr "%s: baza zaufania utworzona\n"
++msgstr "B³±d: uszkodzona baza zaufania.\n"
+ 
+ #: g10/textfilter.c:147
+ #, c-format
+@@ -6465,11 +6421,11 @@
+ 
+ #: g10/trustdb.c:418
+ msgid "You may try to re-create the trustdb using the commands:\n"
+-msgstr ""
++msgstr "Mo¿na próbowaæ odtworzyæ bazê zaufania przy u¿yciu poleceñ:\n"
+ 
+ #: g10/trustdb.c:427
+ msgid "If that does not work, please consult the manual\n"
+-msgstr ""
++msgstr "Je¶li to nie dzia³a, nale¿y poradziæ siê instrukcji\n"
+ 
+ #: g10/trustdb.c:462
+ #, c-format
+@@ -6645,9 +6601,8 @@
  msgstr "b³êdna definicja aliasu"
  
  #: jnlib/argparse.c:192
@@ -648,7 +962,7 @@
  
  #: jnlib/argparse.c:194
  msgid "invalid option"
-@@ -6513,9 +6479,8 @@
+@@ -6679,9 +6634,8 @@
  msgstr "polecenie ,,%.50s'' jest niejednoznaczne\n"
  
  #: jnlib/argparse.c:213
@@ -659,7 +973,7 @@
  
  #: jnlib/argparse.c:215
  #, c-format
-@@ -6548,42 +6513,42 @@
+@@ -6714,42 +6668,42 @@
  msgstr "konwersja z ,,%s'' do ,,%s'' nie powiod³a siê: %s\n"
  
  #: jnlib/dotlock.c:234
@@ -714,114 +1028,169 @@
  
  #: kbx/kbxutil.c:92
  msgid "set debugging flags"
-@@ -6631,24 +6596,20 @@
+@@ -6793,44 +6747,40 @@
  msgstr "NullPIN nie zosta³ jeszcze zmieniony\n"
  
- #: scd/app-nks.c:1090
+ #: scd/app-nks.c:1092
 -#, fuzzy
  msgid "|N|Please enter a new PIN for the standard keys."
 -msgstr "||Proszê wprowadziæ PIN na klawiaturze czytnika"
-+msgstr "|N|Proszê wprowadziæ nowy PIN."
++msgstr "|N|Proszê wprowadziæ nowy PIN dla zwyk³ych kluczy."
  
- #: scd/app-nks.c:1091
+ #: scd/app-nks.c:1093
 -#, fuzzy
  msgid "||Please enter the PIN for the standard keys."
 -msgstr "||Proszê wprowadziæ PIN na klawiaturze czytnika"
-+msgstr "||Proszê wprowadziæ PIN."
- 
- #: scd/app-nks.c:1097
--#, fuzzy
- msgid "|NP|Please enter a new PIN Unblocking Code (PUK) for the standard keys."
--msgstr "Proszê wprowadziæ PIN%s%s%s aby odblokowaæ kartê"
-+msgstr "|NP|Proszê wprowadziæ nowy kod odblokowuj±cy PIN (PUK)."
++msgstr "||Proszê wprowadziæ PIN dla zwyk³ych kluczy."
  
  #: scd/app-nks.c:1099
 -#, fuzzy
+ msgid "|NP|Please enter a new PIN Unblocking Code (PUK) for the standard keys."
+-msgstr "Proszê wprowadziæ PIN%s%s%s aby odblokowaæ kartê"
++msgstr "|NP|Proszê wprowadziæ nowy kod oblokowuj±cy PIN (PUK) dla zwyk³ych kluczy."
+ 
+ #: scd/app-nks.c:1101
+-#, fuzzy
  msgid "|P|Please enter the PIN Unblocking Code (PUK) for the standard keys."
 -msgstr "Proszê wprowadziæ PIN%s%s%s aby odblokowaæ kartê"
-+msgstr "|P|Proszê wprowadziæ kod odblokowuj±cy PIN (PUK)."
++msgstr "|P|Proszê wprowadziæ kod odblokowuj±cy PIN (PUK) dla zwyk³ych kluczy."
  
- #: scd/app-nks.c:1107
+ #: scd/app-nks.c:1109
  msgid "|N|Please enter a new PIN for the key to create qualified signatures."
-@@ -6705,12 +6666,12 @@
- #: scd/app-openpgp.c:1474
+-msgstr ""
++msgstr "|N|Proszê wprowadziæ nowy PIN dla klucza do tworzenia podpisów kwalifikowanych."
+ 
+ #: scd/app-nks.c:1111
+ msgid "||Please enter the PIN for the key to create qualified signatures."
+-msgstr ""
++msgstr "||Proszê wprowadziæ PIN PIN dla klucza do tworzenia podpisów kwalifikowanych."
+ 
+ #: scd/app-nks.c:1119
+ msgid ""
+ "|NP|Please enter a new PIN Unblocking Code (PUK) for the key to create "
+ "qualified signatures."
+-msgstr ""
++msgstr "|NP|Proszê wprowadziæ nowy kod odblokowuj±cy PIN (PUK) dla klucza do tworzenia podpisów kwalifikowanych."
+ 
+ #: scd/app-nks.c:1121
+ msgid ""
+ "|P|Please enter the PIN Unblocking Code (PUK) for the key to create "
+ "qualified signatures."
+-msgstr ""
++msgstr "|P|Proszê wprowadziæ kod odblokowuj±cy PIN (PUK) dla klucza do tworzenia podpisów kwalifikowanych."
+ 
+ #: scd/app-nks.c:1222 scd/app-openpgp.c:2063 scd/app-dinsig.c:532
+ #, c-format
+@@ -6867,12 +6817,12 @@
+ #: scd/app-openpgp.c:1492
  #, c-format
  msgid "using default PIN as %s\n"
 -msgstr ""
 +msgstr "u¿ycie domy¶lnego PIN-u jako %s\n"
  
- #: scd/app-openpgp.c:1481
+ #: scd/app-openpgp.c:1499
  #, c-format
  msgid "failed to use default PIN as %s: %s - disabling further default use\n"
 -msgstr ""
 +msgstr "nie uda³o siê u¿yæ domy¶lnego PIN-u jako %s: %s - wy³±czenie dalszego domy¶lnego u¿ycia\n"
  
- #: scd/app-openpgp.c:1496
+ #: scd/app-openpgp.c:1514
  #, c-format
-@@ -6718,9 +6679,8 @@
+@@ -6880,9 +6830,8 @@
  msgstr "||Proszê wpisaæ PIN%%0A[podpisów wykonanych: %lu]"
  
- #: scd/app-openpgp.c:1507 scd/app-openpgp.c:1969
+ #: scd/app-openpgp.c:1525 scd/app-openpgp.c:1979
 -#, fuzzy
  msgid "||Please enter the PIN"
 -msgstr "||Proszê wpisaæ PIN%%0A[podpisów wykonanych: %lu]"
 +msgstr "||Proszê wpisaæ PIN"
  
- #: scd/app-openpgp.c:1548 scd/app-openpgp.c:1738 scd/app-openpgp.c:1982
+ #: scd/app-openpgp.c:1566 scd/app-openpgp.c:1744 scd/app-openpgp.c:1992
  #, c-format
-@@ -6749,33 +6709,30 @@
+@@ -6906,42 +6855,39 @@
+ #: scd/app-openpgp.c:1660
+ #, c-format
+ msgid "%d Admin PIN attempts remaining before card is permanently locked\n"
+-msgstr "Zosta³o %d prób PIN-u administratora do trwa³ego zablokowania karty\n"
++msgstr "Zosta³o %d prób PIN-u administracyjnego do trwa³ego zablokowania karty\n"
+ 
  #. TRANSLATORS: Do not translate the "|A|" prefix but keep it at
  #. the start of the string.  Use %%0A to force a linefeed.
- #: scd/app-openpgp.c:1661
+ #: scd/app-openpgp.c:1667
 -#, fuzzy, c-format
 +#, c-format
  msgid "|A|Please enter the Admin PIN%%0A[remaining attempts: %d]"
 -msgstr ""
 -"||Proszê wprowadziæ PIN na klawiaturze czytnika%%0A[podpisów wykonanych: %lu]"
-+msgstr "|A|Proszê wprowadziæ PIN administratora%%0A[pozosta³o prób: %d]"
++msgstr "|A|Proszê wprowadziæ PIN administracyjny%%0A[pozosta³o prób: %d]"
  
- #: scd/app-openpgp.c:1665
+ #: scd/app-openpgp.c:1671
 -#, fuzzy
  msgid "|A|Please enter the Admin PIN"
 -msgstr "||Proszê wpisaæ PIN%%0A[podpisów wykonanych: %lu]"
-+msgstr "|A|Proszê wprowadziæ PIN administratora"
++msgstr "|A|Proszê wprowadziæ PIN administracyjny"
  
- #: scd/app-openpgp.c:1686
+ #: scd/app-openpgp.c:1692
  msgid "access to admin commands is not configured\n"
  msgstr "dostêp do poleceñ administratora nie zosta³ skonfigurowany\n"
  
- #: scd/app-openpgp.c:2016
+ #: scd/app-openpgp.c:2026
 -#, fuzzy
  msgid "||Please enter the Reset Code for the card"
 -msgstr "Proszê wprowadziæ PIN%s%s%s aby odblokowaæ kartê"
 +msgstr "||Proszê wprowadziæ kod resetuj±cy dla karty"
  
- #: scd/app-openpgp.c:2026 scd/app-openpgp.c:2078
+ #: scd/app-openpgp.c:2036 scd/app-openpgp.c:2088
 -#, fuzzy, c-format
 +#, c-format
  msgid "Reset Code is too short; minimum length is %d\n"
 -msgstr "PIN dla CHV%d jest zbyt krótki; minimalna d³ugo¶æ to %d\n"
 +msgstr "Kod resetuj±cy zbyt krótki; minimalna d³ugo¶æ to %d\n"
  
- #: scd/app-openpgp.c:2048
+ #: scd/app-openpgp.c:2058
  msgid "|RN|New Reset Code"
 -msgstr ""
 +msgstr "|RN|Nowy kod resetuj±cy"
  
- #: scd/app-openpgp.c:2049
+ #: scd/app-openpgp.c:2059
  msgid "|AN|New Admin PIN"
-@@ -6869,9 +6826,8 @@
+-msgstr "|AN|Nowy PIN administratora"
++msgstr "|AN|Nowy PIN administracyjny"
+ 
+ #: scd/app-openpgp.c:2059
+ msgid "|N|New PIN"
+@@ -6968,9 +6914,8 @@
+ msgstr "generowanie nowego klucza\n"
+ 
+ #: scd/app-openpgp.c:2193
+-#, fuzzy
+ msgid "writing new key\n"
+-msgstr "generowanie nowego klucza\n"
++msgstr "zapisywanie nowego klucza\n"
+ 
+ #: scd/app-openpgp.c:2618
+ msgid "creation timestamp missing\n"
+@@ -7021,7 +6966,7 @@
+ msgid ""
+ "verification of Admin PIN is currently prohibited through this command\n"
+ msgstr ""
+-"weryfikacja PIN-u administratora tym poleceniem jest aktualnie zabroniona\n"
++"weryfikacja PIN-u administracyjnego tym poleceniem jest aktualnie zabroniona\n"
+ 
+ #: scd/app-openpgp.c:3726 scd/app-openpgp.c:3737
+ #, c-format
+@@ -7036,9 +6981,8 @@
  #. keep it at the start of the string.  We need this elsewhere
  #. to get some infos on the string.
- #: scd/app-dinsig.c:528
+ #: scd/app-dinsig.c:529
 -#, fuzzy
  msgid "|N|Initial New PIN"
 -msgstr "|N|Nowy PIN"
-+msgstr "|N|Nowy pocz±tkowy PIN"
++msgstr "|N|Pocz±tkowy nowy PIN"
  
  #: scd/scdaemon.c:107
  msgid "run in multi server mode (foreground)"
-@@ -6882,9 +6838,8 @@
+@@ -7049,9 +6993,8 @@
  msgstr "|POZIOM|ustawienie POZIOMU diagnostyki"
  
  #: scd/scdaemon.c:124 tools/gpgconf-comp.c:620
@@ -832,7 +1201,7 @@
  
  #: scd/scdaemon.c:126
  msgid "|N|connect to reader at port N"
-@@ -6904,16 +6859,15 @@
+@@ -7071,16 +7014,15 @@
  
  #: scd/scdaemon.c:139
  msgid "|N|disconnect the card after N seconds of inactivity"
@@ -849,44 +1218,43 @@
 -msgstr "zezwolenie na u¿ycie poleceñ karty administratora"
 +msgstr "zabronienie u¿ywania poleceñ karty administratora"
  
- #: scd/scdaemon.c:257
+ #: scd/scdaemon.c:259
  msgid "Usage: scdaemon [options] (-h for help)"
-@@ -6949,7 +6903,7 @@
- #: sm/call-agent.c:138
+@@ -7116,7 +7058,7 @@
+ #: sm/call-agent.c:137
  #, c-format
  msgid "failed to proxy %s inquiry to client\n"
 -msgstr ""
 +msgstr "nie uda³o siê przekazaæ zapytania %s do klienta\n"
  
- #: sm/call-dirmngr.c:234
+ #: sm/call-dirmngr.c:245
  #, c-format
-@@ -7018,19 +6972,19 @@
+@@ -7185,19 +7127,18 @@
  msgstr "liczba pasuj±cych wystawców: %d\n"
  
- #: sm/certchain.c:546
+ #: sm/certchain.c:561
 -#, fuzzy
  msgid "looking up issuer from the Dirmngr cache\n"
 -msgstr "poszukiwanie wystawcy na zewn±trz\n"
 +msgstr "poszukiwanie wystawcy w pamiêci podrêcznej Dirmngr\n"
  
- #: sm/certchain.c:570
+ #: sm/certchain.c:585
 -#, fuzzy, c-format
 +#, c-format
  msgid "number of matching certificates: %d\n"
 -msgstr "b³±d importu certyfikatu: %s\n"
 +msgstr "liczba pasuj±cych certyfikatów: %d\n"
  
- #: sm/certchain.c:572
+ #: sm/certchain.c:587
 -#, fuzzy, c-format
 +#, c-format
  msgid "dirmngr cache-only key lookup failed: %s\n"
 -msgstr "zaciemnienie klucza nie powiod³o siê: %s\n"
-+msgstr ""
-+"wyszukiwanie klucza tylko w pamiêci podrêcznej dirmngr nie powiod³o siê: %s\n"
++msgstr "wyszukiwanie klucza tylko w pamiêci podrêcznej dirmngr nie powiod³o siê: %s\n"
  
- #: sm/certchain.c:744 sm/certchain.c:1231 sm/certchain.c:1835 sm/decrypt.c:259
- #: sm/encrypt.c:335 sm/sign.c:327 sm/verify.c:113
-@@ -7243,7 +7197,6 @@
+ #: sm/certchain.c:759 sm/certchain.c:1252 sm/certchain.c:1856 sm/decrypt.c:261
+ #: sm/encrypt.c:335 sm/sign.c:335 sm/verify.c:113
+@@ -7402,7 +7343,6 @@
  msgstr "[B³±d - niew³a¶ciwe DN]"
  
  #: sm/certdump.c:948
@@ -894,7 +1262,7 @@
  msgid ""
  "Please enter the passphrase to unlock the secret key for the X.509 "
  "certificate:\n"
-@@ -7251,9 +7204,10 @@
+@@ -7410,9 +7350,10 @@
  "S/N %s, ID 0x%08lX,\n"
  "created %s, expires %s.\n"
  msgstr ""
@@ -907,230 +1275,268 @@
  
  #: sm/certlist.c:122
  msgid "no key usage specified - assuming all usages\n"
-@@ -7339,55 +7293,55 @@
+@@ -7497,85 +7438,81 @@
+ msgid ""
  "To complete this certificate request please enter the passphrase for the key "
  "you just created once more.\n"
- msgstr ""
-+"Aby zakoñczyæ to ¿±danie certyfikatu proszê wprowadziæ jeszcze raz has³o dla utworzonego klucza.\n"
+-msgstr ""
++msgstr "Aby zakoñczyæ to ¿±danie certyfikatu proszê wprowadziæ jeszcze raz has³o dla utworzonego klucza.\n"
  
- #: sm/certreqgen-ui.c:122
+ #: sm/certreqgen-ui.c:158
 -#, fuzzy, c-format
 +#, c-format
  msgid "   (%d) RSA\n"
 -msgstr "   (%d) RSA (tylko do podpisywania)\n"
 +msgstr "   (%d) RSA\n"
  
- #: sm/certreqgen-ui.c:123
+ #: sm/certreqgen-ui.c:159
 -#, fuzzy, c-format
 +#, c-format
  msgid "   (%d) Existing key\n"
 -msgstr "   (2) Klucz do szyfrowania\n"
 +msgstr "   (%d) Istniej±cy klucz\n"
  
- #: sm/certreqgen-ui.c:124
+ #: sm/certreqgen-ui.c:160
  #, c-format
  msgid "   (%d) Existing key from card\n"
 -msgstr ""
 +msgstr "   (%d) Istniej±cy klucz z karty\n"
  
- #: sm/certreqgen-ui.c:176
+ #: sm/certreqgen-ui.c:202
+-#, fuzzy
+ msgid "Enter the keygrip: "
+-msgstr "Adnotacje: "
++msgstr "Uchwyt klucza: "
+ 
+ #: sm/certreqgen-ui.c:210
+ msgid "Not a valid keygrip (expecting 40 hex digits)\n"
+-msgstr ""
++msgstr "Nieprawid³owy uchwyt klucza (oczekiwano 40 cyfr szesnastkowych)\n"
+ 
+ #: sm/certreqgen-ui.c:212
+-#, fuzzy
+ msgid "No key with this keygrip\n"
+-msgstr "Brak podklucza o numerze %d.\n"
++msgstr "Brak podklucza o tym uchwycie\n"
+ 
+ #: sm/certreqgen-ui.c:230 sm/certreqgen-ui.c:239
+-#, fuzzy, c-format
++#, c-format
+ msgid "error reading the card: %s\n"
+-msgstr "%s: b³±d odczytu pustego wpisu: %s\n"
++msgstr "b³±d odczytu karty: %s\n"
+ 
+ #: sm/certreqgen-ui.c:233
+-#, fuzzy, c-format
++#, c-format
+ msgid "Serial number of the card: %s\n"
+-msgstr "b³±d pobierania numeru seryjnego karty: %s\n"
++msgstr "Numer seryjny karty: %s\n"
+ 
+ #: sm/certreqgen-ui.c:245
+-#, fuzzy
+ msgid "Available keys:\n"
+-msgstr "wy³±czenie klucza z u¿ycia"
++msgstr "Dostêpne klucze:\n"
+ 
+ #: sm/certreqgen-ui.c:276
 -#, fuzzy, c-format
 +#, c-format
  msgid "Possible actions for a %s key:\n"
 -msgstr "Mo¿liwe akcje dla klucza %s: "
 +msgstr "Mo¿liwe akcje dla klucza %s:\n"
  
- #: sm/certreqgen-ui.c:177
+ #: sm/certreqgen-ui.c:277
 -#, fuzzy, c-format
 +#, c-format
  msgid "   (%d) sign, encrypt\n"
 -msgstr "   (%d) DSA (tylko do podpisywania)\n"
 +msgstr "   (%d) podpisywanie, szyfrowanie\n"
  
- #: sm/certreqgen-ui.c:178
+ #: sm/certreqgen-ui.c:278
 -#, fuzzy, c-format
 +#, c-format
  msgid "   (%d) sign\n"
 -msgstr "   (%d) DSA (tylko do podpisywania)\n"
 +msgstr "   (%d) podpisywanie\n"
  
- #: sm/certreqgen-ui.c:179
+ #: sm/certreqgen-ui.c:279
 -#, fuzzy, c-format
 +#, c-format
  msgid "   (%d) encrypt\n"
 -msgstr "   (%d) RSA (tylko do szyfrowania)\n"
 +msgstr "   (%d) szyfrowanie\n"
  
- #: sm/certreqgen-ui.c:203
+ #: sm/certreqgen-ui.c:303
  msgid "Enter the X.509 subject name: "
 -msgstr ""
 +msgstr "Nazwa przedmiotu X.509: "
  
- #: sm/certreqgen-ui.c:207
+ #: sm/certreqgen-ui.c:307
 -#, fuzzy
  msgid "No subject name given\n"
 -msgstr "linia %d: nie podano nazwy przedmiotu\n"
 +msgstr "Nie podano nazwy przedmiotu\n"
  
- #: sm/certreqgen-ui.c:211
+ #: sm/certreqgen-ui.c:311
 -#, fuzzy, c-format
 +#, c-format
  msgid "Invalid subject name label `%.*s'\n"
 -msgstr "linia %d: niew³a¶ciwa etykieta nazwy przedmiotu ,,%.*s''\n"
-+msgstr "Niew³a¶ciwa etykieta nazwy przedmiotu ,,%.*s''\n"
++msgstr "Nieprawid³owa etykieta nazwy przedmiotu ,,%.*s''\n"
  
  #. TRANSLATORS: The 22 in the second string is the
  #. length of the first string up to the "%s".  Please
-@@ -7395,56 +7349,50 @@
+@@ -7583,56 +7520,49 @@
  #. second string is merely passed to atoi so you can
  #. drop everything after the number.
- #: sm/certreqgen-ui.c:220
+ #: sm/certreqgen-ui.c:320
 -#, fuzzy, c-format
 +#, c-format
  msgid "Invalid subject name `%s'\n"
 -msgstr "linia %d: niew³a¶ciwa etykieta nazwy przedmiotu ,,%.*s''\n"
-+msgstr "Niew³a¶ciwa nazwa przedmiotu ,,%s''\n"
++msgstr "Nieprawid³owa nazwa przedmiotu ,,%s''\n"
  
- #: sm/certreqgen-ui.c:222
+ #: sm/certreqgen-ui.c:322
  msgid "22 translator: see certreg-ui.c:gpgsm_gencertreq_tty"
 -msgstr ""
-+msgstr "31"
++msgstr "33"
  
- #: sm/certreqgen-ui.c:234
+ #: sm/certreqgen-ui.c:334
 -#, fuzzy
  msgid "Enter email addresses"
 -msgstr "Adres poczty elektronicznej: "
 +msgstr "Adresy poczty elektronicznej"
  
- #: sm/certreqgen-ui.c:235
+ #: sm/certreqgen-ui.c:335
 -#, fuzzy
  msgid " (end with an empty line):\n"
 -msgstr ""
 -"\n"
 -"Identyfikator u¿ytkownika (pusta linia oznacza koniec): "
-+msgstr " (zakoñczone pust± lini±):\n"
++msgstr " (pusta linia oznacza koniec):\n"
  
- #: sm/certreqgen-ui.c:239
+ #: sm/certreqgen-ui.c:339
 -#, fuzzy
  msgid "Enter DNS names"
 -msgstr "Nazwa pliku"
 +msgstr "Nazwy DNS"
  
- #: sm/certreqgen-ui.c:240 sm/certreqgen-ui.c:245
+ #: sm/certreqgen-ui.c:340 sm/certreqgen-ui.c:345
 -#, fuzzy
  msgid " (optional; end with an empty line):\n"
 -msgstr "Wprowad¼ opis (nieobowi±zkowy) i zakoñcz go pust± lini±:\n"
-+msgstr " (opcjonalne; zakoñczone pust± lini±):\n"
++msgstr " (opcjonalne; pusta linia oznacza koniec):\n"
  
- #: sm/certreqgen-ui.c:244
+ #: sm/certreqgen-ui.c:344
  msgid "Enter URIs"
 -msgstr ""
 +msgstr "URI"
  
- #: sm/certreqgen-ui.c:271
+ #: sm/certreqgen-ui.c:371
  msgid "Parameters to be used for the certificate request:\n"
 -msgstr ""
 +msgstr "Parametry, które bêd± u¿yte przy ¿±daniu certyfikatu:\n"
  
- #: sm/certreqgen-ui.c:289
+ #: sm/certreqgen-ui.c:389
  msgid "Now creating certificate request.  This may take a while ...\n"
 -msgstr ""
 +msgstr "Tworzenie ¿±dania certyfikatu. Mo¿e to chwilê potrwaæ...\n"
  
- #: sm/certreqgen-ui.c:298
+ #: sm/certreqgen-ui.c:398
  msgid "Ready.  You should now send this request to your CA.\n"
- msgstr ""
-+"Gotowe. Teraz nale¿y wys³aæ to ¿±danie do w³asnego centrum certyfikacji.\n"
+-msgstr ""
++msgstr "Gotowe. Teraz nale¿y wys³aæ to ¿±danie do w³asnego centrum certyfikacji.\n"
  
- #: sm/certreqgen-ui.c:303
+ #: sm/certreqgen-ui.c:403
 -#, fuzzy
  msgid "resource problem: out of core\n"
 -msgstr "[B³±d - brak pamiêci]"
 +msgstr "problem z zasobami: brak pamiêci\n"
  
- #: sm/decrypt.c:324
+ #: sm/decrypt.c:330
  msgid "(this is the RC2 algorithm)\n"
-@@ -7564,14 +7512,12 @@
+@@ -7748,14 +7678,12 @@
  msgstr "nie u¿ywanie w ogóle terminala"
  
- #: sm/gpgsm.c:283
+ #: sm/gpgsm.c:285
 -#, fuzzy
  msgid "|FILE|write a server mode log to FILE"
 -msgstr "|PLIK|zapisanie logów trybu serwerowego do PLIKu"
 +msgstr "|PLIK|zapisanie logów trybu serwerowego do PLIKU"
  
- #: sm/gpgsm.c:288
+ #: sm/gpgsm.c:290
 -#, fuzzy
  msgid "|FILE|write an audit log to FILE"
 -msgstr "|PLIK|zapisanie logów trybu serwerowego do PLIKu"
 +msgstr "|PLIK|zapisanie logów audytowych do PLIKU"
  
- #: sm/gpgsm.c:290
+ #: sm/gpgsm.c:293
  msgid "batch mode: never ask"
-@@ -7586,17 +7532,14 @@
+@@ -7770,17 +7698,14 @@
  msgstr "przyjêcie odpowiedzi ,,nie'' na wiêkszo¶æ pytañ"
  
- #: sm/gpgsm.c:295
+ #: sm/gpgsm.c:298
 -#, fuzzy
  msgid "|FILE|add keyring to the list of keyrings"
 -msgstr "dodanie tego zbioru kluczy do listy zbiorów kluczy"
 +msgstr "|PLIK|dodanie tego zbioru kluczy do listy zbiorów kluczy"
  
- #: sm/gpgsm.c:298
+ #: sm/gpgsm.c:301
 -#, fuzzy
  msgid "|USER-ID|use USER-ID as default secret key"
 -msgstr "|NAZWA|u¿ycie NAZWY jako domy¶lnego klucza tajnego"
-+msgstr "|U¯YTKOWNIK|u¿ycie U¯YTKOWNIK jako domy¶lnego klucza tajnego"
++msgstr "|U¯YTKOWNIK|u¿ycie tego identyfikatora jako domy¶lnego klucza tajnego"
  
- #: sm/gpgsm.c:308 tools/gpgconf-comp.c:745
+ #: sm/gpgsm.c:311 tools/gpgconf-comp.c:745
 -#, fuzzy
  msgid "|SPEC|use this keyserver to lookup keys"
  msgstr "|HOST|u¿ycie tego serwera do wyszukiwania kluczy"
  
-@@ -7638,24 +7581,23 @@
+@@ -7822,24 +7747,23 @@
  msgstr "nieznany model poprawno¶ci ,,%s''\n"
  
- #: sm/gpgsm.c:769
+ #: sm/gpgsm.c:801
 -#, fuzzy, c-format
 +#, c-format
  msgid "%s:%u: no hostname given\n"
 -msgstr "linia %d: nie podano nazwy przedmiotu\n"
 +msgstr "%s:%u: nie podano nazwy hosta\n"
  
- #: sm/gpgsm.c:788
+ #: sm/gpgsm.c:820
  #, c-format
  msgid "%s:%u: password given without user\n"
 -msgstr ""
 +msgstr "%s:%u: podano has³o bez u¿ytkownika\n"
  
- #: sm/gpgsm.c:809
+ #: sm/gpgsm.c:841
 -#, fuzzy, c-format
 +#, c-format
  msgid "%s:%u: skipping this line\n"
 -msgstr "  p = pominiêcie tego klucza\n"
 +msgstr "%s:%u: linia pominiêta\n"
  
- #: sm/gpgsm.c:1323
+ #: sm/gpgsm.c:1377
 -#, fuzzy
  msgid "could not parse keyserver\n"
 -msgstr "niezrozumia³y URL serwera kluczy\n"
 +msgstr "niezrozumia³y adres serwera kluczy\n"
  
- #: sm/gpgsm.c:1404
+ #: sm/gpgsm.c:1457
  msgid "WARNING: running with faked system time: "
-@@ -7673,7 +7615,7 @@
+@@ -7857,7 +7781,7 @@
  
- #: sm/gpgsm.c:1864
+ #: sm/gpgsm.c:1934
  msgid "invalid command (there is no implicit command)\n"
 -msgstr ""
 +msgstr "b³êdne polecenie (nie ma polecenia domy¶lnego)\n"
  
- #: sm/import.c:109
+ #: sm/import.c:111
  #, c-format
-@@ -7752,9 +7694,8 @@
+@@ -7936,9 +7860,8 @@
  msgstr "b³±d zapisywania flag: %s\n"
  
- #: sm/keylist.c:640
+ #: sm/keylist.c:642
 -#, fuzzy
  msgid "Error - "
 -msgstr "[B³±d - Brak nazwy]"
@@ -1138,33 +1544,33 @@
  
  #: sm/misc.c:55
  msgid "GPG_TTY has not been set - using maybe bogus default\n"
-@@ -7807,14 +7748,14 @@
+@@ -7991,14 +7914,14 @@
  "Nale¿y zauwa¿yæ, ¿e ten certyfikat NIE utworzy kwalifikowanego podpisu!"
  
- #: sm/sign.c:431
+ #: sm/sign.c:449
 -#, fuzzy, c-format
 +#, c-format
  msgid "hash algorithm %d (%s) for signer %d not supported; using %s\n"
 -msgstr "algorytm ochrony %d%s nie jest obs³ugiwany\n"
-+msgstr "algorytm skrótu %d (%s) dla szyfru %d nie jest obs³ugiwany; u¿ycie %s\n"
++msgstr "algorytm skrótu %d (%s) dla podpisuj±cego %d nie jest obs³ugiwany; u¿ycie %s\n"
  
- #: sm/sign.c:445
+ #: sm/sign.c:463
  #, c-format
  msgid "hash algorithm used for signer %d: %s (%s)\n"
 -msgstr ""
 +msgstr "algorytm skrótu u¿yty dla podpisuj±cego %d: %s (%s)\n"
  
- #: sm/sign.c:495
+ #: sm/sign.c:513
  #, c-format
-@@ -7838,6 +7779,7 @@
+@@ -8022,6 +7945,7 @@
  msgid ""
  "invalid signature: message digest attribute does not match computed one\n"
  msgstr ""
 +"b³êdny podpis: atrybut skrótu wiadomo¶ci nie zgadza siê z obliczonym\n"
  
- #: sm/verify.c:590
+ #: sm/verify.c:594
  msgid "Good signature from"
-@@ -7876,13 +7818,12 @@
+@@ -8060,13 +7984,12 @@
  msgstr "nie u¿ywanie rozszerzonego trybu po³±czenia"
  
  #: tools/gpg-connect-agent.c:80
@@ -1178,9 +1584,9 @@
 -msgstr ""
 +msgstr "uruchomienie /subst przy starcie"
  
- #: tools/gpg-connect-agent.c:183
+ #: tools/gpg-connect-agent.c:184
  msgid "Usage: gpg-connect-agent [options] (-h for help)"
-@@ -8014,16 +7955,15 @@
+@@ -8198,16 +8121,15 @@
  
  #: tools/gpgconf-comp.c:665
  msgid "|SPEC|set up email aliases"
@@ -1199,7 +1605,7 @@
  
  #: tools/gpgconf-comp.c:691
  msgid "allow PKA lookups (DNS requests)"
-@@ -8031,12 +7971,11 @@
+@@ -8215,12 +8137,11 @@
  
  #: tools/gpgconf-comp.c:694
  msgid "|MECHANISMS|use MECHANISMS to locate keys by mail address"
@@ -1214,7 +1620,7 @@
  
  #: tools/gpgconf-comp.c:742
  msgid "|NAME|use encoding NAME for PKCS#12 passphrases"
-@@ -8068,7 +8007,7 @@
+@@ -8252,7 +8173,7 @@
  
  #: tools/gpgconf-comp.c:903
  msgid "LDAP server list"
@@ -1223,7 +1629,7 @@
  
  #: tools/gpgconf-comp.c:911
  msgid "Configuration for OCSP"
-@@ -8077,7 +8016,7 @@
+@@ -8261,7 +8182,7 @@
  #: tools/gpgconf-comp.c:3077
  #, c-format
  msgid "External verification of component %s failed"
@@ -1232,7 +1638,7 @@
  
  #: tools/gpgconf-comp.c:3227
  msgid "Note that group specifications are ignored\n"
-@@ -8100,9 +8039,8 @@
+@@ -8284,9 +8205,8 @@
  msgstr "|KOMPONENT|zmiana opcji"
  
  #: tools/gpgconf.c:66
@@ -1243,7 +1649,7 @@
  
  #: tools/gpgconf.c:68
  msgid "apply global default values"
-@@ -8110,12 +8048,11 @@
+@@ -8294,12 +8214,11 @@
  
  #: tools/gpgconf.c:70
  msgid "get the configuration directories for gpgconf"
@@ -1258,7 +1664,7 @@
  
  #: tools/gpgconf.c:74
  msgid "check global configuration file"
-@@ -8326,394 +8263,13 @@
+@@ -8510,407 +8429,13 @@
  msgstr "klasa %s nie jest obs³ugiwana\n"
  
  #: tools/gpg-check-pattern.c:145
@@ -1272,6 +1678,19 @@
  "Syntax: gpg-check-pattern [options] patternfile\n"
  "Check a passphrase given on stdin against the patternfile\n"
  msgstr ""
+-
+-#~ msgid "Command> "
+-#~ msgstr "Polecenie> "
+-
+-#~ msgid "the trustdb is corrupted; please run \"gpg --fix-trustdb\".\n"
+-#~ msgstr ""
+-#~ "Baza zaufania jest uszkodzona; proszê uruchomiæ ,,gpg --fix-trustdb''.\n"
+-
+-#~ msgid "Please report bugs to <gnupg-bugs@gnu.org>.\n"
+-#~ msgstr "B³êdy prosimy zg³aszaæ na adres <gnupg-bugs@gnu.org>.\n"
+-
+-#~ msgid "Please report bugs to "
+-#~ msgstr "B³êdy prosimy zg³aszaæ na adres "
 -
 -#~ msgid "DSA keypair will have %u bits.\n"
 -#~ msgstr "Para kluczy DSA bêdzie mia³a %u bitów d³ugo¶ci.\n"
