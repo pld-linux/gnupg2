@@ -1,0 +1,55 @@
+--- gnupg-2.0.18/po/pl.po.orig	2011-08-04 16:27:48.000000000 +0200
++++ gnupg-2.0.18/po/pl.po	2011-08-07 20:56:38.746358678 +0200
+@@ -6,10 +6,10 @@
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnupg-2.0.17\n"
++"Project-Id-Version: gnupg-2.0.18\n"
+ "Report-Msgid-Bugs-To: translations@gnupg.org\n"
+ "POT-Creation-Date: 2011-08-04 16:27+0200\n"
+-"PO-Revision-Date: 2011-01-12 08:34+0100\n"
++"PO-Revision-Date: 2011-08-07 20:52+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+@@ -165,32 +165,33 @@
+ "An ssh process requested the use of key%%0A  %s%%0A  (%s)%%0ADo you want to "
+ "allow this?"
+ msgstr ""
++"Proces ssh zarz±da³ u¿ycia klucza%%0a  %s%%0A  (%s)%%0ACzy zezwoliæ na to?"
+ 
+ #: agent/command-ssh.c:2146
+ msgid "Allow"
+-msgstr ""
++msgstr "Zgoda"
+ 
+ #: agent/command-ssh.c:2146
+ msgid "Deny"
+-msgstr ""
++msgstr "Odmowa"
+ 
+ #: agent/command-ssh.c:2155
+-#, fuzzy, c-format
++#, c-format
+ msgid "Please enter the passphrase for the ssh key%%0A  %F%%0A  (%c)"
+-msgstr "Proszê wprowadziæ has³o dla klucza ssh%0A  %c"
++msgstr "Proszê wprowadziæ has³o dla klucza ssh%%0A  %F%%0A  (%c)"
+ 
+ #: agent/command-ssh.c:2484 agent/genkey.c:310 agent/genkey.c:432
+ msgid "Please re-enter this passphrase"
+ msgstr "Proszê ponownie wprowadziæ to has³o"
+ 
+ #: agent/command-ssh.c:2509
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Please enter a passphrase to protect the received secret key%%0A   %s%%0A   %"
+ "s%%0Awithin gpg-agent's key storage"
+ msgstr ""
+ "Proszê wprowadziæ has³o do zabezpieczenia odebranego klucza tajnego%%0A   %s%"
+-"%0A w miejscu przechowywania kluczy gpg-agenta"
++"%0A   %s%%0Aw miejscu przechowywania kluczy gpg-agenta"
+ 
+ #: agent/command-ssh.c:2548 agent/genkey.c:340 agent/genkey.c:463
+ #: tools/symcryptrun.c:436
