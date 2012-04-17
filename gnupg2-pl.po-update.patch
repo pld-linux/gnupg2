@@ -1,15 +1,20 @@
---- gnupg-2.0.18/po/pl.po.orig	2011-08-04 16:27:48.000000000 +0200
-+++ gnupg-2.0.18/po/pl.po	2011-08-07 20:56:38.746358678 +0200
-@@ -6,10 +6,10 @@
+--- gnupg-2.0.19/po/pl.po.orig	2012-03-27 10:23:47.000000000 +0200
++++ gnupg-2.0.19/po/pl.po	2012-04-17 19:32:41.098241338 +0200
+@@ -2,14 +2,14 @@
+ # Copyright (C) 1998, 1999, 2000, 2001, 2002, 
+ #               2007 Free Software Foundation, Inc.
+ # Janusz A. Urbanowicz <alex@bofh.net.pl>, 1999, 2000, 2001, 2002, 2003-2004
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2011.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2012.
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-2.0.17\n"
-+"Project-Id-Version: gnupg-2.0.18\n"
++"Project-Id-Version: gnupg-2.0.19\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2011-08-04 16:27+0200\n"
+ "POT-Creation-Date: 2012-03-27 10:23+0200\n"
 -"PO-Revision-Date: 2011-01-12 08:34+0100\n"
-+"PO-Revision-Date: 2011-08-07 20:52+0200\n"
++"PO-Revision-Date: 2012-04-17 19:31+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"

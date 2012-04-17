@@ -6,12 +6,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.0.18
+Version:	2.0.19
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	2f37e0722666a0fedbe4d9f9227ac4d7
+# Source0-md5:	6a8589381ca1b0c1a921e9955f42b016
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -223,9 +223,6 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
-mv ChangeLog main-ChangeLog || :
-find -name ChangeLog | awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); print "cp " src " " dst}' | sh
-
 %find_lang gnupg2
 rm -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
@@ -246,7 +243,7 @@ EOF
 
 %files
 %defattr(644,root,root,755)
-%doc g10-ChangeLog g10/options.skel
+%doc g10/options.skel
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
 %{_mandir}/man1/gpg2.1*
@@ -254,8 +251,7 @@ EOF
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
-%doc AUTHORS main-ChangeLog NEWS README THANKS TODO
-%doc jnlib-ChangeLog m4-ChangeLog po-ChangeLog scripts-ChangeLog common-ChangeLog kbx-ChangeLog tools-ChangeLog doc-ChangeLog
+%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgkey2ssh
@@ -296,7 +292,6 @@ EOF
 
 %files -n gnupg-smime
 %defattr(644,root,root,755)
-%doc sm-ChangeLog
 %attr(755,root,root) %{_bindir}/gpgsm
 %attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
 %{_mandir}/man1/gpgsm.1*
@@ -304,7 +299,6 @@ EOF
 
 %files -n gnupg-agent
 %defattr(644,root,root,755)
-%doc agent-ChangeLog scd-ChangeLog
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_bindir}/symcryptrun
