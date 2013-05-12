@@ -6,17 +6,18 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.0.19
+Version:	2.0.20
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	6a8589381ca1b0c1a921e9955f42b016
+# Source0-md5:	9d18ee71bb0b10d40d1c8a393bdd7a89
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
 Patch2:		%{name}-disable_tests.patch
 Patch3:		%{name}-pl.po-update.patch
+Patch4:		%{name}-am.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	adns-devel
 BuildRequires:	autoconf >= 2.61
@@ -194,6 +195,7 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 %patch1 -p1
 %{!?with_tests:%patch2 -p1}
 %patch3 -p1
+%patch4 -p1
 
 %{__rm} po/stamp-po
 
@@ -300,12 +302,12 @@ EOF
 %files -n gnupg-agent
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpg-agent
-%attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_bindir}/symcryptrun
 %attr(755,root,root) %{_libexecdir}/gnupg-pcsc-wrapper
 %attr(755,root,root) %{_libexecdir}/gpg-check-pattern
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
+%attr(755,root,root) %{_libexecdir}/scdaemon
 %{_mandir}/man1/gpg-agent.1*
 %{_mandir}/man1/gpg-preset-passphrase.1*
 %{_mandir}/man1/scdaemon.1*

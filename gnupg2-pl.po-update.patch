@@ -1,24 +1,24 @@
---- gnupg-2.0.19/po/pl.po.orig	2012-03-27 10:23:47.000000000 +0200
-+++ gnupg-2.0.19/po/pl.po	2012-04-17 19:32:41.098241338 +0200
+--- gnupg-2.0.20/po/pl.po.orig	2013-05-12 17:25:57.235013323 +0200
++++ gnupg-2.0.20/po/pl.po	2013-05-12 17:31:52.618331743 +0200
 @@ -2,14 +2,14 @@
  # Copyright (C) 1998, 1999, 2000, 2001, 2002, 
  #               2007 Free Software Foundation, Inc.
  # Janusz A. Urbanowicz <alex@bofh.net.pl>, 1999, 2000, 2001, 2002, 2003-2004
 -# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2011.
-+# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2012.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2013.
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-2.0.17\n"
-+"Project-Id-Version: gnupg-2.0.19\n"
++"Project-Id-Version: gnupg-2.0.20\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2012-03-27 10:23+0200\n"
+ "POT-Creation-Date: 2013-05-10 15:57+0200\n"
 -"PO-Revision-Date: 2011-01-12 08:34+0100\n"
-+"PO-Revision-Date: 2012-04-17 19:31+0200\n"
++"PO-Revision-Date: 2013-05-12 17:25+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
- "MIME-Version: 1.0\n"
-@@ -165,32 +165,33 @@
+ "Language: pl\n"
+@@ -169,32 +169,33 @@
  "An ssh process requested the use of key%%0A  %s%%0A  (%s)%%0ADo you want to "
  "allow this?"
  msgstr ""
@@ -49,12 +49,184 @@
 -#, fuzzy, c-format
 +#, c-format
  msgid ""
- "Please enter a passphrase to protect the received secret key%%0A   %s%%0A   %"
- "s%%0Awithin gpg-agent's key storage"
+ "Please enter a passphrase to protect the received secret key%%0A   %s%%0A   "
+ "%s%%0Awithin gpg-agent's key storage"
  msgstr ""
- "Proszê wprowadziæ has³o do zabezpieczenia odebranego klucza tajnego%%0A   %s%"
--"%0A w miejscu przechowywania kluczy gpg-agenta"
-+"%0A   %s%%0Aw miejscu przechowywania kluczy gpg-agenta"
+ "Proszê wprowadziæ has³o do zabezpieczenia odebranego klucza tajnego%%0A   %s"
+-"%%0A w miejscu przechowywania kluczy gpg-agenta"
++"%%0A   %s%%0Aw miejscu przechowywania kluczy gpg-agenta"
  
  #: agent/command-ssh.c:2548 agent/genkey.c:340 agent/genkey.c:463
  #: tools/symcryptrun.c:436
+@@ -229,8 +230,7 @@
+ msgstr "Kod resetuj±cy"
+ 
+ #: agent/divert-scd.c:238
+-#, fuzzy, c-format
+-#| msgid "%s%%0A%%0AUse the reader's keypad for input."
++#, c-format
+ msgid "%s%%0A%%0AUse the reader's pinpad for input."
+ msgstr "%s%%0A%%0ADo wpisywania nale¿y u¿yæ klawiatury czytnika."
+ 
+@@ -347,8 +347,7 @@
+ msgstr "Tak, ochrona nie jest potrzebna"
+ 
+ #: agent/genkey.c:308
+-#, fuzzy, c-format
+-#| msgid "Please enter the passphrase to%0Ato protect your new key"
++#, c-format
+ msgid "Please enter the passphrase to%0Aprotect your new key"
+ msgstr "Proszê wprowadziæ has³o do%0Azabezpieczenia swojego nowego klucza"
+ 
+@@ -2142,19 +2141,14 @@
+ msgstr "Wywo³anie: gpg [opcje] [pliki] (-h podaje pomoc)"
+ 
+ #: g10/gpg.c:843
+-#, fuzzy
+-#| msgid ""
+-#| "Syntax: gpg [options] [files]\n"
+-#| "sign, check, encrypt or decrypt\n"
+-#| "default operation depends on the input data\n"
+ msgid ""
+ "Syntax: gpg [options] [files]\n"
+ "Sign, check, encrypt or decrypt\n"
+ "Default operation depends on the input data\n"
+ msgstr ""
+ "Sk³adnia: gpg [opcje] [pliki]\n"
+-"podpisywanie, sprawdzanie podpisów, szyfrowanie, deszyfrowanie\n"
+-"domy¶lnie wykonywana operacja zale¿y od danych wej¶ciowych\n"
++"Podpisywanie, sprawdzanie podpisów, szyfrowanie, rozszyfrowywanie\n"
++"Domy¶lnie wykonywana operacja zale¿y od danych wej¶ciowych\n"
+ 
+ #: g10/gpg.c:854 sm/gpgsm.c:543
+ msgid ""
+@@ -6765,16 +6759,12 @@
+ msgstr "Wywo³anie: kbxutil [opcje] [pliki] (-h podaje pomoc)"
+ 
+ #: kbx/kbxutil.c:120
+-#, fuzzy
+-#| msgid ""
+-#| "Syntax: kbxutil [options] [files]\n"
+-#| "list, export, import Keybox data\n"
+ msgid ""
+ "Syntax: kbxutil [options] [files]\n"
+ "List, export, import Keybox data\n"
+ msgstr ""
+ "Sk³adnia: kbxutil [opcje] [pliki]\n"
+-"wypisywanie, eksport, import danych Keybox\n"
++"Wypisywanie, eksport, import danych Keybox\n"
+ 
+ #: scd/app-nks.c:713 scd/app-openpgp.c:2783
+ #, c-format
+@@ -6959,16 +6949,12 @@
+ msgstr "|N|Nowy PIN"
+ 
+ #: scd/app-openpgp.c:2256
+-#, fuzzy
+-#| msgid "|A|Please enter the Admin PIN"
+ msgid "||Please enter the Admin PIN and New Admin PIN"
+-msgstr "|A|Proszê wprowadziæ PIN administracyjny"
++msgstr "||Proszê wprowadziæ PIN administracyjny i nowy PIN administracyjny"
+ 
+ #: scd/app-openpgp.c:2257
+-#, fuzzy
+-#| msgid "||Please enter the PIN"
+ msgid "||Please enter the PIN and New PIN"
+-msgstr "||Proszê wpisaæ PIN"
++msgstr "||Proszê wprowadziæ PIN i nowy PIN"
+ 
+ #: scd/app-openpgp.c:2314 scd/app-openpgp.c:3104
+ msgid "error reading application data\n"
+@@ -7052,8 +7038,6 @@
+ msgstr "nie mo¿na dostaæ siê do %s - niepoprawna karta OpenPGP?\n"
+ 
+ #: scd/app-dinsig.c:299
+-#, fuzzy
+-#| msgid "||Please enter your PIN at the reader's keypad"
+ msgid "||Please enter your PIN at the reader's pinpad"
+ msgstr "||Proszê wprowadziæ PIN na klawiaturze czytnika"
+ 
+@@ -7097,8 +7081,6 @@
+ msgstr "|N|od³±czenie karty po N sekundach nieaktywno¶ci"
+ 
+ #: scd/scdaemon.c:144
+-#, fuzzy
+-#| msgid "do not use a reader's keypad"
+ msgid "do not use a reader's pinpad"
+ msgstr "nie u¿ywanie klawiatury czytnika"
+ 
+@@ -7108,7 +7090,7 @@
+ 
+ #: scd/scdaemon.c:152
+ msgid "use variable length input for pinpad"
+-msgstr ""
++msgstr "u¿ycie wej¶cia z klawiatury czytnika o zmiennej d³ugo¶ci"
+ 
+ #: scd/scdaemon.c:267
+ msgid "Usage: scdaemon [options] (-h for help)"
+@@ -7455,26 +7437,18 @@
+ msgstr "b³±d podczas pobierania informacji o wykorzystaniu klucza: %s\n"
+ 
+ #: sm/certlist.c:142
+-#, fuzzy
+-#| msgid "certificate should have not been used for certification\n"
+ msgid "certificate should not have been used for certification\n"
+ msgstr "certyfikat nie powinien byæ u¿ywany do po¶wiadczania\n"
+ 
+ #: sm/certlist.c:154
+-#, fuzzy
+-#| msgid "certificate should have not been used for OCSP response signing\n"
+ msgid "certificate should not have been used for OCSP response signing\n"
+ msgstr "certyfikat nie powinien byæ u¿ywany do podpisywania odpowiedzi OCSP\n"
+ 
+ #: sm/certlist.c:165
+-#, fuzzy
+-#| msgid "certificate should have not been used for encryption\n"
+ msgid "certificate should not have been used for encryption\n"
+ msgstr "certyfikat nie powinien byæ u¿ywany do szyfrowania\n"
+ 
+ #: sm/certlist.c:166
+-#, fuzzy
+-#| msgid "certificate should have not been used for signing\n"
+ msgid "certificate should not have been used for signing\n"
+ msgstr "certyfikat nie powinien byæ u¿ywany do podpisywania\n"
+ 
+@@ -7822,20 +7796,15 @@
+ msgstr "Wywo³anie: gpgsm [opcje] [pliki] (-h podaje pomoc)"
+ 
+ #: sm/gpgsm.c:525
+-#, fuzzy
+-#| msgid ""
+-#| "Syntax: gpgsm [options] [files]\n"
+-#| "sign, check, encrypt or decrypt using the S/MIME protocol\n"
+-#| "default operation depends on the input data\n"
+ msgid ""
+ "Syntax: gpgsm [options] [files]\n"
+ "Sign, check, encrypt or decrypt using the S/MIME protocol\n"
+ "Default operation depends on the input data\n"
+ msgstr ""
+ "Sk³adnia: gpgsm [opcje] [pliki]\n"
+-"podpisywanie, sprawdzanie podpisów, szyfrowanie, deszyfrowanie z u¿yciem S/"
++"Podpisywanie, sprawdzanie podpisów, szyfrowanie, rozszyfrowywanie z u¿yciem S/"
+ "MIME\n"
+-"domy¶lnie wykonywana operacja zale¿y od danych wej¶ciowych\n"
++"Domy¶lnie wykonywana operacja zale¿y od danych wej¶ciowych\n"
+ 
+ #: sm/gpgsm.c:617
+ msgid "usage: gpgsm [options] "
+@@ -8376,7 +8345,7 @@
+ 
+ #: tools/symcryptrun.c:156
+ msgid "decryption modus"
+-msgstr "tryb deszyfrowania"
++msgstr "tryb rozszyfrowywania"
+ 
+ #: tools/symcryptrun.c:157
+ msgid "encryption modus"
+@@ -8543,6 +8512,3 @@
+ msgstr ""
+ "Sk³adnia: gpg-check-pattern [opcje] plik-wzorców\n"
+ "Sprawdzanie has³a ze standardowego wej¶cia wzglêdem pliku wzorców\n"
+-
+-#~ msgid "failed to allocated keyDB handle\n"
+-#~ msgstr "nie uda³o siê przydzieliæ uchwytu keyDB\n"
