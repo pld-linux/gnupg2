@@ -1,18 +1,5 @@
---- gnupg-2.0.21/po/pl.po.orig	2013-08-23 16:12:12.437321823 +0200
-+++ gnupg-2.0.21/po/pl.po	2013-08-23 16:19:07.357304412 +0200
-@@ -6,10 +6,10 @@
- #
- msgid ""
- msgstr ""
--"Project-Id-Version: gnupg-2.0.20\n"
-+"Project-Id-Version: gnupg-2.0.22\n"
- "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2013-10-04 19:46+0200\n"
--"PO-Revision-Date: 2013-05-12 17:25+0200\n"
-+"PO-Revision-Date: 2013-08-23 16:15+0200\n"
- "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
- "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
- "Language: pl\n"
+--- gnupg-2.0.23/po/pl.po.orig	2014-06-03 10:40:31.000000000 +0200
++++ gnupg-2.0.23/po/pl.po	2014-06-05 21:06:01.860847072 +0200
 @@ -441,10 +441,8 @@
  msgstr "nie u¿ywanie pamiêci PIN-ów przy podpisywaniu"
  
@@ -39,3 +26,16 @@
  
  #: agent/gpg-agent.c:202
  msgid "|FILE|write environment settings also to FILE"
+@@ -6132,10 +6130,9 @@
+ msgstr "UWAGA: klucz podpisuj±cy %s zosta³ uniewa¿niony\n"
+ 
+ #: g10/sig-check.c:280
+-#, fuzzy, c-format
+-#| msgid "%s signature, digest algorithm %s\n"
++#, c-format
+ msgid "Note: signatures using the %s algorithm are rejected\n"
+-msgstr "podpis %s, skrót %s\n"
++msgstr "Uwaga: podpisy wykonane algorytmem %s s± odrzucane\n"
+ 
+ #: g10/sig-check.c:341
+ #, c-format
