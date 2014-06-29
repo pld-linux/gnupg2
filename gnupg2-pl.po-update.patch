@@ -1,5 +1,5 @@
---- gnupg-2.0.23/po/pl.po.orig	2014-06-03 10:40:31.000000000 +0200
-+++ gnupg-2.0.23/po/pl.po	2014-06-05 21:06:01.860847072 +0200
+--- gnupg-2.0.24/po/pl.po.orig	2014-06-24 15:07:11.000000000 +0200
++++ gnupg-2.0.24/po/pl.po	2014-06-29 20:30:21.654338043 +0200
 @@ -441,10 +441,8 @@
  msgstr "nie u¿ywanie pamiêci PIN-ów przy podpisywaniu"
  
@@ -26,7 +26,38 @@
  
  #: agent/gpg-agent.c:202
  msgid "|FILE|write environment settings also to FILE"
-@@ -6132,10 +6130,9 @@
+@@ -2919,14 +2917,13 @@
+ msgstr "klucz %s: brak identyfikatora u¿ytkownika\n"
+ 
+ #: g10/import.c:804
+-#, fuzzy, c-format
+-#| msgid "skipped \"%s\": %s\n"
++#, c-format
+ msgid "key %s: %s\n"
+-msgstr "pominiêty ,,%s'': %s\n"
++msgstr "klucz %s: %s\n"
+ 
+ #: g10/import.c:805 g10/import.c:1206
+ msgid "rejected by import filter"
+-msgstr ""
++msgstr "odrzucony przez filtr importu"
+ 
+ #: g10/import.c:834
+ #, c-format
+@@ -3049,10 +3046,9 @@
+ msgstr "klucz %s: ,,%s'' bez zmian\n"
+ 
+ #: g10/import.c:1205
+-#, fuzzy, c-format
+-#| msgid "secret key \"%s\" not found: %s\n"
++#, c-format
+ msgid "secret key %s: %s\n"
+-msgstr "klucz prywatny ,,%s'' nie zosta³ odnaleziony: %s\n"
++msgstr "klucz prywatny %s: %s\n"
+ 
+ #: g10/import.c:1225 g10/import.c:1248
+ msgid "importing secret keys not allowed\n"
+@@ -6148,10 +6144,9 @@
  msgstr "UWAGA: klucz podpisuj±cy %s zosta³ uniewa¿niony\n"
  
  #: g10/sig-check.c:280
