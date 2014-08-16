@@ -6,12 +6,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.0.25
+Version:	2.0.26
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	048d8de797125f1d8e6cf3bdff9e2d12
+# Source0-md5:	fa7e704aad33eb114d1840164455aec1
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -36,8 +36,8 @@ BuildRequires:	pcsc-lite-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
-Suggests:	gnupg-agent
 Requires:	gnupg2-common = %{version}-%{release}
+Suggests:	gnupg-agent
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/gnupg2
