@@ -1,11 +1,11 @@
---- gnupg-2.0.20/configure.ac.orig	2013-05-12 17:32:39.674996433 +0200
-+++ gnupg-2.0.20/configure.ac	2013-05-12 17:33:18.451661475 +0200
-@@ -62,7 +62,7 @@
+--- gnupg-2.1.0/configure.ac~	2014-11-04 16:09:28.000000000 +0100
++++ gnupg-2.1.0/configure.ac	2014-11-21 21:07:10.929592352 +0100
+@@ -77,7 +77,7 @@ VERSION=$PACKAGE_VERSION
  
- AC_CONFIG_AUX_DIR(scripts)
- AC_CONFIG_SRCDIR(sm/gpgsm.c)
--AM_CONFIG_HEADER(config.h)
-+AC_CONFIG_HEADERS(config.h)
- AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
- AC_CANONICAL_HOST
- AB_INIT
+ AC_CONFIG_AUX_DIR([build-aux])
+ AC_CONFIG_SRCDIR([sm/gpgsm.c])
+-AC_CONFIG_HEADER([config.h])
++AC_CONFIG_HEADERS([config.h])
+ # Note: For automake 1.13 add the option
+ #          serial-tests
+ AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip])
