@@ -1,5 +1,8 @@
+# TODO: ntbtls instead of gnutls (when released)?
+#
 # Conditional build:
 %bcond_without	tests	# testsuite on build
+%bcond_with	selinux	# "SELinux hacks"
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
@@ -23,24 +26,22 @@ BuildRequires:	automake >= 1:1.10
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
 BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gnutls-devel >= 3.0
 BuildRequires:	libassuan-devel >= 1:2.0.0
-BuildRequires:	libgcrypt-devel >= 1.4.0
-BuildRequires:	libgpg-error-devel >= 1.7
-BuildRequires:	libksba-devel >= 1.0.7
-BuildRequires:	libusb-compat-devel
+BuildRequires:	libgcrypt-devel >= 1.6.0
+BuildRequires:	libgpg-error-devel >= 1.15
+BuildRequires:	libksba-devel >= 1.2.0
+BuildRequires:	libusb-compat-devel >= 0.1
 BuildRequires:	npth-devel >= 1.1
-BuildRequires:	openldap-devel
+# only for dirmngr, which is not built here
+#BuildRequires:	openldap-devel
+BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
 Suggests:	gnupg-agent
-Obsoletes:	gnupg2-plugin-keys_curl
-Obsoletes:	gnupg2-plugin-keys_finger
-Obsoletes:	gnupg2-plugin-keys_hkp
-Obsoletes:	gnupg2-plugin-keys_kdns
-Obsoletes:	gnupg2-plugin-keys_ldap
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/gnupg2
@@ -67,9 +68,16 @@ Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libassuan >= 1:2.0.0
-Requires:	libgcrypt >= 1.4.0
-Requires:	libgpg-error >= 1.7
-Requires:	libksba >= 1.0.7
+Requires:	libgcrypt >= 1.6.0
+Requires:	libgpg-error >= 1.15
+Requires:	libksba >= 1.2.0
+Requires:	npth >= 1.1
+Obsoletes:	gnupg2-plugin-keys_curl
+Obsoletes:	gnupg2-plugin-keys_finger
+Obsoletes:	gnupg2-plugin-keys_hkp
+Obsoletes:	gnupg2-plugin-keys_kdns
+Obsoletes:	gnupg2-plugin-keys_ldap
+Conflicts:	gnupg < 1.4.18-2
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description common
@@ -149,6 +157,7 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 %configure \
 	--disable-dirmngr \
 	--enable-gpg \
+	%{?with_selinux:--enable-selinux-support} \
 	--enable-symcryptrun \
 	--with-capabilities \
 	--with-pinentry-pgm=%{_bindir}/pinentry \
@@ -166,8 +175,14 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
+# non-existing program
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man1/gpg-zip.1
+# see dirmngr package
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/{man1/dirmngr-client.1,man8/dirmngr.8}
+
+%{__rm} -f $RPM_BUILD_ROOT%{_datadir}/info/dir
+
 %find_lang gnupg2
-rm -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -194,7 +209,7 @@ EOF
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO
+%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP}
 %attr(755,root,root) %{_bindir}/g13
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
