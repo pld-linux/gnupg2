@@ -26,7 +26,7 @@ BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	gnutls-devel >= 3.0
 BuildRequires:	libassuan-devel >= 1:2.0.0
 BuildRequires:	libgcrypt-devel >= 1.6.0
