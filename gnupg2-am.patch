@@ -1,11 +1,11 @@
---- gnupg-2.0.20/configure.ac.orig	2013-05-12 17:32:39.674996433 +0200
-+++ gnupg-2.0.20/configure.ac	2013-05-12 17:33:18.451661475 +0200
+--- gnupg-2.0.27/configure.ac.orig	2015-02-26 19:33:04.165415100 +0100
++++ gnupg-2.0.27/configure.ac	2015-02-26 19:40:14.108730388 +0100
 @@ -62,7 +62,7 @@
  
  AC_CONFIG_AUX_DIR(scripts)
  AC_CONFIG_SRCDIR(sm/gpgsm.c)
 -AM_CONFIG_HEADER(config.h)
-+AC_CONFIG_HEADERS(config.h)
- AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
++AC_CONFIG_HEADERS([config.h])
+ AM_INIT_AUTOMAKE([serial-tests dist-bzip2 no-dist-gzip])
  AC_CANONICAL_HOST
  AB_INIT
