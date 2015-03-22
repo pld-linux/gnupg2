@@ -186,10 +186,10 @@ install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/postshell
+%post	common -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p /sbin/postshell
+%postun	common -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %triggerpostun -n gnupg-agent -- gnupg-agent < 1.9.16-2
