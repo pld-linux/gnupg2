@@ -8,12 +8,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.4
+Version:	2.1.5
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	c36f1a4c261ecc81fa5df551356c33f1
+# Source0-md5:	ff16648f14ec164c7afce1066019364b
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -161,6 +161,9 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 	--with-capabilities \
 	--with-pinentry-pgm=%{_bindir}/pinentry \
 	--with-mailprog=/usr/lib/sendmail
+
+# required for info rebuild
+%{__make} -C doc defs.inc
 
 %{__make}
 
