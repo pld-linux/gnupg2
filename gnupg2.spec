@@ -8,12 +8,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.7
+Version:	2.1.8
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	ebdf92b15b8bcd8579b643c7f41a3238
+# Source0-md5:	50f099162e70599ec351f2cc4788274f
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -184,6 +184,9 @@ install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
 %{__rm} -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
+# files useful for users packaged as %doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/gnupg
+
 %find_lang gnupg2
 
 %clean
@@ -211,7 +214,7 @@ EOF
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP}
+%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP} doc/examples
 %attr(755,root,root) %{_bindir}/g13
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
