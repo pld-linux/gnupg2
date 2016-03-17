@@ -155,6 +155,7 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 %{__automake}
 %configure \
 	--disable-dirmngr \
+	--enable-g13 \
 	--enable-gpg \
 	%{?with_selinux:--enable-selinux-support} \
 	--enable-symcryptrun \
@@ -213,6 +214,7 @@ EOF
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP} doc/examples
+%attr(755,root,root) %{_bindir}/g13
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgparsemail
