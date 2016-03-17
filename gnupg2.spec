@@ -8,12 +8,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.9
+Version:	2.1.11
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	0aabfec527b4b0b11a823c8a8ef9a9ab
+# Source0-md5:	873302c475c4c90badb67daac90ebd5d
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -27,7 +27,7 @@ BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	gnutls-devel >= 3.0
-BuildRequires:	libassuan-devel >= 1:2.2.0
+BuildRequires:	libassuan-devel >= 1:2.4.2
 BuildRequires:	libgcrypt-devel >= 1.6.0
 BuildRequires:	libgpg-error-devel >= 1.16
 BuildRequires:	libksba-devel >= 1.2.0
@@ -67,7 +67,7 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan >= 1:2.2.0
+Requires:	libassuan >= 1:2.4.2
 Requires:	libgcrypt >= 1.6.0
 Requires:	libgpg-error >= 1.16
 Requires:	libksba >= 1.2.0
@@ -177,8 +177,6 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
-# non-existing program
-%{__rm} $RPM_BUILD_ROOT%{_mandir}/man1/gpg-zip.1
 # see dirmngr package
 %{__rm} $RPM_BUILD_ROOT%{_mandir}/{man1/dirmngr-client.1,man8/dirmngr.8}
 
@@ -215,10 +213,8 @@ EOF
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP} doc/examples
-%attr(755,root,root) %{_bindir}/g13
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
-%attr(755,root,root) %{_bindir}/gpgkey2ssh
 %attr(755,root,root) %{_bindir}/gpgparsemail
 %attr(755,root,root) %{_bindir}/gpgtar
 %attr(755,root,root) %{_bindir}/kbxutil
