@@ -1,6 +1,67 @@
---- gnupg-2.0.27/po/pl.po.orig	2015-02-26 19:22:43.012107834 +0100
-+++ gnupg-2.0.27/po/pl.po	2015-02-26 19:31:01.692086906 +0100
-@@ -4038,13 +4038,11 @@
+--- gnupg-2.0.30/po/pl.po.orig	2016-03-31 12:49:13.000000000 +0200
++++ gnupg-2.0.30/po/pl.po	2016-04-18 19:59:02.489174371 +0200
+@@ -38,42 +38,32 @@
+ msgstr "|pinentry-label|_Anuluj"
+ 
+ #: agent/call-pinentry.c:430
+-#, fuzzy
+-#| msgid "|pinentry-label|_OK"
+ msgid "|pinentry-label|_Yes"
+-msgstr "|pinentry-label|_OK"
++msgstr "|pinentry-label|_Tak"
+ 
+ #: agent/call-pinentry.c:431
+-#, fuzzy
+-#| msgid "|pinentry-label|_OK"
+ msgid "|pinentry-label|_No"
+-msgstr "|pinentry-label|_OK"
++msgstr "|pinentry-label|_Nie"
+ 
+ #: agent/call-pinentry.c:432
+ msgid "|pinentry-label|PIN:"
+ msgstr "|pinentry-label|PIN:"
+ 
+ #: agent/call-pinentry.c:433
+-#, fuzzy
+-#| msgid "|pinentry-label|_Cancel"
+ msgid "|pinentry-label|_Save in password manager"
+-msgstr "|pinentry-label|_Anuluj"
++msgstr "|pinentry-label|_Zapisz w zarządcy haseł"
+ 
+ #: agent/call-pinentry.c:434
+-#, fuzzy
+-#| msgid "Do you really want to revoke the selected subkeys? (y/N) "
+ msgid "Do you really want to make your passphrase visible on the screen?"
+-msgstr "Czy na pewno chcesz unieważnić wybrane podklucze? (t/N) "
++msgstr "Czy na pewno uwidocznić hasło na ekranie?"
+ 
+ #: agent/call-pinentry.c:436
+ msgid "|pinentry-tt|Make passphrase visible"
+-msgstr ""
++msgstr "|pinentry-tt|Pokaż hasło"
+ 
+ #: agent/call-pinentry.c:437
+-#, fuzzy
+-#| msgid "Enter new passphrase"
+ msgid "|pinentry-tt|Hide passphrase"
+-msgstr "Wprowadź nowe hasło"
++msgstr "|pinentry-tt|Ukryj hasło"
+ 
+ #. TRANSLATORS: This string is displayed by Pinentry as the label
+ #. for the quality bar.
+@@ -491,10 +481,8 @@
+ msgstr "włączenie obsługi putty"
+ 
+ #: agent/gpg-agent.c:203
+-#, fuzzy
+-#| msgid "do not allow the reuse of old passphrases"
+ msgid "disallow the use of an external password cache"
+-msgstr "nie zezwalanie na ponowne użycie starych haseł"
++msgstr "niezezwalanie na użycie zewnętrznej pamięci haseł"
+ 
+ #: agent/gpg-agent.c:205
+ msgid "|FILE|write environment settings also to FILE"
+@@ -4078,13 +4066,11 @@
  
  #: g10/keyedit.c:3133
  msgid "WARNING: Your encryption subkey expires soon.\n"
@@ -16,3 +77,41 @@
  
  #: g10/keyedit.c:3195
  msgid ""
+@@ -4931,10 +4917,9 @@
+ msgstr "       Odcisk klucza ="
+ 
+ #: g10/keylist.c:1599 g10/keylist.c:1601
+-#, fuzzy, c-format
+-#| msgid "WARNING: using experimental digest algorithm %s\n"
++#, c-format
+ msgid "WARNING: a PGP-2 fingerprint is not safe\n"
+-msgstr "OSTRZEŻENIE: użycie eksperymentalnego algorytmu skrótu %s\n"
++msgstr "OSTRZEŻENIE: odciski PGP-2 nie są bezpieczne\n"
+ 
+ #: g10/keylist.c:1618
+ msgid "      Card serial no. ="
+@@ -6737,10 +6722,8 @@
+ msgstr "brak argumentu"
+ 
+ #: jnlib/argparse.c:205
+-#, fuzzy
+-#| msgid "invalid value\n"
+ msgid "invalid argument"
+-msgstr "niepoprawna wartość\n"
++msgstr "błędny argument"
+ 
+ #: jnlib/argparse.c:207
+ msgid "invalid command"
+@@ -6764,10 +6747,9 @@
+ msgstr "brak argumentu dla opcji ,,%.50s''\n"
+ 
+ #: jnlib/argparse.c:223
+-#, fuzzy, c-format
+-#| msgid "missing argument for option \"%.50s\"\n"
++#, c-format
+ msgid "invalid argument for option \"%.50s\"\n"
+-msgstr "brak argumentu dla opcji ,,%.50s''\n"
++msgstr "błędny argument dla opcji ,,%.50s''\n"
+ 
+ #: jnlib/argparse.c:225
+ #, c-format
