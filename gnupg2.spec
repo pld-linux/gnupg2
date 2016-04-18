@@ -6,12 +6,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.0.27
-Release:	2
+Version:	2.0.30
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	b35df68881a5ae432b0391b73773c698
+# Source0-md5:	01bb47e669a78eaca90dbe6b4b4acc24
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -21,13 +21,13 @@ Patch4:		%{name}-am.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	adns-devel
 BuildRequires:	autoconf >= 2.61
-BuildRequires:	automake >= 1:1.10
+BuildRequires:	automake >= 1:1.14
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gettext-devel >= 0.19.3
 BuildRequires:	libassuan-devel >= 1:2.0.0
-BuildRequires:	libgcrypt-devel >= 1.4.0
-BuildRequires:	libgpg-error-devel >= 1.7
+BuildRequires:	libgcrypt-devel >= 1.5.0
+BuildRequires:	libgpg-error-devel >= 1.11
 BuildRequires:	libksba-devel >= 1.0.7
 BuildRequires:	libusb-compat-devel
 BuildRequires:	openldap-devel
@@ -64,8 +64,8 @@ Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libassuan >= 1:2.0.0
-Requires:	libgcrypt >= 1.4.0
-Requires:	libgpg-error >= 1.7
+Requires:	libgcrypt >= 1.5.0
+Requires:	libgpg-error >= 1.11
 Requires:	libksba >= 1.0.7
 Conflicts:	gnupg-agent < 1.9.14-2
 
