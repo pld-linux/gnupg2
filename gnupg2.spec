@@ -8,12 +8,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.11
+Version:	2.1.12
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	873302c475c4c90badb67daac90ebd5d
+# Source0-md5:	573bc2cd83934eed12f0d0db443f5bde
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -31,13 +31,14 @@ BuildRequires:	libassuan-devel >= 1:2.4.2
 BuildRequires:	libgcrypt-devel >= 1.6.0
 BuildRequires:	libgpg-error-devel >= 1.16
 BuildRequires:	libksba-devel >= 1.2.0
-BuildRequires:	libusb-compat-devel >= 0.1
+BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.1
 # only for dirmngr, which is not built here
 #BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
+BuildRequires:	sqlite3-devel >= 3
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
@@ -223,6 +224,7 @@ EOF
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_sbindir}/applygnupgdefaults
+%attr(755,root,root) %{_sbindir}/g13-syshelp
 %dir %{_libexecdir}
 
 %{_datadir}/gnupg
