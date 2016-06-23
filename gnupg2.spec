@@ -8,12 +8,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.12
+Version:	2.1.13
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	573bc2cd83934eed12f0d0db443f5bde
+# Source0-md5:	6aa46856e4f39b1b559792f003aae986
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -29,7 +29,7 @@ BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	gnutls-devel >= 3.0
 BuildRequires:	libassuan-devel >= 1:2.4.2
 BuildRequires:	libgcrypt-devel >= 1.6.0
-BuildRequires:	libgpg-error-devel >= 1.16
+BuildRequires:	libgpg-error-devel >= 1.21
 BuildRequires:	libksba-devel >= 1.2.0
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.1
@@ -38,10 +38,11 @@ BuildRequires:	npth-devel >= 1.1
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
-BuildRequires:	sqlite3-devel >= 3
+BuildRequires:	sqlite3-devel >= 3.7
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
+Requires:	sqlite3 >= 3.7
 Suggests:	gnupg-agent
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -70,7 +71,7 @@ Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libassuan >= 1:2.4.2
 Requires:	libgcrypt >= 1.6.0
-Requires:	libgpg-error >= 1.16
+Requires:	libgpg-error >= 1.21
 Requires:	libksba >= 1.2.0
 Requires:	npth >= 1.1
 Obsoletes:	gnupg2-plugin-keys_curl
