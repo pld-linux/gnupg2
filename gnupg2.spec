@@ -8,12 +8,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.13
+Version:	2.1.14
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	6aa46856e4f39b1b559792f003aae986
+# Source0-md5:	46cf0a42ffad6c2615cafd633580b2de
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -27,12 +27,12 @@ BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
 BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	gnutls-devel >= 3.0
-BuildRequires:	libassuan-devel >= 1:2.4.2
-BuildRequires:	libgcrypt-devel >= 1.6.0
-BuildRequires:	libgpg-error-devel >= 1.21
-BuildRequires:	libksba-devel >= 1.2.0
+BuildRequires:	libassuan-devel >= 1:2.4.3
+BuildRequires:	libgcrypt-devel >= 1.7.0
+BuildRequires:	libgpg-error-devel >= 1.24
+BuildRequires:	libksba-devel >= 1.3.4
 BuildRequires:	libusb-devel >= 1.0
-BuildRequires:	npth-devel >= 1.1
+BuildRequires:	npth-devel >= 1.2
 # only for dirmngr, which is not built here
 #BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig
@@ -69,11 +69,11 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan >= 1:2.4.2
-Requires:	libgcrypt >= 1.6.0
-Requires:	libgpg-error >= 1.21
-Requires:	libksba >= 1.2.0
-Requires:	npth >= 1.1
+Requires:	libassuan >= 1:2.4.3
+Requires:	libgcrypt >= 1.7.0
+Requires:	libgpg-error >= 1.24
+Requires:	libksba >= 1.3.4
+Requires:	npth >= 1.2
 Obsoletes:	gnupg2-plugin-keys_curl
 Obsoletes:	gnupg2-plugin-keys_finger
 Obsoletes:	gnupg2-plugin-keys_hkp
@@ -220,6 +220,7 @@ EOF
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgparsemail
+%attr(755,root,root) %{_bindir}/gpgscm
 %attr(755,root,root) %{_bindir}/gpgtar
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/watchgnupg
