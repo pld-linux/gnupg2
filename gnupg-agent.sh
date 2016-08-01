@@ -14,7 +14,8 @@ fi
 if grep -q "^[[:blank:]]*use-agent" ${CFG} 2>/dev/null; then
 	if [ -f "${HOME}/.gnupg/GPG_AGENT_INFO" ] && \
 			pid="$(cut -d: -f2 $HOME/.gnupg/GPG_AGENT_INFO)" && \
-			[ "$(resolvesymlink "/proc/$pid/exe")" = "/usr/bin/gpg-agent" ]; then
+			agent="$(resolvesymlink "/proc/$pid/exe")" && \
+			[ "$agent" = "/usr/bin/gpg-agent" -o "$agent" = "/usr/bin/seahorse-agent" ]; then
 		export GPG_AGENT_INFO="$(cat ${HOME}/.gnupg/GPG_AGENT_INFO)"
 	else
 		if [ "$seahorse" = "no" ]; then
@@ -26,5 +27,7 @@ if grep -q "^[[:blank:]]*use-agent" ${CFG} 2>/dev/null; then
 		export GPG_AGENT_INFO
 	fi
 fi
+unset agent
+unset seahorse
 unset CFG
 unset pid
