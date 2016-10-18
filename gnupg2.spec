@@ -1,48 +1,42 @@
-# TODO: ntbtls instead of gnutls (when released)?
 #
 # Conditional build:
+%bcond_without	pth	# without pth-based based version of gnupg
 %bcond_without	tests	# testsuite on build
-%bcond_with	selinux	# "SELinux hacks"
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-# 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.15
-Release:	0.1
+Version:	2.0.26
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	808d10b89c1f0de8d4d2a556aa36b623
+# Source0-md5:	fa7e704aad33eb114d1840164455aec1
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
-
+Patch1:		%{name}-pth.patch
 Patch2:		%{name}-disable_tests.patch
 Patch3:		%{name}-pl.po-update.patch
+Patch4:		%{name}-am.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	adns-devel
 BuildRequires:	autoconf >= 2.61
-BuildRequires:	automake >= 1:1.14
+BuildRequires:	automake >= 1:1.10
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
-BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	gnutls-devel >= 3.0
-BuildRequires:	libassuan-devel >= 1:2.4.3
-BuildRequires:	libgcrypt-devel >= 1.7.0
-BuildRequires:	libgpg-error-devel >= 1.24
-BuildRequires:	libksba-devel >= 1.3.4
-BuildRequires:	libusb-devel >= 1.0
-BuildRequires:	npth-devel >= 1.2
-# only for dirmngr, which is not built here
-#BuildRequires:	openldap-devel
-BuildRequires:	pkgconfig
-BuildRequires:	readline-devel
+BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	libassuan-devel >= 1:2.0.0
+BuildRequires:	libgcrypt-devel >= 1.4.0
+BuildRequires:	libgpg-error-devel >= 1.7
+BuildRequires:	libksba-devel >= 1.0.7
+BuildRequires:	libusb-compat-devel
+BuildRequires:	openldap-devel
+BuildRequires:	pcsc-lite-devel
+%{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
 BuildRequires:	rpmbuild(macros) >= 1.177
-BuildRequires:	sqlite3-devel >= 3.7
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
-Requires:	sqlite3 >= 3.7
 Suggests:	gnupg-agent
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -69,17 +63,10 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan >= 1:2.4.3
-Requires:	libgcrypt >= 1.7.0
-Requires:	libgpg-error >= 1.24
-Requires:	libksba >= 1.3.4
-Requires:	npth >= 1.2
-Obsoletes:	gnupg2-plugin-keys_curl
-Obsoletes:	gnupg2-plugin-keys_finger
-Obsoletes:	gnupg2-plugin-keys_hkp
-Obsoletes:	gnupg2-plugin-keys_kdns
-Obsoletes:	gnupg2-plugin-keys_ldap
-Conflicts:	gnupg < 1.4.18-2
+Requires:	libassuan >= 1:2.0.0
+Requires:	libgcrypt >= 1.4.0
+Requires:	libgpg-error >= 1.7
+Requires:	libksba >= 1.0.7
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description common
@@ -87,6 +74,68 @@ Common files used by tools from GnuPG project.
 
 %description common -l pl.UTF-8
 Pliki wspólne używane przez różne narzędzia z projektu GnuPG.
+
+%package plugin-keys_curl
+Summary:	GnuPG 2 plugin for allow talk to a HTTP/FTP keyserver
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HTTP/FTP
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+Requires:	curl-libs >= 7.10
+
+%description plugin-keys_curl
+GnuPG 2 plugin for allow talk to a HTTP(S)/FTP(S) keyserver.
+
+%description plugin-keys_curl -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy
+HTTP(S)/FTP(S).
+
+%package plugin-keys_finger
+Summary:	GnuPG 2 plugin for allow talk to a FINGER keyserver
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy FINGER
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_finger
+GnuPG 2 plugin for allow talk to a FINGER keyserver.
+
+%description plugin-keys_finger -l pl.UTF-8
+Wtyczka 2 GnuPG pozwalająca komunikować się z serwerem kluczy FINGER.
+
+%package plugin-keys_hkp
+Summary:	GnuPG 2 plugin for allow talk to a HKP keyserver
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_hkp
+GnuPG 2 plugin for allow talk to a HKP keyserver.
+
+%description plugin-keys_hkp -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP.
+
+%package plugin-keys_kdns
+Summary:	GnuPG 2 plugin for allow talk to a KDNS keyserver
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy KDNS
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_kdns
+GnuPG 2 plugin for allow talk to a KDNS keyserver.
+
+%description plugin-keys_kdns -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy KDNS.
+
+%package plugin-keys_ldap
+Summary:	GnuPG 2 plugin for allow talk to a LDAP keyserver
+Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy LDAP
+Group:		Applications/File
+Requires:	%{name}-common = %{version}-%{release}
+
+%description plugin-keys_ldap
+GnuPG 2 plugin for allow talk to a LDAP keyserver.
+
+%description plugin-keys_ldap -l pl.UTF-8
+Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy LDAP.
 
 %package -n gnupg-agent
 Summary:	GnuPG extension - agent
@@ -143,30 +192,26 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 %prep
 %setup -q -n gnupg-%{version}
 %patch0 -p1
-
+%patch1 -p1
 %{!?with_tests:%patch2 -p1}
-#%patch3 -p1
+%patch3 -p1
+%patch4 -p1
 
 %{__rm} po/stamp-po
 
 %build
 %{__gettextize}
-%{__aclocal} -I m4
+%{__aclocal} -I m4 -I gl/m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
-	--disable-dirmngr \
-	--enable-g13 \
+	%{!?with_pth:--disable-threads} \
 	--enable-gpg \
-	%{?with_selinux:--enable-selinux-support} \
 	--enable-symcryptrun \
 	--with-capabilities \
 	--with-pinentry-pgm=%{_bindir}/pinentry \
 	--with-mailprog=/usr/lib/sendmail
-
-# required for info rebuild
-%{__make} -C doc defs.inc
 
 %{__make}
 
@@ -180,23 +225,16 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
-# see dirmngr package
-%{__rm} $RPM_BUILD_ROOT%{_mandir}/{man1/dirmngr-client.1,man8/dirmngr.8}
-
-%{__rm} -f $RPM_BUILD_ROOT%{_datadir}/info/dir
-
-# files useful for users packaged as %doc
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/gnupg
-
 %find_lang gnupg2
+rm -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	common -p /sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	common -p /sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %triggerpostun -n gnupg-agent -- gnupg-agent < 1.9.16-2
@@ -215,39 +253,57 @@ EOF
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP} doc/examples
-%attr(755,root,root) %{_bindir}/g13
+%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
+%attr(755,root,root) %{_bindir}/gpgkey2ssh
 %attr(755,root,root) %{_bindir}/gpgparsemail
-%attr(755,root,root) %{_bindir}/gpgscm
-%attr(755,root,root) %{_bindir}/gpgtar
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_sbindir}/applygnupgdefaults
-%attr(755,root,root) %{_sbindir}/g13-syshelp
 %dir %{_libexecdir}
-
 %{_datadir}/gnupg
 %{_mandir}/man1/gpg-connect-agent.1*
 %{_mandir}/man1/gpgconf.1*
 %{_mandir}/man1/gpgparsemail.1*
 %{_mandir}/man1/watchgnupg.1*
-%{_mandir}/man7/gnupg.7*
 %{_mandir}/man8/addgnupghome.8*
 %{_mandir}/man8/applygnupgdefaults.8*
 %{_infodir}/gnupg.info*
 
+%files plugin-keys_curl
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_curl
+
+%files plugin-keys_finger
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_finger
+
+%files plugin-keys_hkp
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_hkp
+
+%files plugin-keys_kdns
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_kdns
+
+%files plugin-keys_ldap
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gpg2keys_ldap
+
 %files -n gnupg-smime
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpgsm
+%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
 %{_mandir}/man1/gpgsm.1*
+%{_mandir}/man1/gpgsm-gencert.sh.1*
 
 %files -n gnupg-agent
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/symcryptrun
+%attr(755,root,root) %{_libexecdir}/gnupg-pcsc-wrapper
 %attr(755,root,root) %{_libexecdir}/gpg-check-pattern
 %attr(755,root,root) %{_libexecdir}/gpg-protect-tool
 %attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
