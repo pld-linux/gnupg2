@@ -2,18 +2,19 @@
 #
 # Conditional build:
 %bcond_without	tests	# testsuite on build
+%bcond_with	gnutls	# GnuTLS instead of NTBTLS
 %bcond_with	selinux	# "SELinux hacks"
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.18
+Version:	2.1.20
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	c67f908b0b35c7ebc62144f362757e1e
+# Source0-md5:	f6bc7e0b82893dfafe09109d86ff6e9b
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -26,13 +27,14 @@ BuildRequires:	automake >= 1:1.14
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
 BuildRequires:	gettext-tools >= 0.17
-BuildRequires:	gnutls-devel >= 3.0
+%{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0}
 BuildRequires:	libassuan-devel >= 1:2.4.3
 BuildRequires:	libgcrypt-devel >= 1.7.0
 BuildRequires:	libgpg-error-devel >= 1.24
 BuildRequires:	libksba-devel >= 1.3.4
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.2
+%{!?with_gnutls:BuildRequires:	ntbtls-devel >= 0.1.0}
 # only for dirmngr, which is not built here
 #BuildRequires:	openldap-devel
 BuildRequires:	pkgconfig
@@ -159,6 +161,7 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 	--disable-dirmngr \
 	--enable-g13 \
 	--enable-gpg \
+	%{?with_gnutls:--disable-ntbtls} \
 	%{?with_selinux:--enable-selinux-support} \
 	--enable-symcryptrun \
 	--with-capabilities \
