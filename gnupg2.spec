@@ -1,4 +1,3 @@
-# TODO: ntbtls instead of gnutls (when released)?
 #
 # Conditional build:
 %bcond_without	tests	# testsuite on build
@@ -9,12 +8,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.20
+Version:	2.1.21
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	f6bc7e0b82893dfafe09109d86ff6e9b
+# Source0-md5:	685ebf4c3a7134ba0209c96b18b2f064
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 
@@ -210,7 +209,6 @@ EOF
 
 %files
 %defattr(644,root,root,755)
-%doc g10/options.skel
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
 %{_mandir}/man1/gpg2.1*
