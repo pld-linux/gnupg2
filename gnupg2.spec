@@ -1,20 +1,20 @@
 #
 # Conditional build:
-%bcond_without	pth	# without pth-based based version of gnupg
-%bcond_without	tests	# testsuite on build
-%bcond_with	gnutls	# GnuTLS instead of NTBTLS
-%bcond_with	selinux	# "SELinux hacks"
+%bcond_without	tests		# testsuite on build
+%bcond_with	default_gpg	# install as gpg/gpgv instead of gpg2/gpgv2
+%bcond_with	gnutls		# GnuTLS instead of NTBTLS
+%bcond_with	selinux		# "SELinux hacks"
 #
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
-Version:	2.1.21
+Version:	2.1.23
 Release:	0.1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	685ebf4c3a7134ba0209c96b18b2f064
+# Source0-md5:	86c2304ead54b74a422e76c3f1bc7a91
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pth.patch
@@ -44,10 +44,12 @@ BuildRequires:	rpmbuild(macros) >= 1.177
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
+Requires:	sqlite3 >= 3.7
+%{?with_default_gpg:Obsoletes:	gnupg < 2}
 Suggests:	gnupg-agent
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_libexecdir	%{_libdir}/gnupg2
+%define		pkglibexecdir	%{_libexecdir}/gnupg2
 
 %description
 GnuPG is GNU's tool for secure communication and data storage. It can
@@ -213,11 +215,14 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 %{__autoheader}
 %{__automake}
 %configure \
-	%{!?with_pth:--disable-threads} \
-	--enable-gpg \
+	--libexecdir=%{pkglibexecdir} \
+	--disable-dirmngr \
+	--enable-g13 \
+	%{!?with_default_gpg:--enable-gpg-is-gpg2} \
 	%{?with_gnutls:--disable-ntbtls} \
 	%{?with_selinux:--enable-selinux-support} \
 	--enable-symcryptrun \
+	--enable-wks-tools \
 	--with-capabilities \
 	--with-pinentry-pgm=%{_bindir}/pinentry \
 	--with-mailprog=/usr/lib/sendmail
@@ -254,10 +259,17 @@ EOF
 
 %files
 %defattr(644,root,root,755)
+%if %{with default_gpg}
+%attr(755,root,root) %{_bindir}/gpg
+%attr(755,root,root) %{_bindir}/gpgv
+%{_mandir}/man1/gpg.1*
+%{_mandir}/man1/gpgv.1*
+%else
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
 %{_mandir}/man1/gpg2.1*
 %{_mandir}/man1/gpgv2.1*
+%endif
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
@@ -270,7 +282,9 @@ EOF
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_sbindir}/applygnupgdefaults
-%dir %{_libexecdir}
+%attr(755,root,root) %{_sbindir}/g13-syshelp
+%dir %{pkglibexecdir}
+
 %{_datadir}/gnupg
 %{_mandir}/man1/gpg-connect-agent.1*
 %{_mandir}/man1/gpgconf.1*
@@ -310,15 +324,17 @@ EOF
 %files -n gnupg-agent
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpg-agent
+%attr(755,root,root) %{_bindir}/gpg-wks-server
 %attr(755,root,root) %{_bindir}/symcryptrun
-%attr(755,root,root) %{_libexecdir}/gnupg-pcsc-wrapper
-%attr(755,root,root) %{_libexecdir}/gpg-check-pattern
-%attr(755,root,root) %{_libexecdir}/gpg-protect-tool
-%attr(755,root,root) %{_libexecdir}/gpg-preset-passphrase
-%attr(755,root,root) %{_libexecdir}/gpg-wks-client
-%attr(755,root,root) %{_libexecdir}/scdaemon
+%attr(755,root,root) %{pkglibexecdir}/gpg-check-pattern
+%attr(755,root,root) %{pkglibexecdir}/gpg-protect-tool
+%attr(755,root,root) %{pkglibexecdir}/gpg-preset-passphrase
+%attr(755,root,root) %{pkglibexecdir}/gpg-wks-client
+%attr(755,root,root) %{pkglibexecdir}/scdaemon
 %{_mandir}/man1/gpg-agent.1*
 %{_mandir}/man1/gpg-preset-passphrase.1*
+%{_mandir}/man1/gpg-wks-client.1*
+%{_mandir}/man1/gpg-wks-server.1*
 %{_mandir}/man1/scdaemon.1*
 %{_mandir}/man1/symcryptrun.1*
 
