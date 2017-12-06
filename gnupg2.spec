@@ -23,7 +23,6 @@ Patch2:		%{name}-disable_tests.patch
 Patch3:		%{name}-pl.po-update.patch
 Patch4:		%{name}-am.patch
 URL:		http://www.gnupg.org/
-BuildRequires:	adns-devel
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.14
 BuildRequires:	bzip2-devel
