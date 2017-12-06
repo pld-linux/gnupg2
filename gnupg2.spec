@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	tests		# testsuite on build
+%bcond_without	dirmngr		# dirmngr packages build
 %bcond_with	default_gpg	# install as gpg/gpgv instead of gpg2/gpgv2
 %bcond_with	gnutls		# GnuTLS instead of NTBTLS
 %bcond_with	selinux		# "SELinux hacks"
@@ -35,8 +36,7 @@ BuildRequires:	libksba-devel >= 1.3.4
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.2
 %{!?with_gnutls:BuildRequires:	ntbtls-devel >= 0.1.0}
-# only for dirmngr, which is not built here
-#BuildRequires:	openldap-devel
+%{?with_dirmngr:BuildRequires:	openldap-devel >= 2.4.6}
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
@@ -143,6 +143,24 @@ GnuPG extension - S/MIME support.
 %description -n gnupg-smime -l pl.UTF-8
 Rozszerzenie GnuPG - obsługa S/MIME.
 
+%package -n dirmngr
+Summary:	X509/LDAP certificate and revocation list client
+Summary(pl.UTF-8):	Klient certyfikatów i list anulujących X509/LDAP
+Group:		Applications
+Requires:	%{name}-common = %{version}-%{release}
+
+%description -n dirmngr
+DirMngr is a client for managing and downloading certificate
+revocation lists (CRLs) for X509 certificates and for downloading the
+certificates themselves. DirMngr is usually invoked by gpgsm and in
+general not used directly.
+
+%description -n dirmngr -l pl.UTF-8
+DirMngr to klient do zarządzania i pobierania list anulujących
+certyfikaty (CRLs - certificate revocation lists) dla certyfikatów
+X509 oraz do pobierania samych certyfikatów. DirMngr jest zwykle
+wywoływany przez gpgsm i nie używany bezpośrednio.
+
 %prep
 %setup -q -n gnupg-%{version}
 %patch0 -p1
@@ -160,7 +178,7 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 %{__automake}
 %configure \
 	--libexecdir=%{pkglibexecdir} \
-	--disable-dirmngr \
+	%{!?with_dirmngr:--disable-dirmngr} \
 	--enable-g13 \
 	%{!?with_default_gpg:--enable-gpg-is-gpg2} \
 	%{?with_gnutls:--disable-ntbtls} \
@@ -186,8 +204,9 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
-# see dirmngr package
+%if %{without dirmngr}
 %{__rm} $RPM_BUILD_ROOT%{_mandir}/{man1/dirmngr-client.1,man8/dirmngr.8}
+%endif
 
 %{__rm} -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
@@ -280,3 +299,13 @@ EOF
 %files -n gnupg-agent-xinitrc
 %defattr(644,root,root,755)
 %attr(755,root,root) /etc/X11/xinit/xinitrc.d/gnupg-agent.sh
+
+%if %{with dirmngr}
+%files -n dirmngr
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/dirmngr
+%attr(755,root,root) %{_bindir}/dirmngr-client
+%attr(755,root,root) %{pkglibexecdir}/dirmngr_ldap
+%{_mandir}/man1/dirmngr-client.1*
+%{_mandir}/man8/dirmngr.8*
+%endif
