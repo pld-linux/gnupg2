@@ -71,7 +71,7 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan >= 1:2.4.3
+Requires:	libassuan >= 1:2.5.0
 Requires:	libgcrypt >= 1.7.0
 Requires:	libgpg-error >= 1.24
 Requires:	libksba >= 1.3.4
