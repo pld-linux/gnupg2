@@ -71,10 +71,17 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan >= 1:2.0.0
-Requires:	libgcrypt >= 1.5.0
-Requires:	libgpg-error >= 1.11
-Requires:	libksba >= 1.0.7
+Requires:	libassuan >= 1:2.5.0
+Requires:	libgcrypt >= 1.7.0
+Requires:	libgpg-error >= 1.24
+Requires:	libksba >= 1.3.4
+Requires:	npth >= 1.2
+Obsoletes:	gnupg2-plugin-keys_curl
+Obsoletes:	gnupg2-plugin-keys_finger
+Obsoletes:	gnupg2-plugin-keys_hkp
+Obsoletes:	gnupg2-plugin-keys_kdns
+Obsoletes:	gnupg2-plugin-keys_ldap
+Conflicts:	gnupg < 1.4.18-2
 Conflicts:	gnupg-agent < 1.9.14-2
 
 %description common
