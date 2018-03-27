@@ -44,7 +44,10 @@ BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
 Requires:	sqlite3 >= 3.7
-%{?with_default_gpg:Obsoletes:	gnupg < 2}
+%if %{with default_gpg}
+Obsoletes:	gnupg < 2
+Provides:	gnupg = %{version}-%{release}
+%endif
 Suggests:	gnupg-agent
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
