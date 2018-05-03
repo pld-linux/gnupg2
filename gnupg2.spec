@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	tests		# testsuite on build
 %bcond_without	dirmngr		# dirmngr packages build
-%bcond_with	default_gpg	# install as gpg/gpgv instead of gpg2/gpgv2
+%bcond_without	default_gpg	# install as gpg/gpgv instead of gpg2/gpgv2
 %bcond_with	gnutls		# GnuTLS instead of NTBTLS
 %bcond_with	selinux		# "SELinux hacks"
 #
@@ -11,14 +11,14 @@ Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego 
 Name:		gnupg2
 # 2.1.x is development version unfortunately (see gpg2 --version)
 Version:	2.2.7
-Release:	0.1
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
 # Source0-md5:	fc13424af7747a5dd6edb6086ec0cb2f
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-pth.patch
+Patch1:		%{name}-nogit.patch
 Patch2:		%{name}-disable_tests.patch
 Patch3:		%{name}-pl.po-update.patch
 Patch4:		%{name}-am.patch
@@ -46,6 +46,8 @@ Requires:	gnupg2-common = %{version}-%{release}
 Requires:	sqlite3 >= 3.7
 %if %{with default_gpg}
 Obsoletes:	gnupg < 2
+Obsoletes:	gnupg-plugin-keys_curl < 2
+Obsoletes:	gnupg-plugin-keys_hkp < 2
 Provides:	gnupg = %{version}-%{release}
 %endif
 Suggests:	gnupg-agent
@@ -229,6 +231,7 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
+
 %{!?with_tests:%patch2 -p1}
 %patch3 -p1
 %patch4 -p1
@@ -241,6 +244,12 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+if (grep -q ^development_version=yes configure); then
+	echo "configure incorrectly rebuild with messed up development status and likely version and revision." >&2
+	echo "Consider fixing nogit.patch" >&2
+	exit 1
+fi
+
 %configure \
 	--libexecdir=%{pkglibexecdir} \
 	%{!?with_dirmngr:--disable-dirmngr} \

@@ -1,0 +1,18 @@
+--- gnupg-2.2.7/autogen.sh.org	2018-05-03 20:55:20.709894555 +0200
++++ gnupg-2.2.7/autogen.sh	2018-05-03 20:57:36.847624695 +0200
+@@ -244,11 +244,10 @@
+       rev=$(git rev-parse --short HEAD | tr -d '\n\r')
+       rvd=$((0x$(echo ${rev} | dd bs=1 count=4 2>/dev/null)))
+     else
+-      ingit=no
+-      beta=yes
+-      tmp="-unknown"
+-      rev="0000000"
+-      rvd="0"
++      ingit=yes
++      tmp=""
++      rev=$(grep "^BUILD_REVISION=" configure | sed -e 's#^BUILD_REVISION=\"\(.*\)\"#\1#g')
++      rvd=$((0x$(echo ${rev} | dd bs=1 count=4 2>/dev/null)))
+     fi
+ 
+     echo "$package-$vers$tmp:$beta:$ingit:$vers$tmp:$vers:$tmp:$rev:$rvd:"
