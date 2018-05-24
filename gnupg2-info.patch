@@ -1,6 +1,6 @@
---- gnupg-2.0.17/doc/gnupg.texi.orig	2011-01-13 15:43:08.000000000 +0100
-+++ gnupg-2.0.17/doc/gnupg.texi	2011-01-14 16:54:40.626363293 +0100
-@@ -46,14 +46,14 @@
+--- gnupg-2.1.5/doc/gnupg.texi.orig	2015-06-13 22:28:58.864152110 +0200
++++ gnupg-2.1.5/doc/gnupg.texi	2015-06-13 23:01:28.427557018 +0200
+@@ -47,13 +47,13 @@
  @end copying
  
  
@@ -10,14 +10,13 @@
 -* gpg2: (gnupg).           OpenPGP encryption and signing tool.
 -* gpgsm: (gnupg).          S/MIME encryption and signing tool.
 -* gpg-agent: (gnupg).      The secret key daemon.
+-* dirmngr: (gnupg).        X.509 CRL and OCSP server.
+-* dirmngr-client: (gnupg). X.509 CRL and OCSP client.
 +* gpg2: (gnupg).			OpenPGP encryption and signing tool
 +* gpgsm: (gnupg).			S/MIME encryption and signing tool
 +* gpg-agent: (gnupg).			The secret key daemon
- @ifset gpgtwoone
--* dirmngr: (gnupg).        X.509 CRL and OCSP server.
--* dirmngr-client: (gnupg). X.509 CRL and OCSP client.
 +* dirmngr: (gnupg).			X.509 CRL and OCSP server
 +* dirmngr-client: (gnupg).		X.509 CRL and OCSP client
- @end ifset
  @end direntry
+ 
  

@@ -1,117 +1,72 @@
---- gnupg-2.0.30/po/pl.po.orig	2016-03-31 12:49:13.000000000 +0200
-+++ gnupg-2.0.30/po/pl.po	2016-04-18 19:59:02.489174371 +0200
-@@ -38,42 +38,32 @@
- msgstr "|pinentry-label|_Anuluj"
+--- gnupg-2.0.24/po/pl.po.orig	2014-06-24 15:07:11.000000000 +0200
++++ gnupg-2.0.24/po/pl.po	2014-06-29 20:30:21.654338043 +0200
+@@ -441,10 +441,8 @@
+ msgstr "nie u�ywanie pami�ci PIN-�w przy podpisywaniu"
  
- #: agent/call-pinentry.c:430
+ #: agent/gpg-agent.c:189
 -#, fuzzy
--#| msgid "|pinentry-label|_OK"
- msgid "|pinentry-label|_Yes"
--msgstr "|pinentry-label|_OK"
-+msgstr "|pinentry-label|_Tak"
+-#| msgid "allow clients to mark keys as \"trusted\""
+ msgid "disallow clients to mark keys as \"trusted\""
+-msgstr "zezwolenie klientom na oznaczanie kluczy jako \"zaufanych\""
++msgstr "brak zezwolenia dla klient�w na oznaczanie kluczy jako \"zaufanych\""
  
- #: agent/call-pinentry.c:431
--#, fuzzy
--#| msgid "|pinentry-label|_OK"
- msgid "|pinentry-label|_No"
--msgstr "|pinentry-label|_OK"
-+msgstr "|pinentry-label|_Nie"
+ #: agent/gpg-agent.c:192
+ msgid "allow presetting passphrase"
+@@ -452,11 +450,11 @@
  
- #: agent/call-pinentry.c:432
- msgid "|pinentry-label|PIN:"
- msgstr "|pinentry-label|PIN:"
- 
- #: agent/call-pinentry.c:433
--#, fuzzy
--#| msgid "|pinentry-label|_Cancel"
- msgid "|pinentry-label|_Save in password manager"
--msgstr "|pinentry-label|_Anuluj"
-+msgstr "|pinentry-label|_Zapisz w zarządcy haseł"
- 
- #: agent/call-pinentry.c:434
--#, fuzzy
--#| msgid "Do you really want to revoke the selected subkeys? (y/N) "
- msgid "Do you really want to make your passphrase visible on the screen?"
--msgstr "Czy na pewno chcesz unieważnić wybrane podklucze? (t/N) "
-+msgstr "Czy na pewno uwidocznić hasło na ekranie?"
- 
- #: agent/call-pinentry.c:436
- msgid "|pinentry-tt|Make passphrase visible"
+ #: agent/gpg-agent.c:193
+ msgid "enable ssh support"
 -msgstr ""
-+msgstr "|pinentry-tt|Pokaż hasło"
++msgstr "w��czenie obs�ugi ssh"
  
- #: agent/call-pinentry.c:437
--#, fuzzy
--#| msgid "Enter new passphrase"
- msgid "|pinentry-tt|Hide passphrase"
--msgstr "Wprowadź nowe hasło"
-+msgstr "|pinentry-tt|Ukryj hasło"
+ #: agent/gpg-agent.c:196
+ msgid "enable putty support"
+-msgstr ""
++msgstr "w��czenie obs�ugi putty"
  
- #. TRANSLATORS: This string is displayed by Pinentry as the label
- #. for the quality bar.
-@@ -491,10 +481,8 @@
- msgstr "włączenie obsługi putty"
- 
- #: agent/gpg-agent.c:203
--#, fuzzy
--#| msgid "do not allow the reuse of old passphrases"
- msgid "disallow the use of an external password cache"
--msgstr "nie zezwalanie na ponowne użycie starych haseł"
-+msgstr "niezezwalanie na użycie zewnętrznej pamięci haseł"
- 
- #: agent/gpg-agent.c:205
+ #: agent/gpg-agent.c:202
  msgid "|FILE|write environment settings also to FILE"
-@@ -4078,13 +4066,11 @@
+@@ -2919,14 +2917,13 @@
+ msgstr "klucz %s: brak identyfikatora u�ytkownika\n"
  
- #: g10/keyedit.c:3133
- msgid "WARNING: Your encryption subkey expires soon.\n"
+ #: g10/import.c:804
+-#, fuzzy, c-format
+-#| msgid "skipped \"%s\": %s\n"
++#, c-format
+ msgid "key %s: %s\n"
+-msgstr "pomini�ty ,,%s'': %s\n"
++msgstr "klucz %s: %s\n"
+ 
+ #: g10/import.c:805 g10/import.c:1206
+ msgid "rejected by import filter"
 -msgstr ""
-+msgstr "UWAGA: Podklucz szyfrujący wkrótce wygaśnie.\n"
++msgstr "odrzucony przez filtr importu"
  
- #: g10/keyedit.c:3134
--#, fuzzy
--#| msgid "You can't change the expiration date of a v3 key\n"
- msgid "You may want to change its expiration date too.\n"
--msgstr "Nie można zmienić daty ważności klucza w wersji 3.\n"
-+msgstr "Można też zmienić jego datę wygaśnięcia.\n"
+ #: g10/import.c:834
+ #, c-format
+@@ -3049,10 +3046,9 @@
+ msgstr "klucz %s: ,,%s'' bez zmian\n"
  
- #: g10/keyedit.c:3195
- msgid ""
-@@ -4931,10 +4917,9 @@
- msgstr "       Odcisk klucza ="
- 
- #: g10/keylist.c:1599 g10/keylist.c:1601
+ #: g10/import.c:1205
 -#, fuzzy, c-format
--#| msgid "WARNING: using experimental digest algorithm %s\n"
+-#| msgid "secret key \"%s\" not found: %s\n"
 +#, c-format
- msgid "WARNING: a PGP-2 fingerprint is not safe\n"
--msgstr "OSTRZEŻENIE: użycie eksperymentalnego algorytmu skrótu %s\n"
-+msgstr "OSTRZEŻENIE: odciski PGP-2 nie są bezpieczne\n"
+ msgid "secret key %s: %s\n"
+-msgstr "klucz prywatny ,,%s'' nie zosta� odnaleziony: %s\n"
++msgstr "klucz prywatny %s: %s\n"
  
- #: g10/keylist.c:1618
- msgid "      Card serial no. ="
-@@ -6737,10 +6722,8 @@
- msgstr "brak argumentu"
+ #: g10/import.c:1225 g10/import.c:1248
+ msgid "importing secret keys not allowed\n"
+@@ -6148,10 +6144,9 @@
+ msgstr "UWAGA: klucz podpisuj�cy %s zosta� uniewa�niony\n"
  
- #: jnlib/argparse.c:205
--#, fuzzy
--#| msgid "invalid value\n"
- msgid "invalid argument"
--msgstr "niepoprawna wartość\n"
-+msgstr "błędny argument"
- 
- #: jnlib/argparse.c:207
- msgid "invalid command"
-@@ -6764,10 +6747,9 @@
- msgstr "brak argumentu dla opcji ,,%.50s''\n"
- 
- #: jnlib/argparse.c:223
+ #: g10/sig-check.c:280
 -#, fuzzy, c-format
--#| msgid "missing argument for option \"%.50s\"\n"
+-#| msgid "%s signature, digest algorithm %s\n"
 +#, c-format
- msgid "invalid argument for option \"%.50s\"\n"
--msgstr "brak argumentu dla opcji ,,%.50s''\n"
-+msgstr "błędny argument dla opcji ,,%.50s''\n"
+ msgid "Note: signatures using the %s algorithm are rejected\n"
+-msgstr "podpis %s, skr�t %s\n"
++msgstr "Uwaga: podpisy wykonane algorytmem %s s� odrzucane\n"
  
- #: jnlib/argparse.c:225
+ #: g10/sig-check.c:341
  #, c-format

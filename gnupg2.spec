@@ -20,7 +20,6 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
 Patch2:		%{name}-disable_tests.patch
 Patch3:		%{name}-pl.po-update.patch
-Patch4:		%{name}-am.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.14
@@ -39,6 +38,7 @@ BuildRequires:	npth-devel >= 1.2
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
+BuildRequires:	sqlite3-devel >= 3.7
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
@@ -93,68 +93,6 @@ Common files used by tools from GnuPG project.
 
 %description common -l pl.UTF-8
 Pliki wspólne używane przez różne narzędzia z projektu GnuPG.
-
-%package plugin-keys_curl
-Summary:	GnuPG 2 plugin for allow talk to a HTTP/FTP keyserver
-Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HTTP/FTP
-Group:		Applications/File
-Requires:	%{name}-common = %{version}-%{release}
-Requires:	curl-libs >= 7.10
-
-%description plugin-keys_curl
-GnuPG 2 plugin for allow talk to a HTTP(S)/FTP(S) keyserver.
-
-%description plugin-keys_curl -l pl.UTF-8
-Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy
-HTTP(S)/FTP(S).
-
-%package plugin-keys_finger
-Summary:	GnuPG 2 plugin for allow talk to a FINGER keyserver
-Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy FINGER
-Group:		Applications/File
-Requires:	%{name}-common = %{version}-%{release}
-
-%description plugin-keys_finger
-GnuPG 2 plugin for allow talk to a FINGER keyserver.
-
-%description plugin-keys_finger -l pl.UTF-8
-Wtyczka 2 GnuPG pozwalająca komunikować się z serwerem kluczy FINGER.
-
-%package plugin-keys_hkp
-Summary:	GnuPG 2 plugin for allow talk to a HKP keyserver
-Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP
-Group:		Applications/File
-Requires:	%{name}-common = %{version}-%{release}
-
-%description plugin-keys_hkp
-GnuPG 2 plugin for allow talk to a HKP keyserver.
-
-%description plugin-keys_hkp -l pl.UTF-8
-Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy HKP.
-
-%package plugin-keys_kdns
-Summary:	GnuPG 2 plugin for allow talk to a KDNS keyserver
-Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy KDNS
-Group:		Applications/File
-Requires:	%{name}-common = %{version}-%{release}
-
-%description plugin-keys_kdns
-GnuPG 2 plugin for allow talk to a KDNS keyserver.
-
-%description plugin-keys_kdns -l pl.UTF-8
-Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy KDNS.
-
-%package plugin-keys_ldap
-Summary:	GnuPG 2 plugin for allow talk to a LDAP keyserver
-Summary(pl.UTF-8):	Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy LDAP
-Group:		Applications/File
-Requires:	%{name}-common = %{version}-%{release}
-
-%description plugin-keys_ldap
-GnuPG 2 plugin for allow talk to a LDAP keyserver.
-
-%description plugin-keys_ldap -l pl.UTF-8
-Wtyczka GnuPG 2 pozwalająca komunikować się z serwerem kluczy LDAP.
 
 %package -n gnupg-agent
 Summary:	GnuPG extension - agent
@@ -232,14 +170,13 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %patch1 -p1
 
 %{!?with_tests:%patch2 -p1}
-%patch3 -p1
-%patch4 -p1
+#%patch3 -p1
 
 %{__rm} po/stamp-po
 
 %build
 %{__gettextize}
-%{__aclocal} -I m4 -I gl/m4
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -261,6 +198,9 @@ fi
 	--with-capabilities \
 	--with-pinentry-pgm=%{_bindir}/pinentry \
 	--with-mailprog=/usr/lib/sendmail
+
+# required for info rebuild
+%{__make} -C doc defs.inc
 
 %{__make}
 
@@ -284,15 +224,14 @@ install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/gnupg
 
 %find_lang gnupg2
-rm -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/postshell
+%post	common -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p /sbin/postshell
+%postun	common -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %triggerpostun -n gnupg-agent -- gnupg-agent < 1.9.16-2
@@ -317,11 +256,13 @@ EOF
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO
+%doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP} doc/examples
+%attr(755,root,root) %{_bindir}/g13
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
-%attr(755,root,root) %{_bindir}/gpgkey2ssh
 %attr(755,root,root) %{_bindir}/gpgparsemail
+%attr(755,root,root) %{_bindir}/gpgscm
+%attr(755,root,root) %{_bindir}/gpgtar
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
@@ -335,36 +276,15 @@ EOF
 %{_mandir}/man1/gpgparsemail.1*
 %{_mandir}/man1/gpgtar.1*
 %{_mandir}/man1/watchgnupg.1*
+%{_mandir}/man7/gnupg.7*
 %{_mandir}/man8/addgnupghome.8*
 %{_mandir}/man8/applygnupgdefaults.8*
 %{_infodir}/gnupg.info*
 
-%files plugin-keys_curl
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gpg2keys_curl
-
-%files plugin-keys_finger
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gpg2keys_finger
-
-%files plugin-keys_hkp
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gpg2keys_hkp
-
-%files plugin-keys_kdns
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gpg2keys_kdns
-
-%files plugin-keys_ldap
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gpg2keys_ldap
-
 %files -n gnupg-smime
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpgsm
-%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
 %{_mandir}/man1/gpgsm.1*
-%{_mandir}/man1/gpgsm-gencert.sh.1*
 
 %files -n gnupg-agent
 %defattr(644,root,root,755)
