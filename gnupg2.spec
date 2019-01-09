@@ -214,8 +214,13 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
+install -d $RPM_BUILD_ROOT%{systemduserunitdir}
+install -p doc/examples/systemd-user/*.{socket,service} $RPM_BUILD_ROOT%{systemduserunitdir}
+
 %if %{without dirmngr}
 %{__rm} $RPM_BUILD_ROOT%{_mandir}/{man1/dirmngr-client.1,man8/dirmngr.8}
+%else
+install -p doc/examples/systemd-user/dirmngr.{socket,service} $RPM_BUILD_ROOT%{systemduserunitdir}
 %endif
 
 %{__rm} -f $RPM_BUILD_ROOT%{_datadir}/info/dir
@@ -296,6 +301,11 @@ EOF
 %attr(755,root,root) %{pkglibexecdir}/gpg-preset-passphrase
 %attr(755,root,root) %{pkglibexecdir}/gpg-wks-client
 %attr(755,root,root) %{pkglibexecdir}/scdaemon
+%{systemduserunitdir}/gpg-agent.service
+%{systemduserunitdir}/gpg-agent.socket
+%{systemduserunitdir}/gpg-agent-browser.socket
+%{systemduserunitdir}/gpg-agent-extra.socket
+%{systemduserunitdir}/gpg-agent-ssh.socket
 %{_mandir}/man1/gpg-agent.1*
 %{_mandir}/man1/gpg-preset-passphrase.1*
 %{_mandir}/man1/gpg-wks-client.1*
@@ -317,6 +327,8 @@ EOF
 %attr(755,root,root) %{_bindir}/dirmngr
 %attr(755,root,root) %{_bindir}/dirmngr-client
 %attr(755,root,root) %{pkglibexecdir}/dirmngr_ldap
+%{systemduserunitdir}/dirmngr.service
+%{systemduserunitdir}/dirmngr.socket
 %{_mandir}/man1/dirmngr-client.1*
 %{_mandir}/man8/dirmngr.8*
 %endif
