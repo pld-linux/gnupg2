@@ -20,7 +20,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
 Patch2:		%{name}-disable_tests.patch
 Patch3:		%{name}-pl.po-update.patch
-# Patch3-md5:	bb4b9e2a7dedf01f1253c3bae5a6235a
+# Patch3-md5:	2a196c7d6d5a78b0fb35b03c34d86a96
 URL:		http://www.gnupg.org/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.14
@@ -170,7 +170,7 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %patch0 -p1
 %patch1 -p1
 %{!?with_tests:%patch2 -p1}
-#%patch3 -p1
+%patch3 -p1
 
 %{__rm} po/stamp-po
 
