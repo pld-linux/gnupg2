@@ -1,0 +1,18 @@
+--- gnupg-2.2.13/po/pl.po.orig	2019-02-12 16:42:33.000000000 +0100
++++ gnupg-2.2.13/po/pl.po	2019-02-13 19:13:48.206634745 +0100
+@@ -264,13 +264,11 @@
+ 
+ #: agent/divert-scd.c:286
+ msgid "Push ACK button on card/token."
+-msgstr ""
++msgstr "Wciśnij przycisk ACK na karcie/tokenie."
+ 
+ #: agent/divert-scd.c:308 agent/divert-scd.c:312
+-#, fuzzy
+-#| msgid "%s%%0A%%0AUse the reader's pinpad for input."
+ msgid "Use the reader's pinpad for input."
+-msgstr "%s%%0A%%0ADo wpisywania należy użyć klawiatury czytnika."
++msgstr "Do wpisywania należy użyć klawiatury czytnika."
+ 
+ #: agent/divert-scd.c:378
+ msgid "Repeat this Reset Code"
