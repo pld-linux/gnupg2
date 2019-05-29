@@ -1,18 +1,89 @@
---- gnupg-2.2.13/po/pl.po.orig	2019-02-12 16:42:33.000000000 +0100
-+++ gnupg-2.2.13/po/pl.po	2019-02-13 19:13:48.206634745 +0100
-@@ -264,13 +264,11 @@
+--- gnupg-2.2.16/po/pl.po.orig	2019-05-29 17:42:51.821195041 +0200
++++ gnupg-2.2.16/po/pl.po	2019-05-29 17:54:47.000653915 +0200
+@@ -2039,19 +2039,19 @@
  
- #: agent/divert-scd.c:286
- msgid "Push ACK button on card/token."
+ #: g10/delkey.c:181
+ msgid "Note: The public primary key and all its subkeys will be deleted.\n"
 -msgstr ""
-+msgstr "Wciśnij przycisk ACK na karcie/tokenie."
++msgstr "Uwaga: główny klucz publiczny i wszystkie jego podklucze zostaną usunięte.\n"
  
- #: agent/divert-scd.c:308 agent/divert-scd.c:312
--#, fuzzy
--#| msgid "%s%%0A%%0AUse the reader's pinpad for input."
- msgid "Use the reader's pinpad for input."
--msgstr "%s%%0A%%0ADo wpisywania należy użyć klawiatury czytnika."
-+msgstr "Do wpisywania należy użyć klawiatury czytnika."
+ #: g10/delkey.c:186
+ msgid "Note: Only the shown public subkey will be deleted.\n"
+-msgstr ""
++msgstr "Uwaga: usunięty zostanie tylko pokazany podklucz publiczny.\n"
  
- #: agent/divert-scd.c:378
- msgid "Repeat this Reset Code"
+ #: g10/delkey.c:191
+ msgid "Note: Only the secret part of the shown primary key will be deleted.\n"
+-msgstr ""
++msgstr "Uwaga: usunięta zostanie tylko tajna część pokazanego klucza głównego.\n"
+ 
+ #: g10/delkey.c:196
+ msgid "Note: Only the secret part of the shown subkey will be deleted.\n"
+-msgstr ""
++msgstr "Uwaga: usunięta zostanie tylko tajna część pokazanego podklucza.\n"
+ 
+ #: g10/delkey.c:205
+ msgid "Delete this key from the keyring? (y/N) "
+@@ -10912,16 +10912,14 @@
+ msgstr "Komponent nie nadaje się do uruchomienia"
+ 
+ #: tools/gpgconf-comp.c:1278
+-#, fuzzy, c-format
+-#| msgid "External verification of component %s failed"
++#, c-format
+ msgid "Configuration file of component %s is broken\n"
+-msgstr "Zewnętrzna weryfikacja komponentu %s nie powiodła się"
++msgstr "Plik konfiguracyjny komponentu %s jest uszkodzony\n"
+ 
+ #: tools/gpgconf-comp.c:1281
+-#, fuzzy, c-format
+-#| msgid "Note: Use the command \"%s\" to restart them.\n"
++#, c-format
+ msgid "Note: Use the command \"%s%s\" to get details.\n"
+-msgstr "Uwaga: do restartu ich należy użyć polecenia ,,%s''.\n"
++msgstr "Podpowiedź: można użyć polecenia ,,%s%s'', aby uzyskać szczegóły.\n"
+ 
+ #: tools/gpgconf-comp.c:3421
+ #, c-format
+@@ -11215,41 +11213,3 @@
+ msgstr ""
+ "Składnia: gpg-check-pattern [opcje] plik-wzorców\n"
+ "Sprawdzanie hasła ze standardowego wejścia względem pliku wzorców\n"
+-
+-#~ msgid "no keyserver known (use option --keyserver)\n"
+-#~ msgstr "brak znanyk serwerów kluczy (użyj opcji --keyserver)\n"
+-
+-#~ msgid "error creating 'ultimately_trusted_keys' TOFU table: %s\n"
+-#~ msgstr "błąd tworzenia tabeli TOFU ,,ultimately_trusted_keys'': %s\n"
+-
+-#~ msgid "error creating 'encryptions' TOFU table: %s\n"
+-#~ msgstr "błąd tworzenia tabeli TOFU ,,encryptions'': %s\n"
+-
+-#~ msgid "adding column effective_policy to bindings DB: %s\n"
+-#~ msgstr "dodawanie kolumny effective_policy do bazy danych powiązań: %s\n"
+-
+-#~ msgid "resetting keydb: %s\n"
+-#~ msgstr "resetowanie bazy danych kluczy: %s\n"
+-
+-#~ msgid "error setting TOFU binding's policy to %s\n"
+-#~ msgstr "błąd ustawiania polityki powiądań TOFU na %s\n"
+-
+-#~ msgid "%s: Verified %ld~signature in the past %s."
+-#~ msgid_plural "%s: Verified %ld~signatures in the past %s."
+-#~ msgstr[0] "%s: Sprawdzono %ld~podpis przez %s."
+-#~ msgstr[1] "%s: Sprawdzono %ld~podpisy przez %s."
+-#~ msgstr[2] "%s: Sprawdzono %ld~podpisów przez %s."
+-
+-#~ msgid "Encrypted %ld~message in the past %s."
+-#~ msgid_plural "Encrypted %ld~messages in the past %s."
+-#~ msgstr[0] "Zaszyfrowano %ld~wiadomość przez %s."
+-#~ msgstr[1] "Zaszyfrowano %ld~wiadomości przez %s."
+-#~ msgstr[2] "Zaszyfrowano %ld~wiadomości przez %s."
+-
+-#~ msgid "error setting policy for key %s, user id \"%s\": %s"
+-#~ msgstr ""
+-#~ "błąd ustawiania polityki dla klucza %s, identyfikator użytkownika ,,%s'': "
+-#~ "%s"
+-
+-#~ msgid "only SHA-1 is supported for OCSP responses\n"
+-#~ msgstr "dla odpowiedzi OCSP obsługiwane jest tylko SHA-1\n"
