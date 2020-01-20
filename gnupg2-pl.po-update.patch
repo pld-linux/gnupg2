@@ -1,6 +1,103 @@
---- gnupg-2.2.17/po/pl.po.orig	2019-07-09 15:16:30.000000000 +0200
-+++ gnupg-2.2.17/po/pl.po	2019-07-18 17:36:34.173842188 +0200
-@@ -3268,7 +3268,7 @@
+--- gnupg-2.2.19/po/pl.po.orig	2019-12-07 12:05:00.000000000 +0100
++++ gnupg-2.2.19/po/pl.po	2020-01-20 21:19:19.350702559 +0100
+@@ -1606,50 +1606,42 @@
+ msgstr "brak działającego dirmngr w tej sesji\n"
+ 
+ #: g10/call-dirmngr.c:243
+-#, fuzzy, c-format
+-#| msgid "option '%s' may not be used in %s mode\n"
++#, c-format
+ msgid "keyserver option \"%s\" may not be used in %s mode\n"
+-msgstr "opcja ,,%s'' nie może być używana w trybie %s\n"
++msgstr "opcja serwera kluczy ,,%s'' nie może być używana w trybie %s\n"
+ 
+ #: g10/call-dirmngr.c:417
+ msgid "WKD uses a cached result"
+-msgstr ""
++msgstr "WKD używa zapamiętanego wyniku"
+ 
+ #: g10/call-dirmngr.c:420
+ msgid "Tor is not running"
+-msgstr ""
++msgstr "Tor nie działa"
+ 
+ #: g10/call-dirmngr.c:422
+-#, fuzzy
+-#| msgid "\"%s\" is not a proper fingerprint\n"
+ msgid "Tor is not properly configured"
+-msgstr ",,%s'' nie jest właściwym odciskiem\n"
++msgstr "Tor nie jest właściwie skonfigurowany"
+ 
+ #: g10/call-dirmngr.c:424
+-#, fuzzy
+-#| msgid "\"%s\" is not a proper fingerprint\n"
+ msgid "DNS is not properly configured"
+-msgstr ",,%s'' nie jest właściwym odciskiem\n"
++msgstr "DNS nie jest właściwie skonfigurowany"
+ 
+ #: g10/call-dirmngr.c:426
+ msgid "unacceptable HTTP redirect from server"
+-msgstr ""
++msgstr "niedopuszczalne przekierowanie HTTP z serwera"
+ 
+ #: g10/call-dirmngr.c:428
+ msgid "unacceptable HTTP redirect from server was cleaned up"
+-msgstr ""
++msgstr "niedopuszczalne przekierowanie HTTP z serwera zostało wyczyszczone"
+ 
+ #: g10/call-dirmngr.c:430
+-#, fuzzy
+-#| msgid "generate a revocation certificate"
+ msgid "server uses an invalid certificate"
+-msgstr "tworzenie certyfikatu unieważnienia klucza"
++msgstr "serwer używa błędnego certyfikatu"
+ 
+ #: g10/call-dirmngr.c:437
+-#, fuzzy, c-format
+-#| msgid "armor: %s\n"
++#, c-format
+ msgid "Note: %s\n"
+-msgstr "opakowanie: %s\n"
++msgstr "Uwaga: %s\n"
+ 
+ #: g10/card-util.c:86 g10/card-util.c:401 g10/card-util.c:1929
+ #, c-format
+@@ -1690,11 +1682,11 @@
+ 
+ #: g10/card-util.c:578
+ msgid "Mr."
+-msgstr ""
++msgstr "Pan"
+ 
+ #: g10/card-util.c:579
+ msgid "Ms."
+-msgstr ""
++msgstr "Pani"
+ 
+ #: g10/card-util.c:606
+ msgid "not forced"
+@@ -1769,7 +1761,7 @@
+ 
+ #: g10/card-util.c:1160
+ msgid "Salutation (M = Mr., F = Ms., or space): "
+-msgstr ""
++msgstr "Tutuł (M = Pan, F = Pani lub spacja): "
+ 
+ #: g10/card-util.c:1174
+ msgid "Error: invalid response.\n"
+@@ -1992,10 +1984,8 @@
+ msgstr "zmiana preferowanych języków"
+ 
+ #: g10/card-util.c:2174
+-#, fuzzy
+-#| msgid "change card holder's sex"
+ msgid "change card holder's salutation"
+-msgstr "zmiana płci posiadacza karty"
++msgstr "zmiana tytułu posiadacza karty"
+ 
+ #: g10/card-util.c:2176
+ msgid "change a CA fingerprint"
+@@ -3324,7 +3314,7 @@
  
  #: g10/import.c:193
  msgid "ignore key-signatures which are not self-signatures"
@@ -9,7 +106,20 @@
  
  #: g10/import.c:196
  msgid "run import filters and export key immediately"
-@@ -5828,7 +5828,7 @@
+@@ -5093,10 +5083,9 @@
+ msgstr "   (%d) Istniejący klucz\n"
+ 
+ #: g10/keygen.c:1974
+-#, fuzzy, c-format
+-#| msgid "   (%d) Existing key from card\n"
++#, c-format
+ msgid "  (%d) Existing key from card\n"
+-msgstr "   (%d) Istniejący klucz z karty\n"
++msgstr "  (%d) Istniejący klucz z karty\n"
+ 
+ #: g10/keygen.c:2070 sm/certreqgen-ui.c:202
+ msgid "Enter the keygrip: "
+@@ -5905,7 +5894,7 @@
  #: g10/mainproc.c:1958
  #, c-format
  msgid "Note: Use '%s' to make use of this info\n"
@@ -18,3 +128,16 @@
  
  #: g10/mainproc.c:2164
  msgid "[uncertain]"
+@@ -6029,10 +6018,9 @@
+ msgstr "Uwaga: podpisy wykorzystujące algorytm %s są odrzucane\n"
+ 
+ #: g10/misc.c:370
+-#, fuzzy, c-format
+-#| msgid "Note: signatures using the %s algorithm are rejected\n"
++#, c-format
+ msgid "Note: third-party key signatures using the %s algorithm are rejected\n"
+-msgstr "Uwaga: podpisy wykorzystujące algorytm %s są odrzucane\n"
++msgstr "Uwaga: podpisy kluczami trzecimi wykorzystujące algorytm %s są odrzucane\n"
+ 
+ #: g10/misc.c:394
+ #, c-format
