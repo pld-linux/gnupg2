@@ -64,17 +64,17 @@
  #, c-format
 @@ -1690,11 +1682,11 @@
  
- #: g10/card-util.c:578
+ #: g10/card-util.c:582
  msgid "Mr."
 -msgstr ""
 +msgstr "Pan"
  
- #: g10/card-util.c:579
+ #: g10/card-util.c:583
  msgid "Ms."
 -msgstr ""
 +msgstr "Pani"
  
- #: g10/card-util.c:606
+ #: g10/card-util.c:610
  msgid "not forced"
 @@ -1769,7 +1761,7 @@
  
@@ -88,14 +88,14 @@
 @@ -1992,10 +1984,8 @@
  msgstr "zmiana preferowanych języków"
  
- #: g10/card-util.c:2174
+ #: g10/card-util.c:2178
 -#, fuzzy
 -#| msgid "change card holder's sex"
  msgid "change card holder's salutation"
 -msgstr "zmiana płci posiadacza karty"
 +msgstr "zmiana tytułu posiadacza karty"
  
- #: g10/card-util.c:2176
+ #: g10/card-util.c:2180
  msgid "change a CA fingerprint"
 @@ -3324,7 +3314,7 @@
  
