@@ -1,5 +1,5 @@
---- gnupg-2.2.19/po/pl.po.orig	2019-12-07 12:05:00.000000000 +0100
-+++ gnupg-2.2.19/po/pl.po	2020-01-20 21:19:19.350702559 +0100
+--- gnupg-2.2.20/po/pl.po.orig	2020-03-20 15:40:34.000000000 +0100
++++ gnupg-2.2.20/po/pl.po	2020-03-21 07:02:10.277085534 +0100
 @@ -1606,50 +1606,42 @@
  msgstr "brak działającego dirmngr w tej sesji\n"
  
@@ -60,7 +60,7 @@
 -msgstr "opakowanie: %s\n"
 +msgstr "Uwaga: %s\n"
  
- #: g10/card-util.c:86 g10/card-util.c:401 g10/card-util.c:1929
+ #: g10/card-util.c:86 g10/card-util.c:405 g10/card-util.c:1933
  #, c-format
 @@ -1690,11 +1682,11 @@
  
@@ -78,12 +78,12 @@
  msgid "not forced"
 @@ -1769,7 +1761,7 @@
  
- #: g10/card-util.c:1160
+ #: g10/card-util.c:1164
  msgid "Salutation (M = Mr., F = Ms., or space): "
 -msgstr ""
 +msgstr "Tutuł (M = Pan, F = Pani lub spacja): "
  
- #: g10/card-util.c:1174
+ #: g10/card-util.c:1178
  msgid "Error: invalid response.\n"
 @@ -1992,10 +1984,8 @@
  msgstr "zmiana preferowanych języków"
@@ -120,13 +120,13 @@
  #: g10/keygen.c:2070 sm/certreqgen-ui.c:202
  msgid "Enter the keygrip: "
 @@ -5905,7 +5894,7 @@
- #: g10/mainproc.c:1958
+ #: g10/mainproc.c:1996
  #, c-format
  msgid "Note: Use '%s' to make use of this info\n"
 -msgstr ""
 +msgstr "Uwaga: aby wykorzystać tę informację, należy użyć ,,%s''\n"
  
- #: g10/mainproc.c:2164
+ #: g10/mainproc.c:2210
  msgid "[uncertain]"
 @@ -6029,10 +6018,9 @@
  msgstr "Uwaga: podpisy wykorzystujące algorytm %s są odrzucane\n"
@@ -137,7 +137,26 @@
 +#, c-format
  msgid "Note: third-party key signatures using the %s algorithm are rejected\n"
 -msgstr "Uwaga: podpisy wykorzystujące algorytm %s są odrzucane\n"
-+msgstr "Uwaga: podpisy kluczami trzecimi wykorzystujące algorytm %s są odrzucane\n"
++msgstr "Uwaga: podpisy kluczami osób trzecich wykorzystujące algorytm %s są odrzucane\n"
  
  #: g10/misc.c:394
  #, c-format
+@@ -10915,16 +10903,12 @@
+ "adresów e-mail"
+ 
+ #: tools/gpgconf-comp.c:760
+-#, fuzzy
+-#| msgid "import keys from a keyserver"
+ msgid "import missing key from a signature"
+-msgstr "import kluczy z serwera kluczy"
++msgstr "import brakującego klucza z podpisu"
+ 
+ #: tools/gpgconf-comp.c:763
+-#, fuzzy
+-#| msgid "list and check key signatures"
+ msgid "include the public key in signatures"
+-msgstr "wypisanie i sprawdzenie podpisów kluczy"
++msgstr "włączanie klucza publicznego do podpisów"
+ 
+ #: tools/gpgconf-comp.c:770 tools/gpgconf-comp.c:831
+ msgid "disable all access to the dirmngr"
