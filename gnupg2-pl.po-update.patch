@@ -52,7 +52,7 @@
 -msgstr "tworzenie certyfikatu unieważnienia klucza"
 +msgstr "serwer używa błędnego certyfikatu"
  
- #: g10/call-dirmngr.c:437
+ #: g10/call-dirmngr.c:437 g10/gpg.c:4442
 -#, fuzzy, c-format
 -#| msgid "armor: %s\n"
 +#, c-format
@@ -60,21 +60,21 @@
 -msgstr "opakowanie: %s\n"
 +msgstr "Uwaga: %s\n"
  
- #: g10/card-util.c:86 g10/card-util.c:405 g10/card-util.c:1933
+ #: g10/card-util.c:86 g10/card-util.c:366 g10/card-util.c:1896
  #, c-format
 @@ -1690,11 +1682,11 @@
  
- #: g10/card-util.c:582
+ #: g10/card-util.c:545
  msgid "Mr."
 -msgstr ""
 +msgstr "Pan"
  
- #: g10/card-util.c:583
+ #: g10/card-util.c:546
  msgid "Ms."
 -msgstr ""
 +msgstr "Pani"
  
- #: g10/card-util.c:610
+ #: g10/card-util.c:573
  msgid "not forced"
 @@ -1769,7 +1761,7 @@
  
@@ -88,14 +88,14 @@
 @@ -1992,10 +1984,8 @@
  msgstr "zmiana preferowanych języków"
  
- #: g10/card-util.c:2178
+ #: g10/card-util.c:2141
 -#, fuzzy
 -#| msgid "change card holder's sex"
  msgid "change card holder's salutation"
 -msgstr "zmiana płci posiadacza karty"
 +msgstr "zmiana tytułu posiadacza karty"
  
- #: g10/card-util.c:2180
+ #: g10/card-util.c:2143
  msgid "change a CA fingerprint"
 @@ -3324,7 +3314,7 @@
  
@@ -131,7 +131,7 @@
 @@ -6029,10 +6018,9 @@
  msgstr "Uwaga: podpisy wykorzystujące algorytm %s są odrzucane\n"
  
- #: g10/misc.c:370
+ #: g10/misc.c:374
 -#, fuzzy, c-format
 -#| msgid "Note: signatures using the %s algorithm are rejected\n"
 +#, c-format
@@ -139,7 +139,7 @@
 -msgstr "Uwaga: podpisy wykorzystujące algorytm %s są odrzucane\n"
 +msgstr "Uwaga: podpisy kluczami osób trzecich wykorzystujące algorytm %s są odrzucane\n"
  
- #: g10/misc.c:394
+ #: g10/misc.c:398
  #, c-format
 @@ -10915,16 +10903,12 @@
  "adresów e-mail"
