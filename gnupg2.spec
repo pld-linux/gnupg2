@@ -265,7 +265,7 @@ EOF
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgparsemail
-%attr(755,root,root) %{_bindir}/gpgscm
+%{?with_tests:%attr(755,root,root) %{_bindir}/gpgscm}
 %attr(755,root,root) %{_bindir}/gpgtar
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/watchgnupg
