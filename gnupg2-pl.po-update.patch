@@ -1,6 +1,6 @@
---- gnupg-2.2.20/po/pl.po.orig	2020-03-20 15:40:34.000000000 +0100
-+++ gnupg-2.2.20/po/pl.po	2020-03-21 07:02:10.277085534 +0100
-@@ -1606,50 +1606,42 @@
+--- gnupg-2.2.21/po/pl.po.orig	2020-07-09 12:03:39.000000000 +0200
++++ gnupg-2.2.21/po/pl.po	2020-08-15 23:04:26.942628906 +0200
+@@ -1612,50 +1612,42 @@
  msgstr "brak działającego dirmngr w tej sesji\n"
  
  #: g10/call-dirmngr.c:243
@@ -62,7 +62,7 @@
  
  #: g10/card-util.c:86 g10/card-util.c:366 g10/card-util.c:1896
  #, c-format
-@@ -1690,11 +1682,11 @@
+@@ -1696,11 +1688,11 @@
  
  #: g10/card-util.c:545
  msgid "Mr."
@@ -76,16 +76,16 @@
  
  #: g10/card-util.c:573
  msgid "not forced"
-@@ -1769,7 +1761,7 @@
+@@ -1775,7 +1767,7 @@
  
- #: g10/card-util.c:1164
+ #: g10/card-util.c:1127
  msgid "Salutation (M = Mr., F = Ms., or space): "
 -msgstr ""
 +msgstr "Tutuł (M = Pan, F = Pani lub spacja): "
  
- #: g10/card-util.c:1178
+ #: g10/card-util.c:1141
  msgid "Error: invalid response.\n"
-@@ -1992,10 +1984,8 @@
+@@ -1998,10 +1990,8 @@
  msgstr "zmiana preferowanych języków"
  
  #: g10/card-util.c:2141
@@ -97,7 +97,7 @@
  
  #: g10/card-util.c:2143
  msgid "change a CA fingerprint"
-@@ -3324,7 +3314,7 @@
+@@ -3330,7 +3320,7 @@
  
  #: g10/import.c:193
  msgid "ignore key-signatures which are not self-signatures"
@@ -106,7 +106,16 @@
  
  #: g10/import.c:196
  msgid "run import filters and export key immediately"
-@@ -5093,10 +5083,9 @@
+@@ -4487,7 +4477,7 @@
+ 
+ #: g10/keyedit.c:3072
+ msgid "AEAD: "
+-msgstr ""
++msgstr "AEAD: "
+ 
+ #: g10/keyedit.c:3089
+ msgid "Digest: "
+@@ -5103,10 +5093,9 @@
  msgstr "   (%d) Istniejący klucz\n"
  
  #: g10/keygen.c:1974
@@ -119,16 +128,16 @@
  
  #: g10/keygen.c:2070 sm/certreqgen-ui.c:202
  msgid "Enter the keygrip: "
-@@ -5905,7 +5894,7 @@
- #: g10/mainproc.c:1996
+@@ -5915,7 +5904,7 @@
+ #: g10/mainproc.c:2108
  #, c-format
  msgid "Note: Use '%s' to make use of this info\n"
 -msgstr ""
 +msgstr "Uwaga: aby wykorzystać tę informację, należy użyć ,,%s''\n"
  
- #: g10/mainproc.c:2210
+ #: g10/mainproc.c:2322
  msgid "[uncertain]"
-@@ -6029,10 +6018,9 @@
+@@ -6039,10 +6028,9 @@
  msgstr "Uwaga: podpisy wykorzystujące algorytm %s są odrzucane\n"
  
  #: g10/misc.c:374
@@ -141,7 +150,20 @@
  
  #: g10/misc.c:398
  #, c-format
-@@ -10915,16 +10903,12 @@
+@@ -9177,10 +9165,9 @@
+ msgstr "[nie podano daty]"
+ 
+ #: sm/verify.c:479
+-#, fuzzy, c-format
+-#| msgid "algorithm: %s"
++#, c-format
+ msgid "algorithm:"
+-msgstr "algorytm: %s"
++msgstr "algorytm:"
+ 
+ #: sm/verify.c:535
+ #, c-format
+@@ -10931,16 +10918,12 @@
  "adresów e-mail"
  
  #: tools/gpgconf-comp.c:760
