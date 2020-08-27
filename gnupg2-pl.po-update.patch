@@ -118,7 +118,7 @@
 @@ -5103,10 +5093,9 @@
  msgstr "   (%d) Istniejący klucz\n"
  
- #: g10/keygen.c:1974
+ #: g10/keygen.c:1973
 -#, fuzzy, c-format
 -#| msgid "   (%d) Existing key from card\n"
 +#, c-format
