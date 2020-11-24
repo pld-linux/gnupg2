@@ -18,7 +18,6 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
-Patch2:		%{name}-pl.po-update.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.14
@@ -28,8 +27,8 @@ BuildRequires:	gettext-tools >= 0.17
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0}
 BuildRequires:	libassuan-devel >= 1:2.5.0
 BuildRequires:	libgcrypt-devel >= 1.8.0
-BuildRequires:	libgpg-error-devel >= 1.25
-BuildRequires:	libksba-devel >= 1.3.4
+BuildRequires:	libgpg-error-devel >= 1.27
+BuildRequires:	libksba-devel >= 1.3.5
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.2
 %{!?with_gnutls:BuildRequires:	ntbtls-devel >= 0.1.0}
@@ -76,8 +75,8 @@ Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libassuan >= 1:2.5.0
 Requires:	libgcrypt >= 1.8.0
-Requires:	libgpg-error >= 1.25
-Requires:	libksba >= 1.3.4
+Requires:	libgpg-error >= 1.27
+Requires:	libksba >= 1.3.5
 Requires:	npth >= 1.2
 Obsoletes:	gnupg2-plugin-keys_curl
 Obsoletes:	gnupg2-plugin-keys_finger
@@ -167,7 +166,6 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %{__rm} po/stamp-po
 
