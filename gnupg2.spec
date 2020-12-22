@@ -9,12 +9,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.2.25
+Version:	2.2.26
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	07779688b7d7805696a740c52ac744e4
+# Source0-md5:	9db554eabd13f83e941a9825e5af5fe6
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
@@ -188,7 +188,6 @@ fi
 	%{!?with_default_gpg:--enable-gpg-is-gpg2} \
 	%{?with_gnutls:--disable-ntbtls} \
 	%{?with_selinux:--enable-selinux-support} \
-	--enable-symcryptrun \
 	%{!?with_tests:--disable-tests} \
 	--enable-wks-tools \
 	--with-capabilities \
@@ -292,7 +291,6 @@ EOF
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/gpg-wks-server
-%attr(755,root,root) %{_bindir}/symcryptrun
 %attr(755,root,root) %{pkglibexecdir}/gpg-check-pattern
 %attr(755,root,root) %{pkglibexecdir}/gpg-protect-tool
 %attr(755,root,root) %{pkglibexecdir}/gpg-preset-passphrase
@@ -308,7 +306,6 @@ EOF
 %{_mandir}/man1/gpg-wks-client.1*
 %{_mandir}/man1/gpg-wks-server.1*
 %{_mandir}/man1/scdaemon.1*
-%{_mandir}/man1/symcryptrun.1*
 
 %files -n gnupg-agent-profile_d
 %defattr(644,root,root,755)
