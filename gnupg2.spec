@@ -18,7 +18,7 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
-URL:		http://www.gnupg.org/
+URL:		https://www.gnupg.org/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.14
 BuildRequires:	bzip2-devel
@@ -217,6 +217,9 @@ install -p doc/examples/systemd-user/*.{socket,service} $RPM_BUILD_ROOT%{systemd
 %else
 install -p doc/examples/systemd-user/dirmngr.{socket,service} $RPM_BUILD_ROOT%{systemduserunitdir}
 %endif
+
+# tool removed in 2.2.26
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man1/symcryptrun.1*
 
 %{__rm} -f $RPM_BUILD_ROOT%{_datadir}/info/dir
 
