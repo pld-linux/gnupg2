@@ -1,0 +1,45 @@
+--- gnupg-2.2.27/po/pl.po.orig	2021-01-11 18:47:18.000000000 +0100
++++ gnupg-2.2.27/po/pl.po	2021-01-14 17:34:07.833723008 +0100
+@@ -1308,29 +1308,23 @@
+ 
+ #: common/argparse.c:534 common/argparse.c:571
+ msgid "permission error"
+-msgstr ""
++msgstr "błąd uprawnień"
+ 
+ #: common/argparse.c:536 common/argparse.c:569
+ msgid "out of core"
+ msgstr "brak pamięci"
+ 
+ #: common/argparse.c:540 common/argparse.c:575
+-#, fuzzy
+-#| msgid "invalid command"
+ msgid "invalid meta command"
+-msgstr "błędne polecenie"
++msgstr "błędne polecenie meta"
+ 
+ #: common/argparse.c:542 common/argparse.c:577
+-#, fuzzy
+-#| msgid "unknown command '%s'\n"
+ msgid "unknown meta command"
+-msgstr "nieznane polecenie ,,%s''\n"
++msgstr "nieznane polecenie meta"
+ 
+ #: common/argparse.c:544 common/argparse.c:579
+-#, fuzzy
+-#| msgid "unexpected armor: "
+ msgid "unexpected meta command"
+-msgstr "nieoczekiwane opakowanie: "
++msgstr "nieoczekiwane polecenie meta"
+ 
+ #: common/argparse.c:546
+ msgid "invalid option"
+@@ -1384,7 +1378,7 @@
+ #: common/argparse.c:2255
+ #, c-format
+ msgid "Note: ignoring option \"--%s\" due to global config\n"
+-msgstr ""
++msgstr "Uwaga: zignorowano opcję ,,--%s'' ze względu na globalną konfigurację\n"
+ 
+ #: common/utf8conv.c:123
+ #, c-format

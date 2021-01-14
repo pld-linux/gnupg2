@@ -18,6 +18,7 @@ Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
+Patch2:		%{name}-pl.po-update.patch
 URL:		https://www.gnupg.org/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.14
@@ -166,6 +167,7 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %{__rm} po/stamp-po
 
