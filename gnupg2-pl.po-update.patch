@@ -1,6 +1,33 @@
---- gnupg-2.2.27/po/pl.po.orig	2021-01-11 18:47:18.000000000 +0100
-+++ gnupg-2.2.27/po/pl.po	2021-01-14 17:34:07.833723008 +0100
-@@ -1308,29 +1308,23 @@
+--- gnupg-2.2.28/po/pl.po.orig	2021-06-10 18:59:08.000000000 +0200
++++ gnupg-2.2.28/po/pl.po	2021-07-01 17:26:06.621211974 +0200
+@@ -1279,22 +1279,22 @@
+ #: common/ttyio.c:433
+ #, c-format
+ msgid "Sorry, we are in batchmode - can't get input\n"
+-msgstr ""
++msgstr "Niestety pracujemy w trybie wsadowym - nie można uzyskać wejścia\n"
+ 
+ #: common/ttyio.c:439
+ #, c-format
+ msgid "Sorry, no terminal at all requested - can't get input\n"
+-msgstr ""
++msgstr "Niestety nie żądano terminala - nie można uzyskać wejścia\n"
+ 
+ #: common/ttyio.c:474 common/ttyio.c:484
+ #, c-format
+ msgid "too many errors; giving up\n"
+-msgstr ""
++msgstr "zbyt dużo błędów; poddaję się\n"
+ 
+ #: common/ttyio.c:536
+ #, c-format
+ msgid "Control-D detected\n"
+-msgstr ""
++msgstr "wykryto Control-D\n"
+ 
+ #: common/argparse.c:520
+ msgid "argument not expected"
+@@ -1326,29 +1326,23 @@
  
  #: common/argparse.c:534 common/argparse.c:571
  msgid "permission error"
@@ -34,7 +61,7 @@
  
  #: common/argparse.c:546
  msgid "invalid option"
-@@ -1384,7 +1378,7 @@
+@@ -1402,7 +1396,7 @@
  #: common/argparse.c:2255
  #, c-format
  msgid "Note: ignoring option \"--%s\" due to global config\n"
@@ -42,4 +69,51 @@
 +msgstr "Uwaga: zignorowano opcję ,,--%s'' ze względu na globalną konfigurację\n"
  
  #: common/utf8conv.c:123
+ #, c-format
+@@ -6264,10 +6258,8 @@
+ msgstr "problem z agentem: %s\n"
+ 
+ #: g10/passphrase.c:251 sm/decrypt.c:341
+-#, fuzzy
+-#| msgid "Please enter the new passphrase"
+ msgid "Please enter the passphrase for decryption."
+-msgstr "Proszę wprowadzić nowe hasło"
++msgstr "Proszę wprowadzić hasło w celu odszyfrowania."
+ 
+ #: g10/passphrase.c:253
+ msgid "Enter passphrase\n"
+@@ -8918,10 +8910,9 @@
+ msgstr "problem z zasobami: brak pamięci\n"
+ 
+ #: sm/decrypt.c:536
+-#, fuzzy, c-format
+-#| msgid "%s encrypted data\n"
++#, c-format
+ msgid "%s.%s encrypted data\n"
+-msgstr "dane zaszyfrowano za pomocą %s\n"
++msgstr "dane zaszyfrowano za pomocą %s.%s\n"
+ 
+ #: sm/decrypt.c:803
+ #, c-format
+@@ -8934,10 +8925,9 @@
+ msgstr "(to nie wygląda na zaszyfrowaną wiadomość)\n"
+ 
+ #: sm/decrypt.c:958
+-#, fuzzy, c-format
+-#| msgid "encrypted with %s key, ID %s\n"
++#, c-format
+ msgid "encrypted to %s key %s\n"
+-msgstr "zaszyfrowano kluczem %s o identyfikatorze %s\n"
++msgstr "zaszyfrowano do %s kluczem %s\n"
+ 
+ #: sm/delete.c:51 sm/delete.c:112
+ #, c-format
+@@ -10379,7 +10369,7 @@
+ #: dirmngr/ldapserver.c:181
+ #, c-format
+ msgid "%s:%u: ignoring unknown flag '%s'\n"
+-msgstr ""
++msgstr "%s:%u: zignorowano nieznaną flagę ,,%s''\n"
+ 
+ #: dirmngr/ldapserver.c:203
  #, c-format
