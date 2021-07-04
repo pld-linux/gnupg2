@@ -1,25 +1,25 @@
 --- gnupg-2.2.28/po/pl.po.orig	2021-06-10 18:59:08.000000000 +0200
 +++ gnupg-2.2.28/po/pl.po	2021-07-01 17:26:06.621211974 +0200
 @@ -1279,22 +1279,22 @@
- #: common/ttyio.c:433
+ #: common/ttyio.c:447
  #, c-format
  msgid "Sorry, we are in batchmode - can't get input\n"
 -msgstr ""
 +msgstr "Niestety pracujemy w trybie wsadowym - nie można uzyskać wejścia\n"
  
- #: common/ttyio.c:439
+ #: common/ttyio.c:453
  #, c-format
  msgid "Sorry, no terminal at all requested - can't get input\n"
 -msgstr ""
 +msgstr "Niestety nie żądano terminala - nie można uzyskać wejścia\n"
  
- #: common/ttyio.c:474 common/ttyio.c:484
+ #: common/ttyio.c:488 common/ttyio.c:498
  #, c-format
  msgid "too many errors; giving up\n"
 -msgstr ""
 +msgstr "zbyt dużo błędów; poddaję się\n"
  
- #: common/ttyio.c:536
+ #: common/ttyio.c:550
  #, c-format
  msgid "Control-D detected\n"
 -msgstr ""
