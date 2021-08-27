@@ -1,6 +1,44 @@
---- gnupg-2.2.28/po/pl.po.orig	2021-06-10 18:59:08.000000000 +0200
-+++ gnupg-2.2.28/po/pl.po	2021-07-01 17:26:06.621211974 +0200
-@@ -1279,22 +1279,22 @@
+--- gnupg-2.2.30/po/pl.po.orig	2021-08-26 18:22:45.000000000 +0200
++++ gnupg-2.2.30/po/pl.po	2021-08-27 18:40:07.266135803 +0200
+@@ -70,7 +70,7 @@
+ #. for generating a passphrase.
+ #: agent/call-pinentry.c:1007
+ msgid "Suggest"
+-msgstr ""
++msgstr "Propozycja"
+ 
+ #. TRANSLATORS: This string is a tooltip, shown by pinentry when
+ #. hovering over the generate button.  Please use an appropriate
+@@ -80,25 +80,19 @@
+ #. will be used.  The strcmp thingy is there to detect a
+ #. non-translated string.
+ #: agent/call-pinentry.c:1029
+-#, fuzzy
+-#| msgid "pinentry.qualitybar.tooltip"
+ msgid "pinentry.genpin.tooltip"
+-msgstr ""
+-"Jakość wpisanego wyżej tekstu.\n"
+-"Kryteria jakości można uzyskać od administratora."
++msgstr "Propozycja losowego hasła."
+ 
+ #: agent/call-pinentry.c:1057
+ msgid "Note: The blanks are not part of the passphrase."
+-msgstr ""
++msgstr "Uwaga: odstępy nie są częścią hasła."
+ 
+ #. TRANSLATORS: This is a text shown by pinentry as title of a dialog
+ #. telling the user that the entered new passphrase does not satisfy
+ #. the passphrase constraints.  Please keep it short.
+ #: agent/call-pinentry.c:1116
+-#, fuzzy
+-#| msgid "Passphrase too long"
+ msgid "Passphrase Not Allowed"
+-msgstr "Hasło zbyt długie"
++msgstr "Hasło nie dozwolone"
+ 
+ #. TRANSLATORS: This string is displayed by Pinentry as the label
+ #. for the quality bar.
+@@ -1313,22 +1307,22 @@
  #: common/ttyio.c:447
  #, c-format
  msgid "Sorry, we are in batchmode - can't get input\n"
@@ -27,7 +65,7 @@
  
  #: common/argparse.c:520
  msgid "argument not expected"
-@@ -1326,29 +1326,23 @@
+@@ -1360,29 +1354,23 @@
  
  #: common/argparse.c:534 common/argparse.c:571
  msgid "permission error"
@@ -61,7 +99,7 @@
  
  #: common/argparse.c:546
  msgid "invalid option"
-@@ -1402,7 +1396,7 @@
+@@ -1436,7 +1424,7 @@
  #: common/argparse.c:2255
  #, c-format
  msgid "Note: ignoring option \"--%s\" due to global config\n"
@@ -70,7 +108,7 @@
  
  #: common/utf8conv.c:123
  #, c-format
-@@ -6264,10 +6258,8 @@
+@@ -6297,10 +6285,8 @@
  msgstr "problem z agentem: %s\n"
  
  #: g10/passphrase.c:251 sm/decrypt.c:341
@@ -82,7 +120,7 @@
  
  #: g10/passphrase.c:253
  msgid "Enter passphrase\n"
-@@ -8918,10 +8910,9 @@
+@@ -8951,10 +8937,9 @@
  msgstr "problem z zasobami: brak pamięci\n"
  
  #: sm/decrypt.c:536
@@ -95,7 +133,7 @@
  
  #: sm/decrypt.c:803
  #, c-format
-@@ -8934,10 +8925,9 @@
+@@ -8967,10 +8952,9 @@
  msgstr "(to nie wygląda na zaszyfrowaną wiadomość)\n"
  
  #: sm/decrypt.c:958
@@ -108,7 +146,7 @@
  
  #: sm/delete.c:51 sm/delete.c:112
  #, c-format
-@@ -10379,7 +10369,7 @@
+@@ -10411,7 +10395,7 @@
  #: dirmngr/ldapserver.c:181
  #, c-format
  msgid "%s:%u: ignoring unknown flag '%s'\n"
