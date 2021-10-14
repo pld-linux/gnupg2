@@ -9,12 +9,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.2.32
+Version:	2.3.3
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	b5a372a6e0d71c441d917b4305275608
+# Source0-md5:	a2cd4559a51d52790d97991630ab71b7
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
@@ -167,7 +167,7 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %setup -q -n gnupg-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+#%patch2 -p1
 
 %{__rm} po/stamp-po
 
@@ -260,7 +260,9 @@ EOF
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog ChangeLog-2011 NEWS README THANKS TODO doc/{DETAILS,FAQ,KEYSERVER,OpenPGP} doc/examples
 %attr(755,root,root) %{_bindir}/g13
+%attr(755,root,root) %{_bindir}/gpg-card
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
+%attr(755,root,root) %{_bindir}/gpg-wks-client
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgparsemail
 %{?with_tests:%attr(755,root,root) %{_bindir}/gpgscm}
@@ -272,9 +274,14 @@ EOF
 %attr(755,root,root) %{_sbindir}/applygnupgdefaults
 %attr(755,root,root) %{_sbindir}/g13-syshelp
 %dir %{pkglibexecdir}
+%attr(755,root,root) %{pkglibexecdir}/gpg-pair-tool
+%attr(755,root,root) %{pkglibexecdir}/gpg-wks-client
+%attr(755,root,root) %{pkglibexecdir}/keyboxd
 
 %{_datadir}/gnupg
+%{_mandir}/man1/gpg-card.1*
 %{_mandir}/man1/gpg-connect-agent.1*
+%{_mandir}/man1/gpg-wks-client.1*
 %{_mandir}/man1/gpgconf.1*
 %{_mandir}/man1/gpgparsemail.1*
 %{_mandir}/man1/gpgtar.1*
@@ -296,7 +303,6 @@ EOF
 %attr(755,root,root) %{pkglibexecdir}/gpg-check-pattern
 %attr(755,root,root) %{pkglibexecdir}/gpg-protect-tool
 %attr(755,root,root) %{pkglibexecdir}/gpg-preset-passphrase
-%attr(755,root,root) %{pkglibexecdir}/gpg-wks-client
 %attr(755,root,root) %{pkglibexecdir}/scdaemon
 %{systemduserunitdir}/gpg-agent.service
 %{systemduserunitdir}/gpg-agent.socket
@@ -306,7 +312,6 @@ EOF
 %{_mandir}/man1/gpg-agent.1*
 %{_mandir}/man1/gpg-check-pattern.1*
 %{_mandir}/man1/gpg-preset-passphrase.1*
-%{_mandir}/man1/gpg-wks-client.1*
 %{_mandir}/man1/gpg-wks-server.1*
 %{_mandir}/man1/scdaemon.1*
 
