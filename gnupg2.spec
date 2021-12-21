@@ -21,15 +21,15 @@ Patch1:		%{name}-nogit.patch
 Patch2:		%{name}-pl.po-update.patch
 URL:		https://www.gnupg.org/
 BuildRequires:	autoconf >= 2.61
-BuildRequires:	automake >= 1:1.14
+BuildRequires:	automake >= 1:1.16.3
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
 BuildRequires:	gettext-tools >= 0.21
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0}
 BuildRequires:	libassuan-devel >= 1:2.5.0
-BuildRequires:	libgcrypt-devel >= 1.8.0
-BuildRequires:	libgpg-error-devel >= 1.40
-BuildRequires:	libksba-devel >= 1.3.5
+BuildRequires:	libgcrypt-devel >= 1.9.1
+BuildRequires:	libgpg-error-devel >= 1.41
+BuildRequires:	libksba-devel >= 1.3.4
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.2
 %{!?with_gnutls:BuildRequires:	ntbtls-devel >= 0.1.0}
@@ -37,11 +37,12 @@ BuildRequires:	npth-devel >= 1.2
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.177
-BuildRequires:	sqlite3-devel >= 3.7
+BuildRequires:	sqlite3-devel >= 3.27
 BuildRequires:	texinfo
+BuildRequires:	tpm2-tss-devel
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
-Requires:	sqlite3 >= 3.7
+Requires:	sqlite3 >= 3.27
 %if %{with default_gpg}
 Obsoletes:	gnupg < 2
 Obsoletes:	gnupg-plugin-keys_curl < 2
@@ -75,9 +76,9 @@ Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libassuan >= 1:2.5.0
-Requires:	libgcrypt >= 1.8.0
-Requires:	libgpg-error >= 1.40
-Requires:	libksba >= 1.3.5
+Requires:	libgcrypt >= 1.9.1
+Requires:	libgpg-error >= 1.41
+Requires:	libksba >= 1.3.4
 Requires:	npth >= 1.2
 Obsoletes:	gnupg2-plugin-keys_curl
 Obsoletes:	gnupg2-plugin-keys_finger
@@ -304,6 +305,7 @@ EOF
 %attr(755,root,root) %{pkglibexecdir}/gpg-protect-tool
 %attr(755,root,root) %{pkglibexecdir}/gpg-preset-passphrase
 %attr(755,root,root) %{pkglibexecdir}/scdaemon
+%attr(755,root,root) %{pkglibexecdir}/tpm2daemon
 %{systemduserunitdir}/gpg-agent.service
 %{systemduserunitdir}/gpg-agent.socket
 %{systemduserunitdir}/gpg-agent-browser.socket
