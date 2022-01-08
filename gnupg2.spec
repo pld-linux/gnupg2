@@ -10,7 +10,7 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 Version:	2.3.4
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
@@ -36,7 +36,7 @@ BuildRequires:	npth-devel >= 1.2
 %{?with_dirmngr:BuildRequires:	openldap-devel >= 2.4.6}
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
-BuildRequires:	rpmbuild(macros) >= 1.177
+BuildRequires:	rpmbuild(macros) >= 2.011
 BuildRequires:	sqlite3-devel >= 3.27
 BuildRequires:	texinfo
 BuildRequires:	tpm2-tss-devel
@@ -98,8 +98,10 @@ Pliki wspólne używane przez różne narzędzia z projektu GnuPG.
 Summary:	GnuPG extension - agent
 Summary(pl.UTF-8):	Rozszerzenie GnuPG - agent
 Group:		Applications/File
+Requires(post,preun):	systemd-units >= 250.1
 Requires:	%{name}-common = %{version}-%{release}
 Requires:	pinentry >= 0.7.5-2
+Requires:	systemd-units >= 250.1
 Obsoletes:	newpg
 
 %description -n gnupg-agent
@@ -150,7 +152,9 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 Summary:	X509/LDAP certificate and revocation list client
 Summary(pl.UTF-8):	Klient certyfikatów i list anulujących X509/LDAP
 Group:		Applications
+Requires(post,preun):	systemd-units >= 250.1
 Requires:	%{name}-common = %{version}-%{release}
+Requires:	systemd-units >= 250.1
 
 %description -n dirmngr
 DirMngr is a client for managing and downloading certificate
@@ -237,11 +241,23 @@ rm -rf $RPM_BUILD_ROOT
 %postun	common -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
+%post -n gnupg-agent
+%systemd_user_post gpg-agent.service gpg-agent.socket gpg-agent-browser.socket gpg-agent-extra.socket gpg-agent-ssh.socket
+
+%preun -n gnupg-agent
+%systemd_user_preun gpg-agent.service gpg-agent.socket gpg-agent-browser.socket gpg-agent-extra.socket gpg-agent-ssh.socket
+
 %triggerpostun -n gnupg-agent -- gnupg-agent < 1.9.16-2
 %banner gnupg-agent-1.9.16-2 << EOF
 Scripts for starting gnupg-agent have been moved to separate
 subpackages: gnupg-agent-profile_d and gnupg-agent-xinitrc.
 EOF
+
+%post-n dirmngr
+%systemd_user_post dirmngr.service dirmngr.socket
+
+%preun-n dirmngr
+%systemd_user_preun dirmngr.service dirmngr.socket
 
 %files
 %defattr(644,root,root,755)
