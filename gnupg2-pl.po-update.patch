@@ -1,6 +1,6 @@
---- gnupg-2.2.30/po/pl.po.orig	2021-08-26 18:22:45.000000000 +0200
-+++ gnupg-2.2.30/po/pl.po	2021-08-27 18:40:07.266135803 +0200
-@@ -70,7 +70,7 @@
+--- gnupg-2.2.33/po/pl.po.orig	2021-11-23 10:54:57.000000000 +0100
++++ gnupg-2.2.33/po/pl.po	2022-01-29 21:10:24.922565491 +0100
+@@ -70,7 +70,7 @@ msgstr "|pinentry-tt|Ukrycie hasła"
  #. for generating a passphrase.
  #: agent/call-pinentry.c:1007
  msgid "Suggest"
@@ -9,7 +9,7 @@
  
  #. TRANSLATORS: This string is a tooltip, shown by pinentry when
  #. hovering over the generate button.  Please use an appropriate
-@@ -80,25 +80,19 @@
+@@ -80,25 +80,19 @@ msgstr ""
  #. will be used.  The strcmp thingy is there to detect a
  #. non-translated string.
  #: agent/call-pinentry.c:1029
@@ -38,7 +38,16 @@
  
  #. TRANSLATORS: This string is displayed by Pinentry as the label
  #. for the quality bar.
-@@ -1313,22 +1307,22 @@
+@@ -591,7 +585,7 @@ msgstr "nazwa gniazda ,,%s'' zbyt długa
+ #: agent/gpg-agent.c:2238
+ #, c-format
+ msgid "trying to steal socket from running %s\n"
+-msgstr ""
++msgstr "próba kradzieży gniazda od działającego %s\n"
+ 
+ #: agent/gpg-agent.c:2244
+ #, c-format
+@@ -1318,22 +1312,22 @@ msgstr "niewłaściwy znak formatu radix
  #: common/ttyio.c:447
  #, c-format
  msgid "Sorry, we are in batchmode - can't get input\n"
@@ -65,7 +74,7 @@
  
  #: common/argparse.c:520
  msgid "argument not expected"
-@@ -1360,29 +1354,23 @@
+@@ -1365,29 +1359,23 @@ msgstr "błędna definicja aliasu"
  
  #: common/argparse.c:534 common/argparse.c:571
  msgid "permission error"
@@ -99,7 +108,7 @@
  
  #: common/argparse.c:546
  msgid "invalid option"
-@@ -1436,7 +1424,7 @@
+@@ -1441,7 +1429,7 @@ msgstr "plik opcji ,,%s'': %s\n"
  #: common/argparse.c:2255
  #, c-format
  msgid "Note: ignoring option \"--%s\" due to global config\n"
@@ -108,7 +117,7 @@
  
  #: common/utf8conv.c:123
  #, c-format
-@@ -6297,10 +6285,8 @@
+@@ -6302,10 +6290,8 @@ msgid "problem with the agent: %s\n"
  msgstr "problem z agentem: %s\n"
  
  #: g10/passphrase.c:251 sm/decrypt.c:341
@@ -120,7 +129,16 @@
  
  #: g10/passphrase.c:253
  msgid "Enter passphrase\n"
-@@ -8951,10 +8937,9 @@
+@@ -6986,7 +6972,7 @@ msgstr "klucz %s nie może być używany
+ #: g10/sig-check.c:82
+ #, c-format
+ msgid "continuing verification anyway due to option %s\n"
+-msgstr ""
++msgstr "kontynuowanie weryfikacji mimo to ze względu na opcję %s\n"
+ 
+ #: g10/sig-check.c:190
+ #, c-format
+@@ -8961,10 +8947,9 @@ msgid "resource problem: out of core\n"
  msgstr "problem z zasobami: brak pamięci\n"
  
  #: sm/decrypt.c:536
@@ -133,7 +151,7 @@
  
  #: sm/decrypt.c:803
  #, c-format
-@@ -8967,10 +8952,9 @@
+@@ -8977,10 +8962,9 @@ msgid "(this does not seem to be an encr
  msgstr "(to nie wygląda na zaszyfrowaną wiadomość)\n"
  
  #: sm/decrypt.c:958
@@ -146,7 +164,7 @@
  
  #: sm/delete.c:51 sm/delete.c:112
  #, c-format
-@@ -10411,7 +10395,7 @@
+@@ -10421,7 +10405,7 @@ msgstr "%s:%u: podano hasło bez użytko
  #: dirmngr/ldapserver.c:181
  #, c-format
  msgid "%s:%u: ignoring unknown flag '%s'\n"
