@@ -98,10 +98,10 @@ Pliki wspólne używane przez różne narzędzia z projektu GnuPG.
 Summary:	GnuPG extension - agent
 Summary(pl.UTF-8):	Rozszerzenie GnuPG - agent
 Group:		Applications/File
-Requires(post,preun):	systemd-units >= 250.1
+Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	%{name}-common = %{version}-%{release}
 Requires:	pinentry >= 0.7.5-2
-Requires:	systemd-units >= 250.1
+Requires:	systemd-units >= 1:250.1
 Obsoletes:	newpg
 
 %description -n gnupg-agent
@@ -152,9 +152,9 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 Summary:	X509/LDAP certificate and revocation list client
 Summary(pl.UTF-8):	Klient certyfikatów i list anulujących X509/LDAP
 Group:		Applications
-Requires(post,preun):	systemd-units >= 250.1
+Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	%{name}-common = %{version}-%{release}
-Requires:	systemd-units >= 250.1
+Requires:	systemd-units >= 1:250.1
 
 %description -n dirmngr
 DirMngr is a client for managing and downloading certificate
