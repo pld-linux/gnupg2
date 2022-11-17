@@ -10,7 +10,7 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 Version:	2.3.8
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
@@ -42,7 +42,7 @@ BuildRequires:	texinfo
 BuildRequires:	tpm2-tss-devel
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
-Requires:	sqlite3 >= 3.27
+Requires:	sqlite3-libs >= 3.27
 %if %{with default_gpg}
 Obsoletes:	gnupg < 2
 Obsoletes:	gnupg-plugin-keys_curl < 2
