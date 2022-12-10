@@ -1,5 +1,5 @@
---- gnupg-2.2.33/po/pl.po.orig	2021-11-23 10:54:57.000000000 +0100
-+++ gnupg-2.2.33/po/pl.po	2022-01-29 21:10:24.922565491 +0100
+--- gnupg-2.2.40/po/pl.po.orig	2022-10-10 11:58:26.000000000 +0200
++++ gnupg-2.2.40/po/pl.po	2022-12-10 21:42:40.411130085 +0100
 @@ -70,7 +70,7 @@ msgstr "|pinentry-tt|Ukrycie hasła"
  #. for generating a passphrase.
  #: agent/call-pinentry.c:1007
@@ -38,16 +38,106 @@
  
  #. TRANSLATORS: This string is displayed by Pinentry as the label
  #. for the quality bar.
-@@ -591,7 +585,7 @@ msgstr "nazwa gniazda ,,%s'' zbyt długa
- #: agent/gpg-agent.c:2238
+@@ -188,11 +182,11 @@ msgstr "Niepoprawne hasło"
+ 
+ #: agent/command.c:654
+ msgid "Note: Request from the web browser."
+-msgstr ""
++msgstr "Uwaga: żądanie z przeglądarki WWW."
+ 
+ #: agent/command.c:655
+ msgid "Note: Request from a remote site."
+-msgstr ""
++msgstr "Uwaga: żądanie z maszyny zdalnej."
+ 
+ #: agent/command.c:1014 agent/command-ssh.c:2391 agent/command-ssh.c:2437
+ #: agent/command-ssh.c:2455 agent/command-ssh.c:2612 g10/card-util.c:697
+@@ -207,21 +201,18 @@ msgid "Please re-enter this passphrase"
+ msgstr "Proszę ponownie wprowadzić to hasło"
+ 
+ #: agent/command.c:2423
+-#, fuzzy, c-format
+-#| msgid ""
+-#| "Please enter the passphrase to protect the imported object within the "
+-#| "GnuPG system."
++#, c-format
+ msgid ""
+ "Please enter the passphrase to protect the imported object within the %s "
+ "system."
+ msgstr ""
+-"Proszę wprowadzić hasło do zabezpieczenia ważnego obiektu w systemie GnuPG."
++"Proszę wprowadzić hasło do zabezpieczenia importowanego obiektu w systemie %s."
+ 
+ #: agent/command.c:2553
+ msgid ""
+ "This key (or subkey) is not protected with a passphrase.  Please enter a new "
+ "passphrase to export it."
+-msgstr ""
++msgstr "Ten klucz (lub podklucz) nie jest chroniony hasłem. Proszę wprowadzić nowe hasło do wyeksportowania go."
+ 
+ #: agent/command-ssh.c:665 agent/command-ssh.c:754
+ #, c-format
+@@ -366,10 +357,9 @@ msgid "Please enter the PIN%s%s%s to unl
+ msgstr "Proszę wprowadzić PIN%s%s%s aby odblokować kartę"
+ 
+ #: agent/genkey.c:157
+-#, fuzzy, c-format
+-#| msgid "error writing to %s: %s\n"
++#, c-format
+ msgid "error writing to pipe: %s\n"
+-msgstr "błąd zapisu do %s: %s\n"
++msgstr "błąd zapisu do potoku: %s\n"
+ 
+ #: agent/genkey.c:182 agent/genkey.c:188
+ msgid "Enter new passphrase"
+@@ -436,10 +426,8 @@ msgid "Please enter the new passphrase"
+ msgstr "Proszę wprowadzić nowe hasło"
+ 
+ #: agent/gpg-agent.c:167 scd/scdaemon.c:116 dirmngr/dirmngr.c:185
+-#, fuzzy
+-#| msgid "Options useful for debugging"
+ msgid "Options used for startup"
+-msgstr "Opcje przydatne do diagnostyki"
++msgstr "Opcje użyte przy starcie"
+ 
+ #: agent/gpg-agent.c:169 scd/scdaemon.c:121 dirmngr/dirmngr.c:174
+ msgid "run in daemon mode (background)"
+@@ -594,14 +582,12 @@ msgid "do not allow the reuse of old pas
+ msgstr "niezezwalanie na ponowne użycie starych haseł"
+ 
+ #: agent/gpg-agent.c:281
+-#, fuzzy
+-#| msgid "Options controlling the security"
+ msgid "Options controlling the PIN-Entry"
+-msgstr "Opcje sterujące bezpieczeństwem"
++msgstr "Opcje sterujące PIN-Entry"
+ 
+ #: agent/gpg-agent.c:283
+ msgid "never use the PIN-entry"
+-msgstr ""
++msgstr "bez używania PIN-entry"
+ 
+ #: agent/gpg-agent.c:285
+ msgid "disallow caller to override the pinentry"
+@@ -609,7 +595,7 @@ msgstr "niezezwalanie wywołującym na n
+ 
+ #: agent/gpg-agent.c:287
+ msgid "let PIN-Entry grab keyboard and mouse"
+-msgstr ""
++msgstr "przechwytywanie klawiatury i myszy przez PIN-Entry"
+ 
+ #: agent/gpg-agent.c:290
+ msgid "|PGM|use PGM as the PIN-Entry program"
+@@ -684,7 +670,7 @@ msgstr "nazwa gniazda ,,%s'' zbyt długa
+ #: agent/gpg-agent.c:2220
  #, c-format
  msgid "trying to steal socket from running %s\n"
 -msgstr ""
 +msgstr "próba kradzieży gniazda od działającego %s\n"
  
- #: agent/gpg-agent.c:2244
+ #: agent/gpg-agent.c:2226
  #, c-format
-@@ -1318,22 +1312,22 @@ msgstr "niewłaściwy znak formatu radix
+@@ -1418,22 +1404,22 @@ msgstr "niewłaściwy znak formatu radix
  #: common/ttyio.c:447
  #, c-format
  msgid "Sorry, we are in batchmode - can't get input\n"
@@ -74,7 +164,7 @@
  
  #: common/argparse.c:520
  msgid "argument not expected"
-@@ -1365,29 +1359,23 @@ msgstr "błędna definicja aliasu"
+@@ -1465,29 +1451,23 @@ msgstr "błędna definicja aliasu"
  
  #: common/argparse.c:534 common/argparse.c:571
  msgid "permission error"
@@ -108,8 +198,8 @@
  
  #: common/argparse.c:546
  msgid "invalid option"
-@@ -1441,7 +1429,7 @@ msgstr "plik opcji ,,%s'': %s\n"
- #: common/argparse.c:2255
+@@ -1541,7 +1521,7 @@ msgstr "plik opcji ,,%s'': %s\n"
+ #: common/argparse.c:2266
  #, c-format
  msgid "Note: ignoring option \"--%s\" due to global config\n"
 -msgstr ""
@@ -117,7 +207,80 @@
  
  #: common/utf8conv.c:123
  #, c-format
-@@ -6302,10 +6290,8 @@ msgid "problem with the agent: %s\n"
+@@ -2799,16 +2779,12 @@ msgid "prompt before overwriting"
+ msgstr "pytanie przed nadpisaniem plików"
+ 
+ #: g10/gpg.c:689 sm/gpgsm.c:304
+-#, fuzzy
+-#| msgid "Options controlling the security"
+ msgid "Options controlling the input"
+-msgstr "Opcje sterujące bezpieczeństwem"
++msgstr "Opcje sterujące wejściem"
+ 
+ #: g10/gpg.c:707 sm/gpgsm.c:314
+-#, fuzzy
+-#| msgid "Options controlling the diagnostic output"
+ msgid "Options controlling the output"
+-msgstr "Opcje sterujące wyjściem diagnostycznym"
++msgstr "Opcje sterujące wyjściem"
+ 
+ #: g10/gpg.c:709 sm/gpgsm.c:316
+ msgid "create ascii armored output"
+@@ -2827,10 +2803,8 @@ msgid "|N|set compress level to N (0 dis
+ msgstr "|N|ustawienie poziomu kompresji N (0 - bez)"
+ 
+ #: g10/gpg.c:750 sm/gpgsm.c:347
+-#, fuzzy
+-#| msgid "Options controlling the interactivity and enforcement"
+ msgid "Options controlling key import and export"
+-msgstr "Opcje sterujące interaktywnością i wymuszaniem"
++msgstr "Opcje sterujące importem i eksportem kluczy"
+ 
+ #: g10/gpg.c:753
+ msgid "|MECHANISMS|use MECHANISMS to locate keys by mail address"
+@@ -2851,16 +2825,12 @@ msgid "disable all access to the dirmngr
+ msgstr "zablokuj dostęp do dirmngr"
+ 
+ #: g10/gpg.c:776 sm/gpgsm.c:357
+-#, fuzzy
+-#| msgid "Options controlling the configuration"
+ msgid "Options controlling key listings"
+-msgstr "Opcje sterujące konfiguracją"
++msgstr "Opcje sterujące listami kluczy"
+ 
+ #: g10/gpg.c:805 sm/gpgsm.c:324
+-#, fuzzy
+-#| msgid "list secret keys"
+ msgid "Options to specify keys"
+-msgstr "lista kluczy prywatnych"
++msgstr "Opcje określające klucze"
+ 
+ #: g10/gpg.c:807 sm/gpgsm.c:326
+ msgid "|USER-ID|encrypt for USER-ID"
+@@ -2874,11 +2844,11 @@ msgstr ""
+ 
+ #: g10/gpg.c:866 sm/gpgsm.c:396
+ msgid "Options for unattended use"
+-msgstr ""
++msgstr "Opcje do używania bezobsługowego"
+ 
+ #: g10/gpg.c:885 sm/gpgsm.c:408 dirmngr/dirmngr.c:294
+ msgid "Other options"
+-msgstr ""
++msgstr "Opcje inne"
+ 
+ #: g10/gpg.c:953 sm/gpgsm.c:440
+ msgid ""
+@@ -6386,7 +6356,7 @@ msgstr "nieskompresowany|brak"
+ #: g10/misc.c:1410 sm/decrypt.c:1035 sm/encrypt.c:541 sm/verify.c:522
+ #, c-format
+ msgid "operation forced to fail due to unfulfilled compliance rules\n"
+-msgstr ""
++msgstr "wymuszone niepowodzenie operacji ze względu na niespełnione reguły zgodności\n"
+ 
+ #: g10/misc.c:1416
+ #, c-format
+@@ -6470,10 +6440,8 @@ msgid "problem with the agent: %s\n"
  msgstr "problem z agentem: %s\n"
  
  #: g10/passphrase.c:251 sm/decrypt.c:341
@@ -129,7 +292,7 @@
  
  #: g10/passphrase.c:253
  msgid "Enter passphrase\n"
-@@ -6986,7 +6972,7 @@ msgstr "klucz %s nie może być używany
+@@ -7154,7 +7122,7 @@ msgstr "klucz %s nie może być używany
  #: g10/sig-check.c:82
  #, c-format
  msgid "continuing verification anyway due to option %s\n"
@@ -138,7 +301,7 @@
  
  #: g10/sig-check.c:190
  #, c-format
-@@ -8961,10 +8947,9 @@ msgid "resource problem: out of core\n"
+@@ -9135,10 +9103,9 @@ msgid "resource problem: out of core\n"
  msgstr "problem z zasobami: brak pamięci\n"
  
  #: sm/decrypt.c:536
@@ -151,7 +314,7 @@
  
  #: sm/decrypt.c:803
  #, c-format
-@@ -8977,10 +8962,9 @@ msgid "(this does not seem to be an encr
+@@ -9151,10 +9118,9 @@ msgid "(this does not seem to be an encr
  msgstr "(to nie wygląda na zaszyfrowaną wiadomość)\n"
  
  #: sm/decrypt.c:958
@@ -164,12 +327,21 @@
  
  #: sm/delete.c:51 sm/delete.c:112
  #, c-format
-@@ -10421,7 +10405,7 @@ msgstr "%s:%u: podano hasło bez użytko
- #: dirmngr/ldapserver.c:181
+@@ -10322,7 +10288,7 @@ msgstr "|N|bez zwracania więcej niż N
+ 
+ #: dirmngr/dirmngr.c:226
+ msgid "Network related options"
+-msgstr ""
++msgstr "Opcje związane z siecią"
+ 
+ #: dirmngr/dirmngr.c:228
+ msgid "route all network traffic via Tor"
+@@ -10618,7 +10584,7 @@ msgstr "%s:%u: podano hasło bez użytko
+ #: dirmngr/ldapserver.c:188
  #, c-format
  msgid "%s:%u: ignoring unknown flag '%s'\n"
 -msgstr ""
 +msgstr "%s:%u: zignorowano nieznaną flagę ,,%s''\n"
  
- #: dirmngr/ldapserver.c:203
+ #: dirmngr/ldapserver.c:210
  #, c-format
