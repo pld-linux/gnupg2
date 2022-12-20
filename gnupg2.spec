@@ -9,12 +9,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.3.8
-Release:	2
+Version:	2.4.0
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	f9e9dfaf150d31abc77d09e509c6231b
+# Source0-md5:	1a9dd55be7a9d0a6ef34ec3ba0d674a5
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
@@ -28,8 +28,8 @@ BuildRequires:	gettext-tools >= 0.21
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0}
 BuildRequires:	libassuan-devel >= 1:2.5.0
 BuildRequires:	libgcrypt-devel >= 1.9.1
-BuildRequires:	libgpg-error-devel >= 1.41
-BuildRequires:	libksba-devel >= 1.3.4
+BuildRequires:	libgpg-error-devel >= 1.46
+BuildRequires:	libksba-devel >= 1.6.3
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.2
 %{!?with_gnutls:BuildRequires:	ntbtls-devel >= 0.1.0}
@@ -77,8 +77,8 @@ Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
 Requires:	libassuan >= 1:2.5.0
 Requires:	libgcrypt >= 1.9.1
-Requires:	libgpg-error >= 1.41
-Requires:	libksba >= 1.3.4
+Requires:	libgpg-error >= 1.46
+Requires:	libksba >= 1.6.3
 Requires:	npth >= 1.2
 Obsoletes:	gnupg2-plugin-keys_curl
 Obsoletes:	gnupg2-plugin-keys_finger
