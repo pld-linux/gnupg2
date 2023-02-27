@@ -80,11 +80,11 @@ Requires:	libgcrypt >= 1.9.1
 Requires:	libgpg-error >= 1.46
 Requires:	libksba >= 1.6.3
 Requires:	npth >= 1.2
-Obsoletes:	gnupg2-plugin-keys_curl
-Obsoletes:	gnupg2-plugin-keys_finger
-Obsoletes:	gnupg2-plugin-keys_hkp
-Obsoletes:	gnupg2-plugin-keys_kdns
-Obsoletes:	gnupg2-plugin-keys_ldap
+Obsoletes:	gnupg2-plugin-keys_curl < 2.1
+Obsoletes:	gnupg2-plugin-keys_finger < 2.1
+Obsoletes:	gnupg2-plugin-keys_hkp < 2.1
+Obsoletes:	gnupg2-plugin-keys_kdns < 2.1
+Obsoletes:	gnupg2-plugin-keys_ldap < 2.1
 Conflicts:	gnupg < 1.4.18-2
 Conflicts:	gnupg-agent < 1.9.14-2
 
@@ -102,7 +102,7 @@ Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	%{name}-common = %{version}-%{release}
 Requires:	pinentry >= 0.7.5-2
 Requires:	systemd-units >= 1:250.1
-Obsoletes:	newpg
+Obsoletes:	newpg < 1
 
 %description -n gnupg-agent
 GnuPG extension - agent.
@@ -253,10 +253,10 @@ Scripts for starting gnupg-agent have been moved to separate
 subpackages: gnupg-agent-profile_d and gnupg-agent-xinitrc.
 EOF
 
-%post-n dirmngr
+%post	-n dirmngr
 %systemd_user_post dirmngr.service dirmngr.socket
 
-%preun-n dirmngr
+%preun	-n dirmngr
 %systemd_user_preun dirmngr.service dirmngr.socket
 
 %files
