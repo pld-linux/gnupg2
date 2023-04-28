@@ -9,12 +9,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.4.0
+Version:	2.4.1
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	1a9dd55be7a9d0a6ef34ec3ba0d674a5
+# Source0-md5:	b7436fb4a11af229428b52ba15ade8a2
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
@@ -98,10 +98,8 @@ Pliki wspólne używane przez różne narzędzia z projektu GnuPG.
 Summary:	GnuPG extension - agent
 Summary(pl.UTF-8):	Rozszerzenie GnuPG - agent
 Group:		Applications/File
-Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	%{name}-common = %{version}-%{release}
 Requires:	pinentry >= 0.7.5-2
-Requires:	systemd-units >= 1:250.1
 Obsoletes:	newpg < 1
 
 %description -n gnupg-agent
@@ -152,9 +150,7 @@ Rozszerzenie GnuPG - obsługa S/MIME.
 Summary:	X509/LDAP certificate and revocation list client
 Summary(pl.UTF-8):	Klient certyfikatów i list anulujących X509/LDAP
 Group:		Applications
-Requires(post,preun):	systemd-units >= 1:250.1
 Requires:	%{name}-common = %{version}-%{release}
-Requires:	systemd-units >= 1:250.1
 
 %description -n dirmngr
 DirMngr is a client for managing and downloading certificate
@@ -216,13 +212,9 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/gnupg-agent.sh
 install -D %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gnupg-agent.sh
 
-install -d $RPM_BUILD_ROOT%{systemduserunitdir}
-install -p doc/examples/systemd-user/*.{socket,service} $RPM_BUILD_ROOT%{systemduserunitdir}
-
 %if %{without dirmngr}
 %{__rm} $RPM_BUILD_ROOT%{_mandir}/{man1/dirmngr-client.1,man8/dirmngr.8}
 %else
-install -p doc/examples/systemd-user/dirmngr.{socket,service} $RPM_BUILD_ROOT%{systemduserunitdir}
 %endif
 
 %{__rm} -f $RPM_BUILD_ROOT%{_datadir}/info/dir
@@ -241,23 +233,11 @@ rm -rf $RPM_BUILD_ROOT
 %postun	common -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%post -n gnupg-agent
-%systemd_user_post gpg-agent.service gpg-agent.socket gpg-agent-browser.socket gpg-agent-extra.socket gpg-agent-ssh.socket
-
-%preun -n gnupg-agent
-%systemd_user_preun gpg-agent.service gpg-agent.socket gpg-agent-browser.socket gpg-agent-extra.socket gpg-agent-ssh.socket
-
 %triggerpostun -n gnupg-agent -- gnupg-agent < 1.9.16-2
 %banner gnupg-agent-1.9.16-2 << EOF
 Scripts for starting gnupg-agent have been moved to separate
 subpackages: gnupg-agent-profile_d and gnupg-agent-xinitrc.
 EOF
-
-%post	-n dirmngr
-%systemd_user_post dirmngr.service dirmngr.socket
-
-%preun	-n dirmngr
-%systemd_user_preun dirmngr.service dirmngr.socket
 
 %files
 %defattr(644,root,root,755)
@@ -323,11 +303,6 @@ EOF
 %attr(755,root,root) %{pkglibexecdir}/gpg-preset-passphrase
 %attr(755,root,root) %{pkglibexecdir}/scdaemon
 %attr(755,root,root) %{pkglibexecdir}/tpm2daemon
-%{systemduserunitdir}/gpg-agent.service
-%{systemduserunitdir}/gpg-agent.socket
-%{systemduserunitdir}/gpg-agent-browser.socket
-%{systemduserunitdir}/gpg-agent-extra.socket
-%{systemduserunitdir}/gpg-agent-ssh.socket
 %{_mandir}/man1/gpg-agent.1*
 %{_mandir}/man1/gpg-check-pattern.1*
 %{_mandir}/man1/gpg-preset-passphrase.1*
@@ -348,8 +323,6 @@ EOF
 %attr(755,root,root) %{_bindir}/dirmngr
 %attr(755,root,root) %{_bindir}/dirmngr-client
 %attr(755,root,root) %{pkglibexecdir}/dirmngr_ldap
-%{systemduserunitdir}/dirmngr.service
-%{systemduserunitdir}/dirmngr.socket
 %{_mandir}/man1/dirmngr-client.1*
 %{_mandir}/man8/dirmngr.8*
 %endif
