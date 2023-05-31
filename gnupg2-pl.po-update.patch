@@ -12,7 +12,7 @@
 -"Project-Id-Version: gnupg-2.2.24\n"
 +"Project-Id-Version: gnupg-2.4.0\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2023-04-28 11:27+0200\n"
+ "POT-Creation-Date: 2023-05-30 14:04+0200\n"
 -"PO-Revision-Date: 2020-11-18 17:35+0100\n"
 +"PO-Revision-Date: 2023-02-28 08:46+0100\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -83,7 +83,7 @@
 @@ -208,21 +202,20 @@ msgid "Please re-enter this passphrase"
  msgstr "Proszę ponownie wprowadzić to hasło"
  
- #: agent/command.c:2901
+ #: agent/command.c:2908
 -#, fuzzy, c-format
 -#| msgid ""
 -#| "Please enter the passphrase to protect the imported object within the "
@@ -96,7 +96,7 @@
 -"Proszę wprowadzić hasło do zabezpieczenia ważnego obiektu w systemie GnuPG."
 +"Proszę wprowadzić hasło do zabezpieczenia importowanego obiektu w systemie %s."
  
- #: agent/command.c:3042
+ #: agent/command.c:3049
  msgid ""
  "This key (or subkey) is not protected with a passphrase.  Please enter a new "
  "passphrase to export it."
@@ -109,7 +109,7 @@
 @@ -349,10 +342,9 @@ msgid "Please enter the PIN%s%s%s to unl
  msgstr "Proszę wprowadzić PIN%s%s%s aby odblokować kartę"
  
- #: agent/genkey.c:154
+ #: agent/genkey.c:155
 -#, fuzzy, c-format
 -#| msgid "error writing to %s: %s\n"
 +#, c-format
@@ -117,7 +117,7 @@
 -msgstr "błąd zapisu do %s: %s\n"
 +msgstr "błąd zapisu do potoku: %s\n"
  
- #: agent/genkey.c:176
+ #: agent/genkey.c:177
  msgid "Enter new passphrase"
 @@ -419,10 +411,8 @@ msgid "Please enter the new passphrase"
  msgstr "Proszę wprowadzić nowe hasło"
@@ -153,7 +153,7 @@
 -msgstr "włączenie obsługi putty"
 +msgstr "włączenie obsługi Win32-OpenSSH"
  
- #: agent/gpg-agent.c:244 g10/gpg.c:857 scd/scdaemon.c:176 sm/gpgsm.c:392
+ #: agent/gpg-agent.c:244 g10/gpg.c:859 scd/scdaemon.c:176 sm/gpgsm.c:393
  msgid "Options controlling the security"
 @@ -585,14 +571,12 @@ msgid "do not allow the reuse of old pas
  msgstr "niezezwalanie na ponowne użycie starych haseł"
@@ -193,7 +193,7 @@
 @@ -982,13 +966,9 @@ msgid "Please insert the card with seria
  msgstr "Proszę włożyć kartę z numerem seryjnym"
  
- #: agent/findkey.c:1211
+ #: agent/findkey.c:1232
 -#, fuzzy, c-format
 -#| msgid ""
 -#| "An ssh process requested the use of key%%0A  %s%%0A  (%s)%%0ADo you want "
@@ -204,7 +204,7 @@
 -"Proces ssh zarządał użycia klucza%%0a  %s%%0A  (%s)%%0ACzy zezwolić na to?"
 +msgstr "Zażądano użycia klucza%%0A  %s%%0A  %s%%0ACzy zezwolić na to?"
  
- #: agent/findkey.c:1722
+ #: agent/findkey.c:1766
  #, c-format
 @@ -1213,50 +1193,42 @@ msgid "unknown debug flag '%s' ignored\n
  msgstr "nieznana flaga diagnostyczna ,,%s'' zignorowana\n"
@@ -403,8 +403,8 @@
 -msgstr ""
 +msgstr "(opcją ,,%s'' można to obejść)\n"
  
- #: g10/encrypt.c:149 g10/encrypt.c:694 g10/decrypt-data.c:265 g10/gpg.c:4112
- #: g10/gpg.c:4152 sm/decrypt.c:1174 sm/encrypt.c:692 sm/gpgsm.c:1702
+ #: g10/encrypt.c:149 g10/encrypt.c:694 g10/decrypt-data.c:265 g10/gpg.c:4124
+ #: g10/gpg.c:4164 sm/decrypt.c:1174 sm/encrypt.c:692 sm/gpgsm.c:1708
 @@ -2334,17 +2294,14 @@ msgid "error creating passphrase: %s\n"
  msgstr "błąd podczas tworzenia hasła: %s\n"
  
@@ -430,7 +430,7 @@
 @@ -2377,10 +2334,9 @@ msgstr ""
  "adresata\n"
  
- #: g10/encrypt.c:1174
+ #: g10/encrypt.c:1180
 -#, fuzzy, c-format
 -#| msgid "%s/%s encrypted for: \"%s\"\n"
 +#, c-format
@@ -438,7 +438,7 @@
 -msgstr "%s/%s zaszyfrowany dla: ,,%s''\n"
 +msgstr "%s/%s.%s zaszyfrowany dla: ,,%s''\n"
  
- #: g10/encrypt.c:1204 g10/pkclist.c:1068 g10/pkclist.c:1119
+ #: g10/encrypt.c:1210 g10/pkclist.c:1072 g10/pkclist.c:1123
  #, c-format
 @@ -2388,8 +2344,7 @@ msgid "option '%s' may not be used in %s
  msgstr "opcja ,,%s'' nie może być używana w trybie %s\n"
@@ -476,83 +476,83 @@
 @@ -2736,16 +2687,12 @@ msgid "prompt before overwriting"
  msgstr "pytanie przed nadpisaniem plików"
  
- #: g10/gpg.c:714 sm/gpgsm.c:320
+ #: g10/gpg.c:716 sm/gpgsm.c:321
 -#, fuzzy
 -#| msgid "Options controlling the security"
  msgid "Options controlling the input"
 -msgstr "Opcje sterujące bezpieczeństwem"
 +msgstr "Opcje sterujące wejściem"
  
- #: g10/gpg.c:732 sm/gpgsm.c:330
+ #: g10/gpg.c:734 sm/gpgsm.c:331
 -#, fuzzy
 -#| msgid "Options controlling the diagnostic output"
  msgid "Options controlling the output"
 -msgstr "Opcje sterujące wyjściem diagnostycznym"
 +msgstr "Opcje sterujące wyjściem"
  
- #: g10/gpg.c:734 sm/gpgsm.c:332
+ #: g10/gpg.c:736 sm/gpgsm.c:333
  msgid "create ascii armored output"
 @@ -2764,10 +2711,8 @@ msgid "|N|set compress level to N (0 dis
  msgstr "|N|ustawienie poziomu kompresji N (0 - bez)"
  
- #: g10/gpg.c:775 sm/gpgsm.c:367
+ #: g10/gpg.c:777 sm/gpgsm.c:368
 -#, fuzzy
 -#| msgid "Options controlling the interactivity and enforcement"
  msgid "Options controlling key import and export"
 -msgstr "Opcje sterujące interaktywnością i wymuszaniem"
 +msgstr "Opcje sterujące importem i eksportem"
  
- #: g10/gpg.c:778
+ #: g10/gpg.c:780
  msgid "|MECHANISMS|use MECHANISMS to locate keys by mail address"
 @@ -2788,16 +2733,12 @@ msgid "disable all access to the dirmngr
  msgstr "zablokuj dostęp do dirmngr"
  
- #: g10/gpg.c:801 sm/gpgsm.c:377
+ #: g10/gpg.c:803 sm/gpgsm.c:378
 -#, fuzzy
 -#| msgid "Options controlling the configuration"
  msgid "Options controlling key listings"
 -msgstr "Opcje sterujące konfiguracją"
 +msgstr "Opcje sterujące listami kluczy"
  
- #: g10/gpg.c:832 sm/gpgsm.c:342
+ #: g10/gpg.c:834 sm/gpgsm.c:343
 -#, fuzzy
 -#| msgid "list secret keys"
  msgid "Options to specify keys"
 -msgstr "lista kluczy prywatnych"
 +msgstr "Opcje określające klucze"
  
- #: g10/gpg.c:834 sm/gpgsm.c:344
+ #: g10/gpg.c:836 sm/gpgsm.c:345
  msgid "|USER-ID|encrypt for USER-ID"
 @@ -2811,11 +2752,11 @@ msgstr ""
  
- #: g10/gpg.c:889 sm/gpgsm.c:418
+ #: g10/gpg.c:891 sm/gpgsm.c:419
  msgid "Options for unattended use"
 -msgstr ""
 +msgstr "Opcje użycia nieinteraktywnego"
  
- #: g10/gpg.c:908 sm/gpgsm.c:430 dirmngr/dirmngr.c:294
+ #: g10/gpg.c:910 sm/gpgsm.c:431 dirmngr/dirmngr.c:294
  msgid "Other options"
 -msgstr ""
 +msgstr "Pozostałe opcje"
  
- #: g10/gpg.c:984 sm/gpgsm.c:463
+ #: g10/gpg.c:989 sm/gpgsm.c:465
  msgid ""
 @@ -3033,10 +2974,8 @@ msgid "show expiration dates during sign
  msgstr "pokazywanie dat wygaśnięcia przy wypisywaniu podpisów"
  
- #: g10/gpg.c:2093 g10/gpg.c:2095
+ #: g10/gpg.c:2098 g10/gpg.c:2100
 -#, fuzzy
 -#| msgid "list preferences (expert)"
  msgid "show preferences"
 -msgstr "ustawienia (zaawansowane)"
 +msgstr "pokazanie ustawień"
  
- #: g10/gpg.c:2217
+ #: g10/gpg.c:2222
  #, c-format
 @@ -3305,10 +3244,9 @@ msgid "invalid personal compress prefere
  msgstr "niewłaściwe ustawienia algorytmów kompresji\n"
  
- #: g10/gpg.c:4019 g10/gpg.c:4024
+ #: g10/gpg.c:4031 g10/gpg.c:4036
 -#, fuzzy, c-format
 -#| msgid "keysize invalid; using %u bits\n"
 +#, c-format
@@ -560,7 +560,7 @@
 -msgstr "niewłaściwa długość klucza; wykorzystano %u bitów\n"
 +msgstr "nieprawidłowy rozmiar porcji - użycie %d\n"
  
- #: g10/gpg.c:4061
+ #: g10/gpg.c:4073
  #, c-format
 @@ -3490,20 +3428,16 @@ msgid "do not update the trustdb after i
  msgstr "nieuaktualnianie bazy zaufania po imporcie"
@@ -603,13 +603,13 @@
  #: g10/import.c:1375
  #, c-format
 @@ -3984,13 +3917,12 @@ msgstr "klucz %s: pominięto - nieoczeki
- #: g10/import.c:4201
+ #: g10/import.c:4202
  #, c-format
  msgid "key %s: duplicated user ID detected - merged\n"
 -msgstr "key %s: dołączono powtórzony identyfikator użytkownika\n"
 +msgstr "klucz %s: dołączono powtórzony identyfikator użytkownika\n"
  
- #: g10/import.c:4308
+ #: g10/import.c:4309
 -#, fuzzy, c-format
 -#| msgid "key %s: duplicated user ID detected - merged\n"
 +#, c-format
@@ -617,7 +617,7 @@
 -msgstr "key %s: dołączono powtórzony identyfikator użytkownika\n"
 +msgstr "klucz %s: wykryto powtórzone podklucze - połączono\n"
  
- #: g10/import.c:4373
+ #: g10/import.c:4374
  #, c-format
 @@ -4446,7 +4378,7 @@ msgstr "przeniesienie klucza na kartę p
  
@@ -631,14 +631,14 @@
 @@ -4885,10 +4817,8 @@ msgid "You may not add a photo ID to a P
  msgstr "Do klucza dla PGP 2.x nie można dodać zdjęcia.\n"
  
- #: g10/keyedit.c:4341
+ #: g10/keyedit.c:4379
 -#, fuzzy
 -#| msgid "Such a user ID already exists on this key!\n"
  msgid "Such a user ID already exists on this key!"
 -msgstr "Taki identyfikator użytkownika już istnieje na tym kluczu!\n"
 +msgstr "Taki identyfikator użytkownika już istnieje na tym kluczu!"
  
- #: g10/keyedit.c:4443
+ #: g10/keyedit.c:4481
  msgid "Delete this good signature? (y/N/q)"
 @@ -5196,10 +5126,9 @@ msgid "too many compression preferences\
  msgstr "zbyt wiele ustawień kompresji\n"
@@ -889,7 +889,7 @@
 @@ -6761,28 +6667,24 @@ msgstr ""
  "             (brak klucza unieważniającego aby to sprawdzić)\n"
  
- #: g10/pkclist.c:669
+ #: g10/pkclist.c:673
 -#, fuzzy, c-format
 -#| msgid "user ID: \"%s\"\n"
 +#, c-format
@@ -897,7 +897,7 @@
 -msgstr "identyfikator użytkownika: ,,%s''\n"
 +msgstr "sprawdzanie identyfikatora użytkownika ,,%s''\n"
  
- #: g10/pkclist.c:681
+ #: g10/pkclist.c:685
 -#, fuzzy, c-format
 -#| msgid "option '%s' given, but option '%s' not given\n"
 +#, c-format
@@ -905,7 +905,7 @@
 -msgstr "podano opcję ,,%s'', ale nie podano opcji ,,%s''\n"
 +msgstr "podano opcję %s, ale wystawca ,,%s'' nie pasuje\n"
  
- #: g10/pkclist.c:684
+ #: g10/pkclist.c:688
 -#, fuzzy, c-format
 -#| msgid "key %s: doesn't match our copy\n"
 +#, c-format
@@ -913,7 +913,7 @@
 -msgstr "klucz %s: nie zgadza się z lokalną kopią\n"
 +msgstr "wystawca ,,%s'' nie pasuje do żadnego identyfikatora użytkownika\n"
  
- #: g10/pkclist.c:687
+ #: g10/pkclist.c:691
 -#, fuzzy, c-format
 -#| msgid "option '%s' given, but option '%s' not given\n"
 +#, c-format
@@ -921,12 +921,12 @@
 -msgstr "podano opcję ,,%s'', ale nie podano opcji ,,%s''\n"
 +msgstr "podano opcję %s, ale nie znaleziono pasującego identyfikatora użytkownika\n"
  
- #: g10/pkclist.c:696
+ #: g10/pkclist.c:700
  #, c-format
 @@ -6815,10 +6717,9 @@ msgid "Note: This key has expired!\n"
  msgstr "Uwaga: Data ważności tego klucza upłynęła!\n"
  
- #: g10/pkclist.c:729
+ #: g10/pkclist.c:733
 -#, fuzzy, c-format
 -#| msgid "WARNING: This key is not certified with a trusted signature!\n"
 +#, c-format
@@ -934,12 +934,12 @@
 -msgstr "OSTRZEŻENIE: Ten klucz nie jest poświadczony zaufanym podpisem!\n"
 +msgstr "OSTRZEŻENIE: Identyfikator użytkownika tego klucza nie jest poświadczony zaufanym podpisem!\n"
  
- #: g10/pkclist.c:732
+ #: g10/pkclist.c:736
  #, c-format
 @@ -6843,14 +6744,13 @@ msgid "         The signature is probabl
  msgstr "             Ten podpis prawdopodobnie jest FAŁSZYWY.\n"
  
- #: g10/pkclist.c:753
+ #: g10/pkclist.c:757
 -#, fuzzy, c-format
 -#| msgid ""
 -#| "WARNING: This key is not certified with sufficiently trusted signatures!\n"
@@ -952,7 +952,7 @@
 +"OSTRZEŻENIE: Identyfikatora użytkownika tego klucza nie poświadczają "
 +"wystarczająco zaufane podpisy!\n"
  
- #: g10/pkclist.c:756
+ #: g10/pkclist.c:760
  #, c-format
 @@ -6995,10 +6895,9 @@ msgid "anonymous recipient; trying secre
  msgstr "adresat anonimowy; sprawdzanie klucza tajnego %s...\n"
