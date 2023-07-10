@@ -12,7 +12,7 @@
 -"Project-Id-Version: gnupg-2.2.24\n"
 +"Project-Id-Version: gnupg-2.4.0\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2023-05-30 14:04+0200\n"
+ "POT-Creation-Date: 2023-07-04 15:53+0200\n"
 -"PO-Revision-Date: 2020-11-18 17:35+0100\n"
 +"PO-Revision-Date: 2023-02-28 08:46+0100\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -122,14 +122,14 @@
 @@ -419,10 +411,8 @@ msgid "Please enter the new passphrase"
  msgstr "Proszę wprowadzić nowe hasło"
  
- #: agent/gpg-agent.c:167 scd/scdaemon.c:115 dirmngr/dirmngr.c:187
+ #: agent/gpg-agent.c:167 scd/scdaemon.c:115 dirmngr/dirmngr.c:189
 -#, fuzzy
 -#| msgid "Options useful for debugging"
  msgid "Options used for startup"
 -msgstr "Opcje przydatne do diagnostyki"
 +msgstr "Opcje używane przy uruchamianiu"
  
- #: agent/gpg-agent.c:169 scd/scdaemon.c:120 dirmngr/dirmngr.c:176
+ #: agent/gpg-agent.c:169 scd/scdaemon.c:120 dirmngr/dirmngr.c:178
  msgid "run in daemon mode (background)"
 @@ -484,10 +474,8 @@ msgid "|PGM|use PGM as the SCdaemon prog
  msgstr "|PGM|użycie PGM jako programu SCdaemon"
@@ -153,7 +153,7 @@
 -msgstr "włączenie obsługi putty"
 +msgstr "włączenie obsługi Win32-OpenSSH"
  
- #: agent/gpg-agent.c:244 g10/gpg.c:859 scd/scdaemon.c:176 sm/gpgsm.c:393
+ #: agent/gpg-agent.c:244 g10/gpg.c:861 scd/scdaemon.c:176 sm/gpgsm.c:395
  msgid "Options controlling the security"
 @@ -585,14 +571,12 @@ msgid "do not allow the reuse of old pas
  msgstr "niezezwalanie na ponowne użycie starych haseł"
@@ -403,8 +403,8 @@
 -msgstr ""
 +msgstr "(opcją ,,%s'' można to obejść)\n"
  
- #: g10/encrypt.c:149 g10/encrypt.c:694 g10/decrypt-data.c:265 g10/gpg.c:4124
- #: g10/gpg.c:4164 sm/decrypt.c:1174 sm/encrypt.c:692 sm/gpgsm.c:1708
+ #: g10/encrypt.c:149 g10/encrypt.c:694 g10/decrypt-data.c:265 g10/gpg.c:4137
+ #: g10/gpg.c:4177 sm/decrypt.c:1178 sm/encrypt.c:696 sm/gpgsm.c:1714
 @@ -2334,17 +2294,14 @@ msgid "error creating passphrase: %s\n"
  msgstr "błąd podczas tworzenia hasła: %s\n"
  
@@ -425,12 +425,12 @@
 -msgstr "szyfrem %s\n"
 +msgstr "szyfrem %s.%s\n"
  
- #: g10/encrypt.c:527 g10/encrypt.c:913 g10/sign.c:1267
+ #: g10/encrypt.c:527 g10/encrypt.c:913 g10/sign.c:1266
  #, c-format
 @@ -2377,10 +2334,9 @@ msgstr ""
  "adresata\n"
  
- #: g10/encrypt.c:1180
+ #: g10/encrypt.c:1179
 -#, fuzzy, c-format
 -#| msgid "%s/%s encrypted for: \"%s\"\n"
 +#, c-format
@@ -438,7 +438,7 @@
 -msgstr "%s/%s zaszyfrowany dla: ,,%s''\n"
 +msgstr "%s/%s.%s zaszyfrowany dla: ,,%s''\n"
  
- #: g10/encrypt.c:1210 g10/pkclist.c:1072 g10/pkclist.c:1123
+ #: g10/encrypt.c:1209 g10/pkclist.c:1072 g10/pkclist.c:1123
  #, c-format
 @@ -2388,8 +2344,7 @@ msgid "option '%s' may not be used in %s
  msgstr "opcja ,,%s'' nie może być używana w trybie %s\n"
@@ -476,83 +476,83 @@
 @@ -2736,16 +2687,12 @@ msgid "prompt before overwriting"
  msgstr "pytanie przed nadpisaniem plików"
  
- #: g10/gpg.c:716 sm/gpgsm.c:321
+ #: g10/gpg.c:718 sm/gpgsm.c:322
 -#, fuzzy
 -#| msgid "Options controlling the security"
  msgid "Options controlling the input"
 -msgstr "Opcje sterujące bezpieczeństwem"
 +msgstr "Opcje sterujące wejściem"
  
- #: g10/gpg.c:734 sm/gpgsm.c:331
+ #: g10/gpg.c:736 sm/gpgsm.c:333
 -#, fuzzy
 -#| msgid "Options controlling the diagnostic output"
  msgid "Options controlling the output"
 -msgstr "Opcje sterujące wyjściem diagnostycznym"
 +msgstr "Opcje sterujące wyjściem"
  
- #: g10/gpg.c:736 sm/gpgsm.c:333
+ #: g10/gpg.c:738 sm/gpgsm.c:335
  msgid "create ascii armored output"
 @@ -2764,10 +2711,8 @@ msgid "|N|set compress level to N (0 dis
  msgstr "|N|ustawienie poziomu kompresji N (0 - bez)"
  
- #: g10/gpg.c:777 sm/gpgsm.c:368
+ #: g10/gpg.c:779 sm/gpgsm.c:370
 -#, fuzzy
 -#| msgid "Options controlling the interactivity and enforcement"
  msgid "Options controlling key import and export"
 -msgstr "Opcje sterujące interaktywnością i wymuszaniem"
 +msgstr "Opcje sterujące importem i eksportem"
  
- #: g10/gpg.c:780
+ #: g10/gpg.c:782
  msgid "|MECHANISMS|use MECHANISMS to locate keys by mail address"
 @@ -2788,16 +2733,12 @@ msgid "disable all access to the dirmngr
  msgstr "zablokuj dostęp do dirmngr"
  
- #: g10/gpg.c:803 sm/gpgsm.c:378
+ #: g10/gpg.c:805 sm/gpgsm.c:380
 -#, fuzzy
 -#| msgid "Options controlling the configuration"
  msgid "Options controlling key listings"
 -msgstr "Opcje sterujące konfiguracją"
 +msgstr "Opcje sterujące listami kluczy"
  
- #: g10/gpg.c:834 sm/gpgsm.c:343
+ #: g10/gpg.c:836 sm/gpgsm.c:345
 -#, fuzzy
 -#| msgid "list secret keys"
  msgid "Options to specify keys"
 -msgstr "lista kluczy prywatnych"
 +msgstr "Opcje określające klucze"
  
- #: g10/gpg.c:836 sm/gpgsm.c:345
+ #: g10/gpg.c:838 sm/gpgsm.c:347
  msgid "|USER-ID|encrypt for USER-ID"
 @@ -2811,11 +2752,11 @@ msgstr ""
  
- #: g10/gpg.c:891 sm/gpgsm.c:419
+ #: g10/gpg.c:893 sm/gpgsm.c:421
  msgid "Options for unattended use"
 -msgstr ""
 +msgstr "Opcje użycia nieinteraktywnego"
  
- #: g10/gpg.c:910 sm/gpgsm.c:431 dirmngr/dirmngr.c:294
+ #: g10/gpg.c:912 sm/gpgsm.c:433 dirmngr/dirmngr.c:297
  msgid "Other options"
 -msgstr ""
 +msgstr "Pozostałe opcje"
  
- #: g10/gpg.c:989 sm/gpgsm.c:465
+ #: g10/gpg.c:991 sm/gpgsm.c:467
  msgid ""
 @@ -3033,10 +2974,8 @@ msgid "show expiration dates during sign
  msgstr "pokazywanie dat wygaśnięcia przy wypisywaniu podpisów"
  
- #: g10/gpg.c:2098 g10/gpg.c:2100
+ #: g10/gpg.c:2100 g10/gpg.c:2102
 -#, fuzzy
 -#| msgid "list preferences (expert)"
  msgid "show preferences"
 -msgstr "ustawienia (zaawansowane)"
 +msgstr "pokazanie ustawień"
  
- #: g10/gpg.c:2222
+ #: g10/gpg.c:2224
  #, c-format
 @@ -3305,10 +3244,9 @@ msgid "invalid personal compress prefere
  msgstr "niewłaściwe ustawienia algorytmów kompresji\n"
  
- #: g10/gpg.c:4031 g10/gpg.c:4036
+ #: g10/gpg.c:4044 g10/gpg.c:4049
 -#, fuzzy, c-format
 -#| msgid "keysize invalid; using %u bits\n"
 +#, c-format
@@ -560,7 +560,7 @@
 -msgstr "niewłaściwa długość klucza; wykorzystano %u bitów\n"
 +msgstr "nieprawidłowy rozmiar porcji - użycie %d\n"
  
- #: g10/gpg.c:4073
+ #: g10/gpg.c:4086
  #, c-format
 @@ -3490,20 +3428,16 @@ msgid "do not update the trustdb after i
  msgstr "nieuaktualnianie bazy zaufania po imporcie"
@@ -603,13 +603,13 @@
  #: g10/import.c:1375
  #, c-format
 @@ -3984,13 +3917,12 @@ msgstr "klucz %s: pominięto - nieoczeki
- #: g10/import.c:4202
+ #: g10/import.c:4216
  #, c-format
  msgid "key %s: duplicated user ID detected - merged\n"
 -msgstr "key %s: dołączono powtórzony identyfikator użytkownika\n"
 +msgstr "klucz %s: dołączono powtórzony identyfikator użytkownika\n"
  
- #: g10/import.c:4309
+ #: g10/import.c:4323
 -#, fuzzy, c-format
 -#| msgid "key %s: duplicated user ID detected - merged\n"
 +#, c-format
@@ -617,7 +617,7 @@
 -msgstr "key %s: dołączono powtórzony identyfikator użytkownika\n"
 +msgstr "klucz %s: wykryto powtórzone podklucze - połączono\n"
  
- #: g10/import.c:4374
+ #: g10/import.c:4388
  #, c-format
 @@ -4446,7 +4378,7 @@ msgstr "przeniesienie klucza na kartę p
  
@@ -854,7 +854,7 @@
  #: g10/mainproc.c:568 g10/pkclist.c:231
  #, c-format
 @@ -6131,7 +6041,7 @@ msgstr "błąd odszyfrowywania: %s\n"
- #: sm/verify.c:543
+ #: sm/verify.c:547
  #, c-format
  msgid "operation forced to fail due to unfulfilled compliance rules\n"
 -msgstr ""
@@ -979,7 +979,7 @@
 @@ -7376,10 +7275,9 @@ msgid "signing:"
  msgstr "podpis:"
  
- #: g10/sign.c:1646
+ #: g10/sign.c:1645
 -#, fuzzy, c-format
 -#| msgid "%s encryption will be used\n"
 +#, c-format
@@ -1130,7 +1130,7 @@
 @@ -9307,10 +9186,9 @@ msgid "(this does not seem to be an encr
  msgstr "(to nie wygląda na zaszyfrowaną wiadomość)\n"
  
- #: sm/decrypt.c:1310
+ #: sm/decrypt.c:1314
 -#, fuzzy, c-format
 -#| msgid "encrypted with %s key, ID %s\n"
 +#, c-format
@@ -1156,7 +1156,7 @@
 @@ -9635,10 +9512,9 @@ msgid "checking for qualified certificat
  msgstr "sprawdzenie certyfikatu kwalifikowanego nie powiodło się: %s\n"
  
- #: sm/sign.c:1143
+ #: sm/sign.c:1147
 -#, fuzzy, c-format
 -#| msgid "Signature made %s using %s key ID %s\n"
 +#, c-format
@@ -1164,7 +1164,7 @@
 -msgstr "Podpisano w %s kluczem %s o numerze %s\n"
 +msgstr "Podpis %s/%s kluczem %s %s\n"
  
- #: sm/verify.c:474
+ #: sm/verify.c:478
  #, c-format
 @@ -10292,10 +10168,8 @@ msgid "reader to file mapping table full
  msgstr "tabela przypisań czytelników do plików pełna - oczekiwanie\n"
@@ -1180,36 +1180,36 @@
  #: dirmngr/crlfetch.c:310
 @@ -10490,7 +10364,7 @@ msgstr "|N|bez zwracania więcej niż N
  
- #: dirmngr/dirmngr.c:228
+ #: dirmngr/dirmngr.c:231
  msgid "Network related options"
 -msgstr ""
 +msgstr "Opcje związane z siecią"
  
- #: dirmngr/dirmngr.c:230
+ #: dirmngr/dirmngr.c:233
  msgid "route all network traffic via Tor"
 @@ -10517,10 +10391,8 @@ msgid "use system's HTTP proxy setting"
  msgstr "użycie systemowego ustawienia proxy HTTP"
  
- #: dirmngr/dirmngr.c:253
+ #: dirmngr/dirmngr.c:256
 -#, fuzzy
 -#| msgid "Configuration for HTTP servers"
  msgid "Configuration for OpenPGP servers"
 -msgstr "Konfiguracja dla serwerów HTTP"
 +msgstr "Konfiguracja dla serwerów OpenPGP"
  
- #: dirmngr/dirmngr.c:256
+ #: dirmngr/dirmngr.c:259
  msgid "|URL|use keyserver at URL"
 @@ -10531,10 +10403,8 @@ msgid "|FILE|use the CA certificates in
  msgstr "|PLIK|użycie certyfikatów CA w PLIKU dla HKP po TLS"
  
- #: dirmngr/dirmngr.c:260
+ #: dirmngr/dirmngr.c:263
 -#, fuzzy
 -#| msgid "Configuration for HTTP servers"
  msgid "Configuration for X.509 servers"
 -msgstr "Konfiguracja dla serwerów HTTP"
 +msgstr "Konfiguracja dla serwerów X.509"
  
- #: dirmngr/dirmngr.c:262
+ #: dirmngr/dirmngr.c:265
  msgid "inhibit the use of LDAP"
 @@ -10790,7 +10660,7 @@ msgstr "%s:%u: podano hasło bez użytko
  #: dirmngr/ldapserver.c:188
