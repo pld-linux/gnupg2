@@ -1,5 +1,5 @@
---- gnupg-2.4.0/po/pl.po.orig	2022-12-16 17:50:15.000000000 +0100
-+++ gnupg-2.4.0/po/pl.po	2023-03-04 08:35:47.982652524 +0100
+--- gnupg-2.4.3/po/pl.po.orig	2023-07-04 16:06:12.000000000 +0200
++++ gnupg-2.4.3/po/pl.po	2023-10-20 21:39:26.941254666 +0200
 @@ -2,14 +2,14 @@
  # Copyright (C) 1998, 1999, 2000, 2001, 2002,
  #               2007 Free Software Foundation, Inc.
@@ -10,11 +10,11 @@
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-2.2.24\n"
-+"Project-Id-Version: gnupg-2.4.0\n"
++"Project-Id-Version: gnupg-2.4.3\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
  "POT-Creation-Date: 2023-07-04 15:53+0200\n"
 -"PO-Revision-Date: 2020-11-18 17:35+0100\n"
-+"PO-Revision-Date: 2023-02-28 08:46+0100\n"
++"PO-Revision-Date: 2023-10-20 21:29+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
@@ -66,7 +66,19 @@
  
  #. TRANSLATORS: This string is displayed by Pinentry as the label
  #. for the quality bar.
-@@ -191,11 +185,11 @@ msgstr "Niepoprawne hasło"
+@@ -153,10 +147,8 @@ msgid "does not match - try again"
+ msgstr "nie pasują - proszę spróbować jeszcze raz"
+ 
+ #: agent/call-pinentry.c:1550 agent/call-pinentry.c:1819
+-#, fuzzy
+-#| msgid "Passphrase Entry"
+ msgid "Passphrases match."
+-msgstr "Wpisywanie hasła"
++msgstr "Hasła się zgadzają."
+ 
+ #. TRANSLATORS: The string is appended to an error message in
+ #. the pinentry.  The %s is the actual error message, the
+@@ -197,11 +189,11 @@ msgstr "Niepoprawne hasło"
  
  #: agent/command.c:826
  msgid "Note: Request from the web browser."
@@ -80,7 +92,7 @@
  
  #: agent/command.c:1332 g10/card-util.c:749 g10/card-util.c:770
  #, c-format
-@@ -208,21 +202,20 @@ msgid "Please re-enter this passphrase"
+@@ -214,21 +206,20 @@ msgid "Please re-enter this passphrase"
  msgstr "Proszę ponownie wprowadzić to hasło"
  
  #: agent/command.c:2908
@@ -106,7 +118,7 @@
  
  #: agent/command-ssh.c:693 agent/command-ssh.c:782
  #, c-format
-@@ -349,10 +342,9 @@ msgid "Please enter the PIN%s%s%s to unl
+@@ -355,10 +346,9 @@ msgid "Please enter the PIN%s%s%s to unl
  msgstr "Proszę wprowadzić PIN%s%s%s aby odblokować kartę"
  
  #: agent/genkey.c:155
@@ -119,7 +131,7 @@
  
  #: agent/genkey.c:177
  msgid "Enter new passphrase"
-@@ -419,10 +411,8 @@ msgid "Please enter the new passphrase"
+@@ -425,10 +415,8 @@ msgid "Please enter the new passphrase"
  msgstr "Proszę wprowadzić nowe hasło"
  
  #: agent/gpg-agent.c:167 scd/scdaemon.c:115 dirmngr/dirmngr.c:189
@@ -131,7 +143,7 @@
  
  #: agent/gpg-agent.c:169 scd/scdaemon.c:120 dirmngr/dirmngr.c:178
  msgid "run in daemon mode (background)"
-@@ -484,10 +474,8 @@ msgid "|PGM|use PGM as the SCdaemon prog
+@@ -490,10 +478,8 @@ msgid "|PGM|use PGM as the SCdaemon prog
  msgstr "|PGM|użycie PGM jako programu SCdaemon"
  
  #: agent/gpg-agent.c:211
@@ -143,7 +155,7 @@
  
  #: agent/gpg-agent.c:215
  msgid "|NAME|accept some commands via NAME"
-@@ -514,10 +502,8 @@ msgid "enable putty support"
+@@ -520,10 +506,8 @@ msgid "enable putty support"
  msgstr "włączenie obsługi putty"
  
  #: agent/gpg-agent.c:234
@@ -155,7 +167,7 @@
  
  #: agent/gpg-agent.c:244 g10/gpg.c:861 scd/scdaemon.c:176 sm/gpgsm.c:395
  msgid "Options controlling the security"
-@@ -585,14 +571,12 @@ msgid "do not allow the reuse of old pas
+@@ -591,14 +575,12 @@ msgid "do not allow the reuse of old pas
  msgstr "niezezwalanie na ponowne użycie starych haseł"
  
  #: agent/gpg-agent.c:288
@@ -172,7 +184,7 @@
  
  #: agent/gpg-agent.c:292
  msgid "disallow caller to override the pinentry"
-@@ -600,7 +584,7 @@ msgstr "niezezwalanie wywołującym na n
+@@ -606,7 +588,7 @@ msgstr "niezezwalanie wywołującym na n
  
  #: agent/gpg-agent.c:294
  msgid "let PIN-Entry grab keyboard and mouse"
@@ -181,7 +193,7 @@
  
  #: agent/gpg-agent.c:297
  msgid "|PGM|use PGM as the PIN-Entry program"
-@@ -680,7 +664,7 @@ msgstr "nazwa gniazda ,,%s'' zbyt długa
+@@ -686,7 +668,7 @@ msgstr "nazwa gniazda ,,%s'' zbyt długa
  #: agent/gpg-agent.c:2280
  #, c-format
  msgid "trying to steal socket from running %s\n"
@@ -190,7 +202,7 @@
  
  #: agent/gpg-agent.c:2286
  #, c-format
-@@ -982,13 +966,9 @@ msgid "Please insert the card with seria
+@@ -985,13 +967,9 @@ msgid "Please insert the card with seria
  msgstr "Proszę włożyć kartę z numerem seryjnym"
  
  #: agent/findkey.c:1232
@@ -206,7 +218,7 @@
  
  #: agent/findkey.c:1766
  #, c-format
-@@ -1213,50 +1193,42 @@ msgid "unknown debug flag '%s' ignored\n
+@@ -1216,50 +1194,42 @@ msgid "unknown debug flag '%s' ignored\n
  msgstr "nieznana flaga diagnostyczna ,,%s'' zignorowana\n"
  
  #: common/asshelp.c:342
@@ -272,7 +284,7 @@
  msgid "connection to the agent is in restricted mode\n"
  msgstr "połączenie z agentem jest w trybie ograniczonym\n"
  
-@@ -1482,22 +1454,22 @@ msgstr "niewłaściwy znak formatu radix
+@@ -1485,22 +1455,22 @@ msgstr "niewłaściwy znak formatu radix
  #: common/ttyio.c:447
  #, c-format
  msgid "Sorry, we are in batchmode - can't get input\n"
@@ -299,7 +311,7 @@
  
  #: common/utf8conv.c:127
  #, c-format
-@@ -1706,10 +1678,9 @@ msgid "%s is not compliant with %s mode\
+@@ -1721,10 +1691,9 @@ msgid "%s is not compliant with %s mode\
  msgstr "%s nie jest zgodny z trybem %s\n"
  
  #: g10/call-agent.c:1088
@@ -312,7 +324,7 @@
  
  #: g10/call-agent.c:2166 g10/passphrase.c:233 g10/passphrase.c:266
  #: tools/card-call-scd.c:1755
-@@ -1723,10 +1694,9 @@ msgid "no dirmngr running in this sessio
+@@ -1738,10 +1707,9 @@ msgid "no dirmngr running in this sessio
  msgstr "brak działającego dirmngr w tej sesji\n"
  
  #: g10/call-dirmngr.c:212
@@ -325,7 +337,16 @@
  
  #: g10/call-dirmngr.c:410
  msgid "WKD uses a cached result"
-@@ -1919,20 +1889,16 @@ msgid "Replace existing key? (y/N) "
+@@ -1835,7 +1803,7 @@ msgstr "wymuszono"
+ #: g10/card-util.c:712
+ #, c-format
+ msgid "Please try command \"%s\" if the listing does not look correct\n"
+-msgstr ""
++msgstr "Proszę spróbować polecenia ,,%s'', jeśli lista nie wygląda poprawnie\n"
+ 
+ #: g10/card-util.c:809 tools/gpg-card.c:1502
+ msgid "Error: Only plain ASCII is currently allowed.\n"
+@@ -1939,20 +1907,16 @@ msgid "Replace existing key? (y/N) "
  msgstr "Zastąpić istniejący klucz? (t/N) "
  
  #: g10/card-util.c:1421 tools/gpg-card.c:3363
@@ -350,7 +371,7 @@
  
  #: g10/card-util.c:1442 g10/keygen.c:2553 sm/certreqgen-ui.c:180
  #, c-format
-@@ -2081,10 +2047,9 @@ msgid "error for setup KDF: %s\n"
+@@ -2101,10 +2065,9 @@ msgid "error for setup KDF: %s\n"
  msgstr "błąd przy ustawianiu KDF: %s\n"
  
  #: g10/card-util.c:2255
@@ -363,7 +384,7 @@
  
  #: g10/card-util.c:2279 g10/keyedit.c:1266 tools/gpg-card.c:3738
  msgid "quit this menu"
-@@ -2155,20 +2120,16 @@ msgid "destroy all keys and data"
+@@ -2175,24 +2138,20 @@ msgid "destroy all keys and data"
  msgstr "zniszczenie wszystkich kluczy i danych"
  
  #: g10/card-util.c:2302
@@ -386,7 +407,12 @@
  
  #: g10/card-util.c:2305
  msgid "switch to the OpenPGP app"
-@@ -2307,15 +2268,14 @@ msgstr ""
+-msgstr ""
++msgstr "przełączenie na aplikację OpenPGP"
+ 
+ #: g10/card-util.c:2429 tools/gpg-card.c:4017
+ msgid "gpg/card> "
+@@ -2332,15 +2291,14 @@ msgstr ""
  "adresata\n"
  
  #: g10/encrypt.c:136 g10/encrypt.c:683
@@ -405,7 +431,7 @@
  
  #: g10/encrypt.c:149 g10/encrypt.c:694 g10/decrypt-data.c:265 g10/gpg.c:4137
  #: g10/gpg.c:4177 sm/decrypt.c:1178 sm/encrypt.c:696 sm/gpgsm.c:1714
-@@ -2334,17 +2294,14 @@ msgid "error creating passphrase: %s\n"
+@@ -2359,17 +2317,14 @@ msgid "error creating passphrase: %s\n"
  msgstr "błąd podczas tworzenia hasła: %s\n"
  
  #: g10/encrypt.c:484
@@ -427,7 +453,7 @@
  
  #: g10/encrypt.c:527 g10/encrypt.c:913 g10/sign.c:1266
  #, c-format
-@@ -2377,10 +2334,9 @@ msgstr ""
+@@ -2402,10 +2357,9 @@ msgstr ""
  "adresata\n"
  
  #: g10/encrypt.c:1179
@@ -440,7 +466,7 @@
  
  #: g10/encrypt.c:1209 g10/pkclist.c:1072 g10/pkclist.c:1123
  #, c-format
-@@ -2388,8 +2344,7 @@ msgid "option '%s' may not be used in %s
+@@ -2413,8 +2367,7 @@ msgid "option '%s' may not be used in %s
  msgstr "opcja ,,%s'' nie może być używana w trybie %s\n"
  
  #: g10/decrypt-data.c:245
@@ -450,7 +476,7 @@
  msgid "%s encrypted data\n"
  msgstr "dane zaszyfrowano za pomocą %s\n"
  
-@@ -2431,20 +2386,16 @@ msgid "remove as much as possible from k
+@@ -2456,20 +2409,16 @@ msgid "remove as much as possible from k
  msgstr "usunięcie jak największej części klucza przy eksporcie"
  
  #: g10/export.c:138
@@ -473,7 +499,7 @@
  
  #: g10/export.c:1525
  msgid " - skipped"
-@@ -2736,16 +2687,12 @@ msgid "prompt before overwriting"
+@@ -2755,16 +2704,12 @@ msgid "prompt before overwriting"
  msgstr "pytanie przed nadpisaniem plików"
  
  #: g10/gpg.c:718 sm/gpgsm.c:322
@@ -492,7 +518,7 @@
  
  #: g10/gpg.c:738 sm/gpgsm.c:335
  msgid "create ascii armored output"
-@@ -2764,10 +2711,8 @@ msgid "|N|set compress level to N (0 dis
+@@ -2783,10 +2728,8 @@ msgid "|N|set compress level to N (0 dis
  msgstr "|N|ustawienie poziomu kompresji N (0 - bez)"
  
  #: g10/gpg.c:779 sm/gpgsm.c:370
@@ -504,7 +530,7 @@
  
  #: g10/gpg.c:782
  msgid "|MECHANISMS|use MECHANISMS to locate keys by mail address"
-@@ -2788,16 +2733,12 @@ msgid "disable all access to the dirmngr
+@@ -2807,16 +2750,12 @@ msgid "disable all access to the dirmngr
  msgstr "zablokuj dostęp do dirmngr"
  
  #: g10/gpg.c:805 sm/gpgsm.c:380
@@ -523,7 +549,7 @@
  
  #: g10/gpg.c:838 sm/gpgsm.c:347
  msgid "|USER-ID|encrypt for USER-ID"
-@@ -2811,11 +2752,11 @@ msgstr ""
+@@ -2830,11 +2769,11 @@ msgstr ""
  
  #: g10/gpg.c:893 sm/gpgsm.c:421
  msgid "Options for unattended use"
@@ -537,7 +563,19 @@
  
  #: g10/gpg.c:991 sm/gpgsm.c:467
  msgid ""
-@@ -3033,10 +2974,8 @@ msgid "show expiration dates during sign
+@@ -3044,10 +2983,8 @@ msgid "show revoked and expired subkeys
+ msgstr "pokazywanie unieważnionych i wygasłych podkluczy na listach kluczy"
+ 
+ #: g10/gpg.c:2094
+-#, fuzzy
+-#| msgid "show expiration dates during signature listings"
+ msgid "show signatures with invalid algorithms during signature listings"
+-msgstr "pokazywanie dat wygaśnięcia przy wypisywaniu podpisów"
++msgstr "pokazywanie podpisów z niepoprawnymi algorytmami przy wypisywaniu podpisów"
+ 
+ #: g10/gpg.c:2096
+ msgid "show the keyring name in key listings"
+@@ -3058,10 +2995,8 @@ msgid "show expiration dates during sign
  msgstr "pokazywanie dat wygaśnięcia przy wypisywaniu podpisów"
  
  #: g10/gpg.c:2100 g10/gpg.c:2102
@@ -549,7 +587,7 @@
  
  #: g10/gpg.c:2224
  #, c-format
-@@ -3305,10 +3244,9 @@ msgid "invalid personal compress prefere
+@@ -3330,10 +3265,9 @@ msgid "invalid personal compress prefere
  msgstr "niewłaściwe ustawienia algorytmów kompresji\n"
  
  #: g10/gpg.c:4044 g10/gpg.c:4049
@@ -562,7 +600,7 @@
  
  #: g10/gpg.c:4086
  #, c-format
-@@ -3490,20 +3428,16 @@ msgid "do not update the trustdb after i
+@@ -3515,20 +3449,16 @@ msgid "do not update the trustdb after i
  msgstr "nieuaktualnianie bazy zaufania po imporcie"
  
  #: g10/import.c:182
@@ -585,7 +623,7 @@
  
  #: g10/import.c:191
  msgid "only accept updates to existing keys"
-@@ -3635,13 +3569,12 @@ msgstr ""
+@@ -3660,13 +3590,12 @@ msgstr ""
  #: g10/import.c:1342
  #, c-format
  msgid "         \"%s\": preference for cipher algorithm %s\n"
@@ -602,7 +640,16 @@
  
  #: g10/import.c:1375
  #, c-format
-@@ -3984,13 +3917,12 @@ msgstr "klucz %s: pominięto - nieoczeki
+@@ -3831,7 +3760,7 @@ msgstr "klucz %s: błąd wysyłania do a
+ #: g10/import.c:2979
+ #, c-format
+ msgid "key %s: card reference is overridden by key material\n"
+-msgstr ""
++msgstr "klucz %s: odwołanie do karty nadpisane przez materiał klucza\n"
+ 
+ #. TRANSLATORS: For a smartcard, each private key on host has a
+ #. * reference (stub) to a smartcard and actual private key data
+@@ -4014,13 +3943,12 @@ msgstr "klucz %s: pominięto - nieoczeki
  #: g10/import.c:4216
  #, c-format
  msgid "key %s: duplicated user ID detected - merged\n"
@@ -619,7 +666,7 @@
  
  #: g10/import.c:4388
  #, c-format
-@@ -4446,7 +4378,7 @@ msgstr "przeniesienie klucza na kartę p
+@@ -4476,7 +4404,7 @@ msgstr "przeniesienie klucza na kartę p
  
  #: g10/keyedit.c:1306
  msgid "convert a key to TPM form using the local TPM"
@@ -628,7 +675,58 @@
  
  #: g10/keyedit.c:1308
  msgid "move a backup key to a smartcard"
-@@ -4885,10 +4817,8 @@ msgid "You may not add a photo ID to a P
+@@ -4491,10 +4419,8 @@ msgid "add a revocation key"
+ msgstr "dodanie klucza unieważniającego"
+ 
+ #: g10/keyedit.c:1314
+-#, fuzzy
+-#| msgid "Data decryption succeeded"
+ msgid "add an additional decryption subkey"
+-msgstr "Odszyfrowywanie danych zakończone"
++msgstr "dodanie dodatkowego podklucza do odszyfrowywania"
+ 
+ #: g10/keyedit.c:1316
+ msgid "delete signatures from the selected user IDs"
+@@ -4583,11 +4509,9 @@ msgid "Secret subkeys are available.\n"
+ msgstr "Dostępne są podklucze tajne.\n"
+ 
+ #: g10/keyedit.c:1511
+-#, fuzzy
+-#| msgid "Note: Only the secret part of the shown subkey will be deleted.\n"
+ msgid ""
+ "Note: the local copy of the secret key will only be deleted with \"save\".\n"
+-msgstr "Uwaga: usunięta zostanie tylko tajna część pokazanego podklucza.\n"
++msgstr "Uwaga: kopia lokalna klucza tajnego będzie usunięta tylko z \"save\".\n"
+ 
+ #: g10/keyedit.c:1589
+ msgid "Need the secret key to do this.\n"
+@@ -4736,10 +4660,9 @@ msgid "Quit without saving? (y/N) "
+ msgstr "Wyjść bez zapisania zmian? (t/N) "
+ 
+ #: g10/keyedit.c:2294
+-#, fuzzy, c-format
+-#| msgid "deleting secret %s failed: %s\n"
++#, c-format
+ msgid "deleting copy of secret key failed: %s\n"
+-msgstr "usunięcie %s tajnego nie powiodło się: %s\n"
++msgstr "usunięcie kopii klucza tajnego nie powiodło się: %s\n"
+ 
+ #: g10/keyedit.c:2311 g10/keyedit.c:2947 g10/keyedit.c:3247 g10/keyedit.c:3462
+ #, c-format
+@@ -4918,10 +4841,9 @@ msgid "You may want to change its expira
+ msgstr "Może warto także zmienić jego datę ważności.\n"
+ 
+ #: g10/keyedit.c:4295
+-#, fuzzy, c-format
+-#| msgid "WARNING: Your encryption subkey expires soon.\n"
++#, c-format
+ msgid "WARNING: No valid encryption subkey left over.\n"
+-msgstr "OSTRZEŻENIE: podklucz do szyfrowania wkrótce wygaśnie.\n"
++msgstr "OSTRZEŻENIE: nie pozostawiono poprawnego podklucza do szyfrowania.\n"
+ 
+ #: g10/keyedit.c:4353
+ msgid ""
+@@ -4941,10 +4863,8 @@ msgid "You may not add a photo ID to a P
  msgstr "Do klucza dla PGP 2.x nie można dodać zdjęcia.\n"
  
  #: g10/keyedit.c:4379
@@ -640,7 +738,32 @@
  
  #: g10/keyedit.c:4481
  msgid "Delete this good signature? (y/N/q)"
-@@ -5196,10 +5126,9 @@ msgid "too many compression preferences\
+@@ -5046,19 +4966,17 @@ msgstr "Czy na pewno chcesz wyznaczyć t
+ 
+ #: g10/keyedit.c:4830
+ msgid "Enter the fingerprint of the additional decryption subkey: "
+-msgstr ""
++msgstr "Wprowadź odcisk klucza dodatkowego podklucza do odszyfrowywania: "
+ 
+ #: g10/keyedit.c:4869 g10/keyedit.c:4894
+-#, fuzzy, c-format
+-#| msgid "(unless you specify the key by fingerprint)\n"
++#, c-format
+ msgid "Did you specify the fingerprint of a subkey?\n"
+-msgstr "(chyba, że klucz zostaje wybrany przez podanie odcisku)\n"
++msgstr "Czy podano odcisk podklucza?\n"
+ 
+ #: g10/keyedit.c:4915
+-#, fuzzy, c-format
+-#| msgid "Subkey %s is already revoked.\n"
++#, c-format
+ msgid "key \"%s\" is already on this keyblock\n"
+-msgstr "Podklucz %s jest już unieważniony.\n"
++msgstr "klucz ,,%s'' jest już w tym bloku kluczy\n"
+ 
+ #: g10/keyedit.c:5007
+ msgid ""
+@@ -5268,10 +5186,9 @@ msgid "too many compression preferences\
  msgstr "zbyt wiele ustawień kompresji\n"
  
  #: g10/keygen.c:349
@@ -653,7 +776,7 @@
  
  #: g10/keygen.c:529
  #, c-format
-@@ -5271,10 +5200,9 @@ msgid "SsEeAaQq"
+@@ -5343,10 +5260,9 @@ msgid "SsEeAaQq"
  msgstr "PpSsUuZz"
  
  #: g10/keygen.c:1949
@@ -666,7 +789,7 @@
  
  #: g10/keygen.c:1956
  msgid "Current allowed actions: "
-@@ -5301,62 +5229,53 @@ msgid "   (%c) Finished\n"
+@@ -5373,62 +5289,53 @@ msgid "   (%c) Finished\n"
  msgstr "   (%c) Zakończenie\n"
  
  #: g10/keygen.c:2099
@@ -748,7 +871,7 @@
  
  #: g10/keygen.c:2131
  #, c-format
-@@ -5364,28 +5283,24 @@ msgid "  (%d) ECC (sign only)\n"
+@@ -5436,28 +5343,24 @@ msgid "  (%d) ECC (sign only)\n"
  msgstr "   (%d) ECC (tylko do podpisywania)\n"
  
  #: g10/keygen.c:2133
@@ -785,7 +908,7 @@
  
  #: g10/keygen.c:2237 sm/certreqgen-ui.c:203
  msgid "Enter the keygrip: "
-@@ -5657,13 +5572,13 @@ msgstr ""
+@@ -5729,13 +5632,13 @@ msgstr ""
  #: g10/keygen.c:3567
  #, c-format
  msgid "WARNING: v4 is specified, but overridden by v5.\n"
@@ -801,7 +924,7 @@
  
  #: g10/keygen.c:4673
  #, c-format
-@@ -5704,7 +5619,7 @@ msgstr ""
+@@ -5776,7 +5679,7 @@ msgstr ""
  #: g10/keygen.c:5215
  #, c-format
  msgid "Key generation canceled.\n"
@@ -810,7 +933,7 @@
  
  #: g10/keygen.c:5275
  #, c-format
-@@ -6008,22 +5923,19 @@ msgid "weird size for an encrypted sessi
+@@ -6080,22 +5983,19 @@ msgid "weird size for an encrypted sessi
  msgstr "dziwny rozmiar jak na zaszyfrowany klucz sesyjny (%d)\n"
  
  #: g10/mainproc.c:398
@@ -839,7 +962,7 @@
  
  #: g10/mainproc.c:411
  #, c-format
-@@ -6036,11 +5948,9 @@ msgid "public key is %s\n"
+@@ -6108,11 +6008,9 @@ msgid "public key is %s\n"
  msgstr "klucz publiczny to %s\n"
  
  #: g10/mainproc.c:564
@@ -853,7 +976,7 @@
  
  #: g10/mainproc.c:568 g10/pkclist.c:231
  #, c-format
-@@ -6131,7 +6041,7 @@ msgstr "błąd odszyfrowywania: %s\n"
+@@ -6203,7 +6101,7 @@ msgstr "błąd odszyfrowywania: %s\n"
  #: sm/verify.c:547
  #, c-format
  msgid "operation forced to fail due to unfulfilled compliance rules\n"
@@ -862,7 +985,7 @@
  
  #: g10/mainproc.c:944
  #, c-format
-@@ -6468,10 +6378,8 @@ msgid "subpacket of type %d has critical
+@@ -6540,10 +6438,8 @@ msgid "subpacket of type %d has critical
  msgstr "podpakiet typu %d ma ustawiony krytyczny bit\n"
  
  #: g10/passphrase.c:201 sm/decrypt.c:661
@@ -874,7 +997,7 @@
  
  #: g10/passphrase.c:203
  msgid "Enter passphrase\n"
-@@ -6513,10 +6421,8 @@ msgid "Do you really want to permanently
+@@ -6585,10 +6481,8 @@ msgid "Do you really want to permanently
  msgstr "Czy na pewno trwale usunąć klucz prywatny OpenPGP:"
  
  #: g10/passphrase.c:515
@@ -886,7 +1009,7 @@
  
  #: g10/passphrase.c:529
  #, c-format
-@@ -6761,28 +6667,24 @@ msgstr ""
+@@ -6833,28 +6727,24 @@ msgstr ""
  "             (brak klucza unieważniającego aby to sprawdzić)\n"
  
  #: g10/pkclist.c:673
@@ -923,7 +1046,7 @@
  
  #: g10/pkclist.c:700
  #, c-format
-@@ -6815,10 +6717,9 @@ msgid "Note: This key has expired!\n"
+@@ -6887,10 +6777,9 @@ msgid "Note: This key has expired!\n"
  msgstr "Uwaga: Data ważności tego klucza upłynęła!\n"
  
  #: g10/pkclist.c:733
@@ -936,7 +1059,7 @@
  
  #: g10/pkclist.c:736
  #, c-format
-@@ -6843,14 +6744,13 @@ msgid "         The signature is probabl
+@@ -6915,14 +6804,13 @@ msgid "         The signature is probabl
  msgstr "             Ten podpis prawdopodobnie jest FAŁSZYWY.\n"
  
  #: g10/pkclist.c:757
@@ -954,7 +1077,7 @@
  
  #: g10/pkclist.c:760
  #, c-format
-@@ -6995,10 +6895,9 @@ msgid "anonymous recipient; trying secre
+@@ -7067,10 +6955,9 @@ msgid "anonymous recipient; trying secre
  msgstr "adresat anonimowy; sprawdzanie klucza tajnego %s...\n"
  
  #: g10/pubkey-enc.c:146 g10/pubkey-enc.c:159
@@ -967,7 +1090,7 @@
  
  #: g10/pubkey-enc.c:157
  #, c-format
-@@ -7205,7 +7104,7 @@ msgstr "wygenerowano słaby klucz - oper
+@@ -7277,7 +7164,7 @@ msgstr "wygenerowano słaby klucz - oper
  #, c-format
  msgid "cannot avoid weak key for symmetric cipher; tried %d times!\n"
  msgstr ""
@@ -976,7 +1099,7 @@
  "operacja była powtarzana %d razy!\n"
  
  #: g10/seskey.c:299
-@@ -7376,10 +7275,9 @@ msgid "signing:"
+@@ -7443,10 +7330,9 @@ msgid "signing:"
  msgstr "podpis:"
  
  #: g10/sign.c:1645
@@ -989,7 +1112,7 @@
  
  #: g10/skclist.c:173 g10/skclist.c:254
  #, c-format
-@@ -8208,16 +8106,14 @@ msgid "can't open fd %d: %s\n"
+@@ -8275,16 +8161,14 @@ msgid "can't open fd %d: %s\n"
  msgstr "nie można otworzyć fd %d: %s\n"
  
  #: g10/cipher-cfb.c:70
@@ -1010,7 +1133,7 @@
  
  #: kbx/kbxutil.c:92
  msgid "set debugging flags"
-@@ -8257,40 +8153,28 @@ msgid "Remaining attempts: %d"
+@@ -8324,40 +8208,28 @@ msgid "Remaining attempts: %d"
  msgstr "Pozostało prób: %d"
  
  #: scd/app-piv.c:1845
@@ -1057,7 +1180,7 @@
  
  #: scd/app-piv.c:1888 scd/app-nks.c:1667 scd/app-openpgp.c:2726
  #: scd/app-openpgp.c:2750 scd/app-openpgp.c:2928 scd/app-openpgp.c:2950
-@@ -8301,21 +8185,19 @@ msgid "PIN callback returned error: %s\n
+@@ -8368,21 +8240,19 @@ msgid "PIN callback returned error: %s\n
  msgstr "Zapytanie zwrotne o PIN zwróciło błąd: %s\n"
  
  #: scd/app-piv.c:1895
@@ -1084,7 +1207,7 @@
  
  #: scd/app-piv.c:2657 scd/app-openpgp.c:3674
  #, c-format
-@@ -8410,10 +8292,8 @@ msgid "RSA public exponent missing or la
+@@ -8477,10 +8347,8 @@ msgid "RSA public exponent missing or la
  msgstr "publiczny wykładnik RSA brakujący lub większy niż %d bity\n"
  
  #: scd/app-nks.c:1656
@@ -1096,7 +1219,7 @@
  
  #: scd/app-nks.c:1703
  #, c-format
-@@ -8680,7 +8560,7 @@ msgstr "użycie wejścia z klawiatury cz
+@@ -8747,7 +8615,7 @@ msgstr "użycie wejścia z klawiatury cz
  
  #: scd/scdaemon.c:172
  msgid "|LIST|change the application priority to LIST"
@@ -1105,7 +1228,7 @@
  
  #: scd/scdaemon.c:180
  msgid "deny the use of admin card commands"
-@@ -8721,7 +8601,7 @@ msgstr "błąd pobierania informacji o z
+@@ -8788,7 +8656,7 @@ msgstr "błąd pobierania informacji o z
  
  #: sm/call-dirmngr.c:450
  msgid "Tor might be in use - network access is limited"
@@ -1114,7 +1237,7 @@
  
  #: sm/certchain.c:199
  #, c-format
-@@ -9077,10 +8957,9 @@ msgid "certificate is not usable for sig
+@@ -9144,10 +9012,9 @@ msgid "certificate is not usable for sig
  msgstr "certyfikat nie nadaje się do podpisywania\n"
  
  #: sm/certlist.c:379
@@ -1127,7 +1250,7 @@
  
  #: sm/certreqgen.c:468 sm/certreqgen.c:753
  #, c-format
-@@ -9307,10 +9186,9 @@ msgid "(this does not seem to be an encr
+@@ -9374,10 +9241,9 @@ msgid "(this does not seem to be an encr
  msgstr "(to nie wygląda na zaszyfrowaną wiadomość)\n"
  
  #: sm/decrypt.c:1314
@@ -1140,7 +1263,7 @@
  
  #: sm/delete.c:50 sm/delete.c:109
  #, c-format
-@@ -9526,10 +9404,9 @@ msgid "error reading input: %s\n"
+@@ -9593,10 +9459,9 @@ msgid "error reading input: %s\n"
  msgstr "błąd odczytu wejścia: %s\n"
  
  #: sm/keydb.c:528
@@ -1153,7 +1276,7 @@
  
  #: sm/keydb.c:620
  #, c-format
-@@ -9635,10 +9512,9 @@ msgid "checking for qualified certificat
+@@ -9702,10 +9567,9 @@ msgid "checking for qualified certificat
  msgstr "sprawdzenie certyfikatu kwalifikowanego nie powiodło się: %s\n"
  
  #: sm/sign.c:1147
@@ -1166,7 +1289,7 @@
  
  #: sm/verify.c:478
  #, c-format
-@@ -10292,10 +10168,8 @@ msgid "reader to file mapping table full
+@@ -10359,10 +10223,8 @@ msgid "reader to file mapping table full
  msgstr "tabela przypisań czytelników do plików pełna - oczekiwanie\n"
  
  #: dirmngr/crlfetch.c:155
@@ -1178,7 +1301,7 @@
  
  #: dirmngr/crlfetch.c:187 dirmngr/crlfetch.c:246 dirmngr/crlfetch.c:280
  #: dirmngr/crlfetch.c:310
-@@ -10490,7 +10364,7 @@ msgstr "|N|bez zwracania więcej niż N
+@@ -10557,7 +10419,7 @@ msgstr "|N|bez zwracania więcej niż N
  
  #: dirmngr/dirmngr.c:231
  msgid "Network related options"
@@ -1187,7 +1310,7 @@
  
  #: dirmngr/dirmngr.c:233
  msgid "route all network traffic via Tor"
-@@ -10517,10 +10391,8 @@ msgid "use system's HTTP proxy setting"
+@@ -10584,10 +10446,8 @@ msgid "use system's HTTP proxy setting"
  msgstr "użycie systemowego ustawienia proxy HTTP"
  
  #: dirmngr/dirmngr.c:256
@@ -1199,7 +1322,7 @@
  
  #: dirmngr/dirmngr.c:259
  msgid "|URL|use keyserver at URL"
-@@ -10531,10 +10403,8 @@ msgid "|FILE|use the CA certificates in
+@@ -10598,10 +10458,8 @@ msgid "|FILE|use the CA certificates in
  msgstr "|PLIK|użycie certyfikatów CA w PLIKU dla HKP po TLS"
  
  #: dirmngr/dirmngr.c:263
@@ -1211,7 +1334,7 @@
  
  #: dirmngr/dirmngr.c:265
  msgid "inhibit the use of LDAP"
-@@ -10790,7 +10660,7 @@ msgstr "%s:%u: podano hasło bez użytko
+@@ -10857,7 +10715,7 @@ msgstr "%s:%u: podano hasło bez użytko
  #: dirmngr/ldapserver.c:188
  #, c-format
  msgid "%s:%u: ignoring unknown flag '%s'\n"
@@ -1220,7 +1343,7 @@
  
  #: dirmngr/ldapserver.c:210
  #, c-format
-@@ -10828,10 +10698,8 @@ msgid "response from server too large; l
+@@ -10895,10 +10753,8 @@ msgid "response from server too large; l
  msgstr "odpowiedź z serwera zbyt długa; limit to %d bajtów\n"
  
  #: dirmngr/ocsp.c:148
@@ -1232,7 +1355,7 @@
  
  #: dirmngr/ocsp.c:157
  #, c-format
-@@ -11093,10 +10961,8 @@ msgid "connect to the dirmngr"
+@@ -11160,10 +11016,8 @@ msgid "connect to the dirmngr"
  msgstr "połączenie z dirmngr"
  
  #: tools/gpg-connect-agent.c:93
@@ -1244,7 +1367,7 @@
  
  #: tools/gpg-connect-agent.c:96
  msgid "|NAME|connect to Assuan socket NAME"
-@@ -11171,10 +11037,9 @@ msgid "sending line failed: %s\n"
+@@ -11238,10 +11092,9 @@ msgid "sending line failed: %s\n"
  msgstr "wysyłanie linii nie powiodło się: %s\n"
  
  #: tools/gpg-connect-agent.c:2332
@@ -1257,7 +1380,7 @@
  
  #: tools/gpg-connect-agent.c:2338
  #, c-format
-@@ -11190,10 +11055,8 @@ msgid "S/MIME"
+@@ -11257,10 +11110,8 @@ msgid "S/MIME"
  msgstr "S/MIME"
  
  #: tools/gpgconf-comp.c:666
@@ -1269,7 +1392,7 @@
  
  #: tools/gpgconf-comp.c:670
  msgid "Private Keys"
-@@ -11205,7 +11068,7 @@ msgstr "Karty procesorowe"
+@@ -11272,7 +11123,7 @@ msgstr "Karty procesorowe"
  
  #: tools/gpgconf-comp.c:679
  msgid "TPM"
@@ -1278,7 +1401,7 @@
  
  #: tools/gpgconf-comp.c:686
  msgid "Network"
-@@ -11350,34 +11213,30 @@ msgstr ""
+@@ -11417,34 +11268,30 @@ msgstr ""
  "Sprawdzanie hasła ze standardowego wejścia względem pliku wzorców\n"
  
  #: tools/gpg-card.c:2425
@@ -1321,7 +1444,7 @@
  
  #: tools/gpg-card.c:3441 tools/gpg-card.c:3455
  #, c-format
-@@ -11385,21 +11244,21 @@ msgid ""
+@@ -11452,21 +11299,21 @@ msgid ""
  "Warning: Setting the User Interaction Flag to \"%s\"\n"
  "         can only be reverted using a factory reset!\n"
  msgstr ""
@@ -1348,7 +1471,7 @@
  
  #: tools/gpg-card.c:3762
  msgid "setup KDF for PIN authentication"
-@@ -11407,31 +11266,27 @@ msgstr "ustawienie KDF do uwierzytelnian
+@@ -11474,31 +11321,27 @@ msgstr "ustawienie KDF do uwierzytelnian
  
  #: tools/gpg-card.c:3764
  msgid "change a private data object"
