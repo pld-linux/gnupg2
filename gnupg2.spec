@@ -9,12 +9,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.4.3
+Version:	2.4.4
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	e21ab42c629af80f19f813eeb61aa939
+# Source0-md5:	114ac6367668a330ffae1ade6d79133a
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
@@ -25,14 +25,14 @@ BuildRequires:	automake >= 1:1.16.3
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
 BuildRequires:	gettext-tools >= 0.21
-%{?with_gnutls:BuildRequires:	gnutls-devel >= 3.0}
+%{?with_gnutls:BuildRequires:	gnutls-devel >= 3.2}
 BuildRequires:	libassuan-devel >= 1:2.5.0
 BuildRequires:	libgcrypt-devel >= 1.9.1
 BuildRequires:	libgpg-error-devel >= 1.46
 BuildRequires:	libksba-devel >= 1.6.3
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.2
-%{!?with_gnutls:BuildRequires:	ntbtls-devel >= 0.1.0}
+%{!?with_gnutls:BuildRequires:	ntbtls-devel >= 0.2.0}
 %{?with_dirmngr:BuildRequires:	openldap-devel >= 2.4.6}
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
