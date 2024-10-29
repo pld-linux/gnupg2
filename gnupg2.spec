@@ -10,12 +10,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.4.x is stable, 2.5.x testing
-Version:	2.4.5
-Release:	3
+Version:	2.4.6
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	49c3534e87744e994250d37c1b43f928
+# Source0-md5:	cb1900f8f49374ec9446b84e3ecb40f4
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
@@ -260,6 +260,7 @@ EOF
 %attr(755,root,root) %{_bindir}/g13
 %attr(755,root,root) %{_bindir}/gpg-card
 %attr(755,root,root) %{_bindir}/gpg-connect-agent
+%attr(755,root,root) %{_bindir}/gpg-mail-tube
 %attr(755,root,root) %{_bindir}/gpg-wks-client
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgparsemail
@@ -280,6 +281,7 @@ EOF
 %{_datadir}/gnupg
 %{_mandir}/man1/gpg-card.1*
 %{_mandir}/man1/gpg-connect-agent.1*
+%{_mandir}/man1/gpg-mail-tube.1*
 %{_mandir}/man1/gpg-wks-client.1*
 %{_mandir}/man1/gpgconf.1*
 %{_mandir}/man1/gpgparsemail.1*
