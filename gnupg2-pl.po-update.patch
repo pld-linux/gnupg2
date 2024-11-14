@@ -1,24 +1,120 @@
---- gnupg-2.4.4/po/pl.po.orig	2024-01-25 11:10:15.000000000 +0100
-+++ gnupg-2.4.4/po/pl.po	2024-01-28 16:05:20.966874408 +0100
-@@ -288,8 +288,8 @@ msgid ""
- "Please enter a passphrase to protect the received secret key%%0A   %s%%0A   "
- "%s%%0Awithin gpg-agent's key storage"
- msgstr ""
--"Proszę wprowadzić hasło do zabezpieczenia odebranego klucza tajnego%%0A   %s"
--"%%0A   %s%%0Aw miejscu przechowywania kluczy gpg-agenta"
-+"Proszę wprowadzić hasło do zabezpieczenia odebranego klucza tajnego%%0A   "
-+"%s%%0A   %s%%0Aw miejscu przechowywania kluczy gpg-agenta"
- 
- #: agent/command-ssh.c:3965
- #, c-format
-@@ -976,8 +976,8 @@ msgstr "Zażądano użycia klucza%%0A  %
- #: agent/findkey.c:1989
- #, c-format
+--- gnupg-2.4.6/po/pl.po.orig	2024-10-29 13:52:36.000000000 +0100
++++ gnupg-2.4.6/po/pl.po	2024-11-13 22:50:51.542370195 +0100
+@@ -6,10 +6,10 @@
+ #
  msgid ""
--"Do you really want to delete the key identified by keygrip%%0A  %s%%0A  %%C"
--"%%0A?"
-+"Do you really want to delete the key identified by keygrip%%0A  %s%%0A  "
-+"%%C%%0A?"
  msgstr ""
- "Czy na pewno usunąć klucz identyfikowany przez uchwyt%%0A  %s%%0A  %%C%%0A?"
+-"Project-Id-Version: gnupg-2.4.4\n"
++"Project-Id-Version: gnupg-2.4.6\n"
+ "Report-Msgid-Bugs-To: translations@gnupg.org\n"
+ "POT-Creation-Date: 2024-10-29 13:52+0100\n"
+-"PO-Revision-Date: 2024-03-07 14:00+0100\n"
++"PO-Revision-Date: 2024-11-13 22:30+0100\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "Language: pl\n"
+@@ -3002,10 +3002,8 @@ msgid "show preferences"
+ msgstr "pokazanie ustawień"
  
+ #: g10/gpg.c:2117
+-#, fuzzy
+-#| msgid "change the ownertrust"
+ msgid "show ownertrust"
+-msgstr "zmiana zaufania właściciela"
++msgstr "pokazanie zaufania dla właściciela"
+ 
+ #: g10/gpg.c:2239
+ #, c-format
+@@ -3172,10 +3170,9 @@ msgid "invalid argument for option \"%.5
+ msgstr "błędny argument dla opcji „%.50s”\n"
+ 
+ #: g10/gpg.c:3780
+-#, fuzzy, c-format
+-#| msgid "error parsing key specification '%s': %s\n"
++#, c-format
+ msgid "error parsing value for option '%s': %s\n"
+-msgstr "błąd analizy specyfikacji klucza „%s”: %s\n"
++msgstr "błąd analizy wartości opcji „%s”: %s\n"
+ 
+ #: g10/gpg.c:3950 sm/gpgsm.c:1615
+ #, c-format
+@@ -4702,10 +4699,9 @@ msgid "setting the primary user ID faile
+ msgstr "ustawienie głównego identyfikatora użytkownika nie powiodło się: %s\n"
+ 
+ #: g10/keyedit.c:2829
+-#, fuzzy, c-format
+-#| msgid "checking the trust list failed: %s\n"
++#, c-format
+ msgid "setting the ownertrust to '%s' failed: %s\n"
+-msgstr "sprawdzenie listy zaufania nie powiodło się: %s\n"
++msgstr "ustawienie zaufania dla właściciela na „%s” nie powiodło się: %s\n"
+ 
+ #: g10/keyedit.c:2858 g10/keyedit.c:5021 g10/keygen.c:4202 g10/keygen.c:4256
+ #, c-format
+@@ -5741,10 +5737,9 @@ msgstr ""
+ "można dodać do niego podklucz szyfrujący.\n"
+ 
+ #: g10/keygen.c:6123
+-#, fuzzy, c-format
+-#| msgid "WARNING: This key has been revoked by its owner!\n"
++#, c-format
+ msgid "Note: The key has been created with one or more ADSK!\n"
+-msgstr "OSTRZEŻENIE: Ten klucz został unieważniony przez właściciela!\n"
++msgstr "Uwaga: ten klucz został utworzony z jednym lub więcej ADSK!\n"
+ 
+ #: g10/keygen.c:6283 g10/keygen.c:6491
+ #, c-format
+@@ -5852,7 +5847,7 @@ msgstr "Zbiór kluczy"
+ 
+ #: g10/keylist.c:1716
+ msgid "Revocable by: "
+-msgstr ""
++msgstr "Możliwy do unieważnienia przez: "
+ 
+ #: g10/keylist.c:2393
+ msgid "Primary key fingerprint:"
+@@ -7020,10 +7015,9 @@ msgid "Note: secret key %s expired at %s
+ msgstr "Uwaga: ważność klucza tajnego %s wygasła %s\n"
+ 
+ #: g10/pubkey-enc.c:440
+-#, fuzzy, c-format
+-#| msgid "certificate should not have been used for encryption\n"
++#, c-format
+ msgid "Note: ADSK key has been used for decryption"
+-msgstr "certyfikat nie powinien być używany do szyfrowania\n"
++msgstr "Uwaga: do odszyfrowania został użyty klucz ADSK"
+ 
+ #: g10/pubkey-enc.c:446
+ #, c-format
+@@ -8091,16 +8085,14 @@ msgstr[1] " (skasowano %d liczniki zaufa
+ msgstr[2] " (skasowano %d liczników zaufania)\n"
+ 
+ #: g10/trustdb.c:2243
+-#, fuzzy, c-format
+-#| msgid "no ultimately trusted keys found\n"
++#, c-format
+ msgid "Note: ultimately trusted key %s not found\n"
+-msgstr "brak absolutnie zaufanych kluczy\n"
++msgstr "Uwaga: nie znaleziono absolutnie zaufanego klucza %s\n"
+ 
+ #: g10/trustdb.c:2250
+-#, fuzzy, c-format
+-#| msgid "no ultimately trusted keys found\n"
++#, c-format
+ msgid "Note: ultimately trusted key %s expired\n"
+-msgstr "brak absolutnie zaufanych kluczy\n"
++msgstr "Uwaga: absolutnie zaufany klucz %s wygasł\n"
+ 
+ #: g10/trustdb.c:2285
+ #, c-format
+@@ -11396,10 +11388,3 @@ msgstr "polecenia zarządzające kluczam
+ #: tools/gpg-card.c:3912
+ msgid "manage the command history"
+ msgstr "zarządzanie historią poleceń"
+-
+-#, c-format
+-#~ msgid "public key of ultimately trusted key %s not found\n"
+-#~ msgstr "klucz publiczny absolutnie zaufanego klucza %s nie odnaleziony\n"
+-
+-#~ msgid "use canonical text mode"
+-#~ msgstr "kanoniczny format tekstowy"
