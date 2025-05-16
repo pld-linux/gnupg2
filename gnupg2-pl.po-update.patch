@@ -7,7 +7,7 @@
 -"Project-Id-Version: gnupg-2.4.4\n"
 +"Project-Id-Version: gnupg-2.4.6\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2024-11-25 11:54+0100\n"
+ "POT-Creation-Date: 2025-05-14 14:51+0200\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
 +"PO-Revision-Date: 2024-11-13 22:30+0100\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -49,12 +49,12 @@
 -msgstr "sprawdzenie listy zaufania nie powiodło się: %s\n"
 +msgstr "ustawienie zaufania dla właściciela na „%s” nie powiodło się: %s\n"
  
- #: g10/keyedit.c:2858 g10/keyedit.c:5021 g10/keygen.c:4204 g10/keygen.c:4258
+ #: g10/keyedit.c:2858 g10/keyedit.c:5021 g10/keygen.c:4239 g10/keygen.c:4293
  #, c-format
 @@ -5741,10 +5737,9 @@ msgstr ""
  "można dodać do niego podklucz szyfrujący.\n"
  
- #: g10/keygen.c:6125
+ #: g10/keygen.c:6172
 -#, fuzzy, c-format
 -#| msgid "WARNING: This key has been revoked by its owner!\n"
 +#, c-format
@@ -62,16 +62,16 @@
 -msgstr "OSTRZEŻENIE: Ten klucz został unieważniony przez właściciela!\n"
 +msgstr "Uwaga: ten klucz został utworzony z jednym lub więcej ADSK!\n"
  
- #: g10/keygen.c:6285 g10/keygen.c:6493
+ #: g10/keygen.c:6335 g10/keygen.c:6543
  #, c-format
 @@ -5852,7 +5847,7 @@ msgstr "Zbiór kluczy"
  
- #: g10/keylist.c:1716
+ #: g10/keylist.c:1717
  msgid "Revocable by: "
 -msgstr ""
 +msgstr "Możliwy do unieważnienia przez: "
  
- #: g10/keylist.c:2393
+ #: g10/keylist.c:2394
  msgid "Primary key fingerprint:"
 @@ -7020,10 +7015,9 @@ msgid "Note: secret key %s expired at %s
  msgstr "Uwaga: ważność klucza tajnego %s wygasła %s\n"

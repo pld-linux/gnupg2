@@ -10,12 +10,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.4.x is stable, 2.5.x testing
-Version:	2.4.7
+Version:	2.4.8
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	59ec68633deefcd38a5012f39a9d9311
+# Source0-md5:	a165b60aeaac0bb4d251117a45199c5f
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
