@@ -1,15 +1,15 @@
---- gnupg-2.4.6/po/pl.po.orig	2024-10-29 13:52:36.000000000 +0100
-+++ gnupg-2.4.6/po/pl.po	2024-11-13 22:50:51.542370195 +0100
+--- gnupg-2.4.8/po/pl.po.orig	2025-05-14 14:51:35.000000000 +0200
++++ gnupg-2.4.8/po/pl.po	2025-05-17 08:34:51.300895498 +0200
 @@ -6,10 +6,10 @@
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-2.4.4\n"
-+"Project-Id-Version: gnupg-2.4.6\n"
++"Project-Id-Version: gnupg-2.4.8\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
  "POT-Creation-Date: 2025-05-14 14:51+0200\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
-+"PO-Revision-Date: 2024-11-13 22:30+0100\n"
++"PO-Revision-Date: 2025-05-17 08:30+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
@@ -51,7 +51,17 @@
  
  #: g10/keyedit.c:2858 g10/keyedit.c:5021 g10/keygen.c:4239 g10/keygen.c:4293
  #, c-format
-@@ -5741,10 +5737,9 @@ msgstr ""
+@@ -5719,6 +5715,9 @@ msgid ""
+ "         not properly written to the disk.  You may want to repeat the\n"
+ "         entire operation or just create a new encryption key on the card.\n"
+ msgstr ""
++"Uwaga: mimo że klucz został zapisany na karcie, plik kopii zapasowej nie\n"
++"       został właściwie zapisany na dysk. Można powtórzyć całą operację\n"
++"       lub tylko utworzyć nowy klucz szyfrujący na karcie.\n"
+ 
+ #: g10/keygen.c:5835 g10/keygen.c:6095
+ #, c-format
+@@ -5748,10 +5747,9 @@ msgstr ""
  "można dodać do niego podklucz szyfrujący.\n"
  
  #: g10/keygen.c:6172
@@ -64,7 +74,7 @@
  
  #: g10/keygen.c:6335 g10/keygen.c:6543
  #, c-format
-@@ -5852,7 +5847,7 @@ msgstr "Zbiór kluczy"
+@@ -5859,7 +5857,7 @@ msgstr "Zbiór kluczy"
  
  #: g10/keylist.c:1717
  msgid "Revocable by: "
@@ -73,7 +83,7 @@
  
  #: g10/keylist.c:2394
  msgid "Primary key fingerprint:"
-@@ -7020,10 +7015,9 @@ msgid "Note: secret key %s expired at %s
+@@ -7027,10 +7025,9 @@ msgid "Note: secret key %s expired at %s
  msgstr "Uwaga: ważność klucza tajnego %s wygasła %s\n"
  
  #: g10/pubkey-enc.c:440
@@ -86,7 +96,7 @@
  
  #: g10/pubkey-enc.c:446
  #, c-format
-@@ -8091,16 +8085,14 @@ msgstr[1] " (skasowano %d liczniki zaufa
+@@ -8098,16 +8095,14 @@ msgstr[1] " (skasowano %d liczniki zaufa
  msgstr[2] " (skasowano %d liczników zaufania)\n"
  
  #: g10/trustdb.c:2243
@@ -107,7 +117,7 @@
  
  #: g10/trustdb.c:2285
  #, c-format
-@@ -11396,10 +11388,3 @@ msgstr "polecenia zarządzające kluczam
+@@ -11403,10 +11398,3 @@ msgstr "polecenia zarządzające kluczam
  #: tools/gpg-card.c:3912
  msgid "manage the command history"
  msgstr "zarządzanie historią poleceń"
