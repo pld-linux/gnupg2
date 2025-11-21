@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego 
 Name:		gnupg2
 # 2.4.x is stable, 2.5.x testing
 Version:	2.4.8
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/File
 Source0:	https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-%{version}.tar.bz2
