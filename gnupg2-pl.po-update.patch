@@ -1,5 +1,5 @@
---- gnupg-2.4.8/po/pl.po.orig	2025-05-14 14:51:35.000000000 +0200
-+++ gnupg-2.4.8/po/pl.po	2025-05-17 08:34:51.300895498 +0200
+--- gnupg-2.5.16/po/pl.po.orig	2025-12-30 09:00:31.000000000 +0100
++++ gnupg-2.5.16/po/pl.po	2025-12-30 13:06:26.950273632 +0100
 @@ -6,10 +6,10 @@
  #
  msgid ""
@@ -7,28 +7,28 @@
 -"Project-Id-Version: gnupg-2.4.4\n"
 +"Project-Id-Version: gnupg-2.4.8\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2025-05-14 14:51+0200\n"
+ "POT-Creation-Date: 2025-12-30 09:00+0100\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
 +"PO-Revision-Date: 2025-05-17 08:30+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
-@@ -3002,10 +3002,8 @@ msgid "show preferences"
+@@ -3008,10 +3008,8 @@ msgid "show preferences"
  msgstr "pokazanie ustawień"
  
- #: g10/gpg.c:2117
+ #: g10/gpg.c:2149
 -#, fuzzy
 -#| msgid "change the ownertrust"
  msgid "show ownertrust"
 -msgstr "zmiana zaufania właściciela"
 +msgstr "pokazanie zaufania dla właściciela"
  
- #: g10/gpg.c:2239
- #, c-format
-@@ -3172,10 +3170,9 @@ msgid "invalid argument for option \"%.5
+ #: g10/gpg.c:2151
+ #, fuzzy
+@@ -3184,10 +3182,9 @@ msgid "invalid argument for option \"%.5
  msgstr "błędny argument dla opcji „%.50s”\n"
  
- #: g10/gpg.c:3780
+ #: g10/gpg.c:3847
 -#, fuzzy, c-format
 -#| msgid "error parsing key specification '%s': %s\n"
 +#, c-format
@@ -36,12 +36,12 @@
 -msgstr "błąd analizy specyfikacji klucza „%s”: %s\n"
 +msgstr "błąd analizy wartości opcji „%s”: %s\n"
  
- #: g10/gpg.c:3950 sm/gpgsm.c:1615
+ #: g10/gpg.c:4022 sm/gpgsm.c:1630
  #, c-format
-@@ -4702,10 +4699,9 @@ msgid "setting the primary user ID faile
+@@ -4723,10 +4720,9 @@ msgid "setting the primary user ID faile
  msgstr "ustawienie głównego identyfikatora użytkownika nie powiodło się: %s\n"
  
- #: g10/keyedit.c:2829
+ #: g10/keyedit.c:3024
 -#, fuzzy, c-format
 -#| msgid "checking the trust list failed: %s\n"
 +#, c-format
@@ -49,9 +49,9 @@
 -msgstr "sprawdzenie listy zaufania nie powiodło się: %s\n"
 +msgstr "ustawienie zaufania dla właściciela na „%s” nie powiodło się: %s\n"
  
- #: g10/keyedit.c:2858 g10/keyedit.c:5021 g10/keygen.c:4239 g10/keygen.c:4293
+ #: g10/keyedit.c:3053 g10/keyedit.c:5252 g10/keygen.c:4761 g10/keygen.c:4815
  #, c-format
-@@ -5719,6 +5715,9 @@ msgid ""
+@@ -5764,6 +5760,9 @@ msgid ""
  "         not properly written to the disk.  You may want to repeat the\n"
  "         entire operation or just create a new encryption key on the card.\n"
  msgstr ""
@@ -59,12 +59,12 @@
 +"       został właściwie zapisany na dysk. Można powtórzyć całą operację\n"
 +"       lub tylko utworzyć nowy klucz szyfrujący na karcie.\n"
  
- #: g10/keygen.c:5835 g10/keygen.c:6095
+ #: g10/keygen.c:6430 g10/keygen.c:6693
  #, c-format
-@@ -5748,10 +5747,9 @@ msgstr ""
+@@ -5793,10 +5792,9 @@ msgstr ""
  "można dodać do niego podklucz szyfrujący.\n"
  
- #: g10/keygen.c:6172
+ #: g10/keygen.c:6773
 -#, fuzzy, c-format
 -#| msgid "WARNING: This key has been revoked by its owner!\n"
 +#, c-format
@@ -72,21 +72,21 @@
 -msgstr "OSTRZEŻENIE: Ten klucz został unieważniony przez właściciela!\n"
 +msgstr "Uwaga: ten klucz został utworzony z jednym lub więcej ADSK!\n"
  
- #: g10/keygen.c:6335 g10/keygen.c:6543
+ #: g10/keygen.c:6946 g10/keygen.c:7169
  #, c-format
-@@ -5859,7 +5857,7 @@ msgstr "Zbiór kluczy"
+@@ -5909,7 +5907,7 @@ msgstr "komentarz do unieważnienia: "
  
- #: g10/keylist.c:1717
+ #: g10/keylist.c:1980
  msgid "Revocable by: "
 -msgstr ""
 +msgstr "Możliwy do unieważnienia przez: "
  
- #: g10/keylist.c:2394
- msgid "Primary key fingerprint:"
-@@ -7027,10 +7025,9 @@ msgid "Note: secret key %s expired at %s
+ #: g10/keylist.c:2602
+ #, fuzzy, c-format
+@@ -7115,10 +7113,9 @@ msgid "Note: secret key %s expired at %s
  msgstr "Uwaga: ważność klucza tajnego %s wygasła %s\n"
  
- #: g10/pubkey-enc.c:440
+ #: g10/pubkey-enc.c:519
 -#, fuzzy, c-format
 -#| msgid "certificate should not have been used for encryption\n"
 +#, c-format
@@ -94,12 +94,12 @@
 -msgstr "certyfikat nie powinien być używany do szyfrowania\n"
 +msgstr "Uwaga: do odszyfrowania został użyty klucz ADSK"
  
- #: g10/pubkey-enc.c:446
+ #: g10/pubkey-enc.c:525
  #, c-format
-@@ -8098,16 +8095,14 @@ msgstr[1] " (skasowano %d liczniki zaufa
+@@ -8186,16 +8183,14 @@ msgstr[1] " (skasowano %d liczniki zaufa
  msgstr[2] " (skasowano %d liczników zaufania)\n"
  
- #: g10/trustdb.c:2243
+ #: g10/trustdb.c:2244
 -#, fuzzy, c-format
 -#| msgid "no ultimately trusted keys found\n"
 +#, c-format
@@ -107,7 +107,7 @@
 -msgstr "brak absolutnie zaufanych kluczy\n"
 +msgstr "Uwaga: nie znaleziono absolutnie zaufanego klucza %s\n"
  
- #: g10/trustdb.c:2250
+ #: g10/trustdb.c:2252
 -#, fuzzy, c-format
 -#| msgid "no ultimately trusted keys found\n"
 +#, c-format
@@ -115,16 +115,47 @@
 -msgstr "brak absolutnie zaufanych kluczy\n"
 +msgstr "Uwaga: absolutnie zaufany klucz %s wygasł\n"
  
- #: g10/trustdb.c:2285
+ #: g10/trustdb.c:2287
  #, c-format
-@@ -11403,10 +11398,3 @@ msgstr "polecenia zarządzające kluczam
- #: tools/gpg-card.c:3912
+@@ -11502,41 +11497,3 @@ msgstr "polecenia zarządzające kluczam
+ #: tools/gpg-card.c:3943
  msgid "manage the command history"
  msgstr "zarządzanie historią poleceń"
 -
 -#, c-format
+-#~ msgid "GPG_TTY has not been set - using maybe bogus default\n"
+-#~ msgstr ""
+-#~ "GPG_TTY nie zostało ustawione - użycie być może nieprawidłowego "
+-#~ "domyślnego\n"
+-
+-#, c-format
 -#~ msgid "public key of ultimately trusted key %s not found\n"
 -#~ msgstr "klucz publiczny absolutnie zaufanego klucza %s nie odnaleziony\n"
+-
+-#, c-format
+-#~ msgid "waiting for process %d to terminate failed: %s\n"
+-#~ msgstr "oczekiwanie na zakończenie procesu %d nie powiodło się: %s\n"
+-
+-#, fuzzy, c-format
+-#~| msgid "waiting for processes to terminate failed: %s\n"
+-#~ msgid "waiting for process to terminate failed: ec=%d\n"
+-#~ msgstr "oczekiwanie na zakończenie procesów nie powiodło się: %s\n"
+-
+-#, c-format
+-#~ msgid "error running '%s': probably not installed\n"
+-#~ msgstr "błąd uruchamiania „%s”: prawdopodobnie nie zainstalowany\n"
+-
+-#, c-format
+-#~ msgid "error running '%s': exit status %d\n"
+-#~ msgstr "błąd uruchamiania „%s”: kod wyjścia %d\n"
+-
+-#, c-format
+-#~ msgid "error running '%s': terminated\n"
+-#~ msgstr "błąd uruchamiania „%s”: zakończono\n"
+-
+-#, c-format
+-#~ msgid "error getting exit code of process %d: %s\n"
+-#~ msgstr "błąd odczytu kodu zakończenia procesu %d: %s\n"
 -
 -#~ msgid "use canonical text mode"
 -#~ msgstr "kanoniczny format tekstowy"

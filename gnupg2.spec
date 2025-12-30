@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# testsuite on build
 %bcond_without	dirmngr		# dirmngr packages build
-%bcond_without	default_gpg	# install as gpg/gpgv instead of gpg2/gpgv2
 %bcond_with	gnutls		# GnuTLS instead of NTBTLS
 %bcond_with	selinux		# "SELinux hacks"
 #
@@ -10,12 +9,12 @@ Summary:	GNU Privacy Guard - tool for secure communication and data storage - en
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
 # 2.4.x is stable, 2.5.x testing
-Version:	2.4.8
-Release:	2
+Version:	2.5.16
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	a165b60aeaac0bb4d251117a45199c5f
+# Source0-md5:	5bc13825904d5f515c0fffd9e7d01bc5
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
@@ -27,9 +26,9 @@ BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel >= 7.10
 BuildRequires:	gettext-tools >= 0.21
 %{?with_gnutls:BuildRequires:	gnutls-devel >= 3.2}
-BuildRequires:	libassuan-devel >= 1:2.5.0
-BuildRequires:	libgcrypt-devel >= 1.9.1
-BuildRequires:	libgpg-error-devel >= 1.46
+BuildRequires:	libassuan-devel >= 1:3.0.0
+BuildRequires:	libgcrypt-devel >= 1.11.0
+BuildRequires:	libgpg-error-devel >= 1.56
 BuildRequires:	libksba-devel >= 1.6.3
 BuildRequires:	libusb-devel >= 1.0
 BuildRequires:	npth-devel >= 1.2
@@ -44,12 +43,10 @@ BuildRequires:	tpm2-tss-devel
 BuildRequires:	zlib-devel
 Requires:	gnupg2-common = %{version}-%{release}
 Requires:	sqlite3-libs >= 3.27
-%if %{with default_gpg}
 Obsoletes:	gnupg < 2
 Obsoletes:	gnupg-plugin-keys_curl < 2
 Obsoletes:	gnupg-plugin-keys_hkp < 2
 Provides:	gnupg = %{version}-%{release}
-%endif
 Suggests:	gnupg-agent
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -76,9 +73,9 @@ To jest wersja rozszerzona.
 Summary:	GnuPG - common files
 Summary(pl.UTF-8):	GnuPG - pliki wspólne
 Group:		Applications/File
-Requires:	libassuan >= 1:2.5.0
-Requires:	libgcrypt >= 1.9.1
-Requires:	libgpg-error >= 1.46
+Requires:	libassuan >= 1:3.0.0
+Requires:	libgcrypt >= 1.11.0
+Requires:	libgpg-error >= 1.56
 Requires:	libksba >= 1.6.3
 Requires:	npth >= 1.2
 Obsoletes:	gnupg2-plugin-keys_curl < 2.1
@@ -189,7 +186,6 @@ fi
 	--libexecdir=%{pkglibexecdir} \
 	%{!?with_dirmngr:--disable-dirmngr} \
 	--enable-g13 \
-	%{!?with_default_gpg:--enable-gpg-is-gpg2} \
 	%{?with_gnutls:--disable-ntbtls} \
 	%{?with_selinux:--enable-selinux-support} \
 	%{!?with_tests:--disable-tests} \
@@ -242,17 +238,10 @@ EOF
 
 %files
 %defattr(644,root,root,755)
-%if %{with default_gpg}
 %attr(755,root,root) %{_bindir}/gpg
 %attr(755,root,root) %{_bindir}/gpgv
 %{_mandir}/man1/gpg.1*
 %{_mandir}/man1/gpgv.1*
-%else
-%attr(755,root,root) %{_bindir}/gpg2
-%attr(755,root,root) %{_bindir}/gpgv2
-%{_mandir}/man1/gpg2.1*
-%{_mandir}/man1/gpgv2.1*
-%endif
 
 %files common -f gnupg2.lang
 %defattr(644,root,root,755)
