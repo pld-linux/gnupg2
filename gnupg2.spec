@@ -8,17 +8,16 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.5.18
-Release:	2
+Version:	2.5.19
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	4b6ad18c5ffe655612d7f2f940bef4d3
+# Source0-md5:	365d71f23373f5946e72bc3a2b3a69ab
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
 Patch2:		%{name}-pl.po-update.patch
-Patch3:		rsa-sig-padding.patch
 URL:		https://www.gnupg.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.16.3
@@ -167,7 +166,6 @@ wywoływany przez gpgsm i nie używany bezpośrednio.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
-%patch -P3 -p1
 
 %{__rm} po/stamp-po
 

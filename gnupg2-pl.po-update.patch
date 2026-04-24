@@ -7,7 +7,7 @@
 -"Project-Id-Version: gnupg-2.4.4\n"
 +"Project-Id-Version: gnupg-2.4.8\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2026-02-24 10:53+0100\n"
+ "POT-Creation-Date: 2026-04-24 13:12+0200\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
 +"PO-Revision-Date: 2025-05-17 08:30+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -16,19 +16,19 @@
 @@ -3008,10 +3008,8 @@ msgid "show preferences"
  msgstr "pokazanie ustawień"
  
- #: g10/gpg.c:2149
+ #: g10/gpg.c:2155
 -#, fuzzy
 -#| msgid "change the ownertrust"
  msgid "show ownertrust"
 -msgstr "zmiana zaufania właściciela"
 +msgstr "pokazanie zaufania dla właściciela"
  
- #: g10/gpg.c:2151
+ #: g10/gpg.c:2157
  #, fuzzy
 @@ -3184,10 +3182,9 @@ msgid "invalid argument for option \"%.5
  msgstr "błędny argument dla opcji „%.50s”\n"
  
- #: g10/gpg.c:3847
+ #: g10/gpg.c:3861
 -#, fuzzy, c-format
 -#| msgid "error parsing key specification '%s': %s\n"
 +#, c-format
@@ -36,7 +36,7 @@
 -msgstr "błąd analizy specyfikacji klucza „%s”: %s\n"
 +msgstr "błąd analizy wartości opcji „%s”: %s\n"
  
- #: g10/gpg.c:4022 sm/gpgsm.c:1645
+ #: g10/gpg.c:4036 sm/gpgsm.c:1645
  #, c-format
 @@ -4723,10 +4720,9 @@ msgid "setting the primary user ID faile
  msgstr "ustawienie głównego identyfikatora użytkownika nie powiodło się: %s\n"
