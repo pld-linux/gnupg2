@@ -7,7 +7,7 @@
 -"Project-Id-Version: gnupg-2.4.4\n"
 +"Project-Id-Version: gnupg-2.4.8\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2026-04-24 13:12+0200\n"
+ "POT-Creation-Date: 2026-05-13 14:35+0200\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
 +"PO-Revision-Date: 2025-05-17 08:30+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -36,7 +36,7 @@
 -msgstr "błąd analizy specyfikacji klucza „%s”: %s\n"
 +msgstr "błąd analizy wartości opcji „%s”: %s\n"
  
- #: g10/gpg.c:4036 sm/gpgsm.c:1645
+ #: g10/gpg.c:4036 sm/gpgsm.c:1655
  #, c-format
 @@ -4723,10 +4720,9 @@ msgid "setting the primary user ID faile
  msgstr "ustawienie głównego identyfikatora użytkownika nie powiodło się: %s\n"

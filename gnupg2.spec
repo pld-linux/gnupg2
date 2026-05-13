@@ -8,12 +8,12 @@
 Summary:	GNU Privacy Guard - tool for secure communication and data storage - enhanced version
 Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych - wersja rozszerzona
 Name:		gnupg2
-Version:	2.5.19
+Version:	2.5.20
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-%{version}.tar.bz2
-# Source0-md5:	365d71f23373f5946e72bc3a2b3a69ab
+# Source0-md5:	93d6d891254b43138bb9a2a777dc2de7
 Source1:	gnupg-agent.sh
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-nogit.patch
