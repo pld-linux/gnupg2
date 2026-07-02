@@ -7,7 +7,7 @@
 -"Project-Id-Version: gnupg-2.4.4\n"
 +"Project-Id-Version: gnupg-2.4.8\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2026-05-13 14:35+0200\n"
+ "POT-Creation-Date: 2026-07-02 14:43+0200\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
 +"PO-Revision-Date: 2025-05-17 08:30+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -16,19 +16,19 @@
 @@ -3008,10 +3008,8 @@ msgid "show preferences"
  msgstr "pokazanie ustawień"
  
- #: g10/gpg.c:2155
+ #: g10/gpg.c:2156
 -#, fuzzy
 -#| msgid "change the ownertrust"
  msgid "show ownertrust"
 -msgstr "zmiana zaufania właściciela"
 +msgstr "pokazanie zaufania dla właściciela"
  
- #: g10/gpg.c:2157
+ #: g10/gpg.c:2158
  #, fuzzy
 @@ -3184,10 +3182,9 @@ msgid "invalid argument for option \"%.5
  msgstr "błędny argument dla opcji „%.50s”\n"
  
- #: g10/gpg.c:3861
+ #: g10/gpg.c:3862
 -#, fuzzy, c-format
 -#| msgid "error parsing key specification '%s': %s\n"
 +#, c-format
@@ -36,7 +36,7 @@
 -msgstr "błąd analizy specyfikacji klucza „%s”: %s\n"
 +msgstr "błąd analizy wartości opcji „%s”: %s\n"
  
- #: g10/gpg.c:4036 sm/gpgsm.c:1655
+ #: g10/gpg.c:4037 sm/gpgsm.c:1656
  #, c-format
 @@ -4723,10 +4720,9 @@ msgid "setting the primary user ID faile
  msgstr "ustawienie głównego identyfikatora użytkownika nie powiodło się: %s\n"
@@ -59,12 +59,12 @@
 +"       został właściwie zapisany na dysk. Można powtórzyć całą operację\n"
 +"       lub tylko utworzyć nowy klucz szyfrujący na karcie.\n"
  
- #: g10/keygen.c:6430 g10/keygen.c:6693
+ #: g10/keygen.c:6435 g10/keygen.c:6698
  #, c-format
 @@ -5793,10 +5792,9 @@ msgstr ""
  "można dodać do niego podklucz szyfrujący.\n"
  
- #: g10/keygen.c:6773
+ #: g10/keygen.c:6778
 -#, fuzzy, c-format
 -#| msgid "WARNING: This key has been revoked by its owner!\n"
 +#, c-format
@@ -72,7 +72,7 @@
 -msgstr "OSTRZEŻENIE: Ten klucz został unieważniony przez właściciela!\n"
 +msgstr "Uwaga: ten klucz został utworzony z jednym lub więcej ADSK!\n"
  
- #: g10/keygen.c:6946 g10/keygen.c:7169
+ #: g10/keygen.c:6951 g10/keygen.c:7174
  #, c-format
 @@ -5909,7 +5907,7 @@ msgstr "komentarz do unieważnienia: "
  
