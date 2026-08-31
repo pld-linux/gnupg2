@@ -7,7 +7,7 @@
 -"Project-Id-Version: gnupg-2.4.4\n"
 +"Project-Id-Version: gnupg-2.4.8\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2026-07-02 14:43+0200\n"
+ "POT-Creation-Date: 2026-08-31 11:50+0200\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
 +"PO-Revision-Date: 2025-05-17 08:30+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -41,7 +41,7 @@
 @@ -4723,10 +4720,9 @@ msgid "setting the primary user ID faile
  msgstr "ustawienie głównego identyfikatora użytkownika nie powiodło się: %s\n"
  
- #: g10/keyedit.c:3024
+ #: g10/keyedit.c:3036
 -#, fuzzy, c-format
 -#| msgid "checking the trust list failed: %s\n"
 +#, c-format
@@ -49,7 +49,7 @@
 -msgstr "sprawdzenie listy zaufania nie powiodło się: %s\n"
 +msgstr "ustawienie zaufania dla właściciela na „%s” nie powiodło się: %s\n"
  
- #: g10/keyedit.c:3053 g10/keyedit.c:5252 g10/keygen.c:4761 g10/keygen.c:4815
+ #: g10/keyedit.c:3065 g10/keyedit.c:5264 g10/keygen.c:4764 g10/keygen.c:4818
  #, c-format
 @@ -5764,6 +5760,9 @@ msgid ""
  "         not properly written to the disk.  You may want to repeat the\n"
@@ -59,12 +59,12 @@
 +"       został właściwie zapisany na dysk. Można powtórzyć całą operację\n"
 +"       lub tylko utworzyć nowy klucz szyfrujący na karcie.\n"
  
- #: g10/keygen.c:6435 g10/keygen.c:6698
+ #: g10/keygen.c:6439 g10/keygen.c:6702
  #, c-format
 @@ -5793,10 +5792,9 @@ msgstr ""
  "można dodać do niego podklucz szyfrujący.\n"
  
- #: g10/keygen.c:6778
+ #: g10/keygen.c:6782
 -#, fuzzy, c-format
 -#| msgid "WARNING: This key has been revoked by its owner!\n"
 +#, c-format
@@ -72,7 +72,7 @@
 -msgstr "OSTRZEŻENIE: Ten klucz został unieważniony przez właściciela!\n"
 +msgstr "Uwaga: ten klucz został utworzony z jednym lub więcej ADSK!\n"
  
- #: g10/keygen.c:6951 g10/keygen.c:7174
+ #: g10/keygen.c:6955 g10/keygen.c:7162 g10/keygen.c:7261
  #, c-format
 @@ -5909,7 +5907,7 @@ msgstr "komentarz do unieważnienia: "
  
@@ -115,7 +115,7 @@
 -msgstr "brak absolutnie zaufanych kluczy\n"
 +msgstr "Uwaga: absolutnie zaufany klucz %s wygasł\n"
  
- #: g10/trustdb.c:2287
+ #: g10/trustdb.c:2288
  #, c-format
 @@ -11502,41 +11497,3 @@ msgstr "polecenia zarządzające kluczam
  #: tools/gpg-card.c:3943
