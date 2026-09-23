@@ -7,7 +7,7 @@
 -"Project-Id-Version: gnupg-2.4.4\n"
 +"Project-Id-Version: gnupg-2.4.8\n"
  "Report-Msgid-Bugs-To: translations@gnupg.org\n"
- "POT-Creation-Date: 2026-08-31 11:50+0200\n"
+ "POT-Creation-Date: 2026-09-23 13:27+0200\n"
 -"PO-Revision-Date: 2024-03-07 14:00+0100\n"
 +"PO-Revision-Date: 2025-05-17 08:30+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
@@ -16,19 +16,19 @@
 @@ -3008,10 +3008,8 @@ msgid "show preferences"
  msgstr "pokazanie ustawień"
  
- #: g10/gpg.c:2156
+ #: g10/gpg.c:2165
 -#, fuzzy
 -#| msgid "change the ownertrust"
  msgid "show ownertrust"
 -msgstr "zmiana zaufania właściciela"
 +msgstr "pokazanie zaufania dla właściciela"
  
- #: g10/gpg.c:2158
+ #: g10/gpg.c:2167
  #, fuzzy
 @@ -3184,10 +3182,9 @@ msgid "invalid argument for option \"%.5
  msgstr "błędny argument dla opcji „%.50s”\n"
  
- #: g10/gpg.c:3862
+ #: g10/gpg.c:3888
 -#, fuzzy, c-format
 -#| msgid "error parsing key specification '%s': %s\n"
 +#, c-format
@@ -36,12 +36,12 @@
 -msgstr "błąd analizy specyfikacji klucza „%s”: %s\n"
 +msgstr "błąd analizy wartości opcji „%s”: %s\n"
  
- #: g10/gpg.c:4037 sm/gpgsm.c:1656
+ #: g10/gpg.c:4063 sm/gpgsm.c:1667
  #, c-format
 @@ -4723,10 +4720,9 @@ msgid "setting the primary user ID faile
  msgstr "ustawienie głównego identyfikatora użytkownika nie powiodło się: %s\n"
  
- #: g10/keyedit.c:3036
+ #: g10/keyedit.c:3117
 -#, fuzzy, c-format
 -#| msgid "checking the trust list failed: %s\n"
 +#, c-format
@@ -49,7 +49,7 @@
 -msgstr "sprawdzenie listy zaufania nie powiodło się: %s\n"
 +msgstr "ustawienie zaufania dla właściciela na „%s” nie powiodło się: %s\n"
  
- #: g10/keyedit.c:3065 g10/keyedit.c:5264 g10/keygen.c:4764 g10/keygen.c:4818
+ #: g10/keyedit.c:3146 g10/keyedit.c:5345 g10/keygen.c:4943 g10/keygen.c:4997
  #, c-format
 @@ -5764,6 +5760,9 @@ msgid ""
  "         not properly written to the disk.  You may want to repeat the\n"
@@ -59,12 +59,12 @@
 +"       został właściwie zapisany na dysk. Można powtórzyć całą operację\n"
 +"       lub tylko utworzyć nowy klucz szyfrujący na karcie.\n"
  
- #: g10/keygen.c:6439 g10/keygen.c:6702
+ #: g10/keygen.c:6619 g10/keygen.c:6882
  #, c-format
 @@ -5793,10 +5792,9 @@ msgstr ""
  "można dodać do niego podklucz szyfrujący.\n"
  
- #: g10/keygen.c:6782
+ #: g10/keygen.c:6962
 -#, fuzzy, c-format
 -#| msgid "WARNING: This key has been revoked by its owner!\n"
 +#, c-format
@@ -72,7 +72,7 @@
 -msgstr "OSTRZEŻENIE: Ten klucz został unieważniony przez właściciela!\n"
 +msgstr "Uwaga: ten klucz został utworzony z jednym lub więcej ADSK!\n"
  
- #: g10/keygen.c:6955 g10/keygen.c:7162 g10/keygen.c:7261
+ #: g10/keygen.c:7135 g10/keygen.c:7342 g10/keygen.c:7441
  #, c-format
 @@ -5909,7 +5907,7 @@ msgstr "komentarz do unieważnienia: "
  
@@ -81,12 +81,12 @@
 -msgstr ""
 +msgstr "Możliwy do unieważnienia przez: "
  
- #: g10/keylist.c:2602
+ #: g10/keylist.c:2603
  #, fuzzy, c-format
 @@ -7115,10 +7113,9 @@ msgid "Note: secret key %s expired at %s
  msgstr "Uwaga: ważność klucza tajnego %s wygasła %s\n"
  
- #: g10/pubkey-enc.c:519
+ #: g10/pubkey-enc.c:585
 -#, fuzzy, c-format
 -#| msgid "certificate should not have been used for encryption\n"
 +#, c-format
@@ -94,7 +94,7 @@
 -msgstr "certyfikat nie powinien być używany do szyfrowania\n"
 +msgstr "Uwaga: do odszyfrowania został użyty klucz ADSK"
  
- #: g10/pubkey-enc.c:525
+ #: g10/pubkey-enc.c:591
  #, c-format
 @@ -8186,16 +8183,14 @@ msgstr[1] " (skasowano %d liczniki zaufa
  msgstr[2] " (skasowano %d liczników zaufania)\n"
